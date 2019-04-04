@@ -1,0 +1,63 @@
+{
+  "user": [
+    {
+      "type": "textInput",
+      "data": {
+        "inputText": "",
+        "timeout": 1000
+      }
+    },
+    {
+      "type": "textInput",
+      "data": {
+        "inputText": "",
+        "timeout": 1500
+      }
+    },
+    {
+      "type": "textInput",
+      "data": {
+        "inputText": "",
+        "timeout": 2000
+      }
+    },
+    {
+      "type": "textInput",
+      "data": {
+        "inputText": "",
+        "timeout": 2000
+      }
+    }
+  ],
+  "bot": [
+    {
+      "type": "textDisplay",
+      "data": {
+        "displayText": "Enter Name",
+        "timeout": 1000
+      }
+    },
+    {
+      "type": "textDisplay",
+      "data": {
+        "displayText": "Enter Email",
+        "timeout": 1500
+      }
+    },
+    {
+      "type": "textDisplay",
+      "data": {
+        "displayText": "Enter Phone",
+        "timeout": 2000
+      }
+    },
+    {
+      "type": "textDisplay",
+      "data": {
+        "displayText": "Thank you!",
+        "timeout": 2000,
+        "conversationEnd": true
+      }
+    }
+  ]
+}
