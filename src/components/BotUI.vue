@@ -10,7 +10,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="message-bot" v-if="message.type==='textDisplay' || message.type==='imageDisplay'">
+                    <div class="message-bot"
+                         v-if="message.type==='textDisplay' || message.type==='imageDisplay' || message.type==='buttonDisplay'">
                         <div :style="botConfig.isHuman?'text-align: left':'text-align: center'">
                             <template v-if="isBotLoading && index===messages.length-1">
                                 <div class="typing-loader"></div>
@@ -37,11 +38,12 @@
   import textDisplay from './BotWidgets/textDisplay'
   import textInput from './BotWidgets/textInput'
   import imageDisplay from './BotWidgets/imageDisplay'
+  import buttonDisplay from './BotWidgets/buttonDisplay'
 
   let Bot
   export default {
     name: 'BotUI',
-    components: { textInput, textDisplay, imageDisplay },
+    components: { textInput, textDisplay, imageDisplay, buttonDisplay },
     data () {
       return {
         messages: [],
@@ -73,6 +75,11 @@
       sendMessage () {
         Bot.setData(this.userValue)
         this.userValue = ''
+        this.appendMessage(Bot.getNextUserData())
+        this.appendMessage(Bot.getNextBotData())
+      },
+      sendBotMessage (fromWidget) {
+        Bot.setData(fromWidget)
         this.appendMessage(Bot.getNextUserData())
         this.appendMessage(Bot.getNextBotData())
       },

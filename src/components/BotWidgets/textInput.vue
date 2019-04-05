@@ -8,6 +8,9 @@
   export default {
     name: 'textInput',
     props: ['widgetData'],
+    mounted () {
+      console.log(this.$parent)
+    }
   }
 </script>
 
