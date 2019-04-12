@@ -3,11 +3,12 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './registerServiceWorker'
+import $ from 'jquery'
 
 Vue.config.productionTip = false
-
+window.$ = $
 new Vue({
   router,
   store,
-  render: function (h) { return h(App) }
+  render: function (h) { return h(App) },
 }).$mount('#app')

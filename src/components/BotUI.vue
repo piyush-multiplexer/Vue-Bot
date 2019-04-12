@@ -11,8 +11,20 @@
                         </div>
                     </div>
                     <div class="message-bot"
-                         v-if="message.type==='textDisplay' || message.type==='imageDisplay' || message.type==='buttonDisplay'">
+                         v-if="message.type==='textDisplay' || message.type==='imageDisplay'">
                         <div :style="botConfig.isHuman?'text-align: left':'text-align: center'">
+                            <template v-if="isBotLoading && index===messages.length-1">
+                                <div class="typing-loader"></div>
+                            </template>
+                            <template v-else>
+                                <div class="message-content">
+                                    <component :is="message.type" :widgetData="message.data"></component>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    <div v-else-if="message.type==='buttonDisplay'">
+                        <div style="'text-align: center'">
                             <template v-if="isBotLoading && index===messages.length-1">
                                 <div class="typing-loader"></div>
                             </template>
@@ -57,6 +69,9 @@
       Bot = new VueBot()
       this.botConfig = Bot.getConfig()
       this.renderBot()
+      setTimeout(function () {
+        $('#bot-content').css('height', '80vh !important')
+      }, 2000)
     },
     methods: {
       appendMessage (message) {
@@ -106,8 +121,10 @@
         width: 100%;
     }
 
+    /*height: 80vh;*/
+
     #user-input-container {
-        padding-top: 5%;
+        height: 19vh;
     }
 
     .message-content {

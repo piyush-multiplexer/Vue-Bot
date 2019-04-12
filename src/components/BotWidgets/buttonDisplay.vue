@@ -1,9 +1,11 @@
 <template>
     <div class="buttonDisplay">
         <div v-html="widgetData.displayText"></div>
-        <template v-for="btn in widgetData.options">
-            <button :disabled="selected" @click="setButtonValue(btn)">{{btn.value}}</button>
-        </template>
+        <div class="btn-group">
+            <template v-for="btn in widgetData.options">
+                <button :disabled="selected" @click="setButtonValue(btn)">{{btn.value}}</button>
+            </template>
+        </div>
     </div>
 </template>
 
@@ -27,4 +29,28 @@
 </script>
 
 <style scoped>
+    .btn-group button {
+        border-radius: 50%;
+        background-color: #586eaf;
+        border: 1px solid #121180;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        width: 100%;
+        display: block;
+    }
+
+    .btn-group button:hover {
+        background-color: #f9f9f9;
+        color: black;
+        border: 1px solid #121180;
+    }
+
+    .btn-group button:not(:last-child) {
+        border-bottom: none;
+    }
 </style>
