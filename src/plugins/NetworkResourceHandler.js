@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-function fetchNetworkData (url, method, loading, postData, headers) {
+function NetworkCommunicator (method, url, loading, postData, headers) {
   if (method === 'GET') {
     return axios.get(url).then(response => {
       return response.data
@@ -15,3 +15,5 @@ function fetchNetworkData (url, method, loading, postData, headers) {
     })
   }
 }
+
+export default NetworkCommunicator
