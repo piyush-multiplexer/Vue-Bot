@@ -3,7 +3,8 @@
     <div v-html="widgetData.displayText"></div>
     <div class="card-group">
       <div class="single-card" v-for="card in widgetData.options">
-        <img @click="setCardValue(card)" :src="card.url" :alt="card.value">
+        <img class="single-card-image" @click="setCardValue(card)" :src="card.url" :alt="card.value">
+        <div class="single-card-content" v-html="card.value"></div>
       </div>
     </div>
   </div>
@@ -29,19 +30,28 @@
 
 <style scoped>
   .card-group {
-    width: 88vw;
-    padding: 1rem;
-    display: flex;
+    width: 90vw;
     overflow-x: scroll;
-    scroll-padding: 0 50%;
-    scroll-snap-type: x mandatory;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+
+  .card-group::-webkit-scrollbar {
+    display: none;
   }
 
   .single-card {
-    scroll-snap-align: center;
+    cursor: pointer;
+    border: 2px solid #71a0ff;
+    margin: 2px;
     display: inline-block;
-    border-radius: 3px;
-    font-size: 0;
-    margin-right: 3rem;
+    height: 100%;
+    border-radius: 4%;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .single-card-image {
+    height: 25vh;
+    width: 25vh;
   }
 </style>
