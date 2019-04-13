@@ -1,7 +1,7 @@
 <template>
-    <div class="textInput">
-        <div v-html="widgetData.inputText"></div>
-    </div>
+  <div class="textInput">
+    <div v-html="widgetData.inputText"></div>
+  </div>
 </template>
 
 <script>
@@ -9,8 +9,7 @@
     name: 'textInput',
     props: ['widgetData'],
     mounted () {
-      console.log(this.$parent)
-    }
+    },
   }
 </script>
 
