@@ -1,5 +1,5 @@
 <template>
-  <div class="Bubble">
+  <div class="BubbleWidget">
     <div v-for="(bubble,index) in localBubbles" :key="index">
       <div class="bubble-card">
         <div class="bubble-card-content" v-html="bubble.string"></div>
@@ -14,7 +14,7 @@
   import EventBus from '../../plugins/eventBus'
 
   export default {
-    name: 'Bubble',
+    name: 'BubbleWidget',
     props: ['bubbles'],
     data () {
       return {
@@ -24,14 +24,17 @@
     },
     mounted () {
       let self = this
+      let offset = 0
       this.bubbles.forEach((bubble, bubbleIndex) => {
         setTimeout(function () {
           self.appendBubble(bubble, bubbleIndex)
-        }, bubble.delay)
+        }, bubble.delay + offset)
+        offset += bubble.delay
       })
     },
     methods: {
       appendBubble (bubble, bubbleIndex) {
+        console.log(bubbleIndex)
         this.localBubbles.push(bubble)
         if (bubbleIndex + 1 === this.bubbles.length) {
           this.startTyping = false

@@ -110,7 +110,6 @@
       this.messages[0] = await Bot.getConfig()
       this.$forceUpdate()
       EventBus.$on('AFTER_BUBBLE', () => {
-        console.log('wnfio')
         self.showInput = true
       })
       // setTimeout(function () {
