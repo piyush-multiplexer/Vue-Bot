@@ -84,10 +84,16 @@
   import EventBus from '../plugins/eventBus'
   import ButtonsVertical from './BotWidgets/buttonsVertical'
   import DatePicker from './BotWidgets/DatePicker'
+  import SearchSuggestion from './BotWidgets/SearchSuggestion'
 
   export default {
     name: 'BotUITwo',
-    components: { 'date_roll': DatePicker, 'buttons_vertical': ButtonsVertical, 'text-widget': TextWidget },
+    components: {
+      'search_suggester_dynamic': SearchSuggestion,
+      'date_roll': DatePicker,
+      'buttons_vertical': ButtonsVertical,
+      'text-widget': TextWidget,
+    },
     data () {
       return {
         messages: [],

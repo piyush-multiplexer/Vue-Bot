@@ -2,7 +2,8 @@
   <div class="buttonsVertical">
     <div class="btn-group" v-if="showWidget">
       <template v-for="btn in widgetData.input.args.options">
-        <button @click="setButtonValue(btn)">{{btn.val}}</button>
+        <button @click="setButtonValue(btn)">{{btn.val}}<span v-html="btn.href"></span>
+        </button>
       </template>
     </div>
   </div>
@@ -10,7 +11,6 @@
 
 <script>
   import EventBus from '../../plugins/eventBus'
-  import VueBotTwo from '../../plugins/VueBotTwo'
 
   export default {
     name: 'buttonsVertical',
@@ -26,9 +26,7 @@
     },
     methods: {
       setButtonValue (btn) {
-        console.log(Bot)
         Bot.rsp_gid = btn.rsp_gid
-        console.log(this)
         this.$parent.sendMessage(btn.value)
       },
     },
@@ -36,9 +34,6 @@
 </script>
 
 <style scoped>
-  .buttonsVertical {
-    width: 10%;
-  }
 
   .btn-group button {
     border-radius: 50%;
