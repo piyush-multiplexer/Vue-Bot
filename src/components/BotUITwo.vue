@@ -3,18 +3,29 @@
     <div id="bot-container">
       <div id="bot-content" v-if="messages.length">
         <div v-for="(message,messageIndex) in messages" :key="messageIndex">
-          {{message.input.name}}
-          <template v-if="message.input.name==='text'">
+          <template v-if="message.type==='user'">
+            <div style="text-align: right">
+              <div class="message-content">
+                {{message.value}}
+              </div>
+            </div>
+          </template>
+          <template v-else-if="message.input.name==='text'">
             <div :style="botConfig.isHuman?'text-align: left':'text-align: center'">
               <div class="message-content">
-                <text-widget :widgetData="message"></text-widget>
+                <bubble :bubbles="message.text"></bubble>
               </div>
             </div>
           </template>
           <template v-else>
             <div :style="botConfig.isHuman?'text-align: left':'text-align: center'">
               <div class="message-content">
-                <component :is="message.input.name" :widgetData="message.data"></component>
+                <bubble :bubbles="message.text"></bubble>
+              </div>
+            </div>
+            <div style="text-align: center">
+              <div class="message-content">
+                <component :is="message.input.name" :widgetData="message"></component>
               </div>
             </div>
           </template>
@@ -71,11 +82,12 @@
   import VueBotTwo from '../plugins/VueBotTwo'
   import TextWidget from './BotWidgets/TextWidget'
   import EventBus from '../plugins/eventBus'
+  import ButtonsVertical from './BotWidgets/buttonsVertical'
+  import DatePicker from './BotWidgets/DatePicker'
 
-  let Bot
   export default {
     name: 'BotUITwo',
-    components: { TextWidget },
+    components: { 'date_roll': DatePicker, 'buttons_vertical': ButtonsVertical, 'text-widget': TextWidget },
     data () {
       return {
         messages: [],
@@ -88,7 +100,6 @@
     },
     async mounted () {
       let self = this
-      Bot = new VueBotTwo()
       this.messages = []
       this.messages[0] = await Bot.getConfig()
       this.$forceUpdate()
@@ -115,8 +126,10 @@
       hideWidget (widgetId) {
         console.log($('#' + widgetId).hide())
       },
-      async sendMessage () {
+      async sendMessage (userValue) {
+        this.messages.push({ type: 'user', value: this.userValue ? this.userValue : userValue })
         this.messages.push(await Bot.getNextMessage(this.userValue))
+        this.userValue = ''
         this.$forceUpdate()
       },
     },
@@ -156,70 +169,11 @@
     display: inline-block;
   }
 
-  .message-bot .message-content {
-    background-color: #297ec7;
-    color: whitesmoke;
-  }
 
-  .message-user .message-content {
-    background-color: #b6ccff;
-    color: darkslategray;
-  }
+  /*.message-content {*/
+  /*  background-color: #b6ccff;*/
+  /*  color: darkslategray;*/
+  /*}*/
 
-  .typing-loader {
-    margin: 60px auto 60px 1px;
-    width: 6px;
-    height: 6px;
-    -webkit-animation: line 1s linear infinite alternate;
-    -moz-animation: line 1s linear infinite alternate;
-    animation: line 1s linear infinite alternate;
-  }
 
-  @-webkit-keyframes line {
-    0% {
-
-      background-color: rgba(0, 0, 0, 1);
-      box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
-    }
-    25% {
-      background-color: rgba(0, 0, 0, 0.4);
-      box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 2), 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
-    }
-    75% {
-      background-color: rgba(0, 0, 0, 0.4);
-      box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 2);
-    }
-  }
-
-  @-moz-keyframes line {
-    0% {
-
-      background-color: rgba(0, 0, 0, 1);
-      box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
-    }
-    25% {
-      background-color: rgba(0, 0, 0, 0.4);
-      box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 2), 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
-    }
-    75% {
-      background-color: rgba(0, 0, 0, 0.4);
-      box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 2);
-    }
-  }
-
-  @keyframes line {
-    0% {
-
-      background-color: rgba(0, 0, 0, 1);
-      box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
-    }
-    25% {
-      background-color: rgba(0, 0, 0, 0.4);
-      box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 2), 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
-    }
-    75% {
-      background-color: rgba(0, 0, 0, 0.4);
-      box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 2);
-    }
-  }
 </style>

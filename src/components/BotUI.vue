@@ -135,7 +135,7 @@
   }
 
   .message-content {
-    word-break: break-word;
+    /*word-break: break-word;*/
     padding: 1.5%;
     margin: 1%;
     border-radius: 30%;

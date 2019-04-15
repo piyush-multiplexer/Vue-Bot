@@ -6,12 +6,9 @@
 
 <script>
 
-  import Bubble from './Bubble'
-
 
   export default {
     name: 'TextWidget',
-    components: { Bubble },
     props: ['widgetData'],
   }
 </script>
