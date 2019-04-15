@@ -1,0 +1,302 @@
+[
+  {
+    "gid": "1",
+    "input": {
+      "args": {
+        "pass": true,
+        "rsp_gid": "2",
+        "input_type": "user_name"
+      },
+      "attr": {
+        "type": "text",
+        "placeholder": "Type here..",
+        "autocapitalize": "words"
+      },
+      "name": "text"
+    },
+    "varid": "Name",
+    "bubbles": {
+      "pre": {
+        "valid": [
+          {
+            "delay": 1000,
+            "string": "<b>કેમ છો</b>....!"
+          },
+          {
+            "delay": 1000,
+            "string": "હું<b> રવિ પટેલ</b> શાલીગ્રામ ગ્રુપમાંથી."
+          },
+          {
+            "delay": 3000,
+            "string": "<b>શાલીગ્રામ ગ્રુપ</b> છેલ્લા <b>28 વર્ષથી</b> રીઅલ એસ્ટેટ વ્યવસાયમાં સફળતાપૂર્વક કામ કરી રહ્યું છે.",
+            "img_url": "https://i.ibb.co/HB6nVHF/IMG-20190110-WA0016.jpg"
+          },
+          {
+            "delay": 4000,
+            "string": "શું હું તમારું<b> નામ</b> જાણી શકું છું..?"
+          }
+        ]
+      },
+      "post": {
+        "err_invalid": [
+          {
+            "string": "Please give a valid input. Try again."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "gid": "2",
+    "input": {
+      "args": {
+        "rsp_gid": "3",
+        "input_type": "user_phone_number_10"
+      },
+      "attr": {
+        "type": "tel",
+        "placeholder": "Type here..",
+        "autocapitalize": "off"
+      },
+      "name": "text"
+    },
+    "varid": "Mobile No",
+    "bubbles": {
+      "pre": {
+        "valid": [
+          {
+            "delay": 1000,
+            "string": "હેલ્લો {{ursp.Name}}"
+          },
+          {
+            "delay": 1000,
+            "string": "તાપી નદીના કિનારે, કુદરતની સાથે <b>કતારગામ કોઝવેની નજીક શાલીગ્રામ ગ્રુપ</b> એક નવો પ્રોજેકટ લઈને આવી રહ્યું છે.",
+            "img_url": "https://i.ibb.co/SfxRMct/Whats-App-Image-2019-02-04-at-5-03-09-PM.jpg"
+          },
+          {
+            "delay": 4000,
+            "string": "<b>શાલીગ્રામ કિનારો</b>",
+            "img_url": "https://i.ibb.co/5Mn15Cx/2st1vy.gif"
+          },
+          {
+            "delay": 4000,
+            "string": "<b>વિશેષતાઓ</b>",
+            "img_url": "https://i.ibb.co/zHBvZmb/Whats-App-Image-2019-02-04-at-6-17-15-PM.jpg"
+          },
+          {
+            "delay": 4000,
+            "string": "શું તમે તમારો<b> મોબાઇલ નંબર</b> આપી શકો તો હું તમને અમારા પ્રોજેકટની વધુ માહિતી તમારા મોબાઇલ નંબર પર મોકલી શકું...!"
+          }
+        ]
+      },
+      "post": {
+        "err_invalid": [
+          {
+            "string": "Please give a valid input. Try again."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "gid": "3",
+    "input": {
+      "args": {
+        "sn": "y",
+        "options": [
+          {
+            "val": "હા",
+            "name": "હા",
+            "rsp_gid": "4"
+          },
+          {
+            "val": "ના",
+            "name": "ના",
+            "rsp_gid": "7"
+          }
+        ],
+        "rsp_gid": "4"
+      },
+      "attr": {
+        "type": "custom"
+      },
+      "name": "buttons_vertical"
+    },
+    "varid": "Links",
+    "bubbles": {
+      "pre": {
+        "valid": [
+          {
+            "delay": 1000,
+            "string": "ધન્યવાદ મોબાઇલ નંબર આપવા બદલ&nbsp;"
+          },
+          {
+            "delay": 1000,
+            "string": "<b>નદીના કાંઠે, કુદરતની સાથે&nbsp;</b>",
+            "img_url": "https://i.ibb.co/Y3tNW89/Screenshot-20190205-165056-01.jpg"
+          },
+          {
+            "delay": 2000,
+            "string": "<b>ડિજિટલ બ્રોશર</b><br><br><a href=\"https://bit.ly/2BhEPD0\" target=\"_blank\">https://bit.ly/2BhEPD0</a>&nbsp;"
+          },
+          {
+            "delay": 2000,
+            "string": "<b>મોબાઇલ નંબર</b>&nbsp;<br><br><a href=\"9825574309\" target=\"_blank\">9825574309</a>"
+          },
+          {
+            "delay": 2000,
+            "string": "{{ursp.Name}} તમે અમારા પ્રોજેક્ટની મુલાકાત માટે વિચારી રહ્યા છો."
+          }
+        ]
+      },
+      "post": {
+        "err_invalid": [
+          {
+            "string": "Please give a valid input. Try again."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "gid": "4",
+    "input": {
+      "args": {
+        "maxDate": "",
+        "minDate": "ref:tomorrow",
+        "rsp_gid": "6",
+        "date_vector": "future"
+      },
+      "attr": {
+        "type": "custom"
+      },
+      "name": "date_roll"
+    },
+    "varid": "Visit Date",
+    "bubbles": {
+      "pre": {
+        "valid": [
+          {
+            "delay": 1000,
+            "string": "તો તમે ક્યારે અમારી સાઇટ ઓફિસની મુલાકાત લઈ શકશો...?"
+          }
+        ]
+      },
+      "post": {
+        "err_invalid": [
+          {
+            "string": "Please give a valid input. Try again."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "gid": "6",
+    "input": {
+      "args": {
+        "val": "--NO-INPUT--",
+        "rsp_gid": "7"
+      },
+      "attr": {
+        "type": "custom"
+      },
+      "name": "no_input"
+    },
+    "varid": "Thank You",
+    "bubbles": {
+      "pre": {
+        "valid": [
+          {
+            "delay": 1000,
+            "string": "તમારો કિમંત સમય આપવા બદલ તમારો આભાર {{ursp.Name}}"
+          },
+          {
+            "delay": 2000,
+            "string": "અમે આશા રાખીએ છીએ કે તમે તમારા નક્કી કરેલ સમય પર અમારી ઓફિસની મુલાકાત કરશો."
+          }
+        ]
+      },
+      "post": {
+        "err_invalid": [
+          {
+            "string": "Please give a valid input. Try again."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "gid": "7",
+    "input": {
+      "args": {
+        "sn": "y",
+        "options": [
+          {
+            "val": "વેબસાઇટની મુલાકાત લેવા માટે અહીં ક્લિક કરો",
+            "href": "http://www.shaligramgroup.in/projects/upcoming/residential/kinaro/",
+            "name": "વેબસાઇટની મુલાકાત લેવા માટે અહીં ક્લિક કરો",
+            "rsp_gid": "",
+            "icon_class": "fa fa-edge"
+          },
+          {
+            "val": "ગુગલ મેપ લોકેશન માટે અહિ ક્લિક કરો",
+            "href": "https://goo.gl/maps/UEBUbnvZoxj",
+            "name": "ગુગલ મેપ લોકેશન માટે અહિ ક્લિક કરો",
+            "rsp_gid": "",
+            "icon_class": "fa fa-map-marker"
+          },
+          {
+            "val": "વોટ્સઅપ પર વાત કરવા માટે અહીં ક્લિક કરો",
+            "href": "http://bit.ly/2GqvBb6",
+            "name": "વોટ્સઅપ પર વાત કરવા માટે અહીં ક્લિક કરો",
+            "rsp_gid": "",
+            "icon_class": "fa fa-whatsapp"
+          },
+          {
+            "val": "360 ડિગ્રી વર્ચ્યુઅલ ટૂર જોવા માટે અહીં ક્લિક કરો",
+            "href": "https://www.shaligramgroup.in/360-view/kinaro/",
+            "name": "360 ડિગ્રી વર્ચ્યુઅલ ટૂર જોવા માટે અહીં ક્લિક કરો",
+            "rsp_gid": "",
+            "icon_class": "fa fa-video-camera"
+          },
+          {
+            "val": "સાઇટ પર કેટલું કામ થયું છે તે જોવા માટે અહી ક્લિક કરો",
+            "href": "https://drive.google.com/open?id=1D76DWh4oG8nYbzn4fmbX7TNyFfOwErpY",
+            "name": "સાઇટ પર કેટલું કામ થયું છે તે જોવા માટે અહી ક્લિક કરો",
+            "rsp_gid": "",
+            "icon_class": "fa fa-camera"
+          }
+        ],
+        "rsp_gid": "",
+        "with_icons": true
+      },
+      "attr": {
+        "type": "custom"
+      },
+      "name": "buttons_vertical"
+    },
+    "varid": "Exit",
+    "bubbles": {
+      "pre": {
+        "valid": [
+          {
+            "delay": 1000,
+            "string": "સમય આપવા બદલ આભાર."
+          },
+          {
+            "delay": 1000,
+            "string": "<iframe src=\"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshaligramgroup.in%2Fvideos%2F2238760216344199%2F&show_text=0&width=10\" width=\"250\" height=\"200\" style=\"border-width: initial; border-style: none; overflow: hidden;\" scrolling=\"no\" frameborder=\"0\" allowtransparency=\"true\" allowfullscreen=\"true\"></iframe>"
+          }
+        ]
+      },
+      "post": {
+        "err_invalid": [
+          {
+            "string": "Please give a valid input. Try again."
+          }
+        ]
+      }
+    }
+  }
+]

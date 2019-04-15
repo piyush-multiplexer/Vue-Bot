@@ -8,6 +8,9 @@
   export default {
     name: 'textDisplay',
     props: ['widgetData'],
+    created () {
+      console.log(this.widgetData)
+    }
   }
 </script>
 

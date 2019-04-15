@@ -4,10 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import $ from 'jquery'
+// import TypingLoader from './plugins/TypingLoader'
 
 Vue.config.productionTip = false
 window.$ = $
 /* eslint-disable no-new */
+// Vue.use(TypingLoader)
 new Vue({
   el: '#app',
   router,
