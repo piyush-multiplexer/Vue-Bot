@@ -46,6 +46,8 @@
   import TimePickerWidget from './BotWidgets/TimePickerWidget'
   import SearchSuggestion from './BotWidgets/SearchSuggestion'
   import CardSliderWidget from './BotWidgets/CardSliderWidget'
+  import RatingWidget from './BotWidgets/RatingWidget'
+  import RedirectWidget from './BotWidgets/RedirectWidget'
 
   export default {
     name: 'BotUI',
@@ -56,7 +58,9 @@
       'date_roll': DatePickerWidget,
       'time_roll': TimePickerWidget,
       'search_suggester_dynamic': SearchSuggestion,
-      'card_slide':CardSliderWidget
+      'card_slide': CardSliderWidget,
+      'star_rating': RatingWidget,
+      'redirect_convflow':RedirectWidget
     },
     data () {
       return {

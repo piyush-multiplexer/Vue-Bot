@@ -3,7 +3,7 @@
     <div v-for="(bubble,index) in localBubbles" :key="index">
       <div class="bubble-card">
         <div class="bubble-card-content" v-html="bubble.string"></div>
-        <div v-if="bubble.img_url"><img :src="bubble.img_url"/></div>
+        <div class="bubble-card-media" v-if="bubble.img_url"><img :src="bubble.img_url"/></div>
       </div>
     </div>
     <div class="typing-loader" v-if="startTyping"></div>

@@ -19,3 +19,9 @@
   background-color: $bubble-card-background-color;
   color: $bubble-card-font-color;
 }
+
+.bubble-card-media {
+  display: block;
+  max-width: 250px;
+  max-height: 200px;
+}

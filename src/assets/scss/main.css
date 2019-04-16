@@ -90,6 +90,11 @@
   background-color: #5086c7;
   color: whitesmoke; }
 
+.bubble-card-media {
+  display: block;
+  max-width: 250px;
+  max-height: 200px; }
+
 .btn-group button {
   border-radius: 50%;
   background-color: #586eaf;
