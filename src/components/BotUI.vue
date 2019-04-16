@@ -28,7 +28,7 @@
           </div>
         </div>
         <template v-if="messages.length">
-          <div v-if="showInput" id="user-input-container"  @keyup.enter="sendMessage">
+          <div v-if="showInput" id="user-input-container" @keyup.enter="sendMessage">
             <input type="text" v-model="userValue" :disabled="conversationEnd">
             <button @click="sendMessage" :disabled="conversationEnd">Send</button>
           </div>
@@ -41,16 +41,20 @@
 <script>
   import TextWidget from './BotWidgets/TextWidget'
   import ButtonsWidget from './BotWidgets/ButtonsWidget'
-  import DatePicker from './BotWidgets/DatePicker'
+  import CalendarWidget from './BotWidgets/CalendarWidget'
+  import DatePickerWidget from './BotWidgets/DatePickerWidget'
+  import TimePickerWidget from './BotWidgets/TimePickerWidget'
   import SearchSuggestion from './BotWidgets/SearchSuggestion'
 
   export default {
     name: 'BotUI',
     components: {
-      'search_suggester_dynamic': SearchSuggestion,
-      'date_roll': DatePicker,
-      'buttons_vertical': ButtonsWidget,
       'text-widget': TextWidget,
+      'buttons_vertical': ButtonsWidget,
+      'calendar_time': CalendarWidget,
+      'date_roll': DatePickerWidget,
+      'time_roll': TimePickerWidget,
+      'search_suggester_dynamic': SearchSuggestion,
     },
     data () {
       return {

@@ -1,7 +1,9 @@
 <template>
-  <div class="DatePicker">
-    <input type="date" v-model="date">
-    <button @click="setDateValue">Submit</button>
+  <div class="DatePickerWidget">
+    <div v-if="showWidget">
+      <input type="date" v-model="date">
+      <button @click="setDateValue">Submit</button>
+    </div>
   </div>
 </template>
 
@@ -10,7 +12,7 @@
   import EventBus from '../../plugins/eventBus'
 
   export default {
-    name: 'DatePicker',
+    name: 'DatePickerWidget',
     props: ['widgetData'],
     data () {return { date: '', showWidget: false }},
     mounted () {
