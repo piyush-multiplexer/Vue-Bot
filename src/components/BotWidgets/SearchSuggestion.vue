@@ -1,7 +1,7 @@
 <template>
   <div class="SearchSuggestion">
-    <div class="btn-group" v-if="showWidget">
-      <input  list="options" v-model="selectedValue" name="search_options">
+    <div v-if="showWidget">
+      <input list="options" v-model="selectedValue" name="search_options">
       <datalist id="options">
         <option v-for="option in widgetData.input.args.options" :value="option.name"></option>
       </datalist>
@@ -32,7 +32,3 @@
     },
   }
 </script>
-
-<style scoped>
-
-</style>

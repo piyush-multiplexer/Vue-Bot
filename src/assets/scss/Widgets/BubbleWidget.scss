@@ -1,0 +1,21 @@
+@import "../variables";
+
+.bubble-card img {
+  width: 50%;
+}
+
+.bubble-card-content {
+  word-break: normal;
+  display: inline-block;
+
+}
+
+.bubble-card {
+  width: fit-content;
+  max-width: 100%;
+  padding: 1.5%;
+  margin: 1%;
+  border-radius: 10%;
+  background-color: $bubble-card-background-color;
+  color: $bubble-card-font-color;
+}

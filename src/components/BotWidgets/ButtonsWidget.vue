@@ -1,5 +1,5 @@
 <template>
-  <div class="buttonsVertical">
+  <div class="ButtonsWidget">
     <div class="btn-group" v-if="showWidget">
       <template v-for="btn in widgetData.input.args.options">
         <button @click="setButtonValue(btn)">{{btn.val}}<span v-html="btn.href"></span>
@@ -13,7 +13,7 @@
   import EventBus from '../../plugins/eventBus'
 
   export default {
-    name: 'buttonsVertical',
+    name: 'ButtonsWidget',
     props: ['widgetData'],
     mounted () {
       let self = this
@@ -27,36 +27,8 @@
     methods: {
       setButtonValue (btn) {
         Bot.rsp_gid = btn.rsp_gid
-        this.$parent.sendMessage(btn.value)
+        this.$parent.sendMessage(btn.val)
       },
     },
   }
 </script>
-
-<style scoped>
-
-  .btn-group button {
-    border-radius: 50%;
-    background-color: #586eaf;
-    border: 1px solid #121180;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    width: 100%;
-    display: block;
-  }
-
-  .btn-group button:hover {
-    background-color: #f9f9f9;
-    color: black;
-    border: 1px solid #121180;
-  }
-
-  .btn-group button:not(:last-child) {
-    border-bottom: none;
-  }
-</style>

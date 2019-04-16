@@ -1,0 +1,19 @@
+@import "variables";
+@import "typingLoader";
+@import "BotUI";
+@import "Widgets/BubbleWidget";
+@import "Widgets/ButtonsWidget";
+
+body {
+  font: 100% $body-font;
+  color: $primary-color;
+}
+
+#app {
+  font-family: $body-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: $body-font-color;
+  margin-top: 60px;
+}
