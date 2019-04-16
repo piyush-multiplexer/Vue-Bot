@@ -3,13 +3,11 @@
     <div id="bot-container">
       <div id="bot-content" v-if="messages.length">
         <div v-for="(message,messageIndex) in messages" :key="messageIndex">
-
           <div v-if="message.type==='user'" style="text-align: right">
             <div class="message-content-user">
               <bubble :bubbles="message.text"></bubble>
             </div>
           </div>
-
 
           <div v-else-if="message.input.name==='text'"
                :style="botConfig.isHuman?'text-align: left':'text-align: center'">
@@ -29,19 +27,19 @@
             </div>
           </div>
         </div>
-      </div>
-      <div v-if="showInput" id="user-input-container" aria-disabled="true" @keyup.enter="sendMessage">
-        <input type="text" v-model="userValue" :disabled="conversationEnd">
-        <button @click="sendMessage" :disabled="conversationEnd">Send</button>
+        <template v-if="messages.length">
+          <div v-if="showInput" id="user-input-container"  @keyup.enter="sendMessage">
+            <input type="text" v-model="userValue" :disabled="conversationEnd">
+            <button @click="sendMessage" :disabled="conversationEnd">Send</button>
+          </div>
+        </template>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import VueBotTwo from '../plugins/VueBotTwo'
   import TextWidget from './BotWidgets/TextWidget'
-  import EventBus from '../plugins/eventBus'
   import ButtonsWidget from './BotWidgets/ButtonsWidget'
   import DatePicker from './BotWidgets/DatePicker'
   import SearchSuggestion from './BotWidgets/SearchSuggestion'
@@ -78,7 +76,6 @@
       appendMessage (message) {
         let self = this
         this.isBotLoading = true
-        console.log(message)
         this.messages.push(message)
         this.isBotLoading = false
       },

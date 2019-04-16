@@ -23,6 +23,8 @@
       setDateValue () {
         console.log(this.date)
         this.$parent.sendMessage(this.date)
+        this.$destroy()
+        this.$el.parentNode.removeChild(this.$el)
       },
     },
   }

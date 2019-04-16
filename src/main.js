@@ -5,10 +5,10 @@ import App from './App'
 import router from './router'
 import $ from 'jquery'
 import BubbleWidget from './components/BotWidgets/BubbleWidget'
-import VueBotTwo from './plugins/VueBotTwo'
+import VueBot from './plugins/VueBot'
 Vue.config.productionTip = false
 window.$ = $
-window.Bot = new VueBotTwo()
+window.Bot = new VueBot()
 /* eslint-disable no-new */
 // Vue.use(TypingLoader)
 Vue.component('bubble', BubbleWidget)

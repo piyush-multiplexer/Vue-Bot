@@ -28,6 +28,8 @@
       setButtonValue (btn) {
         Bot.rsp_gid = btn.rsp_gid
         this.$parent.sendMessage(btn.val)
+        this.$destroy()
+        this.$el.parentNode.removeChild(this.$el)
       },
     },
   }

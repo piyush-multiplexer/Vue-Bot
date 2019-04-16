@@ -28,6 +28,8 @@
     methods: {
       setSearchValue () {
         this.$parent.sendMessage(this.selectedValue)
+        this.$destroy()
+        this.$el.parentNode.removeChild(this.$el)
       },
     },
   }

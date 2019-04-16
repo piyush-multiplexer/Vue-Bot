@@ -34,7 +34,6 @@
     },
     methods: {
       appendBubble (bubble, bubbleIndex) {
-        console.log(bubbleIndex)
         this.localBubbles.push(bubble)
         if (bubbleIndex + 1 === this.bubbles.length) {
           this.startTyping = false
