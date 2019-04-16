@@ -45,6 +45,7 @@
   import DatePickerWidget from './BotWidgets/DatePickerWidget'
   import TimePickerWidget from './BotWidgets/TimePickerWidget'
   import SearchSuggestion from './BotWidgets/SearchSuggestion'
+  import CardSliderWidget from './BotWidgets/CardSliderWidget'
 
   export default {
     name: 'BotUI',
@@ -55,6 +56,7 @@
       'date_roll': DatePickerWidget,
       'time_roll': TimePickerWidget,
       'search_suggester_dynamic': SearchSuggestion,
+      'card_slide':CardSliderWidget
     },
     data () {
       return {

@@ -109,6 +109,27 @@
   .btn-group button:not(:last-child) {
     border-bottom: none; }
 
+.card-group {
+  width: 90vw;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap; }
+  .card-group::-webkit-scrollbar {
+    display: none; }
+
+.single-card {
+  cursor: pointer;
+  border: 2px solid #71a0ff;
+  margin: 2px;
+  display: inline-block;
+  height: 100%;
+  border-radius: 4%;
+  -webkit-overflow-scrolling: touch; }
+
+.single-card-image {
+  height: 25vh;
+  width: 25vh; }
+
 body {
   font: 100% "Avenir", Helvetica, Arial, sans-serif;
   color: #333; }

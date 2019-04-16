@@ -9,7 +9,7 @@ export default class VueBot {
     this.messages = BotData
     this.historyId = ''
     this.currentId = ''
-    this.convid = 'HkJrB4' // //HyT2ac //Syrk3f
+    this.convid = 'b6ca21' // //HyT2ac //Syrk3f //HkJrB4
     this.rsp_gid = ''
     this.originalGambit = []
   }
