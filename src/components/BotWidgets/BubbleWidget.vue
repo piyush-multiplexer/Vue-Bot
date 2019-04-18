@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="bot-starttyping" v-if="startTyping">
-    <div class="typing-loader"></div>
+      <div class="typing-loader"></div>
     </div>
   </div>
 </template>
