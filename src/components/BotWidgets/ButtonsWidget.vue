@@ -2,8 +2,8 @@
   <div class="ButtonsWidget">
     <div class="btn-group" v-if="showWidget">
       <template v-for="btn in widgetData.input.args.options">
-        <button @click="setButtonValue(btn)">{{btn.val}}<span v-html="btn.href"></span>
-        </button>
+        <v-btn round @click="setButtonValue(btn)">{{btn.val}}<span v-html="btn.href"></span>
+        </v-btn>
       </template>
     </div>
   </div>
