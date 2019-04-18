@@ -29,7 +29,7 @@
         </div>
         <template v-if="messages.length">
           <div v-if="showInput" id="user-input-container" @keyup.enter="sendMessage">
-            <v-layout>
+            <v-layout row wrap>
               <v-flex xs10>
                 <v-text-field outline v-model="userValue" :disabled="conversationEnd" type="text"></v-text-field>
               </v-flex>
