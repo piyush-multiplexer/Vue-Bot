@@ -380,8 +380,15 @@ body {
   display: inline-block;
 }
 
+.bot-starttyping {
+  width: 52px;
+  background-color: #cbddff;
+  padding: 16px 10px;
+  border-radius: 7px;
+}
+
 .typing-loader {
-  margin: 20px auto 20px 1px;
+  margin: 0px auto 0px 0px;
   width: 6px;
   height: 6px;
   -webkit-animation: line 1s linear infinite alternate;
@@ -562,8 +569,15 @@ body {
   width: 49%;
 }
 
+.bot-starttyping {
+  width: 52px;
+  background-color: #cbddff;
+  padding: 16px 10px;
+  border-radius: 7px;
+}
+
 .typing-loader {
-  margin: 20px auto 20px 1px;
+  margin: 0px auto 0px 0px;
   width: 6px;
   height: 6px;
   -webkit-animation: line 1s linear infinite alternate;
