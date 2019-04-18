@@ -1,8 +1,15 @@
 <template>
   <div class="SearchSuggestion">
     <div v-if="showWidget">
-      <v-autocomplete single-line outline class="bot-text-field" lable="name" item-text="name" v-model="selectedValue" :items="widgetData.input.args.options"></v-autocomplete>
-      <button class="bot-rating-button" @click="setSearchValue">Submit</button>
+      <v-layout row wrap>
+        <v-flex xs10>
+          <v-autocomplete single-line outline class="bot-text-field" lable="name" item-text="name" v-model="selectedValue" :items="widgetData.input.args.options"></v-autocomplete>
+        </v-flex>
+        <v-flex xs2>
+          <button class="bot-main-button" @click="setSearchValue">Submit</button>
+        </v-flex>
+      </v-layout>
+
     </div>
   </div>
 </template>
