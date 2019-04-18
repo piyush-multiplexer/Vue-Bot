@@ -1,8 +1,9 @@
 <template>
   <div class="RatingWidget">
     <div v-if="showWidget">
-      <star-rating :increment="0.5" v-model="rating" :show-rating="false"></star-rating>
-      <button @click="setDateTimeValue">Submit</button>
+      <v-rating v-model="rating" color="yellow darken-3" background-color="grey darken-1"
+                empty-icon="$vuetify.icons.ratingFull" half-increments hover x-large></v-rating>
+      <v-btn @click="setDateTimeValue">Submit</v-btn>
     </div>
   </div>
 </template>

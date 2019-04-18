@@ -1,10 +1,7 @@
 <template>
   <div class="SearchSuggestion">
     <div v-if="showWidget">
-      <input list="options" v-model="selectedValue" name="search_options">
-      <datalist id="options">
-        <option v-for="option in widgetData.input.args.options" :value="option.name"></option>
-      </datalist>
+      <v-autocomplete v-model="selectedValue" :items="widgetData.input.args.options"></v-autocomplete>
       <button @click="setSearchValue">Submit</button>
     </div>
   </div>
