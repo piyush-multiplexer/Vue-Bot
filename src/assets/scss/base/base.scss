@@ -39,3 +39,21 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #a0a0a0;
 }
+
+.bot-home{
+  height: 100%;
+  display: table;
+  width: 50%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 767px) {
+
+  .bot-home{
+    height: 100%;
+    display: table;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+}

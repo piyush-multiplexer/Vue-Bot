@@ -41,6 +41,21 @@ body {
   background: #a0a0a0;
 }
 
+.bot-home {
+  height: 100%;
+  display: table;
+  width: 50%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 767px) {
+  .bot-home {
+    height: 100%;
+    display: table;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
 .p-0 {
   padding: 0px !important;
 }
@@ -310,7 +325,7 @@ body {
   box-shadow: none !important;
   background-color: #286efa !important;
   color: #fff !important;
-  margin: 0;
+  margin: 3px 0;
   height: 50px;
   border-radius: 50px;
 }
@@ -349,8 +364,8 @@ body {
 
 /* modules scss imported */
 #BotUI {
-  width: 60%;
-  margin: 0 auto;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 #bot-container {
@@ -392,6 +407,20 @@ body {
   text-align: center;
 }
 
+@media only screen and (max-width: 767px) {
+  #bot-container {
+    transform: rotate(180deg);
+    direction: rtl;
+    height: calc(100vh - 0vh);
+    background-color: #ffffff;
+    box-shadow: 0 0 7px #dedede;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
 .bot-starttyping {
   width: 52px;
   background-color: #f0f0f0;
@@ -451,8 +480,8 @@ body {
   }
 }
 #BotUI {
-  width: 60%;
-  margin: 0 auto;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 #bot-container {
@@ -494,6 +523,20 @@ body {
   text-align: center;
 }
 
+@media only screen and (max-width: 767px) {
+  #bot-container {
+    transform: rotate(180deg);
+    direction: rtl;
+    height: calc(100vh - 0vh);
+    background-color: #ffffff;
+    box-shadow: 0 0 7px #dedede;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
 .bubble-card img {
   width: 50%;
 }
@@ -553,7 +596,7 @@ body {
 
 .card-group {
   width: max-content;
-  padding: 10px;
+  padding: 10px 0;
   background-color: #fff;
   border-radius: 4px;
 }
@@ -700,7 +743,7 @@ body {
 
 .card-group {
   width: max-content;
-  padding: 10px;
+  padding: 10px 0;
   background-color: #fff;
   border-radius: 4px;
 }
