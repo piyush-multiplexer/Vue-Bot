@@ -1,4 +1,4 @@
-@import "../variables";
+@import "../../variables";
 
 .bubble-card img {
   width: 50%;
@@ -13,11 +13,11 @@
 .bubble-card {
   width: fit-content;
   max-width: 100%;
-  padding: 1.5%;
-  margin: 1%;
-  border-radius: 10%;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 4px;
   background-color: $bubble-card-background-color;
-  color: $bubble-card-font-color;
+  color: #424242;
 }
 
 .bubble-card-media {

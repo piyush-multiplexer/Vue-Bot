@@ -1,0 +1,41 @@
+html {
+  box-sizing: border-box;
+  overflow-y: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden !important;
+  background-color: #ffffff !important;
+}
+
+#app {
+  text-align: center;
+  background-color: #ffffff;
+  height: 100vh;
+}
+
+
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-track {
+  background: #a0a0a0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a0a0a0;
+}
