@@ -29,8 +29,14 @@
         </div>
         <template v-if="messages.length">
           <div v-if="showInput" id="user-input-container" @keyup.enter="sendMessage">
-            <input type="text" v-model="userValue" :disabled="conversationEnd">
-            <button @click="sendMessage" :disabled="conversationEnd">Send</button>
+            <v-layout>
+              <v-flex xs10>
+                <v-text-field outline v-model="userValue" :disabled="conversationEnd" type="text"></v-text-field>
+              </v-flex>
+              <v-flex xs2>
+                <v-btn @click="sendMessage" :disabled="conversationEnd">Send</v-btn>
+              </v-flex>
+            </v-layout>
           </div>
         </template>
       </div>
@@ -60,7 +66,7 @@
       'search_suggester_dynamic': SearchSuggestion,
       'card_slide': CardSliderWidget,
       'star_rating': RatingWidget,
-      'redirect_convflow':RedirectWidget
+      'redirect_convflow': RedirectWidget,
     },
     data () {
       return {
