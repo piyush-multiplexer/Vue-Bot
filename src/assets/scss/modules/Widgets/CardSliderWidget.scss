@@ -1,7 +1,7 @@
 @import "../../variables";
 
 .card-group {
-  width: 100%;
+  width: max-content;
   //overflow-x: scroll;
   //overflow-y: hidden;
   //white-space: nowrap;
@@ -15,15 +15,23 @@
 
 .single-card {
   cursor: pointer;
-  border: 2px solid #71a0ff;
-  margin: 2px;
+  //border: 2px solid #71a0ff;
+  background-color: #fff;
+  box-shadow: 0 0 5px #d2d2d2;
+  margin: 2px 5px;
+  padding: 10px 4px;
   display: inline-block;
   height: 100%;
-  border-radius: 4%;
+  border-radius: 4px;
   -webkit-overflow-scrolling: touch;
 }
 
 .single-card-image {
   height: 25vh;
   width: 25vh;
+}
+
+.CardSliderWidget{
+  overflow-x: scroll;
+  width: 49%;
 }

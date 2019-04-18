@@ -15,7 +15,8 @@
   max-width: 100%;
   padding: 10px;
   margin: 6px 0;
-  border-radius: 4px;
+  border-radius: 15px;
+  border-top-left-radius: 0;
   background-color: $bubble-card-background-color;
   color: #424242;
 }
@@ -24,4 +25,34 @@
   display: block;
   max-width: 250px;
   max-height: 200px;
+}
+
+.message-content-bot{
+  .BubbleWidget{
+    .bubble-card {
+      width: fit-content;
+      max-width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border-radius: 15px;
+      border-top-left-radius: 0;
+      background-color: $bubble-card-background-color;
+      color: $text-color;
+    }
+  }
+}
+
+.message-content-user{
+  .BubbleWidget{
+    .bubble-card {
+      width: fit-content;
+      max-width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border-radius: 15px;
+      border-top-right-radius: 0;
+      background-color: $bubble-card-background-color;
+      color: $text-color;
+    }
+  }
 }

@@ -3,7 +3,7 @@
     <div v-if="showWidget">
       <v-rating v-model="rating" color="yellow darken-3" background-color="grey darken-1"
                 empty-icon="$vuetify.icons.ratingFull" half-increments hover x-large></v-rating>
-      <v-btn @click="setDateTimeValue">Submit</v-btn>
+      <v-btn class="bot-rating-button" @click="setDateTimeValue">Submit</v-btn>
     </div>
   </div>
 </template>

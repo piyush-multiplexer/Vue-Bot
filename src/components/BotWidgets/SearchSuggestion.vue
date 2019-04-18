@@ -1,8 +1,8 @@
 <template>
   <div class="SearchSuggestion">
     <div v-if="showWidget">
-      <v-autocomplete v-model="selectedValue" :items="widgetData.input.args.options"></v-autocomplete>
-      <button @click="setSearchValue">Submit</button>
+      <v-autocomplete single-line outline class="bot-text-field" lable="name" item-text="name" v-model="selectedValue" :items="widgetData.input.args.options"></v-autocomplete>
+      <button class="bot-rating-button" @click="setSearchValue">Submit</button>
     </div>
   </div>
 </template>
