@@ -38,7 +38,10 @@
                     <v-text-field class="bot-text-field" outline v-model="userValue" :disabled="conversationEnd" type="text"></v-text-field>
                   </v-flex>
                   <v-flex xs2>
-                    <v-btn class="bot-button" @click="sendMessage" :disabled="conversationEnd">Send</v-btn>
+                    <v-btn class="bot-button" @click="sendMessage" :disabled="conversationEnd" fab flat icon>
+                    <v-icon style="transform:rotate(-45deg) ">send</v-icon>
+<!--                      Send-->
+                    </v-btn>
                   </v-flex>
                 </v-layout>
               </v-flex>
