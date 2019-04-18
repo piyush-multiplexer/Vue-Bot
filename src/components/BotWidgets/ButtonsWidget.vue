@@ -1,5 +1,5 @@
 <template>
-  <div class="ButtonsWidget">
+  <div class="ButtonsWidget" style="text-align: -webkit-center;">
     <div class="btn-group" v-if="showWidget">
       <template v-for="btn in widgetData.input.args.options">
         <v-btn round class="bot-button m-b-10" @click="setButtonValue(btn)">{{btn.val}}<span v-html="btn.href"></span>

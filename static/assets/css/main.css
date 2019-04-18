@@ -377,7 +377,6 @@ body {
 
 .widget-content {
   text-align: center;
-  display: inline-block;
 }
 
 .bot-starttyping {
@@ -477,7 +476,6 @@ body {
 
 .widget-content {
   text-align: center;
-  display: inline-block;
 }
 
 .bubble-card img {
@@ -524,7 +522,7 @@ body {
   margin: 6px 0;
   border-radius: 15px;
   border-top-right-radius: 0;
-  background-color: #cbddff;
+  background-color: #b9c1d0;
   color: #424242;
 }
 
@@ -566,7 +564,7 @@ body {
 
 .CardSliderWidget {
   overflow-x: scroll;
-  width: 49%;
+  width: 100%;
 }
 
 .bot-starttyping {
@@ -671,7 +669,7 @@ body {
   margin: 6px 0;
   border-radius: 15px;
   border-top-right-radius: 0;
-  background-color: #cbddff;
+  background-color: #b9c1d0;
   color: #424242;
 }
 
@@ -713,7 +711,7 @@ body {
 
 .CardSliderWidget {
   overflow-x: scroll;
-  width: 49%;
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

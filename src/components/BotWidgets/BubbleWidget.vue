@@ -6,8 +6,8 @@
         <div class="bubble-card-media" v-if="bubble.img_url"><img :src="bubble.img_url"/></div>
       </div>
     </div>
-    <div class="bot-starttyping">
-    <div class="typing-loader" v-if="startTyping"></div>
+    <div class="bot-starttyping" v-if="startTyping">
+    <div class="typing-loader"></div>
     </div>
   </div>
 </template>
