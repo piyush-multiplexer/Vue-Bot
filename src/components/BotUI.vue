@@ -31,8 +31,6 @@
           <div v-if="showInput" id="user-input-container" @keyup.enter="sendMessage">
             <v-layout row wrap>
               <v-flex xs12>
-
-                <div v-if="showInput" @keyup.enter="sendMessage">
                   <v-layout row wrap>
                     <v-flex xs10>
                       <v-text-field class="bot-text-field" outline v-model="userValue" :disabled="conversationEnd" type="text"></v-text-field>
@@ -41,7 +39,6 @@
                       <v-btn class="bot-button" @click="sendMessage" :disabled="conversationEnd">Send</v-btn>
                     </v-flex>
                   </v-layout>
-                </div>
               </v-flex>
             </v-layout>
           </div>
