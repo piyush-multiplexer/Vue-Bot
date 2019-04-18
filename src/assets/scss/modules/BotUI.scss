@@ -8,8 +8,12 @@
 }
 
 #bot-container {
+  transform: rotate(180deg);
+  direction: rtl;
   height: calc(100vh - 10vh);
-  background-color: #f5f5f5;
+  background-color: $white;
+  box-shadow: 0 0 7px $card-box-shadow;
+  border-radius: 10px;
   padding: 10px;
   position: relative;
   overflow-y: auto;
@@ -17,9 +21,8 @@
 }
 
 #bot-content {
-  position: absolute;
   bottom: 10px;
-  width: 97.5%;
+  width: 100%;
   //padding: 10px 0;
 }
 

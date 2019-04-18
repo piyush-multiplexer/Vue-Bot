@@ -36,7 +36,7 @@
       margin: 6px 0;
       border-radius: 15px;
       border-top-left-radius: 0;
-      background-color: $bubble-card-background-color;
+      background-color: $chat-background-color-left;
       color: $text-color;
     }
   }
@@ -51,8 +51,8 @@
       margin: 6px 0;
       border-radius: 15px;
       border-top-right-radius: 0;
-      background-color: $primary-background-color1;
-      color: $text-color;
+      background-color: $chat-background-color-right;
+      color: $white;
     }
   }
 }

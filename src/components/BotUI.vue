@@ -2,7 +2,8 @@
   <div id="BotUI">
     <div id="bot-container">
       <div id="bot-content" v-if="messages.length">
-        <div v-for="(message,messageIndex) in messages" :key="messageIndex">
+        <div style="transform: rotate(180deg);direction: ltr;">
+        <div v-for="(message,messageIndex) in messages" :key="messageIndex" >
           <div v-if="message.type==='user'" style="text-align: right">
             <div class="message-content-user">
               <bubble :bubbles="message.text"></bubble>
@@ -27,24 +28,27 @@
             </div>
           </div>
         </div>
+
         <template v-if="messages.length">
           <div v-if="showInput" id="user-input-container" @keyup.enter="sendMessage">
             <v-layout row wrap>
               <v-flex xs12>
-                  <v-layout row wrap>
-                    <v-flex xs10>
-                      <v-text-field class="bot-text-field" outline v-model="userValue" :disabled="conversationEnd" type="text"></v-text-field>
-                    </v-flex>
-                    <v-flex xs2>
-                      <v-btn class="bot-button" @click="sendMessage" :disabled="conversationEnd">Send</v-btn>
-                    </v-flex>
-                  </v-layout>
+                <v-layout row wrap>
+                  <v-flex xs10>
+                    <v-text-field class="bot-text-field" outline v-model="userValue" :disabled="conversationEnd" type="text"></v-text-field>
+                  </v-flex>
+                  <v-flex xs2>
+                    <v-btn class="bot-button" @click="sendMessage" :disabled="conversationEnd">Send</v-btn>
+                  </v-flex>
+                </v-layout>
               </v-flex>
             </v-layout>
           </div>
 
         </template>
+        </div>
       </div>
+
     </div>
   </div>
 </template>
