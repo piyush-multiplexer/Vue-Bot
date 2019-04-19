@@ -1,6 +1,6 @@
 <template>
   <div class="FileUploadWidget">
-    <div v-if="showWidget">
+    <div v-if="showWidget" class="animated slideInUp">
       <input type="file" v-model="file" name="file" accept="image/*">
       <button @click="setDateTimeValue">Submit</button>
     </div>
@@ -23,10 +23,13 @@
     },
     methods: {
       setDateTimeValue () {
-        console.log(this.file)
-        this.$parent.sendMessage(this.file)
-        this.$destroy()
-        this.$el.parentNode.removeChild(this.$el)
+        let self = this
+        $(this.$el).addClass('animated slideInDown')
+        setTimeout(function () {
+          this.$parent.sendMessage(self.file)
+          self.$destroy()
+          self.$el.parentNode.removeChild(self.$el)
+        }, 500)
       },
     },
   }

@@ -1,9 +1,10 @@
 <template>
   <div class="SearchSuggestion">
-    <div v-if="showWidget">
+    <div v-if="showWidget" class="animated slideInUp">
       <v-layout row wrap>
         <v-flex xs10 md10>
-          <v-autocomplete single-line outline class="bot-text-field" lable="name" item-text="name" v-model="selectedValue" :items="widgetData.input.args.options"></v-autocomplete>
+          <v-autocomplete single-line outline class="bot-text-field" lable="name" item-text="name"
+                          v-model="selectedValue" :items="widgetData.input.args.options"></v-autocomplete>
         </v-flex>
         <v-flex xs2 md2>
           <!--<button class="bot-main-button" @click="setSearchValue">Submit</button>-->
@@ -35,9 +36,13 @@
     },
     methods: {
       setSearchValue () {
-        this.$parent.sendMessage(this.selectedValue)
-        this.$destroy()
-        this.$el.parentNode.removeChild(this.$el)
+        let self = this
+        $(this.$el).addClass('animated slideInDown')
+        setTimeout(function () {
+          this.$parent.sendMessage(self.selectedValue)
+          self.$destroy()
+          self.$el.parentNode.removeChild(self.$el)
+        }, 500)
       },
     },
   }

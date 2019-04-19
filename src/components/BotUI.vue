@@ -30,7 +30,7 @@
         </div>
 
         <template v-if="messages.length">
-          <div v-if="showInput" id="user-input-container" @keyup.enter="sendMessage">
+          <div v-if="showInput" id=" user-input-container" @keyup.enter="sendMessage" class="animated slideInUp">
             <v-layout row wrap>
               <v-flex xs12>
                 <v-layout row wrap>

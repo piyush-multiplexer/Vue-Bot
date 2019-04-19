@@ -1,6 +1,6 @@
 <template>
   <div class="DatePickerWidget">
-    <div v-if="showWidget">
+    <div v-if="showWidget" class="animated slideInUp">
       <input type="date" v-model="date">
       <button class="bot-main-button" @click="setDateValue">Submit</button>
     </div>
@@ -23,10 +23,13 @@
     },
     methods: {
       setDateValue () {
-        console.log(this.date)
-        this.$parent.sendMessage(this.date)
-        this.$destroy()
-        this.$el.parentNode.removeChild(this.$el)
+        let self = this
+        $(this.$el).addClass('animated slideInDown')
+        setTimeout(function () {
+          self.$parent.sendMessage(self.date)
+          self.$destroy()
+          self.$el.parentNode.removeChild(self.$el)
+        }, 500)
       },
     },
   }
