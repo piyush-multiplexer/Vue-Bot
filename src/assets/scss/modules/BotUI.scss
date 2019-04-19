@@ -8,6 +8,7 @@
 #bot-container {
   transform: rotate(180deg);
   direction: rtl;
+  top: calc(50vh - 45vh);
   height: calc(100vh - 10vh);
   background-color: $white;
   box-shadow: 0 0 7px $card-box-shadow;
@@ -73,6 +74,7 @@
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
+    top: 0;
   }
 
 }
