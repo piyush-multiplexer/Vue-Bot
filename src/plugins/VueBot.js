@@ -1,8 +1,8 @@
 import BotData from '../data/BotDataTwo'
 import NetworkCommunicator from './NetworkResourceHandler'
 
-let initUrl = 'http://bots.bizbrain.in/api/get/'
-let nextUrl = 'http://bots.bizbrain.in/api/getJsonById/'
+let initUrl = 'http://manage.bots.bizbrain.in/api/get/'
+let nextUrl = 'http://manage.bots.bizbrain.in/api/getJsonById/'
 // method, url, loading, postData, headers
 export default class VueBot {
   constructor (botID) {
