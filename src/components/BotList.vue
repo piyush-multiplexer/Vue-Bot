@@ -10,6 +10,7 @@
 </template>
 
 <script>
+  import Constants from '../Constant'
   import NetworkCommunicator from '../plugins/NetworkResourceHandler'
 
   export default {
@@ -20,7 +21,7 @@
       }
     },
     async mounted () {
-      this.bots = await NetworkCommunicator('GET', `http://manage.bots.bizbrain.in/api/allBot`)
+      this.bots = await NetworkCommunicator('GET', `${Constants.base_url}allBot`)
       this.$forceUpdate()
     },
   }
