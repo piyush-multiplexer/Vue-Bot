@@ -2,11 +2,15 @@
   <div class="SearchSuggestion">
     <div v-if="showWidget">
       <v-layout row wrap>
-        <v-flex xs8 md10>
+        <v-flex xs10 md10>
           <v-autocomplete single-line outline class="bot-text-field" lable="name" item-text="name" v-model="selectedValue" :items="widgetData.input.args.options"></v-autocomplete>
         </v-flex>
-        <v-flex xs4 md2>
-          <button class="bot-main-button" @click="setSearchValue">Submit</button>
+        <v-flex xs2 md2>
+          <!--<button class="bot-main-button" @click="setSearchValue">Submit</button>-->
+          <v-btn class="bot-button" @click="setSearchValue" fab flat icon>
+            <v-icon style="transform:rotate(-45deg) ">send</v-icon>
+            <!--                      Send-->
+          </v-btn>
         </v-flex>
       </v-layout>
 

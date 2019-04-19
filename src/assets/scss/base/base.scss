@@ -20,6 +20,7 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+
 /* width */
 ::-webkit-scrollbar {
   width: 6px;
@@ -42,8 +43,8 @@ body {
 
 .bot-home{
   height: 100%;
-  display: table;
-  width: 50%;
+  //display: table;
+  width: 450px;
   margin: 0 auto;
 }
 
