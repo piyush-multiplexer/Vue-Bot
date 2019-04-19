@@ -1,8 +1,8 @@
 import BotData from '../data/BotDataTwo'
 import NetworkCommunicator from './NetworkResourceHandler'
+import Constants from '../Constant'
 
-let initUrl = 'http://manage.bots.bizbrain.in/api/get/'
-let nextUrl = 'http://manage.bots.bizbrain.in/api/getJsonById/'
+let nextUrl = 'https://manage.bots.bizbrain.in/api/getJsonById/'
 // method, url, loading, postData, headers
 export default class VueBot {
   constructor (botID) {
@@ -16,7 +16,8 @@ export default class VueBot {
   }
 
   async getConfig () {
-    let response = await NetworkCommunicator('GET', `${initUrl}${this.convid}`)
+    let response = await NetworkCommunicator('GET',
+      `${Constants.base_url}get/${this.convid}`)
     this.setConfig({
       convid: this.convid,
       historyId: response.historyId,
@@ -44,7 +45,7 @@ export default class VueBot {
       historyId: this.historyId,
     }
     let response = await NetworkCommunicator('POST',
-      `${nextUrl}${this.rsp_gid}`,
+      `${Constants.base_url}getJsonById/${this.rsp_gid}`,
       '', postData)
     this.setConfig({
       convid: this.convid,
