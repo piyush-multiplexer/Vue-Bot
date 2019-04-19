@@ -2,7 +2,7 @@
   <div id="test">
     <template v-if="bots">
       <div v-for="bot in bots">
-        <router-link :to="'/bot/'+bot.convId"> {{bot.convbot_title}}</router-link>
+        <router-link :to="'/'+bot.convId"> {{bot.convbot_title}}</router-link>
       </div>
     </template>
   </div>

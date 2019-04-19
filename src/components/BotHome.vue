@@ -9,7 +9,7 @@
   import VueBot from '../plugins/VueBot'
 
   export default {
-    name: 'Home',
+    name: 'BotHome',
     components: {
       'BotUI': BotUI,
     },
