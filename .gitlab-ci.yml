@@ -1,0 +1,60 @@
+before_script:
+    - alias cp="cp -i"
+stages:   
+    - build   
+    - notify
+
+
+.build_template: &build_defination
+    stage: build
+# Development:
+#     <<: *build_defination
+#     only:
+#         - development
+#     when: manual
+#     tags:
+#         - dev_book_my_farm
+#     script:
+#         - sudo -S echo "development" > environment.txt
+#         - sudo -S cp -Rfu . /data/bots-staging/
+#         - cd /data/bots-staging/
+#         - sh checkPackage.sh
+#         - sudo -S npm run build
+#         - >-
+#             curl -X POST --data-urlencode 'payload={"channel": "#bizbrain", "username": "bots", "text": "--- \n #### '"$(date)"' Successfully Deployed bots.staging.bizbrain.in Staging...!!! \n ---", "icon_emoji": ":thumbsup_all:"}' https://hooks.slack.com/services/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
+#     environment: development
+
+   
+Production:
+    <<: *build_defination
+    only:
+        - master
+    when: manual
+    tags:
+        - prod_book_my_farm
+    script:
+        - sudo -S echo "production" > environment.txt
+        - sudo -S cp -Rfu . /data/bots/
+        - cd /data/bots/
+        - sh checkPackage.sh
+        - sudo -S npm run live
+        - >-
+            curl -X POST --data-urlencode 'payload={"channel": "#bizbrain", "username": "bots", "text": "--- \n #### '"$(date)"' Successfully Deployed bots.bizbrain.inLive...!!! \n ---", "icon_emoji": ":thumbsup_all:"}' https://hooks.slack.com/services/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
+    environment: production
+
+.notify_template: &notify_defination
+    stage: notify
+        
+Notify Failure:   
+    <<: *notify_defination
+    when: on_failure
+    script:
+        - echo "Build Failed"
+        - >-
+            curl -X POST --data-urlencode 'payload={"channel": "#bizbrain", "username": "bots", "text": "--- \n #### '"$(date)"' Bots '"${CI_ENVIRONMENT_NAME}"'  Deployment Failed...!!! \n ---", "icon_emoji": ":ghost:"}' https://hooks.slack.com/services/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
+    
+Notify Success:   
+    <<: *notify_defination
+    when: on_success
+    script:     
+      - echo "Build Successful"
