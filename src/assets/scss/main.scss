@@ -1,1 +1,27 @@
-@import "layout";
+
+
+
+
+
+/* Variables scss imported */
+@import "variables";
+
+
+/* Base scss imported */
+@import "base/base";
+@import "base/spacing";
+
+/* Components scss imported */
+@import "components/button";
+@import "components/input";
+
+/* modules scss imported */
+@import "modules/BotUI";
+@import "modules/layout";
+@import "modules/typingLoader";
+@import "modules/Widgets/BubbleWidget";
+@import "modules/Widgets/ButtonsWidget";
+@import "modules/Widgets/CardSliderWidget";
+
+
+

@@ -1,6 +1,6 @@
 <template>
   <div class="TimePickerWidget">
-    <div v-if="showWidget">
+    <div v-if="showWidget" class="animated slideInUp">
       <input type="time" v-model="time">
       <button @click="setTimeValue">Submit</button>
     </div>
@@ -23,10 +23,13 @@
     },
     methods: {
       setTimeValue () {
-        console.log(this.time)
-        this.$parent.sendMessage(this.time)
-        this.$destroy()
-        this.$el.parentNode.removeChild(this.$el)
+        let self = this
+        $(this.$el).addClass('animated fadeOutDown')
+        setTimeout(function () {
+          self.$parent.sendMessage(self.time)
+          self.$destroy()
+          self.$el.parentNode.removeChild(self.$el)
+        }, 500)
       },
     },
   }

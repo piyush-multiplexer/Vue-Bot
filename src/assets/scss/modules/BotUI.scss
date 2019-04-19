@@ -1,0 +1,106 @@
+#BotUI {
+  //width: 50%;
+  //margin: 0 auto;
+  //display: table-cell;
+  // vertical-align: middle;
+}
+
+#bot-container {
+  transform: rotate(180deg);
+  direction: rtl;
+  top: calc(50vh - 45vh);
+  height: calc(100vh - 10vh);
+  background-color: $white;
+  box-shadow: 0 0 7px $card-box-shadow;
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#bot-content {
+  bottom: 10px;
+  width: 100%;
+  //padding: 10px 0;
+}
+
+/*height: 80vh;*/
+
+#user-input-container {
+  //height: 19vh;
+}
+
+.message-content-bot {
+  word-break: break-word;
+  padding: 5px 0;
+  //margin: 1%;
+  border-radius: 30%;
+  display: inline-block;
+  text-align: left;
+}
+
+.message-content-user {
+  word-break: break-word;
+  padding: 5px 0;
+  //margin: 1%;
+  border-radius: 30%;
+  display: inline-block;
+  text-align: right;
+}
+
+.widget-content {
+  text-align: center;
+  margin: 0 auto;
+  //display: inline-block;
+}
+
+
+.DatePickerWidget{
+
+}
+
+
+.RatingWidget{
+
+}
+
+.SearchSuggestion{
+
+}
+
+
+@media only screen and (max-width: 767px) {
+
+  #BotUI {
+    //width: 100%;
+    //margin: 0 auto;
+  }
+
+  #bot-container {
+    transform: rotate(180deg);
+    direction: rtl;
+    height: calc(100vh - 0vh);
+    background-color: $white;
+    box-shadow: 0 0 7px $card-box-shadow;
+    border-radius: 0px;
+    padding: 30px 10px 10px 10px;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    top: 0;
+  }
+
+  .DatePickerWidget{
+    padding-bottom: 50px;
+  }
+
+  .RatingWidget{
+    padding-bottom: 20px;
+  }
+
+  .SearchSuggestion{
+    padding-bottom: 30px;
+  }
+
+}

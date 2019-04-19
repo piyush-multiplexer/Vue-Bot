@@ -2,7 +2,8 @@
   <div id="BotUI">
     <div id="bot-container">
       <div id="bot-content" v-if="messages.length">
-        <div v-for="(message,messageIndex) in messages" :key="messageIndex">
+        <div style="transform: rotate(180deg);direction: ltr;">
+        <div v-for="(message,messageIndex) in messages" :key="messageIndex" class="animated bounceInUp">
           <div v-if="message.type==='user'" style="text-align: right">
             <div class="message-content-user">
               <bubble :bubbles="message.text"></bubble>
@@ -27,81 +28,102 @@
             </div>
           </div>
         </div>
+
         <template v-if="messages.length">
-          <div v-if="showInput" id="user-input-container" @keyup.enter="sendMessage">
-            <input type="text" v-model="userValue" :disabled="conversationEnd">
-            <button @click="sendMessage" :disabled="conversationEnd">Send</button>
+          <div v-if="showInput" id=" user-input-container" @keyup.enter="sendMessage" class="animated slideInUp">
+            <v-layout row wrap>
+              <v-flex xs12>
+                <v-layout row wrap>
+                  <v-flex xs10 md10>
+                    <v-text-field class="bot-text-field" outline v-model="userValue" :disabled="conversationEnd" type="text"></v-text-field>
+                  </v-flex>
+                  <v-flex xs2 md2>
+                    <v-btn class="bot-button" @click="sendMessage" :disabled="conversationEnd" fab flat icon>
+                    <v-icon style="transform:rotate(-45deg) ">send</v-icon>
+<!--                      Send-->
+                    </v-btn>
+                  </v-flex>
+                </v-layout>
+              </v-flex>
+            </v-layout>
           </div>
+
         </template>
+        </div>
       </div>
+
     </div>
   </div>
 </template>
 
 <script>
-  import TextWidget from './BotWidgets/TextWidget'
-  import ButtonsWidget from './BotWidgets/ButtonsWidget'
-  import CalendarWidget from './BotWidgets/CalendarWidget'
-  import DatePickerWidget from './BotWidgets/DatePickerWidget'
-  import TimePickerWidget from './BotWidgets/TimePickerWidget'
-  import SearchSuggestion from './BotWidgets/SearchSuggestion'
-  import CardSliderWidget from './BotWidgets/CardSliderWidget'
+    import TextWidget from './BotWidgets/TextWidget'
+    import ButtonsWidget from './BotWidgets/ButtonsWidget'
+    import CalendarWidget from './BotWidgets/CalendarWidget'
+    import DatePickerWidget from './BotWidgets/DatePickerWidget'
+    import TimePickerWidget from './BotWidgets/TimePickerWidget'
+    import SearchSuggestion from './BotWidgets/SearchSuggestion'
+    import CardSliderWidget from './BotWidgets/CardSliderWidget'
+    import RatingWidget from './BotWidgets/RatingWidget'
+    import RedirectWidget from './BotWidgets/RedirectWidget'
 
-  export default {
-    name: 'BotUI',
-    components: {
-      'text-widget': TextWidget,
-      'buttons_vertical': ButtonsWidget,
-      'calendar_time': CalendarWidget,
-      'date_roll': DatePickerWidget,
-      'time_roll': TimePickerWidget,
-      'search_suggester_dynamic': SearchSuggestion,
-      'card_slide':CardSliderWidget
-    },
-    data () {
-      return {
-        messages: [],
-        userValue: '',
-        isBotLoading: false,
-        conversationEnd: false,
-        botConfig: { isHuman: true },
-      }
-    },
-    async mounted () {
-      let self = this
-      this.messages = []
-      this.messages[0] = await Bot.getConfig()
-      this.$forceUpdate()
-    },
-    computed: {
-      showInput () {
-        return this.messages[this.messages.length - 1].input.name === 'text'
-      },
-    },
-    methods: {
-      appendMessage (message) {
-        let self = this
-        this.isBotLoading = true
-        this.messages.push(message)
-        this.isBotLoading = false
-      },
-      toggleInput () {
-        this.conversationEnd = !this.conversationEnd
-      },
-      hideWidget (widgetId) {
-        console.log($('#' + widgetId).hide())
-      },
-      async sendMessage (userValue) {
-        this.messages.push({
-          type: 'user',
-          input: { name: 'user' },
-          class: '',
-          text: [{ string: this.userValue ? this.userValue : userValue }],
-        })
-        this.messages.push(await Bot.getNextMessage(this.userValue ? this.userValue : userValue))
-        this.userValue = ''
-        this.$forceUpdate()
-      },
-    },
-  }
+    export default {
+        name: 'BotUI',
+        components: {
+            'text-widget': TextWidget,
+            'buttons_vertical': ButtonsWidget,
+            'calendar_time': CalendarWidget,
+            'date_roll': DatePickerWidget,
+            'time_roll': TimePickerWidget,
+            'search_suggester_dynamic': SearchSuggestion,
+            'card_slide': CardSliderWidget,
+            'star_rating': RatingWidget,
+            'redirect_convflow': RedirectWidget,
+        },
+        data() {
+            return {
+                messages: [],
+                userValue: '',
+                isBotLoading: false,
+                conversationEnd: false,
+                botConfig: {isHuman: true},
+            }
+        },
+        async mounted() {
+            let self = this
+            this.messages = []
+            this.messages[0] = await Bot.getConfig()
+            this.$forceUpdate()
+        },
+        computed: {
+            showInput() {
+                return this.messages[this.messages.length - 1].input.name === 'text'
+            },
+        },
+        methods: {
+            appendMessage(message) {
+                let self = this
+                this.isBotLoading = true
+                this.messages.push(message)
+                this.isBotLoading = false
+            },
+            toggleInput() {
+                this.conversationEnd = !this.conversationEnd
+            },
+            hideWidget(widgetId) {
+                console.log($('#' + widgetId).hide())
+            },
+            async sendMessage(userValue) {
+                this.messages.push({
+                    type: 'user',
+                    input: {name: 'user'},
+                    class: '',
+                    text: [{string: this.userValue ? this.userValue : userValue}],
+                })
+                this.messages.push(await Bot.getNextMessage(this.userValue ? this.userValue : userValue))
+                this.userValue = ''
+                this.$forceUpdate()
+            },
+        },
+    }
 </script>

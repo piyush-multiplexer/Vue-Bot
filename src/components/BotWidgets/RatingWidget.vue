@@ -1,20 +1,25 @@
 <template>
-  <div class="CalendarWidget">
+  <div class="RatingWidget">
     <div v-if="showWidget" class="animated slideInUp">
-      <input type="datetime-local" v-model="datetime">
-      <button @click="setDateTimeValue">Submit</button>
+      <v-rating v-model="rating" color="yellow darken-3" background-color="grey darken-1"
+                empty-icon="$vuetify.icons.ratingFull" half-increments hover x-large></v-rating>
+      <v-btn class="bot-rating-button" @click="setDateTimeValue">Submit</v-btn>
     </div>
   </div>
 </template>
 
 <script>
+  import StarRating from 'vue-star-rating'
 
   import EventBus from '../../plugins/eventBus'
 
   export default {
-    name: 'CalendarWidget',
+    name: 'RatingWidget',
     props: ['widgetData'],
-    data () {return { datetime: '', showWidget: false }},
+    components: {
+      StarRating,
+    },
+    data () {return { rating: 0.5, showWidget: false }},
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
@@ -26,7 +31,7 @@
         let self = this
         $(this.$el).addClass('animated fadeOutDown')
         setTimeout(function () {
-          self.$parent.sendMessage(self.datetime)
+          self.$parent.sendMessage(self.rating.toString())
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)

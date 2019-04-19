@@ -5,11 +5,12 @@ let initUrl = 'http://bots.bizbrain.in/api/get/'
 let nextUrl = 'http://bots.bizbrain.in/api/getJsonById/'
 // method, url, loading, postData, headers
 export default class VueBot {
-  constructor () {
+  constructor (botID) {
     this.messages = BotData
     this.historyId = ''
     this.currentId = ''
-    this.convid = 'b6ca21' // //HyT2ac //Syrk3f //HkJrB4
+    // this.convid = '087f5c' // //HyT2ac //Syrk3f //HkJrB4 //087f5c //40cb22
+    this.convid = botID // //HyT2ac //Syrk3f //HkJrB4 //087f5c //40cb22
     this.rsp_gid = ''
     this.originalGambit = []
   }

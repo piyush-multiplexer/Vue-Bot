@@ -4,14 +4,20 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
   base: process.env.BASE_URL,
+  mode: 'history',
   routes: [
     {
-      path: '/',
-      name: 'Home',
+      path: '/list',
+      name: 'BotList',
       component: function () {
-        return import(/* webpackChunkName: "about" */ './views/Home.vue')
+        return import(/* webpackChunkName: "about" */ './components/BotList.vue')
+      },
+    }, {
+      path: '/:botId',
+      name: 'BotHome',
+      component: function () {
+        return import(/* webpackChunkName: "about" */ './components/BotHome.vue')
       },
     },
   ],

@@ -1,0 +1,60 @@
+html {
+  box-sizing: border-box;
+  overflow-y: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden !important;
+  background-color: #f9f9f9 !important;
+}
+
+#app {
+  text-align: center;
+  background-color: #f9f9f9;
+  height: 100vh;
+}
+
+
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-track {
+  background: #a0a0a0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a0a0a0;
+}
+
+.bot-home{
+  height: 100%;
+  //display: table;
+  width: 450px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 767px) {
+
+  .bot-home{
+    height: 100%;
+    display: table;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+}

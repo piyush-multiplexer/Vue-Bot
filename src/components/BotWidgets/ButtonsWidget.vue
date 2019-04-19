@@ -1,9 +1,9 @@
 <template>
-  <div class="ButtonsWidget">
-    <div class="btn-group" v-if="showWidget">
+  <div class="ButtonsWidget" style="text-align: -webkit-center;">
+    <div class="btn-group animated slideInUp" v-if="showWidget">
       <template v-for="btn in widgetData.input.args.options">
-        <button @click="setButtonValue(btn)">{{btn.val}}<span v-html="btn.href"></span>
-        </button>
+        <v-btn round class="bot-button m-b-10" @click="setButtonValue(btn)">{{btn.val}}<span v-html="btn.href"></span>
+        </v-btn>
       </template>
     </div>
   </div>
@@ -26,10 +26,15 @@
     },
     methods: {
       setButtonValue (btn) {
-        Bot.rsp_gid = btn.rsp_gid
-        this.$parent.sendMessage(btn.val)
-        this.$destroy()
-        this.$el.parentNode.removeChild(this.$el)
+        let self = this
+        // $(this.$el).addClass('animated fadeOutDown')
+        $(this.$el).addClass('animated fadeOutDown')
+        setTimeout(function () {
+          Bot.rsp_gid = btn.rsp_gid
+          self.$parent.sendMessage(btn.val)
+          self.$destroy()
+          self.$el.parentNode.removeChild(self.$el)
+        }, 500)
       },
     },
   }
