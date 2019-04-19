@@ -1,6 +1,7 @@
 <template>
-  <div class="CardSliderWidget">
-    <div class="card-group" v-if="showWidget">
+  <div style="padding-bottom: 40px">
+    <!--<div class="card-group" v-if="showWidget">-->
+    <div class="CardSliderWidget" v-if="showWidget">
           <v-layout>
             <v-flex class="single-card" v-for="(card,index) in widgetData.input.args.options" :key="index">
               <v-img class="single-card-image" @click="setCardValue(card)" :src="card.img_url" :alt="card.name" />

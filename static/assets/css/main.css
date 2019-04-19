@@ -736,7 +736,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe3172', end
   .CardSliderWidget {
     overflow-x: scroll;
     width: 100%;
-    padding-bottom: 30px;
   }
 }
 .bot-starttyping {
@@ -935,7 +934,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe3172', end
   .CardSliderWidget {
     overflow-x: scroll;
     width: 100%;
-    padding-bottom: 30px;
   }
 }
 
