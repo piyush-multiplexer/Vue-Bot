@@ -2,7 +2,11 @@
   <div class="BubbleWidget">
     <div v-for="(bubble,index) in localBubbles" :key="index">
       <div class="bubble-card">
-        <div class="bubble-card-content" v-html="bubble.string"></div>
+        <div  class="bubble-card-content" v-html="bubble.string"></div>
+        <!--        <div class="bubble-card-content">-->
+        <!--          <vue-typed-js @onComplete="checkBubble" :strings="[bubble.string]" :typeSpeed="20" :showCursor="false">-->
+        <!--            <span class="typing"></span>-->
+        <!--          </vue-typed-js></div>-->
         <div class="bubble-card-media" v-if="bubble.img_url"><img :src="bubble.img_url"/></div>
       </div>
     </div>
@@ -35,6 +39,13 @@
       })
     },
     methods: {
+      checkBubble () {
+        if (this.bubbles.length === this.localBubbles.length) {
+          console.log(1)
+          this.startTyping = false
+          EventBus.$emit('AFTER_BUBBLE', { type: 'text' })
+        }
+      },
       appendBubble (bubble, bubbleIndex) {
         this.localBubbles.push(bubble)
         if (bubbleIndex + 1 === this.bubbles.length) {

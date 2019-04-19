@@ -3,7 +3,7 @@
     <div id="bot-container">
       <div id="bot-content" v-if="messages.length">
         <div style="transform: rotate(180deg);direction: ltr;">
-        <div v-for="(message,messageIndex) in messages" :key="messageIndex" >
+        <div v-for="(message,messageIndex) in messages" :key="messageIndex" class="animated bounceInUp">
           <div v-if="message.type==='user'" style="text-align: right">
             <div class="message-content-user">
               <bubble :bubbles="message.text"></bubble>

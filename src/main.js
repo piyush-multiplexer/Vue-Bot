@@ -6,7 +6,14 @@ import router from './router'
 import $ from 'jquery'
 import 'vuetify/dist/vuetify.min.css'
 import Vuetify from 'vuetify'
+import 'animate.css/animate.min.css'
+import VueAnime from 'vue-animejs';
 
+Vue.use(VueAnime)
+// import VueTypedJs from 'vue-typed-js'
+//
+// Vue.use(VueTypedJs)
+// import 'vue-t'
 Vue.use(Vuetify)
 import BubbleWidget from './components/BotWidgets/BubbleWidget'
 import VueBot from './plugins/VueBot'
