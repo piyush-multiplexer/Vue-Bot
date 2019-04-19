@@ -39,7 +39,7 @@
         let self = this
         $(this.$el).addClass('animated slideInDown')
         setTimeout(function () {
-          this.$parent.sendMessage(self.selectedValue)
+          self.$parent.sendMessage(self.selectedValue)
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)

@@ -26,7 +26,7 @@
         let self = this
         $(this.$el).addClass('animated slideInDown')
         setTimeout(function () {
-          this.$parent.sendMessage(self.file)
+          self.$parent.sendMessage(self.file)
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)
