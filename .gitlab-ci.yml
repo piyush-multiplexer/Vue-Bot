@@ -12,8 +12,6 @@ stages:
 #     only:
 #         - development
 #     when: manual
-#     tags:
-#         - dev_book_my_farm
 #     script:
 #         - sudo -S echo "development" > environment.txt
 #         - sudo -S cp -Rfu . /data/bots-staging/
@@ -30,8 +28,6 @@ Production:
     only:
         - master
     when: manual
-    tags:
-        - prod_book_my_farm
     script:
         - sudo -S echo "production" > environment.txt
         - sudo -S cp -Rfu . /data/bots/
