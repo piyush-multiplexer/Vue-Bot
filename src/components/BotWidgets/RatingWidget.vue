@@ -29,7 +29,7 @@
     methods: {
       setDateTimeValue () {
         let self = this
-        $(this.$el).addClass('animated slideInDown')
+        $(this.$el).addClass('animated fadeOutDown')
         setTimeout(function () {
           self.$parent.sendMessage(self.rating.toString())
           self.$destroy()

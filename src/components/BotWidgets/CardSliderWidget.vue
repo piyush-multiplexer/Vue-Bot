@@ -31,7 +31,7 @@
     methods: {
       setCardValue (card) {
         let self = this
-        $(this.$el).addClass('animated slideInDown')
+        $(this.$el).addClass('animated fadeOutDown')
         setTimeout(function () {
           Bot.rsp_gid = card.rsp_gid
           self.$parent.sendMessage(card.val)

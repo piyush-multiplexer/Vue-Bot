@@ -42,7 +42,6 @@
     methods: {
       checkBubble () {
         if (this.bubbles.length === this.localBubbles.length) {
-          console.log(1)
           this.startTyping = false
           EventBus.$emit('AFTER_BUBBLE', { type: 'text' })
         }

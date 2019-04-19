@@ -27,7 +27,8 @@
     methods: {
       setButtonValue (btn) {
         let self = this
-        $(this.$el).addClass('animated slideInDown')
+        // $(this.$el).addClass('animated fadeOutDown')
+        $(this.$el).addClass('animated fadeOutDown')
         setTimeout(function () {
           Bot.rsp_gid = btn.rsp_gid
           self.$parent.sendMessage(btn.val)
