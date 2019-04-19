@@ -20,7 +20,7 @@
       }
     },
     async mounted () {
-      this.bots = await NetworkCommunicator('GET', `http://bots.bizbrain.in/api/allBot`)
+      this.bots = await NetworkCommunicator('GET', `http://manage.bots.bizbrain.in/api/allBot`)
       this.$forceUpdate()
     },
   }
