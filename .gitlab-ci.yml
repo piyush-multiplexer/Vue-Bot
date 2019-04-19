@@ -33,7 +33,7 @@ Production:
         - sudo -S cp -Rfu . /data/bots/
         - cd /data/bots/
         - sh checkPackage.sh
-        - sudo -S npm run live
+        - sudo -S npm run build
         - >-
             curl -X POST --data-urlencode 'payload={"channel": "#bizbrain", "username": "bots", "text": "--- \n #### '"$(date)"' Successfully Deployed bots.bizbrain.inLive...!!! \n ---", "icon_emoji": ":thumbsup_all:"}' https://hooks.slack.com/services/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
     environment: production
