@@ -1,13 +1,16 @@
 <template>
   <div id="test">
     <template v-if="bots">
-      <v-flex >Bots</v-flex>
-      <v-layout>
-        <v-flex >
-          <v-list class="text-center" dense>
+
+      <v-layout row wrap justify-center>
+        <v-flex xs12>
+          <h1 class="p-t-10 p-b-10">Bots</h1>
+        </v-flex>
+        <v-flex xs12 md5>
+          <v-list class="text-center bot-list" dense>
             <v-list-tile @click="gotoBot(bot)" v-for="(bot,index) in bots" :key="index">
               <v-list-tile-content>
-                <v-list-tile-title>{{bot.convbot_title}}</v-list-tile-title>
+                <v-list-tile-title class="text-center">{{bot.convbot_title}}</v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
