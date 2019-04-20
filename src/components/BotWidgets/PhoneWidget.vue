@@ -6,7 +6,7 @@
           <v-text-field required ref="phone" class="bot-text-field" outline v-model="phone"
                         mask="##### #####"></v-text-field>
         </v-flex>
-        <v-flex xs2 md2>
+        <v-flex xs2 md2 class="text-center">
           <v-btn class="bot-button-round" :disabled="!(phone.length===10)" @click="setPhoneValue" fab flat icon>
             <v-icon style="transform:rotate(-45deg) ">send</v-icon>
           </v-btn>

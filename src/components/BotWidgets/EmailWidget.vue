@@ -5,7 +5,7 @@
         <v-flex xs10 md10>
           <v-text-field class="bot-text-field" outline v-model="date" mask="##### #####"></v-text-field>
         </v-flex>
-        <v-flex xs2 md2>
+        <v-flex xs2 md2 class="text-center">
           <v-btn class="bot-button-round" @click="setEmailValue" fab flat icon>
             <v-icon style="transform:rotate(-45deg) ">send</v-icon>
           </v-btn>
