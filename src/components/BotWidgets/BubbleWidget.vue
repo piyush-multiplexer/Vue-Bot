@@ -5,7 +5,7 @@
         <div  class="bubble-card-content" v-html="bubble.string"></div>
       </div>
       <div class="bubble-card" v-if="bubble.img_url">
-      <div class="bubble-card-media" v-if="bubble.img_url"><img :src="thombarUrl+bubble.img_url"/></div>
+      <div><img :src="thombarUrl+bubble.img_url"/></div>
       </div>
     </div>
     <div class="bot-starttyping" v-if="startTyping">

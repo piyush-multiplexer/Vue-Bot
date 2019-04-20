@@ -6,7 +6,7 @@
           <v-text-field class="bot-text-field" outline v-model="password" mask="##### #####"></v-text-field>
         </v-flex>
         <v-flex xs2 md2>
-          <v-btn class="bot-button-round" @click="setPasswordValue" fab flat icon>
+          <v-btn class="bot-button" @click="setPasswordValue" fab flat icon>
             <v-icon style="transform:rotate(-45deg) ">send</v-icon>
           </v-btn>
         </v-flex>
