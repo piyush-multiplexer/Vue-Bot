@@ -2,7 +2,7 @@
   <div class="PhoneWidget">
     <div v-if="showWidget" class="animated slideInUp">
       <input type="tel" v-model="phone">
-      <button class="bot-main-button" @click="setPhoneValue">Submit</button>
+      <button class="bot-button" @click="setPhoneValue">Submit</button>
     </div>
   </div>
 </template>

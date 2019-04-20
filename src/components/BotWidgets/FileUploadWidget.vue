@@ -2,7 +2,7 @@
   <div class="FileUploadWidget">
     <div v-if="showWidget" class="animated slideInUp">
       <input type="file" ref="file" id="file" name="file" accept="image/*">
-      <v-btn class="bot-rating-button" @click="uploadFile">Submit</v-btn>
+      <v-btn class="bot-button" @click="uploadFile">Submit</v-btn>
     </div>
   </div>
 </template>

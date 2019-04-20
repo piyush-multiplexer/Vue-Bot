@@ -2,7 +2,7 @@
   <div class="EmailWidget">
     <div v-if="showWidget" class="animated slideInUp">
       <input type="email" v-model="date">
-      <button class="bot-main-button" @click="setEmailValue">Submit</button>
+      <button class="bot-button" @click="setEmailValue">Submit</button>
     </div>
   </div>
 </template>

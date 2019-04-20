@@ -2,7 +2,7 @@
   <div class="PasswordWidget">
     <div v-if="showWidget" class="animated slideInUp">
       <input type="password" v-model="password">
-      <button class="bot-main-button" @click="setPasswordValue">Submit</button>
+      <button class="bot-button" @click="setPasswordValue">Submit</button>
     </div>
   </div>
 </template>

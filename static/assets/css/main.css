@@ -35,6 +35,10 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+.primary--text {
+  color: #F6283C !important;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 0px;
@@ -351,7 +355,6 @@ body {
 }
 
 .bot-text-field .v-input__control .v-input__slot {
-  border: 2px solid #d0d0d0 !important;
   border-radius: 50px;
   margin-bottom: 0;
 }
@@ -592,10 +595,6 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#fe3172", endColorstr="#f6283c", GradientType=1 );
 }
 
-.bubble-card img {
-  width: 50%;
-}
-
 .bubble-card-content {
   word-break: normal;
   display: inline-block;
@@ -788,10 +787,6 @@ body {
   background: -ms-linear-gradient(left, #fe3172 0%, #f6283c 100%);
   background: linear-gradient(to right, #fe3172 0%, #f6283c 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#fe3172", endColorstr="#f6283c", GradientType=1 );
-}
-
-.bubble-card img {
-  width: 50%;
 }
 
 .bubble-card-content {

@@ -35,7 +35,7 @@
               <v-flex xs12>
                 <v-layout row wrap>
                   <v-flex xs10 md10>
-                    <v-text-field class="bot-text-field" outline v-model="userValue" :disabled="conversationEnd" type="text"></v-text-field>
+                    <v-text-field class="bot-text-field" single-line outline v-model="userValue" :disabled="conversationEnd" type="text"></v-text-field>
                   </v-flex>
                   <v-flex xs2 md2>
                     <v-btn class="bot-button-round" @click="sendMessage" :disabled="conversationEnd" fab flat icon>
