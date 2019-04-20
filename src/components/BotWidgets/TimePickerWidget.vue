@@ -1,8 +1,11 @@
 <template>
   <div class="TimePickerWidget">
     <div v-if="showWidget" class="animated slideInUp">
-      <input type="time" v-model="time">
-      <button @click="setTimeValue">Submit</button>
+      <v-layout row wrap>
+        <v-flex xs12>
+          <v-time-picker header-color="#f6283c" @input="setTimeValue" v-model="time"></v-time-picker>
+        </v-flex>
+      </v-layout>
     </div>
   </div>
 </template>

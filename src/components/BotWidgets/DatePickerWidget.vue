@@ -1,14 +1,17 @@
 <template>
   <div class="DatePickerWidget">
     <div v-if="showWidget" class="animated slideInUp">
-      <input type="date" v-model="date">
-      <button class="bot-main-button" @click="setDateValue">Submit</button>
+      <v-layout row wrap>
+        <v-flex xs12>
+          <v-date-picker header-color="#f6283c"
+                         @input="setDateValue" v-model="date"></v-date-picker>
+        </v-flex>
+      </v-layout>
     </div>
   </div>
 </template>
 
 <script>
-
   import EventBus from '../../plugins/eventBus'
 
   export default {

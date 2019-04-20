@@ -1,25 +1,28 @@
 <template>
-  <div class="RatingWidget">
+  <div class="EmailWidget">
     <div v-if="showWidget" class="animated slideInUp">
-      <v-rating v-model="rating" color="yellow darken-3" background-color="grey darken-1"
-                empty-icon="$vuetify.icons.ratingFull" half-increments hover x-large></v-rating>
-      <v-btn class="bot-button" @click="setDateTimeValue">Submit</v-btn>
+      <v-layout row wrap>
+        <v-flex xs10 md10>
+          <v-text-field class="bot-text-field" outline v-model="date" mask="##### #####"></v-text-field>
+        </v-flex>
+        <v-flex xs2 md2 class="text-center">
+          <v-btn class="bot-button-round" @click="setEmailValue" fab flat icon>
+            <v-icon style="transform:rotate(-45deg) ">send</v-icon>
+          </v-btn>
+        </v-flex>
+      </v-layout>
     </div>
   </div>
 </template>
 
 <script>
-  import StarRating from 'vue-star-rating'
 
   import EventBus from '../../plugins/eventBus'
 
   export default {
-    name: 'RatingWidget',
+    name: 'EmailWidget',
     props: ['widgetData'],
-    components: {
-      StarRating,
-    },
-    data () {return { rating: 0.5, showWidget: false }},
+    data () {return { email: '', showWidget: false }},
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
@@ -27,11 +30,11 @@
       })
     },
     methods: {
-      setDateTimeValue () {
+      setEmailValue () {
         let self = this
         $(this.$el).addClass('animated fadeOutDown')
         setTimeout(function () {
-          self.$parent.sendMessage(self.rating.toString())
+          self.$parent.sendMessage(self.email)
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)
