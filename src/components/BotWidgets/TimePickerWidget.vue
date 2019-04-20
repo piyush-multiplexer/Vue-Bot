@@ -3,7 +3,7 @@
     <div v-if="showWidget" class="animated slideInUp">
       <v-layout row wrap>
         <v-flex xs12>
-          <v-time-picker @input="setTimeValue" v-model="time"></v-time-picker>
+          <v-time-picker header-color="#f6283c" @input="setTimeValue" v-model="time"></v-time-picker>
         </v-flex>
       </v-layout>
     </div>
