@@ -1,6 +1,6 @@
 <template>
   <div class="CalendarWidget">
-    <div v-if="showWidget" class="animated slideInUp">
+    <div v-if="showWidget">
       <input type="datetime-local" v-model="datetime">
       <button @click="setDateTimeValue">Submit</button>
     </div>
@@ -23,13 +23,10 @@
     },
     methods: {
       setDateTimeValue () {
-        let self = this
-        $(this.$el).addClass('animated fadeOutDown')
-        setTimeout(function () {
-          self.$parent.sendMessage(self.datetime)
-          self.$destroy()
-          self.$el.parentNode.removeChild(self.$el)
-        }, 500)
+        console.log(this.datetime)
+        this.$parent.sendMessage(this.datetime)
+        this.$destroy()
+        this.$el.parentNode.removeChild(this.$el)
       },
     },
   }
