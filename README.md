@@ -20,11 +20,17 @@ npm run build --report
 
 Supported Inputs
 -----------------
-Text
-Button Group[single]
-Card Group[single]
+* Button Group[single]
+* Card Group[single]
+* Search Suggestion
+* Rating
+* Text
+* Mobile
+* Date
+* Redirect
+
 
 Support Output
 ----------------
-Text
-Image
+* Text
+* Raw HTML

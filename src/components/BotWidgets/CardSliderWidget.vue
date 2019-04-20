@@ -9,7 +9,28 @@
         </v-flex>
       </v-layout>
 
+
+    <!--<div style="overflow:auto;white-space: nowrap; background-color: #ffffff; padding: 10px 5px">
+      <a style="display: inline-block" target="_blank">
+        <img style="padding: 0 10px; height: 150px; border-radius: 15px;"
+             src="https://www.w3schools.com/w3images/avatar2.png"/>
+      </a>
+      <a style="display: inline-block" target="_blank">
+        <img style="padding: 0 10px; height: 150px; border-radius: 15px;"
+             src="https://www.w3schools.com/howto/img_avatar.png"/>
+      </a>
+      <a style="display: inline-block" target="_blank">
+        <img style="padding: 0 10px; height: 150px; border-radius: 15px;"
+             src="https://images.vexels.com/media/users/3/145908/preview2/52eabf633ca6414e60a7677b0b917d92-male-avatar-maker.jpg"/>
+      </a>
+      <a style="display: inline-block" target="_blank">
+        <img style="padding: 0 10px; height: 150px; border-radius: 15px;"
+             src="https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png"/>
+      </a>
+    </div>-->
+
     </div>
+
   </div>
 </template>
 

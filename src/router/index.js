@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const router =  new Router({
+const router = new Router({
   mode: 'history',
   base: '/',
   routes: [
@@ -14,7 +14,7 @@ const router =  new Router({
         return import(/* webpackChunkName: "about" */ '../components/Home.vue')
       },
     }, {
-      path: '/list',
+      path: '/list/',
       name: 'BotList',
       component: function () {
         return import(/* webpackChunkName: "about" */ '../components/BotList.vue')
