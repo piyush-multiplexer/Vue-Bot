@@ -1,12 +1,12 @@
 <template>
-  <div class="EmailWidget">
-    <div v-if="showWidget" class="animated slideInUp">
+  <div class="UserNameWidget">
+    <div v-if="showWidget" class="animated slideInUp" @keyup.enter="setEmailValue">
       <v-layout row wrap>
         <v-flex xs10 md10>
-          <v-text-field class="bot-text-field" outline v-model="date" mask="##### #####"></v-text-field>
+          <v-text-field required ref="username" class="bot-text-field" outline v-model="userName"></v-text-field>
         </v-flex>
         <v-flex xs2 md2>
-          <v-btn class="bot-button-round" @click="setEmailValue" fab flat icon>
+          <v-btn class="bot-button-round" @click="setEmailValue" :disabled="!userName.length" fab flat icon>
             <v-icon style="transform:rotate(-45deg) ">send</v-icon>
           </v-btn>
         </v-flex>
@@ -20,13 +20,14 @@
   import EventBus from '../../plugins/eventBus'
 
   export default {
-    name: 'EmailWidget',
+    name: 'UserNameWidget',
     props: ['widgetData'],
-    data () {return { email: '', showWidget: false }},
+    data () {return { userName: '', showWidget: false }},
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
         self.showWidget = true
+        setTimeout(function () { self.$refs.username.focus() }, 100)
       })
     },
     methods: {
@@ -34,7 +35,7 @@
         let self = this
         $(this.$el).addClass('animated fadeOutDown')
         setTimeout(function () {
-          self.$parent.sendMessage(self.email)
+          self.$parent.sendMessage(self.userName)
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)

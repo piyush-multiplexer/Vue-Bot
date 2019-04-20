@@ -1,16 +1,14 @@
 <template>
   <div class="SearchSuggestion">
-    <div v-if="showWidget" class="animated slideInUp">
+    <div v-if="showWidget" class="animated slideInUp" @keyup.enter="setSearchValue">
       <v-layout row wrap>
         <v-flex xs10 md10>
           <v-autocomplete single-line outline class="bot-text-field" lable="name" item-text="name"
                           v-model="selectedValue" :items="widgetData.input.args.options"></v-autocomplete>
         </v-flex>
         <v-flex xs2 md2>
-          <!--<button class="bot-button-round" @click="setSearchValue">Submit</button>-->
           <v-btn class="bot-button-round" @click="setSearchValue" fab flat icon>
             <v-icon style="transform:rotate(-45deg) ">send</v-icon>
-            <!--                      Send-->
           </v-btn>
         </v-flex>
       </v-layout>

@@ -1,8 +1,16 @@
 <template>
   <div class="PasswordWidget">
     <div v-if="showWidget" class="animated slideInUp">
-      <input type="password" v-model="password">
-      <button class="bot-main-button" @click="setPasswordValue">Submit</button>
+      <v-layout row wrap>
+        <v-flex xs10 md10>
+          <v-text-field class="bot-text-field" outline v-model="password" mask="##### #####"></v-text-field>
+        </v-flex>
+        <v-flex xs2 md2>
+          <v-btn class="bot-button-round" @click="setPasswordValue" fab flat icon>
+            <v-icon style="transform:rotate(-45deg) ">send</v-icon>
+          </v-btn>
+        </v-flex>
+      </v-layout>
     </div>
   </div>
 </template>
