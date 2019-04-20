@@ -6,6 +6,8 @@ import router from './router/index'
 import $ from 'jquery'
 import 'vuetify/dist/vuetify.min.css'
 import Vuetify from 'vuetify'
+import Loader from './plugins/Loader'
+Vue.use(Loader)
 import 'animate.css/animate.min.css'
 import VueAnime from 'vue-animejs'
 

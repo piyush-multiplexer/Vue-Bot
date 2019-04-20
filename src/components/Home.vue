@@ -1,6 +1,6 @@
 <template>
   <div class="Home">
-    Home
+    <router-link to="/list">Go To List</router-link>
   </div>
 </template>
 
