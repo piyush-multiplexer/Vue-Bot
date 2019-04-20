@@ -25,7 +25,7 @@
       uploadFile () {
         let self = this
         let formData = new FormData()
-        formData.append('file[]', this.$refs.file.files[0])
+        formData.append('file[]', this.$refs.file.files)
         console.log(formData)
         $(this.$el).addClass('animated fadeOutDown')
         setTimeout(function () {
