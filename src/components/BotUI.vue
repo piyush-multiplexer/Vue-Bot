@@ -66,6 +66,7 @@
     import CardSliderWidget from './BotWidgets/CardSliderWidget'
     import RatingWidget from './BotWidgets/RatingWidget'
     import RedirectWidget from './BotWidgets/RedirectWidget'
+    import FileUploadWidget from './BotWidgets/FileUploadWidget'
 
     export default {
         name: 'BotUI',
@@ -79,6 +80,7 @@
             'card_slide': CardSliderWidget,
             'star_rating': RatingWidget,
             'redirect_convflow': RedirectWidget,
+            'file_upload': FileUploadWidget,
         },
         data() {
             return {

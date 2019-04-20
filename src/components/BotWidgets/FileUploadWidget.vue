@@ -1,8 +1,8 @@
 <template>
   <div class="FileUploadWidget">
     <div v-if="showWidget" class="animated slideInUp">
-      <input type="file" v-model="file" name="file" accept="image/*">
-      <button @click="setDateTimeValue">Submit</button>
+      <input type="file" ref="file" id="file" name="file" accept="image/*">
+      <v-btn class="bot-rating-button" @click="uploadFile">Submit</v-btn>
     </div>
   </div>
 </template>
@@ -14,7 +14,7 @@
   export default {
     name: 'FileUploadWidget',
     props: ['widgetData'],
-    data () {return { file: '', showWidget: false }},
+    data () {return { showWidget: false }},
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
@@ -22,11 +22,13 @@
       })
     },
     methods: {
-      setDateTimeValue () {
+      uploadFile () {
         let self = this
+        let formData = new FormData()
+        formData.append('file', this.$refs.file.files[0])
         $(this.$el).addClass('animated fadeOutDown')
         setTimeout(function () {
-          self.$parent.sendMessage(self.file)
+          self.$parent.sendMessage(formData)
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)
