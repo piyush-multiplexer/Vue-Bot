@@ -1,8 +1,8 @@
 <template>
-  <div class="FileUploadWidget">
+  <div class="PhoneWidget">
     <div v-if="showWidget" class="animated slideInUp">
-      <input type="file" ref="file" id="file" name="file" accept="image/*">
-      <v-btn class="bot-rating-button" @click="uploadFile">Submit</v-btn>
+      <input type="tel" v-model="phone">
+      <button class="bot-main-button" @click="setPhoneValue">Submit</button>
     </div>
   </div>
 </template>
@@ -12,9 +12,9 @@
   import EventBus from '../../plugins/eventBus'
 
   export default {
-    name: 'FileUploadWidget',
+    name: 'PhoneWidget',
     props: ['widgetData'],
-    data () {return { showWidget: false }},
+    data () {return { phone: '', showWidget: false }},
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
@@ -22,14 +22,11 @@
       })
     },
     methods: {
-      uploadFile () {
+      setPhoneValue () {
         let self = this
-        let formData = new FormData()
-        formData.append('file[]', this.$refs.file.files[0])
-        console.log(formData)
         $(this.$el).addClass('animated fadeOutDown')
         setTimeout(function () {
-          self.$parent.sendMessage(formData)
+          self.$parent.sendMessage(self.phone)
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)
