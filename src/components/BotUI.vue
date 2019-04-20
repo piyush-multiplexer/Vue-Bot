@@ -30,7 +30,7 @@
         </div>
 
         <template v-if="messages.length">
-          <div v-if="showInput" id=" user-input-container" @keyup.enter="sendMessage" class="animated slideInUp">
+          <div v-if="showInput" id=" user-input-container" @keyup.enter="sendMessage" class="animated slideInUp bot-search-filed">
             <v-layout row wrap>
               <v-flex xs12>
                 <v-layout row wrap>
@@ -38,7 +38,7 @@
                     <v-text-field class="bot-text-field" outline v-model="userValue" :disabled="conversationEnd" type="text"></v-text-field>
                   </v-flex>
                   <v-flex xs2 md2>
-                    <v-btn class="bot-button" @click="sendMessage" :disabled="conversationEnd" fab flat icon>
+                    <v-btn class="bot-button-round" @click="sendMessage" :disabled="conversationEnd" fab flat icon>
                     <v-icon style="transform:rotate(-45deg) ">send</v-icon>
 <!--                      Send-->
                     </v-btn>

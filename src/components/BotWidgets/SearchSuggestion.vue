@@ -7,8 +7,8 @@
                           v-model="selectedValue" :items="widgetData.input.args.options"></v-autocomplete>
         </v-flex>
         <v-flex xs2 md2>
-          <!--<button class="bot-main-button" @click="setSearchValue">Submit</button>-->
-          <v-btn class="bot-button" @click="setSearchValue" fab flat icon>
+          <!--<button class="bot-button-round" @click="setSearchValue">Submit</button>-->
+          <v-btn class="bot-button-round" @click="setSearchValue" fab flat icon>
             <v-icon style="transform:rotate(-45deg) ">send</v-icon>
             <!--                      Send-->
           </v-btn>

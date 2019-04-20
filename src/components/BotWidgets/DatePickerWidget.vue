@@ -2,7 +2,7 @@
   <div class="DatePickerWidget">
     <div v-if="showWidget" class="animated slideInUp">
       <input type="date" v-model="date">
-      <button class="bot-main-button" @click="setDateValue">Submit</button>
+      <button class="bot-button" @click="setDateValue">Submit</button>
     </div>
   </div>
 </template>

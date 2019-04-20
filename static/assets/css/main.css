@@ -323,7 +323,7 @@ body {
 }
 
 /* Components scss imported */
-.bot-button {
+.bot-button-round {
   box-shadow: none !important;
   background: #fe3172;
   background: -moz-linear-gradient(left, #fe3172 0%, #f6283c 100%);
@@ -338,7 +338,7 @@ body {
   border-radius: 50px;
 }
 
-.bot-main-button {
+.bot-button {
   box-shadow: none !important;
   background: #fe3172;
   background: -moz-linear-gradient(left, #fe3172 0%, #f6283c 100%);
@@ -353,23 +353,6 @@ body {
   height: 50px;
   padding: 0 20px;
   border-radius: 50px;
-}
-
-.bot-rating-button {
-  box-shadow: none !important;
-  background: #fe3172;
-  background: -moz-linear-gradient(left, #fe3172 0%, #f6283c 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #fe3172), color-stop(100%, #f6283c));
-  background: -webkit-linear-gradient(left, #fe3172 0%, #f6283c 100%);
-  background: -o-linear-gradient(left, #fe3172 0%, #f6283c 100%);
-  background: -ms-linear-gradient(left, #fe3172 0%, #f6283c 100%);
-  background: linear-gradient(to right, #fe3172 0%, #f6283c 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#fe3172", endColorstr="#f6283c", GradientType=1 );
-  color: #fff !important;
-  margin: 10px;
-  height: 40px;
-  border-radius: 10px;
-  padding: 0 10px;
 }
 
 .bot-text-field .v-input__control .v-input__slot {
@@ -427,6 +410,10 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
+  .bot-search-filed {
+    padding-bottom: 30px;
+  }
+
   #bot-container {
     transform: rotate(180deg);
     direction: rtl;
@@ -434,7 +421,7 @@ body {
     background-color: #ffffff;
     box-shadow: 0 0 7px #dedede;
     border-radius: 0px;
-    padding: 30px 10px 10px 10px;
+    padding: 40px 10px 10px 10px;
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
@@ -558,6 +545,10 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
+  .bot-search-filed {
+    padding-bottom: 30px;
+  }
+
   #bot-container {
     transform: rotate(180deg);
     direction: rtl;
@@ -565,7 +556,7 @@ body {
     background-color: #ffffff;
     box-shadow: 0 0 7px #dedede;
     border-radius: 0px;
-    padding: 30px 10px 10px 10px;
+    padding: 40px 10px 10px 10px;
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
