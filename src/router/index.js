@@ -11,19 +11,19 @@ const router = new Router({
       path: '/',
       name: 'Home',
       component: function () {
-        return import(/* webpackChunkName: "about" */ '../components/Home.vue')
+        return import('../components/Home.vue')
       },
     }, {
       path: '/list/',
       name: 'BotList',
       component: function () {
-        return import(/* webpackChunkName: "about" */ '../components/BotList.vue')
+        return import('../components/BotList.vue')
       },
     }, {
       path: '/:botId',
       name: 'BotHome',
       component: function () {
-        return import(/* webpackChunkName: "about" */ '../components/BotHome.vue')
+        return import('../components/BotHome.vue')
       },
     },
   ],

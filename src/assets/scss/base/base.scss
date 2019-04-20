@@ -2,17 +2,20 @@ html {
   box-sizing: border-box;
   overflow-y: hidden;
   -webkit-text-size-adjust: 100%;
+  font-family: Roboto,sans-serif;
 }
 
 body {
   overflow-x: hidden !important;
   background-color: #f9f9f9 !important;
+  font-family: Roboto,sans-serif;
 }
 
 #app {
   text-align: center;
   background-color: #f9f9f9;
   height: 100vh;
+  font-family: Roboto,sans-serif;
 }
 
 
