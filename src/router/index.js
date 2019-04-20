@@ -20,6 +20,12 @@ const router =  new Router({
         return import(/* webpackChunkName: "about" */ '../components/BotList.vue')
       },
     }, {
+      path: '/list/',
+      name: 'BotList',
+      component: function () {
+        return import(/* webpackChunkName: "about" */ '../components/BotList.vue')
+      },
+    }, {
       path: '/:botId',
       name: 'BotHome',
       component: function () {
