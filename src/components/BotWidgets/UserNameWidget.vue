@@ -27,18 +27,20 @@
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
         self.showWidget = true
-        setTimeout(function () { self.$refs.username.focus() }, 100)
+        setTimeout(function () { self.$refs.username.focus() }, 200)
       })
     },
     methods: {
       setEmailValue () {
         let self = this
-        $(this.$el).addClass('animated fadeOutDown')
-        setTimeout(function () {
-          self.$parent.sendMessage(self.userName)
-          self.$destroy()
-          self.$el.parentNode.removeChild(self.$el)
-        }, 500)
+        if (this.userName.length) {
+          $(this.$el).addClass('animated fadeOutDown')
+          setTimeout(function () {
+            self.$parent.sendMessage(self.userName)
+            self.$destroy()
+            self.$el.parentNode.removeChild(self.$el)
+          }, 500)
+        }
       },
     },
   }

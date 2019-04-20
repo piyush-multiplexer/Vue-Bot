@@ -24,7 +24,7 @@
       return {
         localBubbles: [],
         startTyping: true,
-        thombarUrl:'http://thumbor.avinashi.com/unsafe/300x350/smart/'
+        thombarUrl:'http://thumbor.avinashi.com/unsafe/250x300/smart/'
       }
     },
     mounted () {

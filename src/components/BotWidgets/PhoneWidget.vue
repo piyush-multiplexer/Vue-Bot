@@ -1,12 +1,13 @@
 <template>
   <div class="PhoneWidget">
-    <div v-if="showWidget" class="animated slideInUp">
+    <div v-if="showWidget" class="animated slideInUp" @keyup.enter="setPhoneValue">
       <v-layout row wrap>
         <v-flex xs10 md10>
-          <v-text-field class="bot-text-field" outline v-model="phone" mask="##### #####"></v-text-field>
+          <v-text-field required ref="phone" class="bot-text-field" outline v-model="phone"
+                        mask="##### #####"></v-text-field>
         </v-flex>
         <v-flex xs2 md2>
-          <v-btn class="bot-button-round" @click="setPhoneValue" fab flat icon>
+          <v-btn class="bot-button-round" :disabled="!(phone.length===10)" @click="setPhoneValue" fab flat icon>
             <v-icon style="transform:rotate(-45deg) ">send</v-icon>
           </v-btn>
         </v-flex>
@@ -27,17 +28,20 @@
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
         self.showWidget = true
+        setTimeout(function () { self.$refs.phone.focus() }, 200)
       })
     },
     methods: {
       setPhoneValue () {
         let self = this
-        $(this.$el).addClass('animated fadeOutDown')
-        setTimeout(function () {
-          self.$parent.sendMessage(self.phone)
-          self.$destroy()
-          self.$el.parentNode.removeChild(self.$el)
-        }, 500)
+        if (this.phone && this.phone.length === 10) {
+          $(this.$el).addClass('animated fadeOutDown')
+          setTimeout(function () {
+            self.$parent.sendMessage(self.phone)
+            self.$destroy()
+            self.$el.parentNode.removeChild(self.$el)
+          }, 500)
+        }
       },
     },
   }
