@@ -13,7 +13,7 @@
   background-color: $white;
   box-shadow: 0 0 7px $card-box-shadow;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 0;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
@@ -33,7 +33,7 @@
 
 .message-content-bot {
   word-break: break-word;
-  padding: 5px 0;
+  padding: 5px 10px;
   //margin: 1%;
   border-radius: 30%;
   display: inline-block;
@@ -42,7 +42,7 @@
 
 .message-content-user {
   word-break: break-word;
-  padding: 5px 0;
+  padding: 5px 10px;
   //margin: 1%;
   border-radius: 30%;
   display: inline-block;
@@ -53,6 +53,16 @@
   text-align: center;
   margin: 0 auto;
   //display: inline-block;
+}
+
+.widget-question{
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  color: #251010;
+  background: linear-gradient(to bottom, #0099ff 0%, #00ccff 100%);
+  border-radius: 22px;
+  margin-bottom: 10px;
 }
 
 
