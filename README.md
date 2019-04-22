@@ -31,12 +31,12 @@ Supported Inputs
 * Start Rating
 * Date Picker
 * Time Picker
+* Image/file input
 * Auto Page Redirection
 * No Input
 
 Upcoming Supported Features
 ---------------------------
-* Image/file input
 * Geo Location
 * Calendar Date/Time
 
