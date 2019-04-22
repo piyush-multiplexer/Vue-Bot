@@ -19,15 +19,26 @@ npm run build --report
 ```
 
 Supported Inputs
------------------
+-----------------------
+* Text 
+  - Custom Text
+  - Mobile
+  - Password
+  - Name
+* Auto Search Suggestion
 * Button Group[single]
 * Card Group[single]
-* Search Suggestion
-* Rating
-* Text
-* Mobile
-* Date
-* Redirect
+* Start Rating
+* Date Picker
+* Time Picker
+* Auto Page Redirection
+* No Input
+
+Upcoming Supported Features
+---------------------------
+* Image/file input
+* Geo Location
+* Calendar Date/Time
 
 
 Support Output
