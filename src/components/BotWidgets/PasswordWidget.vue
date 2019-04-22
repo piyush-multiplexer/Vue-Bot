@@ -1,6 +1,6 @@
 <template>
   <div class="PasswordWidget">
-    <div v-if="showWidget" class="animated slideInUp" @keyup.enter="setPasswordValue">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setPasswordValue">
       <v-layout row wrap>
         <v-flex xs10 md10>
           <v-text-field required ref="password" class="bot-text-field" outline v-model="password"

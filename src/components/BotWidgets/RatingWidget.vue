@@ -1,6 +1,6 @@
 <template>
   <div class="RatingWidget">
-    <div v-if="showWidget" class="animated slideInUp">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card">
       <v-rating v-model="rating" color="yellow darken-3" background-color="grey darken-1"
                 empty-icon="$vuetify.icons.ratingFull" half-increments hover x-large></v-rating>
       <v-btn class="bot-button" @click="setDateTimeValue">Submit</v-btn>

@@ -1,6 +1,6 @@
 <template>
   <div class="UserNameWidget">
-    <div v-if="showWidget" class="animated slideInUp" @keyup.enter="setEmailValue">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setEmailValue">
       <v-layout row wrap>
         <v-flex xs10 md10>
           <v-text-field required ref="username" class="bot-text-field" outline v-model="userName"></v-text-field>
