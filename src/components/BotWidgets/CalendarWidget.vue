@@ -1,6 +1,7 @@
 <template>
   <div class="CalendarWidget">
     <div v-if="showWidget">
+      <div class="widget-question"> {{widgetData.text[widgetData.text.length-1].string}}</div>
       <input type="datetime-local" v-model="datetime">
       <button @click="setDateTimeValue">Submit</button>
     </div>

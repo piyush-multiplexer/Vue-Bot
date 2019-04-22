@@ -13,7 +13,7 @@
             <div v-else-if="message.input.name==='text'"
                  :style="botConfig.isHuman?'text-align: left':'text-align: center'">
               <div class="message-content-bot">
-                <bubble :bubbles="message.text"></bubble>
+                <bubble :bubbles="message.text" v-if="message.text.length!==1"></bubble>
               </div>
               <component :is="message.input.args.input_type" :widgetData="message"></component>
             </div>
@@ -25,33 +25,33 @@
                 </div>
               </div>
               <div class="widget-content">
-                  <component :is="message.input.name" :widgetData="message"></component>
+                <component :is="message.input.name" :widgetData="message"></component>
               </div>
             </div>
           </div>
 
-<!--          <template v-if="messages.length">-->
-<!--            <div v-if="showInput" id=" user-input-container" @keyup.enter="sendMessage"-->
-<!--                 class="animated slideInUp bot-search-filed">-->
-<!--              <v-layout row wrap>-->
-<!--                <v-flex xs12>-->
-<!--                  <v-layout row wrap>-->
-<!--                    <v-flex xs10 md10>-->
-<!--                      <v-text-field class="bot-text-field" outline v-model="userValue" :disabled="conversationEnd"-->
-<!--                                    type="text"></v-text-field>-->
-<!--                    </v-flex>-->
-<!--                    <v-flex xs2 md2>-->
-<!--                      <v-btn class="bot-button-round" @click="sendMessage" :disabled="conversationEnd" fab flat icon>-->
-<!--                        <v-icon style="transform:rotate(-45deg) ">send</v-icon>-->
-<!--                        &lt;!&ndash;                      Send&ndash;&gt;-->
-<!--                      </v-btn>-->
-<!--                    </v-flex>-->
-<!--                  </v-layout>-->
-<!--                </v-flex>-->
-<!--              </v-layout>-->
-<!--            </div>-->
+          <!--          <template v-if="messages.length">-->
+          <!--            <div v-if="showInput" id=" user-input-container" @keyup.enter="sendMessage"-->
+          <!--                 class="animated slideInUp bot-search-filed">-->
+          <!--              <v-layout row wrap>-->
+          <!--                <v-flex xs12>-->
+          <!--                  <v-layout row wrap>-->
+          <!--                    <v-flex xs10 md10>-->
+          <!--                      <v-text-field class="bot-text-field" outline v-model="userValue" :disabled="conversationEnd"-->
+          <!--                                    type="text"></v-text-field>-->
+          <!--                    </v-flex>-->
+          <!--                    <v-flex xs2 md2>-->
+          <!--                      <v-btn class="bot-button-round" @click="sendMessage" :disabled="conversationEnd" fab flat icon>-->
+          <!--                        <v-icon style="transform:rotate(-45deg) ">send</v-icon>-->
+          <!--                        &lt;!&ndash;                      Send&ndash;&gt;-->
+          <!--                      </v-btn>-->
+          <!--                    </v-flex>-->
+          <!--                  </v-layout>-->
+          <!--                </v-flex>-->
+          <!--              </v-layout>-->
+          <!--            </div>-->
 
-<!--          </template>-->
+          <!--          </template>-->
         </div>
       </div>
 
@@ -70,6 +70,7 @@
   import RatingWidget from './BotWidgets/RatingWidget'
   import RedirectWidget from './BotWidgets/RedirectWidget'
   import FileUploadWidget from './BotWidgets/FileUploadWidget'
+  import GEOLocationWidget from './BotWidgets/GEOLocationWidget'
   import PhoneWidget from './BotWidgets/PhoneWidget'
   import PasswordWidget from './BotWidgets/PasswordWidget'
   import EmailWidget from './BotWidgets/EmailWidget'
@@ -89,7 +90,9 @@
       'star_rating': RatingWidget,
       'redirect_convflow': RedirectWidget,
       'file_upload': FileUploadWidget,
+      'geo_location': GEOLocationWidget,
       'user_phone_number_10': PhoneWidget,
+      'user_phone_number': PhoneWidget,
       'user_password': PasswordWidget,
       'user_email': EmailWidget,
       'user_name': UserNameWidget,

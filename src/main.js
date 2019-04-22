@@ -8,6 +8,18 @@ import 'vuetify/dist/vuetify.min.css'
 import Vuetify from 'vuetify'
 import Loader from './plugins/Loader'
 Vue.use(Loader)
+import * as VueGoogleMaps from 'vue2-google-maps'
+Vue.use(VueGoogleMaps, {
+  load: {
+    region: 'IN',
+    language: 'en',
+    libraries: "places",
+    key: 'AIzaSyCgG2RHYJmuCsaY0di7Jz3lEIEbsVhhWfY',
+  },
+  installComponents: false,
+})
+Vue.component('google-map', VueGoogleMaps.Map)
+Vue.component('google-marker', VueGoogleMaps.Marker)
 import 'animate.css/animate.min.css'
 import VueAnime from 'vue-animejs'
 
