@@ -53,7 +53,7 @@
     methods: {
       setCardValue (card) {
         let self = this
-        $(this.$el).addClass('animated fadeOutDownBig')
+        $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
           Bot.rsp_gid = card.rsp_gid
           self.$parent.sendMessage(card.val)

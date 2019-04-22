@@ -5,13 +5,14 @@
       <v-layout row wrap>
         <v-flex xs10 md10>
           <google-map ref="map" :center="center" :zoom="10" style="width: 100%; height: 500px">
-            <google-marker ref="marker" v-for="(marker,index) in markers" :key="index" :position="marker.position" :clickable="true"
+            <google-marker ref="marker" v-for="(marker,index) in markers" :key="index" :position="marker.position"
+                           :clickable="true"
                            :draggable="true" @click="center=marker.position"
-                           @dragend="getMarkerPosition(this)"></google-marker>
+                           @dragend="getMarkerPosition"></google-marker>
           </google-map>
         </v-flex>
         <v-flex xs2 md2 class="text-center">
-          <v-btn class="bot-button-round" :disabled="!(phone.length===10)" @click="setPhoneValue" fab flat icon>
+          <v-btn class="bot-button-round" :disabled="!locationObj.address.length" @click="setMapValue" fab flat icon>
             <v-icon style="transform:rotate(-45deg) ">send</v-icon>
           </v-btn>
         </v-flex>
@@ -23,6 +24,7 @@
 <script>
 
   import EventBus from '../../plugins/eventBus'
+  import NetworkCommunicator from '../../plugins/NetworkResourceHandler'
 
   export default {
     name: 'GEOLocationWidget',
@@ -31,7 +33,12 @@
       return {
         center: { lat: 21.17, lng: 72.83 },
         markers: [{ position: { lat: 21.20, lng: 72.84 } }],
-        phone: '', showWidget: false,
+        locationObj: {
+          'lat': '',
+          'lng': '',
+          'address': '',
+          'type': 'geoloc',
+        }, showWidget: false,
       }
     },
     mounted () {
@@ -42,17 +49,28 @@
       })
     },
     methods: {
-      getMarkerPosition(map){
-        // console.log(this.$refs.map)
-        // console.log(this.$refs.marker)
-        // console.log(map)
-      },
-      setPhoneValue () {
+      getMarkerPosition (map) {
         let self = this
-        if (this.phone && this.phone.length === 10) {
-          $(this.$el).addClass('animated fadeOutDownBig')
+        let latLong = {
+          lat: map.latLng.lat(this.$refs.marker),
+          lng: map.latLng.lng(this.$refs.marker),
+        }
+        this.locationObj.lat = latLong.lat
+        this.locationObj.lng = latLong.lng
+        NetworkCommunicator(`GET`,
+          `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latLong.lat},${latLong.lng}&key=AIzaSyCgG2RHYJmuCsaY0di7Jz3lEIEbsVhhWfY`).
+          then(response => {
+            if (response.results.length) {
+              self.locationObj.address = response.results[0].formatted_address
+            }
+          })
+      },
+      setMapValue () {
+        let self = this
+        if (this.locationObj.address) {
+          $(this.$el).addClass('animated bounceOutDown')
           setTimeout(function () {
-            self.$parent.sendMessage(self.phone)
+            self.$parent.sendMessage(self.locationObj)
             self.$destroy()
             self.$el.parentNode.removeChild(self.$el)
           }, 500)

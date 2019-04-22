@@ -35,7 +35,7 @@
       setEmailValue () {
         let self = this
         if (this.userName.length) {
-          $(this.$el).addClass('animated slideOutDown') //bounceOutDown //fadeOutDownBig
+          $(this.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
           setTimeout(function () {
             self.$parent.sendMessage(self.userName)
             self.$destroy()

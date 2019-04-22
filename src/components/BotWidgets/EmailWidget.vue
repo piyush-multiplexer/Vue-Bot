@@ -34,7 +34,7 @@
     methods: {
       setEmailValue () {
         let self = this
-        $(this.$el).addClass('animated fadeOutDownBig')
+        $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
           self.$parent.sendMessage(self.email)
           self.$destroy()

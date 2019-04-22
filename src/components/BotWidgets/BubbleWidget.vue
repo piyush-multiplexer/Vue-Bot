@@ -2,7 +2,11 @@
   <div class="BubbleWidget">
     <div v-for="(bubble,index) in localBubbles" :key="index">
       <div class="bubble-card">
-        <div class="bubble-card-content" v-html="bubble.string"></div>
+        <div class="bubble-card-content" v-if="typeof bubble.string === 'string' || typeof bubble.string === 'number' "
+             v-html="bubble.string"></div>
+        <div class="bubble-card-content" v-else>
+          {{bubble.string.address}}
+        </div>
       </div>
       <div class="bubble-card" v-if="bubble.img_url">
         <div><img :src="thombarUrl+bubble.img_url"/></div>
@@ -46,7 +50,7 @@
         }
       },
       appendBubble (bubble, bubbleIndex) {
-        if (bubbleIndex === 0 || bubbleIndex+1 < this.bubbles.length) {
+        if (bubbleIndex === 0 || bubbleIndex + 1 < this.bubbles.length) {
           this.localBubbles.push(bubble)
         }
         if (bubbleIndex + 1 === this.bubbles.length) {

@@ -36,7 +36,7 @@
       setPhoneValue () {
         let self = this
         if (this.phone && this.phone.length === 10) {
-          $(this.$el).addClass('animated fadeOutDownBig')
+          $(this.$el).addClass('animated bounceOutDown')
           setTimeout(function () {
             self.$parent.sendMessage(self.phone)
             self.$destroy()

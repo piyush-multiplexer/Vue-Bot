@@ -28,7 +28,7 @@
     methods: {
       setDateValue () {
         let self = this
-        $(this.$el).addClass('animated fadeOutDownBig')
+        $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
           self.$parent.sendMessage(self.date)
           self.$destroy()

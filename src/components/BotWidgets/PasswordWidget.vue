@@ -35,7 +35,7 @@
       setPasswordValue () {
         let self = this
         if (this.password.length) {
-          $(this.$el).addClass('animated fadeOutDownBig')
+          $(this.$el).addClass('animated bounceOutDown')
           setTimeout(function () {
             self.$parent.sendMessage(self.password)
             self.$destroy()
