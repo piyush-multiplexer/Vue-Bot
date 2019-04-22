@@ -416,6 +416,11 @@ body {
   margin: 0 auto;
 }
 
+.widget-question {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
 @media only screen and (max-width: 767px) {
   .bot-search-filed {
     padding-bottom: 30px;
@@ -560,6 +565,11 @@ body {
 .widget-content {
   text-align: center;
   margin: 0 auto;
+}
+
+.widget-question {
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 @media only screen and (max-width: 767px) {
