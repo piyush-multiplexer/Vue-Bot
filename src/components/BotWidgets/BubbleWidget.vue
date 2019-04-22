@@ -50,9 +50,9 @@
         }
       },
       appendBubble (bubble, bubbleIndex) {
-        if (bubbleIndex === 0 || bubbleIndex + 1 < this.bubbles.length) {
-          this.localBubbles.push(bubble)
-        }
+        // if (bubbleIndex === 0 || bubbleIndex + 1 < this.bubbles.length) {
+        this.localBubbles.push(bubble)
+        // }
         if (bubbleIndex + 1 === this.bubbles.length) {
           this.startTyping = false
           EventBus.$emit('AFTER_BUBBLE', { type: 'text' })
