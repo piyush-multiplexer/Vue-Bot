@@ -16,6 +16,9 @@ npm run build
 
 # build for production and view the bundle analyzer report
 npm run build --report
+
+# compile sass
+sass --watch src/assets/scss/main.scss:static/assets/css/main.css
 ```
 
 Supported Inputs
