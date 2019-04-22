@@ -13,10 +13,13 @@ Vue.use(VueGoogleMaps, {
   load: {
     region: 'IN',
     language: 'en',
+    libraries: "places",
     key: 'AIzaSyCgG2RHYJmuCsaY0di7Jz3lEIEbsVhhWfY',
   },
   installComponents: false,
 })
+Vue.component('google-map', VueGoogleMaps.Map)
+Vue.component('google-marker', VueGoogleMaps.Marker)
 import 'animate.css/animate.min.css'
 import VueAnime from 'vue-animejs'
 

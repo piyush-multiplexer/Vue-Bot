@@ -1,6 +1,7 @@
 <template>
   <div class="DatePickerWidget">
     <div v-if="showWidget" class="animated slideInUp bot-animated-card">
+      <div class="widget-question"> {{widgetData.text[widgetData.text.length-1].string}}</div>
       <v-layout row wrap>
         <v-flex xs12>
           <v-date-picker header-color="#f6283c"
@@ -27,7 +28,7 @@
     methods: {
       setDateValue () {
         let self = this
-        $(this.$el).addClass('animated fadeOutDown')
+        $(this.$el).addClass('animated fadeOutDownBig')
         setTimeout(function () {
           self.$parent.sendMessage(self.date)
           self.$destroy()

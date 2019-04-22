@@ -1,6 +1,7 @@
 <template>
   <div class="UserNameWidget">
-    <div v-if="showWidget" class="animated slideInUp" @keyup.enter="restartBot">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="restartBot">
+      <div class="widget-question"> {{widgetData.text[widgetData.text.length-1].string}}</div>
       <v-layout row wrap>
         <v-flex xs12>
           <v-btn class="bot-button" @click="restartBot">

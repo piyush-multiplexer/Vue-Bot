@@ -2,10 +2,10 @@
   <div class="BubbleWidget">
     <div v-for="(bubble,index) in localBubbles" :key="index">
       <div class="bubble-card">
-        <div  class="bubble-card-content" v-html="bubble.string"></div>
+        <div class="bubble-card-content" v-html="bubble.string"></div>
       </div>
       <div class="bubble-card" v-if="bubble.img_url">
-      <div><img :src="thombarUrl+bubble.img_url"/></div>
+        <div><img :src="thombarUrl+bubble.img_url"/></div>
       </div>
     </div>
     <div class="bot-starttyping" v-if="startTyping">
@@ -24,7 +24,7 @@
       return {
         localBubbles: [],
         startTyping: true,
-        thombarUrl:'http://thumbor.avinashi.com/unsafe/250x300/smart/'
+        thombarUrl: 'http://thumbor.avinashi.com/unsafe/250x300/smart/',
       }
     },
     mounted () {
@@ -46,7 +46,9 @@
         }
       },
       appendBubble (bubble, bubbleIndex) {
-        this.localBubbles.push(bubble)
+        if (bubbleIndex === 0 || bubbleIndex+1 < this.bubbles.length) {
+          this.localBubbles.push(bubble)
+        }
         if (bubbleIndex + 1 === this.bubbles.length) {
           this.startTyping = false
           EventBus.$emit('AFTER_BUBBLE', { type: 'text' })

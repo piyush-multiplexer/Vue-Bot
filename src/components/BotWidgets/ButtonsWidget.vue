@@ -1,8 +1,10 @@
 <template>
   <div class="ButtonsWidget" style="text-align: -webkit-center;">
-      <div class="btn-group animated slideInUp bot-animated-card" v-if="showWidget">
+    <div class="btn-group animated slideInUp bot-animated-card" v-if="showWidget">
+      <div class="widget-question"> {{widgetData.text[widgetData.text.length-1].string}}</div>
       <template v-for="btn in widgetData.input.args.options">
-        <v-btn round class="bot-button-round m-b-10" @click="setButtonValue(btn)">{{btn.val}}<span v-html="btn.href"></span>
+        <v-btn round class="bot-button-round m-b-10" @click="setButtonValue(btn)">{{btn.val}}<span
+          v-html="btn.href"></span>
         </v-btn>
       </template>
     </div>
@@ -27,8 +29,8 @@
     methods: {
       setButtonValue (btn) {
         let self = this
-        // $(this.$el).addClass('animated fadeOutDown')
-        $(this.$el).addClass('animated fadeOutDown')
+        // $(this.$el).addClass('animated fadeOutDownBig')
+        $(this.$el).addClass('animated fadeOutDownBig')
         setTimeout(function () {
           Bot.rsp_gid = btn.rsp_gid
           self.$parent.sendMessage(btn.val)

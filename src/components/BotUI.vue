@@ -13,7 +13,7 @@
             <div v-else-if="message.input.name==='text'"
                  :style="botConfig.isHuman?'text-align: left':'text-align: center'">
               <div class="message-content-bot">
-                <bubble :bubbles="message.text"></bubble>
+                <bubble :bubbles="message.text" v-if="message.text.length!==1"></bubble>
               </div>
               <component :is="message.input.args.input_type" :widgetData="message"></component>
             </div>
@@ -92,6 +92,7 @@
       'file_upload': FileUploadWidget,
       'geo_location': GEOLocationWidget,
       'user_phone_number_10': PhoneWidget,
+      'user_phone_number': PhoneWidget,
       'user_password': PasswordWidget,
       'user_email': EmailWidget,
       'user_name': UserNameWidget,

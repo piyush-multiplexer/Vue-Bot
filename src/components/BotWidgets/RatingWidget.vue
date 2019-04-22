@@ -1,6 +1,7 @@
 <template>
   <div class="RatingWidget">
     <div v-if="showWidget" class="animated slideInUp bot-animated-card">
+      <div class="widget-question"> {{widgetData.text[widgetData.text.length-1].string}}</div>
       <v-rating v-model="rating" color="yellow darken-3" background-color="grey darken-1"
                 empty-icon="$vuetify.icons.ratingFull" half-increments hover x-large></v-rating>
       <v-btn class="bot-button" @click="setDateTimeValue">Submit</v-btn>
@@ -29,7 +30,7 @@
     methods: {
       setDateTimeValue () {
         let self = this
-        $(this.$el).addClass('animated fadeOutDown')
+        $(this.$el).addClass('animated fadeOutDownBig')
         setTimeout(function () {
           self.$parent.sendMessage(self.rating.toString())
           self.$destroy()
