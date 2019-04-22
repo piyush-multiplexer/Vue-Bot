@@ -1,9 +1,10 @@
 <template>
   <div class="PhoneWidget">
-    <div v-if="showWidget" class="animated slideInUp" @keyup.enter="setPhoneValue">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setPhoneValue">
+      <div class="widget-question"> {{widgetData.text[widgetData.text.length-1].string}}</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
-          <v-text-field required ref="phone" class="bot-text-field" outline v-model="phone"
+          <v-text-field required ref="phone" class="bot-text-field" outline v-model="phone" prepend-inner-icon="phone"
                         mask="##### #####"></v-text-field>
         </v-flex>
         <v-flex xs2 md2 class="text-center">
@@ -35,7 +36,7 @@
       setPhoneValue () {
         let self = this
         if (this.phone && this.phone.length === 10) {
-          $(this.$el).addClass('animated fadeOutDown')
+          $(this.$el).addClass('animated bounceOutDown')
           setTimeout(function () {
             self.$parent.sendMessage(self.phone)
             self.$destroy()

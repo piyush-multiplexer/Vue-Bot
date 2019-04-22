@@ -1,9 +1,10 @@
 <template>
   <div class="PasswordWidget">
     <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setPasswordValue">
+      <div class="widget-question"> {{widgetData.text[widgetData.text.length-1].string}}</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
-          <v-text-field required ref="password" class="bot-text-field" outline v-model="password"
+          <v-text-field required ref="password" prepend-inner-icon="vpn_key" class="bot-text-field" outline v-model="password"
                         type="password"></v-text-field>
         </v-flex>
         <v-flex xs2 md2 class="text-center">
@@ -34,7 +35,7 @@
       setPasswordValue () {
         let self = this
         if (this.password.length) {
-          $(this.$el).addClass('animated fadeOutDown')
+          $(this.$el).addClass('animated bounceOutDown')
           setTimeout(function () {
             self.$parent.sendMessage(self.password)
             self.$destroy()

@@ -2,6 +2,7 @@
   <div style="padding-bottom: 40px">
     <!--<div class="card-group" v-if="showWidget">-->
     <div class="CardSliderWidget animated slideInUp bot-animated-card" v-if="showWidget">
+      <div class="widget-question"> {{widgetData.text[widgetData.text.length-1].string}}</div>
       <v-layout>
         <v-flex class="single-card" v-for="(card,index) in widgetData.input.args.options" :key="index">
           <v-img class="single-card-image" @click="setCardValue(card)" :src="card.img_url" :alt="card.name"/>
@@ -52,7 +53,7 @@
     methods: {
       setCardValue (card) {
         let self = this
-        $(this.$el).addClass('animated fadeOutDown')
+        $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
           Bot.rsp_gid = card.rsp_gid
           self.$parent.sendMessage(card.val)
