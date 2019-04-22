@@ -1,8 +1,19 @@
 <template>
   <div class="FileUploadWidget">
     <div v-if="showWidget" class="animated slideInUp">
-      <input type="file" ref="file" id="file" name="file" accept="image/*">
-      <v-btn class="bot-button" :disabled="!uploadFileData.length" @click="uploadFile">Submit</v-btn>
+      <v-layout row wrap>
+        <v-flex xs10 md10>
+          <v-text-field label="Select File/Image" @click='pickFile' v-model='imageName'
+                        prepend-icon='attach_file'></v-text-field>
+          <input type="file" style="display: none" ref="file" id="file" name="file" @change="localUpload"
+          >
+        </v-flex>
+        <v-flex xs2 md2 class="text-center">
+          <v-btn class="bot-button-round" :disabled="!uploadFileData.length" @click="uploadFile" fab flat icon>
+            <v-icon style="transform:rotate(-45deg) ">send</v-icon>
+          </v-btn>
+        </v-flex>
+      </v-layout>
     </div>
   </div>
 </template>
@@ -16,7 +27,7 @@
   export default {
     name: 'FileUploadWidget',
     props: ['widgetData'],
-    data () {return { showWidget: false, uploadFileData: '' }},
+    data () {return { showWidget: false, imageName: '', uploadFileData: '' }},
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
@@ -24,6 +35,19 @@
       })
     },
     methods: {
+      pickFile () {
+        this.$refs.file.click()
+      },
+      localUpload (e) {
+        const files = e.target.files
+        if (files[0] !== undefined) {
+          this.imageName = files[0].name
+          this.uploadFileData = files[0].name
+        } else {
+          this.imageName = ''
+          this.uploadFileData = files[0].name
+        }
+      },
       async uploadFile () {
         let self = this
         let formData = new FormData()
