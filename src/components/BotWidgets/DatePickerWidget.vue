@@ -1,6 +1,6 @@
 <template>
   <div class="DatePickerWidget">
-    <div v-if="showWidget" class="animated slideInUp">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card">
       <v-layout row wrap>
         <v-flex xs12>
           <v-date-picker header-color="#f6283c"

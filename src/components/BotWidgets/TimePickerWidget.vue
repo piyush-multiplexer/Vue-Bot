@@ -1,6 +1,6 @@
 <template>
   <div class="TimePickerWidget">
-    <div v-if="showWidget" class="animated slideInUp">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card">
       <v-layout row wrap>
         <v-flex xs12>
           <v-time-picker header-color="#f6283c" @input="setTimeValue" v-model="time"></v-time-picker>

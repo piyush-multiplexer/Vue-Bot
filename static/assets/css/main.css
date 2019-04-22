@@ -36,7 +36,7 @@ body {
 }
 
 .primary--text {
-  color: #F6283C !important;
+  color: #000000 !important;
 }
 
 /* width */
@@ -363,6 +363,15 @@ body {
 }
 .bot-text-field .v-input__control .v-text-field__details {
   display: none;
+}
+
+.bot-animated-card {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #f5f5f5;
+  padding: 10px;
+  box-shadow: 0 0 4px #b3b3b3;
 }
 
 /* modules scss imported */
