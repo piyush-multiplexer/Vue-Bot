@@ -1,6 +1,6 @@
 <template>
   <div class="PasswordWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setPasswordValue">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="setPasswordValue">
       <div class="widget-question">Enter Password</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
@@ -29,6 +29,7 @@
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
         self.showWidget = true
+        setTimeout(function () { self.$refs.password.focus() }, 200)
       })
     },
     methods: {

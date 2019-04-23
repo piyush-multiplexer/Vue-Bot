@@ -1,13 +1,13 @@
 <template>
   <div class="FileUploadWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card"
+         @keyup.enter.once="uploadFile">
       <div class="widget-question">Upload File/Image</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
-          <v-text-field label="Select File/Image" @click.once='pickFile' v-model='imageName'
+          <v-text-field ref="uploadFile" label="Select File/Image" @click.native='pickFile' v-model='imageName'
                         prepend-icon='attach_file'></v-text-field>
-          <input type="file" style="display: none" ref="file" id="file" name="file" @change="localUpload"
-          >
+          <input type="file" style="display: none" ref="file" id="file" name="file" @change="localUpload">
         </v-flex>
         <v-flex xs2 md2 class="text-center">
           <v-btn class="bot-button-round" :disabled="!uploadFileData.length" @click.once="uploadFile" fab flat icon>
@@ -33,6 +33,7 @@
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
         self.showWidget = true
+        setTimeout(function () { self.$refs.uploadFile.focus() }, 200)
       })
     },
     methods: {
@@ -51,14 +52,15 @@
       },
       async uploadFile () {
         let self = this
-        let formData = new FormData()
-        formData.append('file[]', this.$refs.file.files[0])
-        console.log(formData)
-        let response = await NetworkCommunicator('POST',
-          `${Constants.uploadFileUrl}`, false, formData)
-        if (response.flag) {
-          self.uploadFileData = response.data.success[0]
-          self.setFile(response.data.success[0].url)
+        if (this.uploadFileData.length) {
+          let formData = new FormData()
+          formData.append('file[]', this.$refs.file.files[0])
+          let response = await NetworkCommunicator('POST',
+            `${Constants.uploadFileUrl}`, false, formData)
+          if (response.flag) {
+            self.uploadFileData = response.data.success[0]
+            self.setFile(response.data.success[0].url)
+          }
         }
       },
       setFile (fileUrl) {

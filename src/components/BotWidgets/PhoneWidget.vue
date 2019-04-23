@@ -1,6 +1,6 @@
 <template>
   <div class="PhoneWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setPhoneValue">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="setPhoneValue">
       <div class="widget-question">Enter Phone Number</div>
       <v-layout row wrap>
         <v-flex xs10 md10>

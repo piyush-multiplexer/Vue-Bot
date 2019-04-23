@@ -31,7 +31,7 @@
           </div>
 
           <!--          <template v-if="messages.length">-->
-          <!--            <div v-if="showInput" id=" user-input-container" @keyup.enter="sendMessage"-->
+          <!--            <div v-if="showInput" id=" user-input-container" @keyup.enter.once="sendMessage"-->
           <!--                 class="animated slideInUp bot-search-filed">-->
           <!--              <v-layout row wrap>-->
           <!--                <v-flex xs12>-->

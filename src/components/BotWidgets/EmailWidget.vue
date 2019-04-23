@@ -1,6 +1,6 @@
 <template>
   <div class="EmailWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="setEmailValue">
       <div class="widget-question">Enter Email</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
