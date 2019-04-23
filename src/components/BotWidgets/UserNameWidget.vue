@@ -1,6 +1,6 @@
 <template>
   <div class="UserNameWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setUserValue">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="setUserValue">
       <div class="widget-question">Enter Name</div>
       <v-layout row wrap>
         <v-flex xs10 md10>

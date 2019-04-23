@@ -6,14 +6,20 @@ import router from './router/index'
 import $ from 'jquery'
 import 'vuetify/dist/vuetify.min.css'
 import Vuetify from 'vuetify'
+import DatetimePicker from 'vuetify-datetime-picker'
+import 'vuetify-datetime-picker/src/stylus/main.styl'
+
+Vue.use(DatetimePicker)
 import Loader from './plugins/Loader'
+
 Vue.use(Loader)
 import * as VueGoogleMaps from 'vue2-google-maps'
+
 Vue.use(VueGoogleMaps, {
   load: {
     region: 'IN',
     language: 'en',
-    libraries: "places",
+    libraries: 'places',
     key: 'AIzaSyCgG2RHYJmuCsaY0di7Jz3lEIEbsVhhWfY',
   },
   installComponents: false,

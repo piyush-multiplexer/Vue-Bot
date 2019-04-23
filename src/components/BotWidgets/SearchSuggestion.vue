@@ -1,6 +1,6 @@
 <template>
   <div class="SearchSuggestion">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setSearchValue">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="setSearchValue">
       <div class="widget-question">Search & Select</div>
       <v-layout row wrap>
         <v-flex xs10 md10>

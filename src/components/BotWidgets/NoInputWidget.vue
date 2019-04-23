@@ -1,11 +1,8 @@
 <template>
   <div class="UserNameWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="+restartBot">
-      <div class="widget-question"
-           v-if="typeof widgetData.text[widgetData.text.length-1].string === 'string' || typeof widgetData.text[widgetData.text.length-1].string === 'number'"
-           v-html="widgetData.text[widgetData.text.length-1].string"></div>
-      <div class="widget-question" v-else>
-        {{widgetData.text[widgetData.text.length-1].string.address}}
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="+restartBot">
+      <div class="widget-question">
+        Finished
       </div>
       <v-layout row wrap>
         <v-flex xs12>
