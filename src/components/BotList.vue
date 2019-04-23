@@ -8,7 +8,7 @@
         </v-flex>
         <v-flex xs12 md5>
           <v-list class="text-center bot-list" dense>
-            <v-list-tile @click.once="gotoBot(bot)" v-for="(bot,index) in bots" :key="index">
+            <v-list-tile @click="gotoBot(bot)" v-for="(bot,index) in bots" :key="index">
               <v-list-tile-content>
                 <v-list-tile-title class="text-center">{{bot.convbot_title}}</v-list-tile-title>
               </v-list-tile-content>
