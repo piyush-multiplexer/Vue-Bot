@@ -4,7 +4,7 @@
       <div class="widget-question">Pick a Time</div>
       <v-layout row wrap>
         <v-flex xs12>
-          <v-time-picker header-color="#f6283c" @input="setTimeValue" v-model="time"></v-time-picker>
+          <v-time-picker header-color="#f6283c" @input.once="setTimeValue" v-model="time"></v-time-picker>
         </v-flex>
       </v-layout>
     </div>
