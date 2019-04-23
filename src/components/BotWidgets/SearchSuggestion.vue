@@ -1,7 +1,7 @@
 <template>
   <div class="SearchSuggestion">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setSearchValue">
-      <div class="widget-question"> {{widgetData.text[widgetData.text.length-1].string}}</div>
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="setSearchValue">
+      <div class="widget-question">Search & Select</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
           <v-autocomplete prepend-inner-icon="search"
@@ -9,7 +9,7 @@
                           v-model="state" :items="widgetData.input.args.options"></v-autocomplete>
         </v-flex>
         <v-flex xs2 md2 class="text-center">
-          <v-btn class="bot-button-round" @click="setSearchValue" fab flat icon>
+          <v-btn class="bot-button-round" @click.once="setSearchValue" fab flat icon>
             <v-icon style="transform:rotate(-45deg)">send</v-icon>
           </v-btn>
         </v-flex>

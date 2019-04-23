@@ -1,14 +1,14 @@
 <template>
   <div class="PasswordWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setPasswordValue">
-      <div class="widget-question"> {{widgetData.text[widgetData.text.length-1].string}}</div>
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="setPasswordValue">
+      <div class="widget-question">Enter Password</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
           <v-text-field required ref="password" prepend-inner-icon="vpn_key" class="bot-text-field" outline v-model="password"
                         type="password"></v-text-field>
         </v-flex>
         <v-flex xs2 md2 class="text-center">
-          <v-btn class="bot-button-round" @click="setPasswordValue" :disabled="!password.length" fab flat icon>
+          <v-btn class="bot-button-round" @click.once="setPasswordValue" :disabled="!password.length" fab flat icon>
             <v-icon style="transform:rotate(-45deg) ">send</v-icon>
           </v-btn>
         </v-flex>
@@ -29,6 +29,7 @@
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
         self.showWidget = true
+        setTimeout(function () { self.$refs.password.focus() }, 200)
       })
     },
     methods: {

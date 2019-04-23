@@ -1,21 +1,31 @@
 <template>
   <div class="CalendarWidget">
-    <div v-if="showWidget">
-      <div class="widget-question"> {{widgetData.text[widgetData.text.length-1].string}}</div>
-      <input type="datetime-local" v-model="datetime">
-      <button @click="setDateTimeValue">Submit</button>
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="setDateTimeValue">
+      <div class="widget-question"> Select Date & Time</div>
+      <v-layout row wrap>
+        <v-flex xs10 md10>
+          <v-datetime-picker label="Select Datetime" timePickerFormat="ampm" v-model="datetime"
+                             format="DD/MM/YYYY hh:mm:ss A">
+          </v-datetime-picker>
+        </v-flex>
+        <v-flex xs2 md2 class="text-center">
+          <v-btn class="bot-button-round" :disabled="!datetime" @click.once="setDateTimeValue" fab flat icon>
+            <v-icon style="transform:rotate(-45deg) ">send</v-icon>
+          </v-btn>
+        </v-flex>
+      </v-layout>
     </div>
   </div>
 </template>
 
 <script>
-
   import EventBus from '../../plugins/eventBus'
+  import moment from 'moment'
 
   export default {
     name: 'CalendarWidget',
     props: ['widgetData'],
-    data () {return { datetime: '', showWidget: false }},
+    data () {return { datetime: new Date(), showWidget: false }},
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
@@ -24,8 +34,7 @@
     },
     methods: {
       setDateTimeValue () {
-        console.log(this.datetime)
-        this.$parent.sendMessage(this.datetime)
+        this.$parent.sendMessage(moment(this.datetime).format('DD/MM/YYYY hh:mm:ss A'))
         this.$destroy()
         this.$el.parentNode.removeChild(this.$el)
       },

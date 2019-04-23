@@ -1,6 +1,6 @@
 <template>
   <div class="TextWidget">
-    <div class="widget-question"> {{widgetData.text[widgetData.text.length-1].string}}</div>
+<!--    <div class="widget-question">Enter Te</div>-->
     <bubble :bubbles="widgetData.text"></bubble>
   </div>
 </template>
