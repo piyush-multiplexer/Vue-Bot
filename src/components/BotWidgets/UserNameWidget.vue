@@ -1,13 +1,13 @@
 <template>
   <div class="UserNameWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setEmailValue">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setUserValue">
       <div class="widget-question">Enter Name</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
           <v-text-field required ref="username" class="bot-text-field" outline v-model="userName"></v-text-field>
         </v-flex>
         <v-flex xs2 md2 class="text-center">
-          <v-btn class="bot-button-round" @click="setEmailValue" :disabled="!userName.length" fab flat icon>
+          <v-btn class="bot-button-round" @click.once="setUserValue" :disabled="!userName.length" fab flat icon>
             <v-icon style="transform:rotate(-45deg) ">send</v-icon>
           </v-btn>
         </v-flex>
@@ -32,7 +32,7 @@
       })
     },
     methods: {
-      setEmailValue () {
+      setUserValue () {
         let self = this
         if (this.userName.length) {
           $(this.$el).addClass('animated bounceOutDown') // //fadeOutDownBig

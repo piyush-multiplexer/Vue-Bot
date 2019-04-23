@@ -12,7 +12,7 @@
           </google-map>
         </v-flex>
         <v-flex xs2 md2 class="text-center">
-          <v-btn class="bot-button-round" :disabled="!locationObj.address.length" @click="setMapValue" fab flat icon>
+          <v-btn class="bot-button-round" :disabled="!locationObj.address.length" @click.once="setMapValue" fab flat icon>
             <v-icon style="transform:rotate(-45deg) ">send</v-icon>
           </v-btn>
         </v-flex>

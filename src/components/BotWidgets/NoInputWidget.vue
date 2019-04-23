@@ -9,7 +9,7 @@
       </div>
       <v-layout row wrap>
         <v-flex xs12>
-          <v-btn class="bot-button" @click="restartBot">
+          <v-btn class="bot-button" @click.once="restartBot">
             Restart
           </v-btn>
         </v-flex>

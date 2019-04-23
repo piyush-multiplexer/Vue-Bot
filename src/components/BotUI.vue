@@ -41,7 +41,7 @@
           <!--                                    type="text"></v-text-field>-->
           <!--                    </v-flex>-->
           <!--                    <v-flex xs2 md2>-->
-          <!--                      <v-btn class="bot-button-round" @click="sendMessage" :disabled="conversationEnd" fab flat icon>-->
+          <!--                      <v-btn class="bot-button-round" @click.once="sendMessage" :disabled="conversationEnd" fab flat icon>-->
           <!--                        <v-icon style="transform:rotate(-45deg) ">send</v-icon>-->
           <!--                        &lt;!&ndash;                      Send&ndash;&gt;-->
           <!--                      </v-btn>-->

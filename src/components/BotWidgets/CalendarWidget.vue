@@ -3,7 +3,7 @@
     <div v-if="showWidget">
       <div class="widget-question"> Select Date & Time</div>
       <input type="datetime-local" v-model="datetime">
-      <button @click="setDateTimeValue">Submit</button>
+      <button @click.once="setDateTimeValue">Submit</button>
     </div>
   </div>
 </template>

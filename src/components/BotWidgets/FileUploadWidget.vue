@@ -4,13 +4,13 @@
       <div class="widget-question">Upload File/Image</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
-          <v-text-field label="Select File/Image" @click='pickFile' v-model='imageName'
+          <v-text-field label="Select File/Image" @click.once='pickFile' v-model='imageName'
                         prepend-icon='attach_file'></v-text-field>
           <input type="file" style="display: none" ref="file" id="file" name="file" @change="localUpload"
           >
         </v-flex>
         <v-flex xs2 md2 class="text-center">
-          <v-btn class="bot-button-round" :disabled="!uploadFileData.length" @click="uploadFile" fab flat icon>
+          <v-btn class="bot-button-round" :disabled="!uploadFileData.length" @click.once="uploadFile" fab flat icon>
             <v-icon style="transform:rotate(-45deg) ">send</v-icon>
           </v-btn>
         </v-flex>

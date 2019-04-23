@@ -5,7 +5,7 @@
       <div class="widget-question">Select a Card</div>
       <v-layout>
         <v-flex class="single-card" v-for="(card,index) in widgetData.input.args.options" :key="index">
-          <v-img class="single-card-image" @click="setCardValue(card)" :src="card.img_url" :alt="card.name"/>
+          <v-img class="single-card-image" @click.once="setCardValue(card)" :src="card.img_url" :alt="card.name"/>
           <v-card-text class="single-card-content" v-html="card.footer_text"></v-card-text>
         </v-flex>
       </v-layout>
