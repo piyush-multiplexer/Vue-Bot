@@ -4,7 +4,7 @@
       <div class="widget-question">Enter Email</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
-          <v-text-field class="bot-text-field" outline prepend-inner-icon="email"
+          <v-text-field ref="email" class="bot-text-field" outline prepend-inner-icon="email"
                         v-model="email"></v-text-field>
         </v-flex>
         <v-flex xs2 md2 class="text-center">
@@ -29,6 +29,7 @@
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
         self.showWidget = true
+        setTimeout(function () { self.$refs.email.focus() }, 200)
       })
     },
     methods: {

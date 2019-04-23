@@ -96,6 +96,7 @@
       'user_password': PasswordWidget,
       'user_email': EmailWidget,
       'user_name': UserNameWidget,
+      'user_fullname': UserNameWidget,
       'no_input': NoInputWidget,
     },
     data () {
