@@ -1,6 +1,7 @@
 .bot-button-round{
   box-shadow: none !important;
-  @extend %background-color;
+  //@extend %background-color;
+  background-color: #fe6056 !important;
   color: $white !important;
   margin: 0px 0;
   //height: 50px;
@@ -9,7 +10,8 @@
 
 .bot-button{
   box-shadow: none !important;
-  @extend %background-color;
+  //@extend %background-color;
+  background-color: #fe6056 !important;
   color: $white !important;
   margin: 0;
   height: 50px;
