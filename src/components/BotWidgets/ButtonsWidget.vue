@@ -1,7 +1,7 @@
 <template>
   <div class="ButtonsWidget" style="text-align: -webkit-center;">
     <div class="btn-group animated slideInUp bot-animated-card" v-if="showWidget">
-      <div class="widget-question"> {{widgetData.text[widgetData.text.length-1].string}}</div>
+      <div class="widget-question">Select from Options</div>
       <template v-for="btn in widgetData.input.args.options">
         <v-btn round class="bot-button-round m-b-10" @click="setButtonValue(btn)">{{btn.val}}<span
           v-html="btn.href"></span>

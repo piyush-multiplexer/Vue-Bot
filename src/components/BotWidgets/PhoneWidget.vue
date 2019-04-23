@@ -1,7 +1,7 @@
 <template>
   <div class="PhoneWidget">
     <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setPhoneValue">
-      <div class="widget-question"> {{widgetData.text[widgetData.text.length-1].string}}</div>
+      <div class="widget-question">Enter Phone Number</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
           <v-text-field required ref="phone" class="bot-text-field" outline v-model="phone" prepend-inner-icon="phone"

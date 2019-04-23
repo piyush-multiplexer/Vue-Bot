@@ -1,7 +1,7 @@
 <template>
   <div class="FileUploadWidget">
     <div v-if="showWidget" class="animated slideInUp bot-animated-card">
-      <div class="widget-question"> {{widgetData.text[widgetData.text.length-1].string}}</div>
+      <div class="widget-question">Upload File/Image</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
           <v-text-field label="Select File/Image" @click='pickFile' v-model='imageName'

@@ -1,7 +1,7 @@
 <template>
   <div class="GEOLocationWidget">
     <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setPhoneValue">
-      <div class="widget-question"> {{widgetData.text[widgetData.text.length-1].string}}</div>
+      <div class="widget-question">Drag & Drop Pin to Select Location</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
           <google-map ref="map" :center="center" :zoom="10" style="width: 100%; height: 500px">

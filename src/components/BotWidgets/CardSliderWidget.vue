@@ -2,7 +2,7 @@
   <div style="padding-bottom: 40px">
     <!--<div class="card-group" v-if="showWidget">-->
     <div class="CardSliderWidget animated slideInUp bot-animated-card" v-if="showWidget">
-      <div class="widget-question"> {{widgetData.text[widgetData.text.length-1].string}}</div>
+      <div class="widget-question">Select a Card</div>
       <v-layout>
         <v-flex class="single-card" v-for="(card,index) in widgetData.input.args.options" :key="index">
           <v-img class="single-card-image" @click="setCardValue(card)" :src="card.img_url" :alt="card.name"/>
