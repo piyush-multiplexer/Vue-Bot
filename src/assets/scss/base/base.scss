@@ -7,13 +7,13 @@ html {
 
 body {
   overflow-x: hidden !important;
-  background-color: #f9f9f9 !important;
+  background-color: #b8d8d8 !important;
   font-family: Roboto,sans-serif;
 }
 
 #app {
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: #b8d8d8;
   height: 100vh;
   font-family: Roboto,sans-serif;
 }
@@ -21,6 +21,9 @@ body {
 .primary--text {
   color: #000000 !important;
 }
+
+
+
 
 *{
   -webkit-overflow-scrolling: touch;
@@ -46,7 +49,6 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #d4d4d4;
 }
-
 
 .bot-home{
   height: 100%;
