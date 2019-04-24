@@ -3,7 +3,7 @@
     <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="setPhoneValue">
       <div class="widget-question">Drag & Drop Pin to Select Location</div>
       <v-layout row wrap>
-        <v-flex xs10 md10>
+        <v-flex xs12>
           <google-map ref="map" :center="center" :zoom="10" style="width: 100%; height: 500px" @click="changeMarker">
             <google-marker ref="marker" v-for="(marker,index) in markers" :key="index" :position="marker.position"
                            :clickable="true"
@@ -11,8 +11,14 @@
                            @dragend="getMarkerPosition"></google-marker>
           </google-map>
         </v-flex>
+        <v-flex xs10 md10 class="text-center">
+          <div>
+            {{locationObj.address}}
+          </div>
+        </v-flex>
         <v-flex xs2 md2 class="text-center">
-          <v-btn class="bot-button-round" :disabled="!locationObj.address.length" @click.once="setMapValue" fab flat
+          <v-btn class="bot-button-round" :disabled="!locationObj.address.length"
+                 @click.once="setMapValue" fab flat
                  icon>
             <v-icon style="transform:rotate(-45deg) ">send</v-icon>
           </v-btn>
@@ -47,9 +53,8 @@
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
-        self.detectLocation()
         self.showWidget = true
-        setTimeout(function () { self.$refs.phone.focus() }, 200)
+        self.detectLocation()
       })
     },
     methods: {
@@ -61,10 +66,8 @@
             lat: position.coords.latitude,
             lng: position.coords.longitude,
           }
-          self.locationObj = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          }
+          self.locationObj.lat = position.coords.latitude
+          self.locationObj.lng = position.coords.longitude
           self.markers = [{ position: self.center }]
           self.$forceUpdate()
           self.getLocationFromGoogle()
