@@ -34,7 +34,6 @@
       setTimeValue () {
         let self = this
         $(this.$el).addClass('animated bounceOutDown')
-        debugger
         setTimeout(function () {
           self.$parent.sendMessage(moment(self.time,'HH:mm').format('hh:mm A'))
           self.$destroy()

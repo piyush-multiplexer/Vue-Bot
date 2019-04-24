@@ -34,7 +34,7 @@
     },
     methods: {
       setDateTimeValue () {
-        this.$parent.sendMessage(moment(this.datetime).format('DD/MM/YYYY hh:mm:ss A'))
+        this.$parent.sendMessage(moment(this.datetime).format('LLLL'))
         this.$destroy()
         this.$el.parentNode.removeChild(this.$el)
       },
