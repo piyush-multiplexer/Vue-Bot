@@ -4,7 +4,7 @@
       <div class="widget-question">Drag & Drop Pin to Select Location</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
-          <google-map ref="map" :center="center" :zoom="10" style="width: 100%; height: 500px" @click="test">
+          <google-map ref="map" :center="center" :zoom="10" style="width: 100%; height: 500px" @click="changeMarker">
             <google-marker ref="marker" v-for="(marker,index) in markers" :key="index" :position="marker.position"
                            :clickable="true"
                            :draggable="true" @click="center=marker.position"
@@ -32,8 +32,10 @@
     props: ['widgetData'],
     data () {
       return {
+        // center: {},
         center: { lat: 21.17, lng: 72.83 },
-        markers: [{ position: { lat: 21.20, lng: 72.84 } }],
+        // markers: [{ position: { lat: 21.20, lng: 72.84 } }],
+        markers: [],
         locationObj: {
           'lat': '',
           'lng': '',
@@ -45,12 +47,34 @@
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
+        self.detectLocation()
         self.showWidget = true
         setTimeout(function () { self.$refs.phone.focus() }, 200)
       })
     },
     methods: {
-      test (map) {
+      detectLocation () {
+        let self = this
+
+        function geoSuccess (position) {
+          self.center = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          }
+          self.locationObj = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          }
+          self.markers = [{ position: self.center }]
+          self.$forceUpdate()
+          self.getLocationFromGoogle()
+        }
+
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(geoSuccess)
+        }
+      },
+      changeMarker (map) {
         let self = this
         this.center = {
           lat: map.latLng.lat(this.$refs.map),
