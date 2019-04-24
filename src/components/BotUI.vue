@@ -13,7 +13,7 @@
             <div v-else-if="message.input.name==='text'"
                  :style="botConfig.isHuman?'text-align: left':'text-align: center'">
               <div class="message-content-bot">
-                <bubble :bubbles="message.text" v-if="message.text.length!==1"></bubble>
+                <bubble :bubbles="message.text" ></bubble>
               </div>
               <component :is="message.input.args.input_type" :widgetData="message"></component>
             </div>

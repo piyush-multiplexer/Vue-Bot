@@ -1,6 +1,6 @@
 <template>
   <div class="EmailWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="setEmailValue">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.prevent="setEmailValue">
       <div class="widget-question">Enter Email</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
@@ -8,7 +8,8 @@
                         v-model="email"></v-text-field>
         </v-flex>
         <v-flex xs2 md2 class="text-center">
-          <v-btn class="bot-button-round" @click.once="setEmailValue" fab flat icon>
+          <v-btn class="bot-button-round" @click.once="setEmailValue" fab flat icon
+                 :disabled="!emailPattern.test(email)">
             <v-icon style="transform:rotate(-45deg) ">send</v-icon>
           </v-btn>
         </v-flex>
@@ -24,7 +25,12 @@
   export default {
     name: 'EmailWidget',
     props: ['widgetData'],
-    data () {return { email: '', showWidget: false }},
+    data () {
+      return {
+        email: '', showWidget: false,
+        emailPattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      }
+    },
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
@@ -35,12 +41,14 @@
     methods: {
       setEmailValue () {
         let self = this
-        $(this.$el).addClass('animated bounceOutDown')
-        setTimeout(function () {
-          self.$parent.sendMessage(self.email)
-          self.$destroy()
-          self.$el.parentNode.removeChild(self.$el)
-        }, 500)
+        if (this.emailPattern.test(this.email)) {
+          $(this.$el).addClass('animated bounceOutDown')
+          setTimeout(function () {
+            self.$parent.sendMessage(self.email)
+            self.$destroy()
+            self.$el.parentNode.removeChild(self.$el)
+          }, 500)
+        }
       },
     },
   }
