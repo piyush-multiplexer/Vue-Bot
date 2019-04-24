@@ -1,6 +1,6 @@
 <template>
   <div class="UserNameWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="setUserValue">
+    <div v-show="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setUserValue">
       <div class="widget-question">Enter Name</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
@@ -23,7 +23,7 @@
   export default {
     name: 'UserNameWidget',
     props: ['widgetData'],
-    data () {return { userName: '', showWidget: false }},
+    data () {return { userName: '', showWidget: false, clicked: false }},
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
@@ -34,7 +34,8 @@
     methods: {
       setUserValue () {
         let self = this
-        if (this.userName.length) {
+        if (this.userName.length && !this.clicked) {
+          this.clicked = true
           $(this.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
           setTimeout(function () {
             self.$parent.sendMessage(self.userName)

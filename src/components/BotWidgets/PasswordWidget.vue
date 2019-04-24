@@ -1,10 +1,11 @@
 <template>
   <div class="PasswordWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="setPasswordValue">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setPasswordValue">
       <div class="widget-question">Enter Password</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
-          <v-text-field required ref="password" prepend-inner-icon="vpn_key" class="bot-text-field" outline v-model="password"
+          <v-text-field required ref="password" prepend-inner-icon="vpn_key" class="bot-text-field" outline
+                        v-model="password"
                         type="password"></v-text-field>
         </v-flex>
         <v-flex xs2 md2 class="text-center">
@@ -24,7 +25,7 @@
   export default {
     name: 'PasswordWidget',
     props: ['widgetData'],
-    data () {return { password: '', showWidget: false }},
+    data () {return { password: '', showWidget: false, clicked: false }},
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
@@ -35,7 +36,8 @@
     methods: {
       setPasswordValue () {
         let self = this
-        if (this.password.length) {
+        if (this.password.length && !this.clicked) {
+          this.clicked = true
           $(this.$el).addClass('animated bounceOutDown')
           setTimeout(function () {
             self.$parent.sendMessage(self.password)

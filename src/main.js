@@ -8,7 +8,9 @@ import 'vuetify/dist/vuetify.min.css'
 import Vuetify from 'vuetify'
 import DatetimePicker from 'vuetify-datetime-picker'
 import 'vuetify-datetime-picker/src/stylus/main.styl'
+import _ from 'lodash'
 
+window._ = _
 Vue.use(DatetimePicker)
 import Loader from './plugins/Loader'
 

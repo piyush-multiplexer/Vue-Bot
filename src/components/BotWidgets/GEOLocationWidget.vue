@@ -1,6 +1,6 @@
 <template>
   <div class="GEOLocationWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="setPhoneValue">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setMapValue">
       <div class="widget-question">Drag & Drop Pin to Select Location</div>
       <v-layout row wrap>
         <v-flex xs12>
@@ -48,6 +48,7 @@
           'address': '',
           'type': 'geoloc',
         }, showWidget: false,
+        clicked: false,
       }
     },
     mounted () {
@@ -108,7 +109,8 @@
       },
       setMapValue () {
         let self = this
-        if (this.locationObj.address) {
+        if (this.locationObj.address && !this.clicked) {
+          this.clicked = true
           $(this.$el).addClass('animated bounceOutDown')
           setTimeout(function () {
             self.$parent.sendMessage(self.locationObj)

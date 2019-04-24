@@ -1,6 +1,6 @@
 <template>
   <div class="SearchSuggestion">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="setSearchValue">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setSearchValue">
       <div class="widget-question">Search & Select</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
@@ -34,17 +34,20 @@
       })
     },
     data () {
-      return { showWidget: false, state: '' }
+      return { showWidget: false, state: '', clicked: false }
     },
     methods: {
       setSearchValue () {
         let self = this
-        $(this.$el).addClass('animated bounceOutDown')
-        setTimeout(function () {
-          self.$parent.sendMessage(self.state)
-          self.$destroy()
-          self.$el.parentNode.removeChild(self.$el)
-        }, 500)
+        if (this.state && !this.clicked) {
+          this.clicked = true
+          $(this.$el).addClass('animated bounceOutDown')
+          setTimeout(function () {
+            self.$parent.sendMessage(self.state)
+            self.$destroy()
+            self.$el.parentNode.removeChild(self.$el)
+          }, 500)
+        }
       },
     },
   }

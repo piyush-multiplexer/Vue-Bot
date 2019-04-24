@@ -1,6 +1,6 @@
 <template>
   <div class="EmailWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.prevent="setEmailValue">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setEmailValue">
       <div class="widget-question">Enter Email</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
@@ -28,6 +28,7 @@
     data () {
       return {
         email: '', showWidget: false,
+        clicked: false,
         emailPattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       }
     },
@@ -41,7 +42,8 @@
     methods: {
       setEmailValue () {
         let self = this
-        if (this.emailPattern.test(this.email)) {
+        if (this.emailPattern.test(this.email) && !this.clicked) {
+          this.clicked = true
           $(this.$el).addClass('animated bounceOutDown')
           setTimeout(function () {
             self.$parent.sendMessage(self.email)

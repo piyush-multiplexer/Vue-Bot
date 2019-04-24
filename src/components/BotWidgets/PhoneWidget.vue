@@ -1,6 +1,6 @@
 <template>
   <div class="PhoneWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="setPhoneValue">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setPhoneValue">
       <div class="widget-question">Enter Phone Number</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
@@ -24,7 +24,7 @@
   export default {
     name: 'PhoneWidget',
     props: ['widgetData'],
-    data () {return { phone: '', showWidget: false }},
+    data () {return { phone: '', showWidget: false, clicked: false }},
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
@@ -35,7 +35,8 @@
     methods: {
       setPhoneValue () {
         let self = this
-        if (this.phone && this.phone.length === 10) {
+        if (this.phone && this.phone.length === 10 && !this.clicked) {
+          this.clicked = true
           $(this.$el).addClass('animated bounceOutDown')
           setTimeout(function () {
             self.$parent.sendMessage(self.phone)

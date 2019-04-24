@@ -4,7 +4,7 @@
       <div class="widget-question">Pick a Time</div>
       <v-layout row wrap>
         <v-flex xs12>
-          <v-time-picker header-color="#f6283c"  v-model="time"></v-time-picker>
+          <v-time-picker header-color="#f6283c" v-model="time"></v-time-picker>
         </v-flex>
         <v-flex xs12>
           <v-spacer></v-spacer>
@@ -35,7 +35,7 @@
         let self = this
         $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
-          self.$parent.sendMessage(moment(self.time,'HH:mm').format('hh:mm A'))
+          self.$parent.sendMessage(moment(self.time, 'HH:mm').format('hh:mm A'))
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)
