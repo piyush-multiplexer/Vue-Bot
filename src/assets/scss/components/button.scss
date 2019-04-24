@@ -1,18 +1,15 @@
 .bot-button-round{
   box-shadow: none !important;
-  //@extend %background-color;
-  background-color: #fe6056 !important;
-  color: $white !important;
+  background-color: $bot-theme-button !important;
+  color: $bot-theme-bubble-bot-user !important;
   margin: 0px 0;
-  //height: 50px;
   border-radius: 50px;
 }
 
 .bot-button{
   box-shadow: none !important;
-  //@extend %background-color;
-  background-color: #fe6056 !important;
-  color: $white !important;
+  background-color: $bot-theme-button !important;
+  color: $bot-theme-bubble-bot-user !important;
   margin: 0;
   height: 50px;
   padding: 0 20px;
