@@ -10,10 +10,9 @@
   direction: rtl;
   top: calc(50vh - 45vh);
   height: calc(100vh - 10vh);
-  background-color: #7a9e9f;
-  box-shadow: 0 0 7px $card-box-shadow;
+  background-color: $bot-theme-sub-body;
   border-radius: 10px;
-  padding: 10px 0;
+  padding: 0 0 10px 0;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
@@ -59,10 +58,10 @@
   text-align: center;
   padding-bottom: 10px;
   padding-top: 10px;
-  color: $white;
-  @extend %background-second-color;
+  color: $bot-theme-bubble-bot-user;
   border-radius: 22px;
   margin-bottom: 10px;
+  font-size: 16px;
 }
 
 
@@ -98,10 +97,9 @@
     transform: rotate(180deg);
     direction: rtl;
     height: calc(100vh - 0vh);
-    background-color: $white;
-    box-shadow: 0 0 7px $card-box-shadow;
+    background-color: $bot-theme-sub-body;
     border-radius: 0px;
-    padding: 40px 10px 10px 10px;
+    padding: 0 0 10px 0;
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;

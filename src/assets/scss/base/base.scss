@@ -7,13 +7,13 @@ html {
 
 body {
   overflow-x: hidden !important;
-  background-color: #b8d8d8 !important;
+  background-color: $bot-theme-body !important;
   font-family: Roboto,sans-serif;
 }
 
 #app {
   text-align: center;
-  background-color: #b8d8d8;
+  background-color: $bot-theme-body;
   height: 100vh;
   font-family: Roboto,sans-serif;
 }

@@ -14,8 +14,8 @@
   margin: 6px 0;
   border-radius: 15px;
   border-top-left-radius: 0;
-  background-color: $bubble-card-background-color;
-  color: #424242;
+  background-color: $bot-theme-bubble-bot-bg;
+  color: $white;
 }
 
 .bubble-card-media {
@@ -33,9 +33,8 @@
       margin: 6px 0;
       border-radius: 15px;
       border-top-left-radius: 0;
-      //background-color: $chat-background-color-left;
-      background-color: #eef5db;
-      color: $text-color;
+      background-color: $bot-theme-bubble-bot-bg;
+      color: $white;
     }
   }
 }
@@ -49,15 +48,7 @@
       margin: 6px 0;
       border-radius: 15px;
       border-top-right-radius: 0;
-      background-color: #fe5f55;
-      /*background: rgba(254,49,114,1);
-      background: -moz-linear-gradient(left, rgba(254,49,114,1) 0%, rgba(246,40,60,1) 100%);
-      background: -webkit-gradient(left top, right top, color-stop(0%, rgba(254,49,114,1)), color-stop(100%, rgba(246,40,60,1)));
-      background: -webkit-linear-gradient(left, rgba(254,49,114,1) 0%, rgba(246,40,60,1) 100%);
-      background: -o-linear-gradient(left, rgba(254,49,114,1) 0%, rgba(246,40,60,1) 100%);
-      background: -ms-linear-gradient(left, rgba(254,49,114,1) 0%, rgba(246,40,60,1) 100%);
-      background: linear-gradient(to right, rgba(254,49,114,1) 0%, rgba(246,40,60,1) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe3172', endColorstr='#f6283c', GradientType=1 );*/
+      background-color: $bot-theme-bubble-bot-user;
       color: $white;
     }
   }

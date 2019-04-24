@@ -1,15 +1,4 @@
 /* Variables scss imported */
-.widget-question {
-  background: #247ba0;
-  background: -moz-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #247ba0), color-stop(100%, #70c1b4));
-  background: -webkit-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -o-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -ms-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: linear-gradient(to right, #247ba0 0%, #70c1b4 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#247ba0", endColorstr="#70c1b4", GradientType=1 );
-}
-
 /* Base scss imported */
 html {
   box-sizing: border-box;
@@ -20,13 +9,13 @@ html {
 
 body {
   overflow-x: hidden !important;
-  background-color: #b8d8d8 !important;
+  background-color: #E0FBFC !important;
   font-family: Roboto, sans-serif;
 }
 
 #app {
   text-align: center;
-  background-color: #b8d8d8;
+  background-color: #E0FBFC;
   height: 100vh;
   font-family: Roboto, sans-serif;
 }
@@ -340,16 +329,16 @@ body {
 /* Components scss imported */
 .bot-button-round {
   box-shadow: none !important;
-  background-color: #fe6056 !important;
-  color: #ffffff !important;
+  background-color: #e0fbfc !important;
+  color: #253237 !important;
   margin: 0px 0;
   border-radius: 50px;
 }
 
 .bot-button {
   box-shadow: none !important;
-  background-color: #fe6056 !important;
-  color: #ffffff !important;
+  background-color: #e0fbfc !important;
+  color: #253237 !important;
   margin: 0;
   height: 50px;
   padding: 0 20px;
@@ -357,10 +346,13 @@ body {
 }
 
 .bot-text-field .v-input__control .v-input__slot {
+  border-color: transparent !important;
+  background-color: rgba(157, 180, 192, 0.5) !important;
   border-radius: 50px;
   margin-bottom: 0;
 }
 .bot-text-field .v-input__control .v-input__slot .v-text-field__slot input {
+  color: #5C6B73;
   margin-top: 10px;
 }
 .bot-text-field .v-input__control .v-text-field__details {
@@ -370,9 +362,9 @@ body {
 .bot-animated-card {
   width: 100%;
   bottom: 0;
-  background-color: #e2fbf4;
+  background-color: #c2dfe3;
   padding: 10px;
-  box-shadow: 0 0 14px #2e3130;
+  box-shadow: 0 3px 17px #5C6B73;
 }
 
 /* modules scss imported */
@@ -381,10 +373,9 @@ body {
   direction: rtl;
   top: calc(50vh - 45vh);
   height: calc(100vh - 10vh);
-  background-color: #7a9e9f;
-  box-shadow: 0 0 7px #dedede;
+  background-color: #9DB4C0;
   border-radius: 10px;
-  padding: 10px 0;
+  padding: 0 0 10px 0;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
@@ -421,9 +412,10 @@ body {
   text-align: center;
   padding-bottom: 10px;
   padding-top: 10px;
-  color: #ffffff;
+  color: #253237;
   border-radius: 22px;
   margin-bottom: 10px;
+  font-size: 16px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -435,10 +427,9 @@ body {
     transform: rotate(180deg);
     direction: rtl;
     height: calc(100vh - 0vh);
-    background-color: #ffffff;
-    box-shadow: 0 0 7px #dedede;
+    background-color: #9DB4C0;
     border-radius: 0px;
-    padding: 40px 10px 10px 10px;
+    padding: 0 0 10px 0;
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
@@ -458,24 +449,12 @@ body {
   }
 }
 .bot-list .v-list__tile .v-list__tile__content .v-list__tile__title {
-  color: #286efa;
   font-size: 16px;
-}
-
-.widget-question {
-  background: #247ba0;
-  background: -moz-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #247ba0), color-stop(100%, #70c1b4));
-  background: -webkit-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -o-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -ms-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: linear-gradient(to right, #247ba0 0%, #70c1b4 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#247ba0", endColorstr="#70c1b4", GradientType=1 );
 }
 
 .bot-starttyping {
   width: 52px;
-  background-color: #eef5db;
+  background-color: #5C6B73;
   padding: 16px 10px;
   border-radius: 7px;
 }
@@ -491,44 +470,44 @@ body {
 
 @-webkit-keyframes line {
   0% {
-    background-color: black;
-    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
   }
   25% {
-    background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 12px 0px 0px 0px black, 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px red, 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
   }
   75% {
-    background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px black;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px white;
   }
 }
 @-moz-keyframes line {
   0% {
-    background-color: black;
-    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
   }
   25% {
-    background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 12px 0px 0px 0px black, 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px white, 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
   }
   75% {
-    background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px black;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px white;
   }
 }
 @keyframes line {
   0% {
-    background-color: black;
-    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
   }
   25% {
-    background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 12px 0px 0px 0px black, 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px white, 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
   }
   75% {
-    background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px black;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px white;
   }
 }
 #bot-container {
@@ -536,10 +515,9 @@ body {
   direction: rtl;
   top: calc(50vh - 45vh);
   height: calc(100vh - 10vh);
-  background-color: #7a9e9f;
-  box-shadow: 0 0 7px #dedede;
+  background-color: #9DB4C0;
   border-radius: 10px;
-  padding: 10px 0;
+  padding: 0 0 10px 0;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
@@ -576,9 +554,10 @@ body {
   text-align: center;
   padding-bottom: 10px;
   padding-top: 10px;
-  color: #ffffff;
+  color: #253237;
   border-radius: 22px;
   margin-bottom: 10px;
+  font-size: 16px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -590,10 +569,9 @@ body {
     transform: rotate(180deg);
     direction: rtl;
     height: calc(100vh - 0vh);
-    background-color: #ffffff;
-    box-shadow: 0 0 7px #dedede;
+    background-color: #9DB4C0;
     border-radius: 0px;
-    padding: 40px 10px 10px 10px;
+    padding: 0 0 10px 0;
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
@@ -612,17 +590,6 @@ body {
     padding-bottom: 30px;
   }
 }
-.widget-question {
-  background: #247ba0;
-  background: -moz-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #247ba0), color-stop(100%, #70c1b4));
-  background: -webkit-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -o-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -ms-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: linear-gradient(to right, #247ba0 0%, #70c1b4 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#247ba0", endColorstr="#70c1b4", GradientType=1 );
-}
-
 .bubble-card-content {
   word-break: normal;
   display: inline-block;
@@ -635,8 +602,8 @@ body {
   margin: 6px 0;
   border-radius: 15px;
   border-top-left-radius: 0;
-  background-color: #cbddff;
-  color: #424242;
+  background-color: #5C6B73;
+  color: #ffffff;
 }
 
 .bubble-card-media {
@@ -652,8 +619,8 @@ body {
   margin: 6px 0;
   border-radius: 15px;
   border-top-left-radius: 0;
-  background-color: #eef5db;
-  color: #424242;
+  background-color: #5C6B73;
+  color: #ffffff;
 }
 
 .message-content-user .BubbleWidget .bubble-card {
@@ -663,36 +630,12 @@ body {
   margin: 6px 0;
   border-radius: 15px;
   border-top-right-radius: 0;
-  background-color: #fe5f55;
-  /*background: rgba(254,49,114,1);
-  background: -moz-linear-gradient(left, rgba(254,49,114,1) 0%, rgba(246,40,60,1) 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(254,49,114,1)), color-stop(100%, rgba(246,40,60,1)));
-  background: -webkit-linear-gradient(left, rgba(254,49,114,1) 0%, rgba(246,40,60,1) 100%);
-  background: -o-linear-gradient(left, rgba(254,49,114,1) 0%, rgba(246,40,60,1) 100%);
-  background: -ms-linear-gradient(left, rgba(254,49,114,1) 0%, rgba(246,40,60,1) 100%);
-  background: linear-gradient(to right, rgba(254,49,114,1) 0%, rgba(246,40,60,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe3172', endColorstr='#f6283c', GradientType=1 );*/
+  background-color: #253237;
   color: #ffffff;
-}
-
-.widget-question {
-  background: #247ba0;
-  background: -moz-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #247ba0), color-stop(100%, #70c1b4));
-  background: -webkit-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -o-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -ms-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: linear-gradient(to right, #247ba0 0%, #70c1b4 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#247ba0", endColorstr="#70c1b4", GradientType=1 );
 }
 
 .btn-group button {
   display: block;
-}
-.btn-group button:hover {
-  background-color: #f9f9f9;
-  color: black;
-  border: 1px solid #121180;
 }
 
 @media only screen and (max-width: 767px) {
@@ -700,17 +643,6 @@ body {
     padding-bottom: 40px;
   }
 }
-.widget-question {
-  background: #247ba0;
-  background: -moz-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #247ba0), color-stop(100%, #70c1b4));
-  background: -webkit-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -o-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -ms-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: linear-gradient(to right, #247ba0 0%, #70c1b4 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#247ba0", endColorstr="#70c1b4", GradientType=1 );
-}
-
 .card-group {
   width: max-content;
   padding: 10px 0;
@@ -782,7 +714,7 @@ body {
 }
 .bot-starttyping {
   width: 52px;
-  background-color: #eef5db;
+  background-color: #5C6B73;
   padding: 16px 10px;
   border-radius: 7px;
 }
@@ -798,57 +730,46 @@ body {
 
 @-webkit-keyframes line {
   0% {
-    background-color: black;
-    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
   }
   25% {
-    background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 12px 0px 0px 0px black, 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px red, 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
   }
   75% {
-    background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px black;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px white;
   }
 }
 @-moz-keyframes line {
   0% {
-    background-color: black;
-    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
   }
   25% {
-    background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 12px 0px 0px 0px black, 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px white, 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
   }
   75% {
-    background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px black;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px white;
   }
 }
 @keyframes line {
   0% {
-    background-color: black;
-    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
   }
   25% {
-    background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 12px 0px 0px 0px black, 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px white, 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
   }
   75% {
-    background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px black;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px white;
   }
 }
-.widget-question {
-  background: #247ba0;
-  background: -moz-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #247ba0), color-stop(100%, #70c1b4));
-  background: -webkit-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -o-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -ms-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: linear-gradient(to right, #247ba0 0%, #70c1b4 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#247ba0", endColorstr="#70c1b4", GradientType=1 );
-}
-
 .bubble-card-content {
   word-break: normal;
   display: inline-block;
@@ -861,8 +782,8 @@ body {
   margin: 6px 0;
   border-radius: 15px;
   border-top-left-radius: 0;
-  background-color: #cbddff;
-  color: #424242;
+  background-color: #5C6B73;
+  color: #ffffff;
 }
 
 .bubble-card-media {
@@ -878,8 +799,8 @@ body {
   margin: 6px 0;
   border-radius: 15px;
   border-top-left-radius: 0;
-  background-color: #eef5db;
-  color: #424242;
+  background-color: #5C6B73;
+  color: #ffffff;
 }
 
 .message-content-user .BubbleWidget .bubble-card {
@@ -889,36 +810,12 @@ body {
   margin: 6px 0;
   border-radius: 15px;
   border-top-right-radius: 0;
-  background-color: #fe5f55;
-  /*background: rgba(254,49,114,1);
-  background: -moz-linear-gradient(left, rgba(254,49,114,1) 0%, rgba(246,40,60,1) 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(254,49,114,1)), color-stop(100%, rgba(246,40,60,1)));
-  background: -webkit-linear-gradient(left, rgba(254,49,114,1) 0%, rgba(246,40,60,1) 100%);
-  background: -o-linear-gradient(left, rgba(254,49,114,1) 0%, rgba(246,40,60,1) 100%);
-  background: -ms-linear-gradient(left, rgba(254,49,114,1) 0%, rgba(246,40,60,1) 100%);
-  background: linear-gradient(to right, rgba(254,49,114,1) 0%, rgba(246,40,60,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe3172', endColorstr='#f6283c', GradientType=1 );*/
+  background-color: #253237;
   color: #ffffff;
-}
-
-.widget-question {
-  background: #247ba0;
-  background: -moz-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #247ba0), color-stop(100%, #70c1b4));
-  background: -webkit-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -o-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -ms-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: linear-gradient(to right, #247ba0 0%, #70c1b4 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#247ba0", endColorstr="#70c1b4", GradientType=1 );
 }
 
 .btn-group button {
   display: block;
-}
-.btn-group button:hover {
-  background-color: #f9f9f9;
-  color: black;
-  border: 1px solid #121180;
 }
 
 @media only screen and (max-width: 767px) {
@@ -926,17 +823,6 @@ body {
     padding-bottom: 40px;
   }
 }
-.widget-question {
-  background: #247ba0;
-  background: -moz-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #247ba0), color-stop(100%, #70c1b4));
-  background: -webkit-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -o-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: -ms-linear-gradient(left, #247ba0 0%, #70c1b4 100%);
-  background: linear-gradient(to right, #247ba0 0%, #70c1b4 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#247ba0", endColorstr="#70c1b4", GradientType=1 );
-}
-
 .card-group {
   width: max-content;
   padding: 10px 0;
