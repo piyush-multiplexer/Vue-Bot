@@ -4,7 +4,11 @@
       <div class="widget-question">Pick a Time</div>
       <v-layout row wrap>
         <v-flex xs12>
-          <v-time-picker header-color="#f6283c" @input.once="setTimeValue" v-model="time"></v-time-picker>
+          <v-time-picker header-color="#f6283c"  v-model="time"></v-time-picker>
+        </v-flex>
+        <v-flex xs12>
+          <v-spacer></v-spacer>
+          <v-btn class="bot-button" @click.once="setTimeValue">Set Date</v-btn>
         </v-flex>
       </v-layout>
     </div>
@@ -14,6 +18,7 @@
 <script>
 
   import EventBus from '../../plugins/eventBus'
+  import moment from 'moment'
 
   export default {
     name: 'TimePickerWidget',
@@ -29,8 +34,9 @@
       setTimeValue () {
         let self = this
         $(this.$el).addClass('animated bounceOutDown')
+        debugger
         setTimeout(function () {
-          self.$parent.sendMessage(self.time)
+          self.$parent.sendMessage(moment(self.time,'HH:mm').format('hh:mm A'))
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)

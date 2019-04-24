@@ -9,7 +9,8 @@
         <v-layout>
           <v-flex class="single-card" v-for="(card,index) in widgetData.input.args.options" :key="index">
             <div>
-              <v-img class="single-card-image" @click.once="setCardValue(card)" :src="card.img_url" :alt="card.name"/>
+              <v-img class="single-card-image" @click.once="setCardValue(card)" :src="thombarUrl+card.img_url"
+                     :alt="card.name"/>
               <v-card-text class="single-card-content" v-html="card.footer_text"></v-card-text>
             </div>
           </v-flex>
@@ -28,7 +29,7 @@
       <!--          </v-layout>-->
       <!--        </div>-->
     </div>
-<!--  </div>-->
+    <!--  </div>-->
   </div>
 </template>
 
@@ -42,7 +43,9 @@
 
     props: ['widgetData'],
     data () {
-      return { showWidget: false }
+      return {
+        showWidget: false, thombarUrl: 'http://thumbor.avinashi.com/unsafe/250x300/smart/',
+      }
     },
     mounted () {
       let self = this

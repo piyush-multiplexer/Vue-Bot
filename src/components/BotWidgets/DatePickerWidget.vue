@@ -5,7 +5,11 @@
       <v-layout row wrap>
         <v-flex xs12>
           <v-date-picker header-color="#f6283c"
-                         @input.once="setDateValue" v-model="date"></v-date-picker>
+                         v-model="date"></v-date-picker>
+        </v-flex>
+        <v-flex xs12>
+          <v-spacer></v-spacer>
+          <v-btn class="bot-button" @click.once="setDateValue">Set Date</v-btn>
         </v-flex>
       </v-layout>
     </div>
@@ -14,6 +18,7 @@
 
 <script>
   import EventBus from '../../plugins/eventBus'
+  import moment from 'moment'
 
   export default {
     name: 'DatePickerWidget',
@@ -30,7 +35,7 @@
         let self = this
         $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
-          self.$parent.sendMessage(self.date)
+          self.$parent.sendMessage(moment(self.date).format('DD/MM/YYYY'))
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)
