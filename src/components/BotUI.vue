@@ -13,7 +13,7 @@
             <div v-else-if="message.input.name==='text'"
                  :style="botConfig.isHuman?'text-align: left':'text-align: center'">
               <div class="message-content-bot">
-                <bubble :bubbles="message.text" ></bubble>
+                <bubble :bubbles="message.text"></bubble>
               </div>
               <component :is="message.input.args.input_type" :widgetData="message"></component>
             </div>
@@ -29,38 +29,15 @@
               </div>
             </div>
           </div>
-
-         <!--           <template v-if="messages.length">
-                      <div v-if="showInput" id=" user-input-container" @keyup.enter.once="sendMessage"
-                           class="animated slideInUp bot-search-filed">
-                        <v-layout row wrap>
-                          <v-flex xs12>
-                            <v-layout row wrap>
-                              <v-flex xs10 md10>
-                                <v-text-field class="bot-text-field" outline v-model="userValue" :disabled="conversationEnd"
-                                              type="text"></v-text-field>
-                              </v-flex>
-                              <v-flex xs2 md2>
-                                <v-btn class="bot-button-round" @click.once="sendMessage" :disabled="conversationEnd" fab flat icon>
-                                  <v-icon style="transform:rotate(-45deg) ">send</v-icon>
-                                  &lt;!&ndash;                      Send&ndash;&gt;
-                                </v-btn>
-                              </v-flex>
-                            </v-layout>
-                          </v-flex>
-                        </v-layout>
-                      </div>
-
-                    </template>-->
-
-
-
         </div>
-
-
-
       </div>
-
+    </div>
+    <div id="powered-by" style="top: 57px;position: relative;">
+      <v-layout  class="text-center">
+        <v-flex xs12>
+          Powered By Avinashi Pvt. Ltd.
+        </v-flex>
+      </v-layout>
     </div>
   </div>
 </template>
