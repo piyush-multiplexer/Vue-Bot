@@ -1,6 +1,13 @@
 <template>
   <div class="home bot-home">
     <BotUI v-if="isBot"></BotUI>
+    <div id="powered-by">
+      <v-layout  class="text-center">
+        <v-flex xs12>
+          Powered By Avinashi Pvt. Ltd.
+        </v-flex>
+      </v-layout>
+    </div>
   </div>
 </template>
 

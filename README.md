@@ -28,13 +28,16 @@ Supported Inputs
   - Mobile
   - Password
   - Name
+  - Email
 * Auto Search Suggestion
 * Button Group[single]
 * Card Group[single]
 * Start Rating
 * Date Picker
 * Time Picker
-* Image/file input
+* DateTime Picker
+* Image/file Upload
+* Current Location/Custom Location Selection[Map]
 * Auto Page Redirection
 * No Input
 

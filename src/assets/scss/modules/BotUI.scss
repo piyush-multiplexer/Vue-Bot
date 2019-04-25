@@ -8,16 +8,16 @@
 #bot-container {
   transform: rotate(180deg);
   direction: rtl;
-  top: calc(50vh - 45vh);
+  top: calc(50vh - 48vh);
   height: calc(100vh - 10vh);
-  background-color: #7a9e9f;
-  box-shadow: 0 0 7px $card-box-shadow;
+  background-color: $white;
   border-radius: 10px;
-  padding: 10px 0;
+  padding: 0 0 10px 0;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
 }
+
 
 #bot-content {
   bottom: 10px;
@@ -55,31 +55,34 @@
   //display: inline-block;
 }
 
-.widget-question{
+.widget-question {
   text-align: center;
   padding-bottom: 10px;
   padding-top: 10px;
-  color: $white;
-  @extend %background-second-color;
+  color: $bot-theme-text;
   border-radius: 22px;
   margin-bottom: 10px;
+  font-size: 16px;
 }
 
-
-.DatePickerWidget{
-
+#powered-by {
+  bottom: -20px;
+  position: relative;
 }
 
-
-.RatingWidget{
-
-}
-
-.SearchSuggestion{
+.DatePickerWidget {
 
 }
 
-.bot-search-filed{
+.RatingWidget {
+
+}
+
+.SearchSuggestion {
+
+}
+
+.bot-search-filed {
 
 }
 
@@ -90,34 +93,38 @@
     //margin: 0 auto;
   }
 
-  .bot-search-filed{
+  .bot-search-filed {
     padding-bottom: 30px;
   }
 
   #bot-container {
     transform: rotate(180deg);
     direction: rtl;
-    height: calc(100vh - 0vh);
+    height: calc(100vh - 5vh);
     background-color: $white;
-    box-shadow: 0 0 7px $card-box-shadow;
     border-radius: 0px;
-    padding: 40px 10px 10px 10px;
+    padding: 0 0 10px 0;
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
     top: 0;
   }
 
-  .DatePickerWidget{
+  .DatePickerWidget {
     padding-bottom: 50px;
   }
 
-  .RatingWidget{
+  .RatingWidget {
     padding-bottom: 20px;
   }
 
-  .SearchSuggestion{
+  .SearchSuggestion {
     padding-bottom: 30px;
+  }
+
+  #powered-by {
+    bottom: -5px;
+    position: relative;
   }
 
 }

@@ -4,7 +4,7 @@
       <div id="bot-content" v-if="messages.length">
         <div style="transform: rotate(180deg);direction: ltr;">
           <div v-for="(message,messageIndex) in messages" :key="messageIndex" class="animated bounceInUp">
-            <div v-if="message.type==='user'" style="text-align: right">
+            <div v-if="message.type==='user'" class="text-right">
               <div class="message-content-user">
                 <bubble :bubbles="message.text"></bubble>
               </div>
@@ -13,7 +13,7 @@
             <div v-else-if="message.input.name==='text'"
                  :style="botConfig.isHuman?'text-align: left':'text-align: center'">
               <div class="message-content-bot">
-                <bubble :bubbles="message.text" v-if="message.text.length!==1"></bubble>
+                <bubble :bubbles="message.text"></bubble>
               </div>
               <component :is="message.input.args.input_type" :widgetData="message"></component>
             </div>
@@ -29,33 +29,10 @@
               </div>
             </div>
           </div>
-
-          <!--          <template v-if="messages.length">-->
-          <!--            <div v-if="showInput" id=" user-input-container" @keyup.enter.once="sendMessage"-->
-          <!--                 class="animated slideInUp bot-search-filed">-->
-          <!--              <v-layout row wrap>-->
-          <!--                <v-flex xs12>-->
-          <!--                  <v-layout row wrap>-->
-          <!--                    <v-flex xs10 md10>-->
-          <!--                      <v-text-field class="bot-text-field" outline v-model="userValue" :disabled="conversationEnd"-->
-          <!--                                    type="text"></v-text-field>-->
-          <!--                    </v-flex>-->
-          <!--                    <v-flex xs2 md2>-->
-          <!--                      <v-btn class="bot-button-round" @click.once="sendMessage" :disabled="conversationEnd" fab flat icon>-->
-          <!--                        <v-icon style="transform:rotate(-45deg) ">send</v-icon>-->
-          <!--                        &lt;!&ndash;                      Send&ndash;&gt;-->
-          <!--                      </v-btn>-->
-          <!--                    </v-flex>-->
-          <!--                  </v-layout>-->
-          <!--                </v-flex>-->
-          <!--              </v-layout>-->
-          <!--            </div>-->
-
-          <!--          </template>-->
         </div>
       </div>
-
     </div>
+
   </div>
 </template>
 

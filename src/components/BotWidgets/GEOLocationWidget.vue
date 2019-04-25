@@ -1,18 +1,24 @@
 <template>
   <div class="GEOLocationWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="setPhoneValue">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setMapValue">
       <div class="widget-question">Drag & Drop Pin to Select Location</div>
       <v-layout row wrap>
-        <v-flex xs10 md10>
-          <google-map ref="map" :center="center" :zoom="10" style="width: 100%; height: 500px" @click="test">
+        <v-flex xs12>
+          <google-map ref="map" :center="center" :zoom="10" style="width: 100%; height: 500px" @click="changeMarker">
             <google-marker ref="marker" v-for="(marker,index) in markers" :key="index" :position="marker.position"
                            :clickable="true"
                            :draggable="true" @click="center=marker.position"
                            @dragend="getMarkerPosition"></google-marker>
           </google-map>
         </v-flex>
+        <v-flex xs10 md10 class="text-center">
+          <div>
+            {{locationObj.address}}
+          </div>
+        </v-flex>
         <v-flex xs2 md2 class="text-center">
-          <v-btn class="bot-button-round" :disabled="!locationObj.address.length" @click.once="setMapValue" fab flat
+          <v-btn class="bot-button-round" :disabled="!locationObj.address.length"
+                 @click.once="setMapValue" fab flat
                  icon>
             <v-icon style="transform:rotate(-45deg) ">send</v-icon>
           </v-btn>
@@ -32,25 +38,47 @@
     props: ['widgetData'],
     data () {
       return {
+        // center: {},
         center: { lat: 21.17, lng: 72.83 },
-        markers: [{ position: { lat: 21.20, lng: 72.84 } }],
+        // markers: [{ position: { lat: 21.20, lng: 72.84 } }],
+        markers: [],
         locationObj: {
           'lat': '',
           'lng': '',
           'address': '',
           'type': 'geoloc',
         }, showWidget: false,
+        clicked: false,
       }
     },
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
         self.showWidget = true
-        setTimeout(function () { self.$refs.phone.focus() }, 200)
+        self.detectLocation()
       })
     },
     methods: {
-      test (map) {
+      detectLocation () {
+        let self = this
+
+        function geoSuccess (position) {
+          self.center = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          }
+          self.locationObj.lat = position.coords.latitude
+          self.locationObj.lng = position.coords.longitude
+          self.markers = [{ position: self.center }]
+          self.$forceUpdate()
+          self.getLocationFromGoogle()
+        }
+
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(geoSuccess)
+        }
+      },
+      changeMarker (map) {
         let self = this
         this.center = {
           lat: map.latLng.lat(this.$refs.map),
@@ -81,7 +109,8 @@
       },
       setMapValue () {
         let self = this
-        if (this.locationObj.address) {
+        if (this.locationObj.address && !this.clicked) {
+          this.clicked = true
           $(this.$el).addClass('animated bounceOutDown')
           setTimeout(function () {
             self.$parent.sendMessage(self.locationObj)

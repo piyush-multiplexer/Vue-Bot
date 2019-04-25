@@ -1,17 +1,18 @@
 .bot-button-round{
   box-shadow: none !important;
-  //@extend %background-color;
-  background-color: #fe6056 !important;
+  @extend %bot-theme-button;
   color: $white !important;
   margin: 0px 0;
-  //height: 50px;
   border-radius: 50px;
+  &:hover{
+    @extend %bot-theme-hover-button;
+    color: $white !important;
+  }
 }
 
 .bot-button{
   box-shadow: none !important;
-  //@extend %background-color;
-  background-color: #fe6056 !important;
+  @extend %bot-theme-button;
   color: $white !important;
   margin: 0;
   height: 50px;

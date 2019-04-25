@@ -1,11 +1,24 @@
 .bot-text-field {
   .v-input__control {
     .v-input__slot {
-      border-radius: 50px;
+      border-color: transparent !important;
+      background-color: $bot-theme-text-filed !important;
+      border-radius: 10px;
       margin-bottom: 0;
       .v-text-field__slot {
         input {
+          color: $bot-theme-text;
           margin-top: 10px;
+        }
+      }
+      .v-input__prepend-inner{
+        .v-input__icon{
+          i{
+            color: $bot-theme-text;
+            &:hover{
+              color: $bot-theme-text;
+            }
+          }
         }
       }
     }

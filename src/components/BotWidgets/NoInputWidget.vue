@@ -1,6 +1,6 @@
 <template>
   <div class="UserNameWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="+restartBot">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="restartBot">
       <div class="widget-question">
         Finished
       </div>

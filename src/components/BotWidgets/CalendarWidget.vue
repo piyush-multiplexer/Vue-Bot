@@ -1,6 +1,6 @@
 <template>
   <div class="CalendarWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="setDateTimeValue">
+    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setDateTimeValue">
       <div class="widget-question"> Select Date & Time</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
@@ -25,7 +25,7 @@
   export default {
     name: 'CalendarWidget',
     props: ['widgetData'],
-    data () {return { datetime: new Date(), showWidget: false }},
+    data () {return { datetime: new Date(), showWidget: false, clicked: false }},
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
@@ -34,9 +34,12 @@
     },
     methods: {
       setDateTimeValue () {
-        this.$parent.sendMessage(moment(this.datetime).format('DD/MM/YYYY hh:mm:ss A'))
-        this.$destroy()
-        this.$el.parentNode.removeChild(this.$el)
+        if (!this.clicked) {
+          this.clicked = true
+          this.$parent.sendMessage(moment(this.datetime).format('LLLL'))
+          this.$destroy()
+          this.$el.parentNode.removeChild(this.$el)
+        }
       },
     },
   }
