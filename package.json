@@ -16,6 +16,7 @@
     "moment": "latest",
     "vue": "^2.5.2",
     "vue-animejs": "^2.1.1",
+    "vue-awesome-swiper": "^3.1.3",
     "vue-owl-carousel": "^2.0.3",
     "vue-router": "^3.0.1",
     "vue-star-rating": "^1.6.1",

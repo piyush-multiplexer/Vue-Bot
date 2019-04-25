@@ -5,15 +5,24 @@
     <div class="bot-animated-card animated slideInUp" v-if="showWidget">
       <div class="widget-question">Select a Card</div>
       <!--      <div class="CardSliderWidget">-->
-      <carousel :dots="false" :nav="false" class="bot-carousel">
+      <swiper :options="swiperOption">
+        <swiper-slide v-for="(card) in widgetData.input.args.options" :key="index">
+          <v-img :alt="card.name" :src="card.img_url" @click.once="setCardValue(card)"
+                 class="single-card-image"/>
+          <div>{{card.footer_text}}</div>
+        </swiper-slide>
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
+      </swiper>
+      <!--      <carousel :dots="false" :nav="false" class="bot-carousel">-->
 
-            <div class="single-card" v-for="(card,index) in widgetData.input.args.options" :key="index">
-              <v-img class="single-card-image" @click.once="setCardValue(card)" :src="thombarUrl+card.img_url"
-                     :alt="card.name"/>
-              <v-card-text class="single-card-content" v-html="card.footer_text"></v-card-text>
-            </div>
+      <!--            <div class="single-card" v-for="(card,index) in widgetData.input.args.options" :key="index">-->
+      <!--              <v-img class="single-card-image" @click.once="setCardValue(card)" :src="thombarUrl+card.img_url"-->
+      <!--                     :alt="card.name"/>-->
+      <!--              <v-card-text class="single-card-content" v-html="card.footer_text"></v-card-text>-->
+      <!--            </div>-->
 
-      </carousel>
+      <!--      </carousel>-->
       <!--      <div>-->
       <!--    </div>-->
       <!--        <div class="CardSliderWidget">-->
@@ -33,15 +42,29 @@
 
 <script>
   import EventBus from '../../plugins/eventBus'
-  import carousel from 'vue-owl-carousel'
+  import 'swiper/dist/css/swiper.css'
+
+  import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
   export default {
     name: 'CardSliderWidget',
-    components: { carousel },
-
+    components: {
+      swiper,
+      swiperSlide,
+    },
     props: ['widgetData'],
     data () {
       return {
+        swiperOption: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          slidesPerGroup: 3,
+          loop: true,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        },
         showWidget: false, thombarUrl: 'http://thumbor.avinashi.com/unsafe/250x300/smart/',
       }
     },
