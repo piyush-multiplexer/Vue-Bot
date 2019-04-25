@@ -1,20 +1,18 @@
 <template>
-  <div style="padding-bottom: 40px">
+  <div>
     <!--<div class="card-group" v-if="showWidget">-->
 
     <div class="bot-animated-card animated slideInUp" v-if="showWidget">
       <div class="widget-question">Select a Card</div>
       <!--      <div class="CardSliderWidget">-->
-      <carousel :dots="false" :nav="false">
-        <v-layout>
-          <v-flex class="single-card" v-for="(card,index) in widgetData.input.args.options" :key="index">
-            <div>
+      <carousel :dots="false" :nav="false" class="bot-carousel">
+
+            <div class="single-card" v-for="(card,index) in widgetData.input.args.options" :key="index">
               <v-img class="single-card-image" @click.once="setCardValue(card)" :src="thombarUrl+card.img_url"
                      :alt="card.name"/>
               <v-card-text class="single-card-content" v-html="card.footer_text"></v-card-text>
             </div>
-          </v-flex>
-        </v-layout>
+
       </carousel>
       <!--      <div>-->
       <!--    </div>-->

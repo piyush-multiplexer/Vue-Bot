@@ -3,11 +3,11 @@
     <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setEmailValue">
       <div class="widget-question">Enter Email</div>
       <v-layout row wrap>
-        <v-flex xs10 md10>
+        <v-flex xs9 md10>
           <v-text-field ref="email" class="bot-text-field" outline prepend-inner-icon="email"
                         v-model="email"></v-text-field>
         </v-flex>
-        <v-flex xs2 md2 class="text-center">
+        <v-flex xs3 md2 class="text-center">
           <v-btn class="bot-button-round" @click.once="setEmailValue" fab flat icon
                  :disabled="!emailPattern.test(email)">
             <v-icon style="transform:rotate(-45deg) ">send</v-icon>

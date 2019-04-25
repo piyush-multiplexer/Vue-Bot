@@ -1,0 +1,14 @@
+.bot-date-picker {
+  .v-picker__title {
+    @extend %bot-theme-date-picker;
+    color: $white !important;
+    .v-time-picker-title{
+      .v-time-picker-title__time{
+        color: $white !important;
+      }
+      .v-time-picker-title__ampm{
+        color: $white !important;
+      }
+    }
+  }
+}

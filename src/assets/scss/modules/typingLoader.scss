@@ -1,8 +1,10 @@
 .bot-starttyping {
   width: 52px;
-  background-color: $bot-theme-bubble-bot-bg;
+  background-color: $white;
+  box-shadow: 0 0 12px 0 $bot-theme-shadow;
   padding: 16px 10px;
   border-radius: 7px;
+  margin: 10px 0;
 }
 
 .typing-loader {
@@ -16,51 +18,51 @@
 
 @-webkit-keyframes line {
   0% {
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 1);
+    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
   }
 
   25% {
-    background-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 12px 0px 0px 0px rgba(255, 0, 0, 2), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 2), 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
   }
 
   75% {
-    background-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px rgba(255, 255, 255, 2);
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 2);
   }
 }
 
 @-moz-keyframes line {
   0% {
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 1);
+    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
   }
 
   25% {
-    background-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 2), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 2), 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
   }
 
   75% {
-    background-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px rgba(255, 255, 255, 2);
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 2);
   }
 }
 
 @keyframes line {
   0% {
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 1);
+    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
   }
 
   25% {
-    background-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 2), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 2), 24px 0px 0px 0px rgba(0, 0, 0, 0.2);
   }
 
   75% {
-    background-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px rgba(255, 255, 255, 2);
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 2);
   }
 }

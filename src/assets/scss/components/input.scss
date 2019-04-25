@@ -7,8 +7,18 @@
       margin-bottom: 0;
       .v-text-field__slot {
         input {
-          color: $bot-theme-bubble-bot-bg;
+          color: $bot-theme-text;
           margin-top: 10px;
+        }
+      }
+      .v-input__prepend-inner{
+        .v-input__icon{
+          i{
+            color: $bot-theme-text;
+            &:hover{
+              color: $bot-theme-text;
+            }
+          }
         }
       }
     }

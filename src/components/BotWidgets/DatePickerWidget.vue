@@ -4,12 +4,12 @@
       <div class="widget-question"> Select Date</div>
       <v-layout row wrap>
         <v-flex xs12>
-          <v-date-picker header-color="#f6283c"
+          <v-date-picker  class="bot-date-picker"
                          v-model="date"></v-date-picker>
         </v-flex>
-        <v-flex xs12>
+        <v-flex xs12 class="m-t-20 m-b-10">
           <v-spacer></v-spacer>
-          <v-btn class="bot-button" @click.once="setDateValue">Set Date</v-btn>
+          <v-btn class="bot-button-round" @click.once="setDateValue">Set Date</v-btn>
         </v-flex>
       </v-layout>
     </div>
