@@ -4,7 +4,7 @@
 
     <div class="bot-animated-card animated slideInUp" v-if="showWidget">
       <!--      <div class="CardSliderWidget">-->
-      <swiper :options="swiperOption" class="p-r-24 p-l-10">
+      <swiper :options="swiperOption" class="p-r-24 p-l-10 bot-carousel">
         <swiper-slide v-for="(card) in widgetData.input.args.options" :key="index" class="p-t-10 p-b-10">
           <div class="bot-carousel-card">
           <v-img :alt="card.name" :src="card.img_url" @click.once="setCardValue(card)"
@@ -12,8 +12,8 @@
           <p class="m-t-5 m-b-0">{{card.footer_text}}</p>
           </div>
         </swiper-slide>
-        <!--<div class="swiper-button-prev" slot="button-prev"></div>-->
-        <!--<div class="swiper-button-next" slot="button-next"></div>-->
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
       </swiper>
       <!--      <carousel :dots="false" :nav="false" class="bot-carousel">-->
 
@@ -59,6 +59,7 @@
         swiperOption: {
           slidesPerView: 3,
           spaceBetween: 30,
+            width: 500,
           loop: false,
           navigation: {
             nextEl: '.swiper-button-next',
