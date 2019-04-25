@@ -433,6 +433,10 @@ body {
   box-shadow: 0 -2px 10px 0 #EAEAEA;
 }
 
+.bot-carousel .swiper-wrapper {
+  z-index: -1;
+}
+
 .theme--light.v-list .v-list__tile--link:hover, .theme--light.v-list .v-list__tile--highlighted, .theme--light.v-list .v-list__group__header:hover {
   color: #ffffff;
 }

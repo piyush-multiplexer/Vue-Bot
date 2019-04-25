@@ -1,11 +1,5 @@
-.bot-carousel{
-.owl-carousel{
-  .owl-stage-outer{
-    .owl-stage{
-      .owl-item{
-        //width: fit-content !important;
-      }
-    }
+.bot-carousel {
+  .swiper-wrapper {
+    z-index: -1;
   }
-}
 }
