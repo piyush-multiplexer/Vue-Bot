@@ -166,11 +166,11 @@ body {
 }
 
 .p-r-24 {
-  padding-left: 24px !important;
+  padding-right: 24px !important;
 }
 
 .p-t-24 {
-  padding-left: 24px !important;
+  padding-top: 24px !important;
 }
 
 .p-l-0 {
@@ -279,6 +279,10 @@ body {
 
 .m-t-5 {
   margin-top: 5px !important;
+}
+
+.m-b-5 {
+  margin-bottom: 5px !important;
 }
 
 .m-r-0 {
@@ -975,7 +979,17 @@ body {
 
 .single-card-image {
   height: 25vh;
-  width: 25vh;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.bot-carousel-card {
+  background-color: #fff;
+  box-shadow: 0 0 12px 0 #D6D6D6;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .CardSliderWidget {
@@ -1332,7 +1346,17 @@ body {
 
 .single-card-image {
   height: 25vh;
-  width: 25vh;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.bot-carousel-card {
+  background-color: #fff;
+  box-shadow: 0 0 12px 0 #D6D6D6;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .CardSliderWidget {
