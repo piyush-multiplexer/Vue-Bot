@@ -1,0 +1,12 @@
+.bot-rating{
+  .yellow--text.text--darken-3{
+    color: $bot-theme-rating !important;
+    caret-color: $bot-theme-rating !important;
+  }
+
+  .grey--text.text--darken-1{
+    color: $bot-theme-rating-disable !important;
+    caret-color: $bot-theme-rating-disable !important;
+  }
+
+}

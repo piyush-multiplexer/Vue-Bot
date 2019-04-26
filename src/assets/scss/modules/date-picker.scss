@@ -11,4 +11,57 @@
       }
     }
   }
+
+  .v-picker__body{
+    .v-date-picker-header{
+      button{
+        color: $bot-theme-text ;
+      }
+      .v-date-picker-header__value{
+        .accent--text{
+          button{
+            color: $bot-theme-text;
+          }
+        }
+      }
+    }
+    .v-date-picker-table{
+      table{
+        thead{
+          tr{
+            th{
+              color: $bot-theme-text;
+            }
+          }
+        }
+        tbody{
+          tr{
+            td{
+              button{
+                color: $bot-theme-text;
+              }
+            }
+          }
+        }
+      }
+    }
+    .v-date-picker-table .v-btn.v-btn--active{
+      color: $white !important;
+    }
+  }
+}
+
+.bot-time-picker {
+  .v-picker__title {
+    @extend %bot-theme-date-picker;
+    color: $white !important;
+    .v-time-picker-title{
+      .v-time-picker-title__time{
+        color: $white !important;
+      }
+      .v-time-picker-title__ampm{
+        color: $white !important;
+      }
+    }
+  }
 }

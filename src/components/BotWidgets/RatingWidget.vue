@@ -2,10 +2,10 @@
   <div class="RatingWidget">
     <div v-if="showWidget" class="animated slideInUp bot-animated-card">
       <div class="widget-question">Rate It</div>
-      <v-rating v-model="rating" color="yellow darken-3" background-color="grey darken-1"
+      <v-rating class="bot-rating m-b-20" v-model="rating" color="yellow darken-3" background-color="grey darken-1"
                 empty-icon="$vuetify.icons.ratingFull" :half-increments="widgetData.input.args.step!=1?true:false"
                 hover x-large></v-rating>
-      <v-btn class="bot-button" @click.once="setDateTimeValue">Submit {{rating}} Rating</v-btn>
+      <v-btn class="bot-button-round-text" @click.once="setDateTimeValue">Submit {{rating}} Rating</v-btn>
     </div>
   </div>
 </template>

@@ -9,7 +9,7 @@
         </v-flex>
         <v-flex xs12 class="m-t-20 m-b-10">
           <v-spacer></v-spacer>
-          <v-btn class="bot-button-round" @click.once="setDateValue">Set Date</v-btn>
+          <v-btn class="bot-button-round-text" @click.once="setDateValue">Set Date</v-btn>
         </v-flex>
       </v-layout>
     </div>

@@ -4,12 +4,12 @@
       <div class="widget-question">Enter Phone Number</div>
       <v-layout row wrap>
         <v-flex xs9 md10>
-          <v-text-field required ref="phone" class="bot-text-field" outline v-model="phone" prepend-inner-icon="phone"
+          <v-text-field required ref="phone" class="bot-text-field-email" v-model="phone" prepend-inner-icon="phone"
                         mask="##### #####"></v-text-field>
         </v-flex>
-        <v-flex xs3 md2 class="text-center">
+        <v-flex xs3 md2 class="text-right">
           <v-btn class="bot-button-round" :disabled="!(phone.length===10)" @click.once="setPhoneValue" fab flat icon>
-            <v-icon style="transform:rotate(-45deg) ">send</v-icon>
+            <v-icon>send</v-icon>
           </v-btn>
         </v-flex>
       </v-layout>

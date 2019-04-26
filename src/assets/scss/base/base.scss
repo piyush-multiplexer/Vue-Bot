@@ -2,26 +2,34 @@ html {
   box-sizing: border-box;
   overflow-y: hidden;
   -webkit-text-size-adjust: 100%;
-  font-family: Roboto,sans-serif;
+  //font-family: Roboto,sans-serif;
+  font-family: "AzoSansW01-Regular";
 }
 
 body {
   overflow-x: hidden !important;
   background-color: $bot-theme-body !important;
-  font-family: Roboto,sans-serif;
+  //font-family: Roboto,sans-serif;
+  font-family: "AzoSansW01-Regular";
 }
 
 #app {
   text-align: center;
   background-color: $bot-theme-body;
   height: 100vh;
-  font-family: Roboto,sans-serif;
+  //font-family: Roboto,sans-serif;
+  font-family: "AzoSansW01-Regular";
 }
 
 .primary--text {
-  color: #000000 !important;
+  color: $bot-theme-icon !important;
 }
 
+
+.accent{
+  background-color: $bot-theme-body !important;
+  border-color: $bot-theme-body !important;
+}
 
 
 

@@ -28,12 +28,13 @@
     .bubble-card {
       width: fit-content;
       max-width: 100%;
-      padding: 12px 10px;
-      margin: 10px 0;
+      padding: 17px;
+      margin: 15px 0;
       border-radius: 15px;
+      font-size: 18px;
       border-top-left-radius: 0;
       background-color: $white;
-      box-shadow: 0 0 12px 0 $bot-theme-shadow;
+      box-shadow: 0 0 12px 0 $bot-theme-bot-shadow;
       color: $bot-theme-text;
     }
   }
@@ -44,12 +45,13 @@
     .bubble-card {
       width: fit-content;
       max-width: 100%;
-      padding: 12px 10px;
-      margin: 10px 0;
+      padding: 17px;
+      margin: 15px 0;
       border-radius: 15px;
+      font-size: 18px;
       border-top-right-radius: 0;
-      @extend %bot-theme-user-bg;
-      box-shadow: 0 0 12px 0 $bot-theme-shadow;
+      background-color: $bot-theme-user-bot;
+      box-shadow: 0 0 12px 0 $bot-theme-bot-shadow;
       color: $white;
     }
   }

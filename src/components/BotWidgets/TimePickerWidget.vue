@@ -4,11 +4,11 @@
       <div class="widget-question">Pick a Time</div>
       <v-layout row wrap>
         <v-flex xs12>
-          <v-time-picker class="bot-date-picker" v-model="time"></v-time-picker>
+          <v-time-picker class="bot-time-picker" v-model="time"></v-time-picker>
         </v-flex>
         <v-flex xs12 class="m-t-20 m-b-10">
           <v-spacer></v-spacer>
-          <v-btn class="bot-button-round" @click.once="setTimeValue">Set Date</v-btn>
+          <v-btn class="bot-button-round-text" @click.once="setTimeValue">Set Date</v-btn>
         </v-flex>
       </v-layout>
     </div>
