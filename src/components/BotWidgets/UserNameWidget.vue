@@ -4,11 +4,11 @@
       <div class="widget-question">Enter Name</div>
       <v-layout row wrap>
         <v-flex xs9 md10>
-          <v-text-field required ref="username" class="bot-text-field" outline v-model="userName"></v-text-field>
+          <v-text-field required ref="username" class="bot-text-field" v-model="userName"></v-text-field>
         </v-flex>
-        <v-flex xs3 md2 class="text-center">
+        <v-flex xs3 md2 class="text-right">
           <v-btn class="bot-button-round" @click.once="setUserValue" :disabled="!userName.length" fab flat icon>
-            <v-icon style="transform:rotate(-45deg) ">send</v-icon>
+            <v-icon>send</v-icon>
           </v-btn>
         </v-flex>
       </v-layout>

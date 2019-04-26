@@ -1,16 +1,29 @@
-.bot-button-round{
+.bot-button-round {
   box-shadow: none !important;
-  @extend %bot-theme-button;
-  color: $white !important;
+  color: $bot-theme-text !important;
   margin: 0px 0;
   border-radius: 50px;
-  &:hover{
-    @extend %bot-theme-hover-button;
+  &:hover {
+    color: $bot-theme-text !important;
+  }
+}
+
+.bot-button-round-text {
+  box-shadow: none !important;
+  background-color: $bot-theme-user-bot !important;
+  height: 48px;
+  padding: 0 34px;
+  font-size: 15px;
+  color: $bot-theme-text !important;
+  margin: 0px 0;
+  border-radius: 50px;
+  &:hover {
+    background-color: $bot-theme-button-hover !important;
     color: $white !important;
   }
 }
 
-.bot-button{
+.bot-button {
   box-shadow: none !important;
   @extend %bot-theme-button;
   color: $white !important;

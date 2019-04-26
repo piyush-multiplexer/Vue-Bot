@@ -10,7 +10,7 @@
   direction: rtl;
   top: calc(50vh - 48vh);
   height: calc(100vh - 10vh);
-  background-color: $white;
+  background-color: $bot-theme-subbody;
   border-radius: 10px;
   padding: 0 0 10px 0;
   position: relative;
@@ -55,6 +55,12 @@
   //display: inline-block;
 }
 
+.bot-map-address{
+  font-size: 16px;
+  font-weight: 300;
+  color: $bot-theme-text;
+}
+
 .widget-question {
   text-align: center;
   padding-bottom: 10px;
@@ -62,7 +68,7 @@
   color: $bot-theme-text;
   border-radius: 22px;
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 22px;
 }
 
 #powered-by {
@@ -101,7 +107,7 @@
     transform: rotate(180deg);
     direction: rtl;
     height: calc(100vh - 5vh);
-    background-color: $white;
+    background-color: $bot-theme-subbody;
     border-radius: 0px;
     padding: 0 0 10px 0;
     position: relative;

@@ -4,19 +4,27 @@
 
     <div class="bot-animated-card animated slideInUp" v-if="showWidget">
       <!--      <div class="CardSliderWidget">-->
-      <swiper :options="swiperOption" class="p-r-24 p-l-10 bot-carousel">
+      <swiper :options="swiperOption" class="p-r-24 bot-carousel">
         <swiper-slide v-for="(card) in widgetData.input.args.options" :key="index" class="p-t-10 p-b-10">
           <div class="bot-carousel-card">
-          <v-img :alt="card.name" :src="card.img_url" @click.once="setCardValue(card)"
-                 class="single-card-image"/>
-          <p class="m-t-5 m-b-0">{{card.footer_text}}</p>
+            <v-img :alt="card.name" :src="card.img_url" @click.once="setCardValue(card)"
+                   class="single-card-image"/>
+            <p class="m-t-5 m-b-0">{{card.footer_text}}</p>
           </div>
         </swiper-slide>
-        <div slot="button-prev">
-        <div class="swiper-button-prev"></div>
+        <div class="bot-silder-icon" slot="button-prev">
+          <div class="swiper-button-prev" >
+            <i class="material-icons">
+              keyboard_arrow_left
+            </i>
+          </div>
         </div>
-        <div slot="button-next">
-        <div class="swiper-button-next"></div>
+          <div class="bot-silder-icon" slot="button-next">
+          <div class="swiper-button-next">
+            <i class="material-icons">
+              keyboard_arrow_right
+            </i>
+          </div>
         </div>
       </swiper>
       <!--      <carousel :dots="false" :nav="false" class="bot-carousel">-->
@@ -46,53 +54,53 @@
 </template>
 
 <script>
-  import EventBus from '../../plugins/eventBus'
-  import 'swiper/dist/css/swiper.css'
+    import EventBus from '../../plugins/eventBus'
+    import 'swiper/dist/css/swiper.css'
 
-  import { swiper, swiperSlide } from 'vue-awesome-swiper'
+    import {swiper, swiperSlide} from 'vue-awesome-swiper'
 
-  export default {
-    name: 'CardSliderWidget',
-    components: {
-      swiper,
-      swiperSlide,
-    },
-    props: ['widgetData'],
-    data () {
-      return {
-        swiperOption: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-            width: 500,
-          loop: false,
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
+    export default {
+        name: 'CardSliderWidget',
+        components: {
+            swiper,
+            swiperSlide,
         },
-        showWidget: false, thombarUrl: 'http://thumbor.avinashi.com/unsafe/250x300/smart/',
-      }
-    },
-    mounted () {
-      let self = this
-      EventBus.$on('AFTER_BUBBLE', function () {
-        self.showWidget = true
-      })
-    },
-    methods: {
-      setCardValue (card) {
-        let self = this
-        $(this.$el).addClass('animated bounceOutDown')
-        setTimeout(function () {
-          Bot.rsp_gid = card.rsp_gid
-          self.$parent.sendMessage(card.val)
-          self.$destroy()
-          self.$el.parentNode.removeChild(self.$el)
-        }, 500)
+        props: ['widgetData'],
+        data() {
+            return {
+                swiperOption: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    width: 500,
+                    loop: false,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                },
+                showWidget: false, thombarUrl: 'http://thumbor.avinashi.com/unsafe/250x300/smart/',
+            }
+        },
+        mounted() {
+            let self = this
+            EventBus.$on('AFTER_BUBBLE', function () {
+                self.showWidget = true
+            })
+        },
+        methods: {
+            setCardValue(card) {
+                let self = this
+                $(this.$el).addClass('animated bounceOutDown')
+                setTimeout(function () {
+                    Bot.rsp_gid = card.rsp_gid
+                    self.$parent.sendMessage(card.val)
+                    self.$destroy()
+                    self.$el.parentNode.removeChild(self.$el)
+                }, 500)
 
-      },
-    },
-  }
+            },
+        },
+    }
 </script>
 
 <style>

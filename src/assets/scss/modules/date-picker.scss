@@ -11,4 +11,43 @@
       }
     }
   }
+
+  .v-picker__body{
+    .v-date-picker-header{
+      button{
+        color: $bot-theme-text ;
+      }
+      .v-date-picker-header__value{
+        .accent--text{
+          button{
+            color: $bot-theme-text;
+          }
+        }
+      }
+    }
+    .v-date-picker-table{
+      table{
+        thead{
+          tr{
+            th{
+              color: $bot-theme-text;
+            }
+          }
+        }
+        tbody{
+          tr{
+            td{
+              button{
+                color: $bot-theme-text;
+              }
+              .accent{
+                background-color: $bot-theme-subbody !important;
+                border-color: $bot-theme-subbody !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
