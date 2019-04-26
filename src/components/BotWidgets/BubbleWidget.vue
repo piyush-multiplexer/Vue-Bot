@@ -2,9 +2,9 @@
   <div class="BubbleWidget">
     <div v-for="(bubble,index) in localBubbles" :key="index">
       <div class="bubble-card">
-        <div class="bubble-card-content" v-if="typeof bubble.string === 'string' || typeof bubble.string === 'number' "
+        <div v-if="typeof bubble.string === 'string' || typeof bubble.string === 'number' "
              v-html="bubble.string"></div>
-        <div class="bubble-card-content" v-else>
+        <div v-else>
           {{bubble.string.address}}
         </div>
       </div>

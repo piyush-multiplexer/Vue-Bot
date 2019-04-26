@@ -5,8 +5,8 @@
       <div class="widget-question">Upload File/Image</div>
       <v-layout row wrap>
         <v-flex xs10 md10>
-          <v-text-field ref="uploadFile" label="Select File/Image" @click.native='pickFile' v-model='imageName'
-                        prepend-icon='attach_file'></v-text-field>
+          <v-text-field single-line outline ref="uploadFile" class="bot-text-field" label="Select File/Image" @click.native='pickFile' v-model='imageName'
+                        prepend-inner-icon='attach_file'></v-text-field>
           <input type="file" style="display: none" ref="file" id="file" name="file" @change="localUpload">
         </v-flex>
         <v-flex xs2 md2 class="text-center">

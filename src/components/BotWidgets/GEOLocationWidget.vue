@@ -4,15 +4,15 @@
       <div class="widget-question">Drag & Drop Pin to Select Location</div>
       <v-layout row wrap>
         <v-flex xs12>
-          <google-map ref="map" :center="center" :zoom="10" style="width: 100%; height: 500px" @click="changeMarker">
+          <google-map ref="map" :center="center" :zoom="10" style="width: 100%; height: 350px; margin-bottom: 10px" @click="changeMarker">
             <google-marker ref="marker" v-for="(marker,index) in markers" :key="index" :position="marker.position"
                            :clickable="true"
                            :draggable="true" @click="center=marker.position"
                            @dragend="getMarkerPosition"></google-marker>
           </google-map>
         </v-flex>
-        <v-flex xs10 md10 class="text-center">
-          <div>
+        <v-flex xs10 md10 class="text-left">
+          <div style="color: #9f9f9f">
             {{locationObj.address}}
           </div>
         </v-flex>
