@@ -23,7 +23,7 @@
   export default {
     name: 'TimePickerWidget',
     props: ['widgetData'],
-    data () {return { time: '', showWidget: false }},
+    data () {return { time: new Date(), showWidget: false }},
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {

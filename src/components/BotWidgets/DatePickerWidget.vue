@@ -23,7 +23,7 @@
   export default {
     name: 'DatePickerWidget',
     props: ['widgetData'],
-    data () {return { date: '', showWidget: false }},
+    data () {return { date: moment().format('YYYY-MM-DD'), showWidget: false }},
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
