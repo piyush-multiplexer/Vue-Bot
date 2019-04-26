@@ -12,8 +12,12 @@
           <p class="m-t-5 m-b-0">{{card.footer_text}}</p>
           </div>
         </swiper-slide>
-        <div class="swiper-button-prev" slot="button-prev"></div>
-        <div class="swiper-button-next" slot="button-next"></div>
+        <div slot="button-prev">
+        <div class="swiper-button-prev"></div>
+        </div>
+        <div slot="button-next">
+        <div class="swiper-button-next"></div>
+        </div>
       </swiper>
       <!--      <carousel :dots="false" :nav="false" class="bot-carousel">-->
 
