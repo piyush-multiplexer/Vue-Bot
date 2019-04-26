@@ -1,6 +1,7 @@
 <template>
   <div id="BotUI">
     <div id="bot-container">
+      <div class="bot-background">
       <div id="bot-content" v-if="messages.length">
         <div style="transform: rotate(180deg);direction: ltr;">
           <div v-for="(message,messageIndex) in messages" :key="messageIndex" class="animated bounceInUp">
@@ -30,6 +31,7 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
 

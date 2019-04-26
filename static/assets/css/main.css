@@ -122,6 +122,7 @@ body {
 .accent {
   background-color: #9aa3ab !important;
   border-color: #9aa3ab !important;
+  color: #ffffff !important;
 }
 
 * {
@@ -447,7 +448,7 @@ body {
   height: 48px;
   padding: 0 34px;
   font-size: 15px;
-  color: #616c6f !important;
+  color: #ffffff !important;
   margin: 0px 0;
   border-radius: 50px;
 }
@@ -473,6 +474,7 @@ body {
   color: #616c6f;
   margin-top: 0px;
   margin-bottom: 10px;
+  font-size: 18px;
 }
 .bot-text-field .v-input__control .v-input__slot .v-input__prepend-inner .v-input__icon i {
   color: #616c6f;
@@ -596,6 +598,15 @@ body {
 }
 
 /* modules scss imported */
+.bot-background {
+  overflow-x: hidden;
+  height: 100%;
+  background-image: url("../../../../static/assets/image/bot-background.png");
+  background-size: 100%;
+  background-position: bottom;
+  background-repeat: repeat;
+}
+
 #bot-container {
   transform: rotate(180deg);
   direction: rtl;
@@ -603,7 +614,7 @@ body {
   height: calc(100vh - 10vh);
   background-color: #e4f1fb;
   border-radius: 10px;
-  padding: 0 0 10px 0;
+  padding: 0 0 0 0;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
@@ -668,7 +679,7 @@ body {
     height: calc(100vh - 5vh);
     background-color: #e4f1fb;
     border-radius: 0px;
-    padding: 0 0 10px 0;
+    padding: 0 0 0 0;
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
@@ -853,6 +864,15 @@ $bot-theme-text-filed:#f3f3f3;
     box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px black;
   }
 }
+.bot-background {
+  overflow-x: hidden;
+  height: 100%;
+  background-image: url("../../../../static/assets/image/bot-background.png");
+  background-size: 100%;
+  background-position: bottom;
+  background-repeat: repeat;
+}
+
 #bot-container {
   transform: rotate(180deg);
   direction: rtl;
@@ -860,7 +880,7 @@ $bot-theme-text-filed:#f3f3f3;
   height: calc(100vh - 10vh);
   background-color: #e4f1fb;
   border-radius: 10px;
-  padding: 0 0 10px 0;
+  padding: 0 0 0 0;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
@@ -925,7 +945,7 @@ $bot-theme-text-filed:#f3f3f3;
     height: calc(100vh - 5vh);
     background-color: #e4f1fb;
     border-radius: 0px;
-    padding: 0 0 10px 0;
+    padding: 0 0 0 0;
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
@@ -1396,10 +1416,10 @@ $bot-theme-text-filed:#f3f3f3;
   color: #ffffff !important;
 }
 .bot-date-picker .v-picker__body .v-date-picker-header button {
-  color: #616c6f;
+  color: #616c6f !important;
 }
 .bot-date-picker .v-picker__body .v-date-picker-header .v-date-picker-header__value .accent--text button {
-  color: #616c6f;
+  color: #616c6f !important;
 }
 .bot-date-picker .v-picker__body .v-date-picker-table table thead tr th {
   color: #616c6f;
@@ -1407,6 +1427,7 @@ $bot-theme-text-filed:#f3f3f3;
 .bot-date-picker .v-picker__body .v-date-picker-table table tbody tr td button {
   color: #616c6f;
 }
+
 .bot-time-picker .v-picker__title {
   color: #ffffff !important;
 }
@@ -1416,17 +1437,8 @@ $bot-theme-text-filed:#f3f3f3;
 .bot-time-picker .v-picker__title .v-time-picker-title .v-time-picker-title__ampm {
   color: #ffffff !important;
 }
-.bot-time-picker .v-picker__body .v-date-picker-header button {
-  color: #616c6f;
-}
-.bot-time-picker .v-picker__body .v-date-picker-header .v-date-picker-header__value .accent--text button {
-  color: #616c6f;
-}
-.bot-time-picker .v-picker__body .v-date-picker-table table thead tr th {
-  color: #616c6f;
-}
-.bot-time-picker .v-picker__body .v-date-picker-table table tbody tr td button {
-  color: #616c6f;
+.bot-time-picker .v-picker__body .v-time-picker-clock__container .v-time-picker-clock .v-time-picker-clock__inner .v-time-picker-clock__hand {
+  height: calc(50% - 17px) !important;
 }
 
 .bot-starttyping {
