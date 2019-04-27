@@ -6,7 +6,7 @@
       </div>
       <v-layout row wrap>
         <v-flex xs12>
-          <v-btn class="bot-button" @click.once="restartBot">
+          <v-btn class="bot-button-round-text" @click.once="restartBot">
             Restart
           </v-btn>
         </v-flex>

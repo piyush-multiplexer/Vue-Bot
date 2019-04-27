@@ -5,6 +5,15 @@
   // vertical-align: middle;
 }
 
+.bot-background {
+  overflow-x: hidden;
+  height: 100%;
+  background-image: url("../../../../static/assets/image/bot-background.png");
+  background-size: 100%;
+  background-position: bottom;
+  background-repeat: repeat;
+}
+
 #bot-container {
   transform: rotate(180deg);
   direction: rtl;
@@ -12,12 +21,11 @@
   height: calc(100vh - 10vh);
   background-color: $bot-theme-subbody;
   border-radius: 10px;
-  padding: 0 0 10px 0;
+  padding: 0 0 0 0;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
 }
-
 
 #bot-content {
   bottom: 10px;
@@ -55,10 +63,29 @@
   //display: inline-block;
 }
 
-.bot-map-address{
+.bot-location-center{
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
+.bot-map-address {
   font-size: 16px;
   font-weight: 300;
   color: $bot-theme-text;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.bot-location-button-center{
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
+.bot-location-subbutton-center{
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .widget-question {
@@ -109,7 +136,7 @@
     height: calc(100vh - 5vh);
     background-color: $bot-theme-subbody;
     border-radius: 0px;
-    padding: 0 0 10px 0;
+    padding: 0 0 0 0;
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;

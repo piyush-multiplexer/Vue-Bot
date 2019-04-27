@@ -2,6 +2,7 @@
   <div class="PhoneWidget">
     <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setPhoneValue">
       <div class="widget-question">Enter Phone Number</div>
+      <div class="bot-text-filed-buttton-broder">
       <v-layout row wrap>
         <v-flex xs9 md10>
           <v-text-field required ref="phone" class="bot-text-field-email" v-model="phone" prepend-inner-icon="phone"
@@ -13,6 +14,7 @@
           </v-btn>
         </v-flex>
       </v-layout>
+      </div>
     </div>
   </div>
 </template>

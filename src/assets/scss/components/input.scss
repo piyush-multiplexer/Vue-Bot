@@ -1,4 +1,5 @@
 .bot-text-field {
+  margin-top: 0;
   .v-input__control {
     .v-input__slot {
       border-radius: 10px;
@@ -8,6 +9,7 @@
           color: $bot-theme-text;
           margin-top: 0px;
           margin-bottom: 10px;
+          font-size: 18px;
         }
       }
       .v-input__prepend-inner{
@@ -27,12 +29,14 @@
   }
 
 .v-input__control > .v-input__slot:before{
-  border-color: $bot-theme-text-filed-border !important;
+  //border-color: $bot-theme-text-filed-border !important;
+  border-color: transparent !important;
 }
 
   .v-input__control > .v-input__slot:after{
     border-width: thin 0 0 0 !important;
-    border-color: $bot-theme-text-filed-border-hover !important;
+    //border-color: $bot-theme-text-filed-border-hover !important;
+    border-color: transparent !important;
   }
 
 
@@ -40,6 +44,7 @@
 
 
 .bot-text-field-password {
+  margin-top: 0;
   .v-input__control {
     .v-input__slot {
       border-radius: 10px;
@@ -70,12 +75,14 @@
   }
 
   .v-input__control > .v-input__slot:before{
-    border-color: $bot-theme-text-filed-border !important;
+    //border-color: $bot-theme-text-filed-border !important;
+    border-color: transparent !important;
   }
 
   .v-input__control > .v-input__slot:after{
     border-width: thin 0 0 0 !important;
-    border-color: $bot-theme-text-filed-border-hover !important;
+    //border-color: $bot-theme-text-filed-border-hover !important;
+    border-color: transparent !important;
   }
 
 
@@ -83,6 +90,7 @@
 
 
 .bot-text-field-autocomplete {
+  margin-top: 0;
   .v-input__control {
     .v-input__slot {
       border-radius: 10px;
@@ -118,12 +126,14 @@
   }
 
   .v-input__control > .v-input__slot:before{
-    border-color: $bot-theme-text-filed-border !important;
+    //border-color: $bot-theme-text-filed-border !important;
+    border-color: transparent !important;
   }
 
   .v-input__control > .v-input__slot:after{
     border-width: thin 0 0 0 !important;
-    border-color: $bot-theme-text-filed-border-hover !important;
+    //border-color: $bot-theme-text-filed-border-hover !important;
+    border-color: transparent !important;
   }
 
 
@@ -131,6 +141,7 @@
 
 
 .bot-text-field-email {
+  margin-top: 0;
   .v-input__control {
     .v-input__slot {
       border-radius: 10px;
@@ -161,13 +172,21 @@
   }
 
   .v-input__control > .v-input__slot:before{
-    border-color: $bot-theme-text-filed-border !important;
+    //border-color: $bot-theme-text-filed-border !important;
+    border-color: transparent !important;
   }
 
   .v-input__control > .v-input__slot:after{
     border-width: thin 0 0 0 !important;
-    border-color: $bot-theme-text-filed-border-hover !important;
+    //border-color: $bot-theme-text-filed-border-hover !important;
+    border-color: transparent !important;
   }
 
 
+}
+
+
+.bot-text-filed-buttton-broder{
+  border: 1px solid $bot-theme-text-filed-border;
+  padding: 0 10px;
 }

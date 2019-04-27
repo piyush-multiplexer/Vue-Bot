@@ -15,12 +15,12 @@
   .v-picker__body{
     .v-date-picker-header{
       button{
-        color: $bot-theme-text ;
+        color: $bot-theme-text !important;
       }
       .v-date-picker-header__value{
         .accent--text{
           button{
-            color: $bot-theme-text;
+            color: $bot-theme-text !important;
           }
         }
       }
@@ -45,9 +45,6 @@
         }
       }
     }
-    .v-date-picker-table .v-btn.v-btn--active{
-      color: $white !important;
-    }
   }
 }
 
@@ -64,4 +61,17 @@
       }
     }
   }
+
+  .v-picker__body{
+    .v-time-picker-clock__container{
+      .v-time-picker-clock{
+        .v-time-picker-clock__inner{
+          .v-time-picker-clock__hand{
+            height: calc(50% - 17px) !important;
+          }
+        }
+      }
+    }
+  }
+
 }

@@ -122,6 +122,7 @@ body {
 .accent {
   background-color: #9aa3ab !important;
   border-color: #9aa3ab !important;
+  color: #ffffff !important;
 }
 
 * {
@@ -447,7 +448,7 @@ body {
   height: 48px;
   padding: 0 34px;
   font-size: 15px;
-  color: #616c6f !important;
+  color: #ffffff !important;
   margin: 0px 0;
   border-radius: 50px;
 }
@@ -465,6 +466,9 @@ body {
   border-radius: 50px;
 }
 
+.bot-text-field {
+  margin-top: 0;
+}
 .bot-text-field .v-input__control .v-input__slot {
   border-radius: 10px;
   margin-bottom: 0;
@@ -473,6 +477,7 @@ body {
   color: #616c6f;
   margin-top: 0px;
   margin-bottom: 10px;
+  font-size: 18px;
 }
 .bot-text-field .v-input__control .v-input__slot .v-input__prepend-inner .v-input__icon i {
   color: #616c6f;
@@ -484,13 +489,16 @@ body {
   display: none;
 }
 .bot-text-field .v-input__control > .v-input__slot:before {
-  border-color: #efefef !important;
+  border-color: transparent !important;
 }
 .bot-text-field .v-input__control > .v-input__slot:after {
   border-width: thin 0 0 0 !important;
-  border-color: #bfe5f1 !important;
+  border-color: transparent !important;
 }
 
+.bot-text-field-password {
+  margin-top: 0;
+}
 .bot-text-field-password .v-input__control .v-input__slot {
   border-radius: 10px;
   margin-bottom: 0;
@@ -512,13 +520,16 @@ body {
   display: none;
 }
 .bot-text-field-password .v-input__control > .v-input__slot:before {
-  border-color: #efefef !important;
+  border-color: transparent !important;
 }
 .bot-text-field-password .v-input__control > .v-input__slot:after {
   border-width: thin 0 0 0 !important;
-  border-color: #bfe5f1 !important;
+  border-color: transparent !important;
 }
 
+.bot-text-field-autocomplete {
+  margin-top: 0;
+}
 .bot-text-field-autocomplete .v-input__control .v-input__slot {
   border-radius: 10px;
   margin-bottom: 0;
@@ -544,13 +555,16 @@ body {
   display: none;
 }
 .bot-text-field-autocomplete .v-input__control > .v-input__slot:before {
-  border-color: #efefef !important;
+  border-color: transparent !important;
 }
 .bot-text-field-autocomplete .v-input__control > .v-input__slot:after {
   border-width: thin 0 0 0 !important;
-  border-color: #bfe5f1 !important;
+  border-color: transparent !important;
 }
 
+.bot-text-field-email {
+  margin-top: 0;
+}
 .bot-text-field-email .v-input__control .v-input__slot {
   border-radius: 10px;
   margin-bottom: 0;
@@ -572,11 +586,16 @@ body {
   display: none;
 }
 .bot-text-field-email .v-input__control > .v-input__slot:before {
-  border-color: #efefef !important;
+  border-color: transparent !important;
 }
 .bot-text-field-email .v-input__control > .v-input__slot:after {
   border-width: thin 0 0 0 !important;
-  border-color: #bfe5f1 !important;
+  border-color: transparent !important;
+}
+
+.bot-text-filed-buttton-broder {
+  border: 1px solid #efefef;
+  padding: 0 10px;
 }
 
 .bot-animated-card {
@@ -596,6 +615,15 @@ body {
 }
 
 /* modules scss imported */
+.bot-background {
+  overflow-x: hidden;
+  height: 100%;
+  background-image: url("../../../../static/assets/image/bot-background.png");
+  background-size: 100%;
+  background-position: bottom;
+  background-repeat: repeat;
+}
+
 #bot-container {
   transform: rotate(180deg);
   direction: rtl;
@@ -603,7 +631,7 @@ body {
   height: calc(100vh - 10vh);
   background-color: #e4f1fb;
   border-radius: 10px;
-  padding: 0 0 10px 0;
+  padding: 0 0 0 0;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
@@ -636,10 +664,29 @@ body {
   margin: 0 auto;
 }
 
+.bot-location-center {
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
 .bot-map-address {
   font-size: 16px;
   font-weight: 300;
   color: #616c6f;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.bot-location-button-center {
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
+.bot-location-subbutton-center {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .widget-question {
@@ -668,7 +715,7 @@ body {
     height: calc(100vh - 5vh);
     background-color: #e4f1fb;
     border-radius: 0px;
-    padding: 0 0 10px 0;
+    padding: 0 0 0 0;
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
@@ -853,6 +900,15 @@ $bot-theme-text-filed:#f3f3f3;
     box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px black;
   }
 }
+.bot-background {
+  overflow-x: hidden;
+  height: 100%;
+  background-image: url("../../../../static/assets/image/bot-background.png");
+  background-size: 100%;
+  background-position: bottom;
+  background-repeat: repeat;
+}
+
 #bot-container {
   transform: rotate(180deg);
   direction: rtl;
@@ -860,7 +916,7 @@ $bot-theme-text-filed:#f3f3f3;
   height: calc(100vh - 10vh);
   background-color: #e4f1fb;
   border-radius: 10px;
-  padding: 0 0 10px 0;
+  padding: 0 0 0 0;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
@@ -893,10 +949,29 @@ $bot-theme-text-filed:#f3f3f3;
   margin: 0 auto;
 }
 
+.bot-location-center {
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
 .bot-map-address {
   font-size: 16px;
   font-weight: 300;
   color: #616c6f;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.bot-location-button-center {
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
+.bot-location-subbutton-center {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .widget-question {
@@ -925,7 +1000,7 @@ $bot-theme-text-filed:#f3f3f3;
     height: calc(100vh - 5vh);
     background-color: #e4f1fb;
     border-radius: 0px;
-    padding: 0 0 10px 0;
+    padding: 0 0 0 0;
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
@@ -1396,10 +1471,10 @@ $bot-theme-text-filed:#f3f3f3;
   color: #ffffff !important;
 }
 .bot-date-picker .v-picker__body .v-date-picker-header button {
-  color: #616c6f;
+  color: #616c6f !important;
 }
 .bot-date-picker .v-picker__body .v-date-picker-header .v-date-picker-header__value .accent--text button {
-  color: #616c6f;
+  color: #616c6f !important;
 }
 .bot-date-picker .v-picker__body .v-date-picker-table table thead tr th {
   color: #616c6f;
@@ -1407,6 +1482,7 @@ $bot-theme-text-filed:#f3f3f3;
 .bot-date-picker .v-picker__body .v-date-picker-table table tbody tr td button {
   color: #616c6f;
 }
+
 .bot-time-picker .v-picker__title {
   color: #ffffff !important;
 }
@@ -1416,17 +1492,8 @@ $bot-theme-text-filed:#f3f3f3;
 .bot-time-picker .v-picker__title .v-time-picker-title .v-time-picker-title__ampm {
   color: #ffffff !important;
 }
-.bot-time-picker .v-picker__body .v-date-picker-header button {
-  color: #616c6f;
-}
-.bot-time-picker .v-picker__body .v-date-picker-header .v-date-picker-header__value .accent--text button {
-  color: #616c6f;
-}
-.bot-time-picker .v-picker__body .v-date-picker-table table thead tr th {
-  color: #616c6f;
-}
-.bot-time-picker .v-picker__body .v-date-picker-table table tbody tr td button {
-  color: #616c6f;
+.bot-time-picker .v-picker__body .v-time-picker-clock__container .v-time-picker-clock .v-time-picker-clock__inner .v-time-picker-clock__hand {
+  height: calc(50% - 17px) !important;
 }
 
 .bot-starttyping {
