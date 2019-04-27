@@ -1,21 +1,21 @@
 <template>
   <div class="FileUploadWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card"
-         @keyup.enter.once="uploadFile">
+    <div @keyup.enter.once="uploadFile" class="animated slideInUp bot-animated-card"
+         v-if="showWidget">
       <div class="widget-question">Upload File/Image</div>
       <div class="bot-text-filed-buttton-broder">
-      <v-layout row wrap>
-        <v-flex xs10 md10>
-          <v-text-field ref="uploadFile" class="bot-text-field-email" @click.native='pickFile' v-model='imageName'
-                        prepend-inner-icon='attach_file'></v-text-field>
-          <input type="file" style="display: none" ref="file" id="file" name="file" @change="localUpload">
-        </v-flex>
-        <v-flex xs2 md2 class="text-right">
-          <v-btn class="bot-button-round" :disabled="!uploadFileData.length" @click.once="uploadFile" fab flat icon>
-            <v-icon>send</v-icon>
-          </v-btn>
-        </v-flex>
-      </v-layout>
+        <v-layout row wrap>
+          <v-flex md10 xs10>
+            <v-text-field @click.native='pickFile' class="bot-text-field-email" prepend-inner-icon='attach_file' ref="uploadFile"
+                          v-model='imageName'></v-text-field>
+            <input @change="localUpload" id="file" name="file" ref="file" style="display: none" type="file">
+          </v-flex>
+          <v-flex class="text-right" md2 xs2>
+            <v-btn :disabled="!uploadFileData.length" @click.once="uploadFile" class="bot-button-round" fab flat icon>
+              <v-icon>send</v-icon>
+            </v-btn>
+          </v-flex>
+        </v-layout>
       </div>
     </div>
   </div>
@@ -67,10 +67,12 @@
       },
       setFile (fileUrl) {
         let self = this
-        $('.bot-button-round').addClass('animated rollOut')
+        setTimeout(function () {
+          $('.bot-button-round').addClass('animated rollOut')
+        }, 100)
         setTimeout(function () {
           $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
-        },200)
+        }, 300)
         setTimeout(function () {
           self.$parent.sendMessage(fileUrl)
           self.$destroy()
