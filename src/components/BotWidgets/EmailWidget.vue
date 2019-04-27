@@ -46,7 +46,7 @@
         let self = this
         if (this.emailPattern.test(this.email) && !this.clicked) {
           this.clicked = true
-          $('.bot-button-round').addClass('animated rollOut')
+          animateSendButton()
           setTimeout(function () {
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
           },200)

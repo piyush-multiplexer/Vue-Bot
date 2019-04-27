@@ -118,7 +118,7 @@
         let self = this
         if (this.locationObj.address && !this.clicked) {
           this.clicked = true
-          $('.bot-button-round').addClass('animated rollOut')
+          animateSendButton()
           setTimeout(function () {
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
           },200)

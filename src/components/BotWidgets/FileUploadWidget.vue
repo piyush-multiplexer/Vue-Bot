@@ -68,7 +68,7 @@
       setFile (fileUrl) {
         let self = this
         setTimeout(function () {
-          $('.bot-button-round').addClass('animated rollOut')
+          animateSendButton()
         }, 100)
         setTimeout(function () {
           $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig

@@ -27,7 +27,7 @@
   export default {
     name: 'PasswordWidget',
     props: ['widgetData'],
-    data () {return { password: '', showWidget: false, clicked: false }},
+    data () {return { password: '', passwordOriginal: '', showWidget: false, clicked: false }},
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
@@ -40,10 +40,10 @@
         let self = this
         if (this.password.length && !this.clicked) {
           this.clicked = true
-          $('.bot-button-round').addClass('animated rollOut')
+          animateSendButton()
           setTimeout(function () {
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
-          }, 200)
+          }, 500)
           setTimeout(function () {
             self.$parent.sendMessage(self.password)
             self.$destroy()
