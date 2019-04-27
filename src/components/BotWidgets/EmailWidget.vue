@@ -46,12 +46,15 @@
         let self = this
         if (this.emailPattern.test(this.email) && !this.clicked) {
           this.clicked = true
-          $(this.$el).addClass('animated bounceOutDown')
+          animateSendButton()
+          setTimeout(function () {
+            $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
+          },200)
           setTimeout(function () {
             self.$parent.sendMessage(self.email)
             self.$destroy()
             self.$el.parentNode.removeChild(self.$el)
-          }, 500)
+          }, 1000)
         }
       },
     },

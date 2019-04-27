@@ -13,7 +13,7 @@
           </div>
         </swiper-slide>
         <div class="bot-silder-icon" slot="button-prev">
-          <div class="swiper-button-prev" >
+          <div class="swiper-button-prev">
             <i class="material-icons">
               keyboard_arrow_left
             </i>
@@ -72,7 +72,7 @@
                     slidesPerView: 3,
                     spaceBetween: 30,
                     width: 500,
-                    loop: true,
+                    loop: false,
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev',

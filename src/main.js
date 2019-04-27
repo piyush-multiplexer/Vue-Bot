@@ -11,7 +11,10 @@ import 'vuetify-datetime-picker/src/stylus/main.styl'
 
 Vue.use(DatetimePicker)
 import Loader from './plugins/Loader'
-
+import {animateSendButton} from './plugins/animateSendButton'
+window.animateSendButton = animateSendButton
+import move from 'move-js'
+window.move = move
 Vue.use(Loader)
 import * as VueGoogleMaps from 'vue2-google-maps'
 

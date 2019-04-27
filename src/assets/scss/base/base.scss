@@ -30,6 +30,9 @@ body {
   background-color: $bot-theme-body !important;
   border-color: $bot-theme-body !important;
   color: $white !important;
+  span{
+    color: $white !important;
+  }
 }
 
 

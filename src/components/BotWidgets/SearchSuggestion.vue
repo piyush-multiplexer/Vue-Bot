@@ -42,7 +42,10 @@
         let self = this
         if (this.state && !this.clicked) {
           this.clicked = true
-          $(this.$el).addClass('animated bounceOutDown')
+          animateSendButton()
+          setTimeout(function () {
+            $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
+          }, 200)
           setTimeout(function () {
             self.$parent.sendMessage(self.state)
             self.$destroy()

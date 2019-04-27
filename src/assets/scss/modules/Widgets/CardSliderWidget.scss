@@ -19,7 +19,7 @@
     i{
       position: relative;
       left: -10px;
-      font-size: 45px;
+      font-size: $bot-font-size-45;
       color: $bot-theme-body;
       background-color: $bot-theme-slider-icon;
       &:hover{
@@ -32,8 +32,8 @@
     background-image: none;
     i{
       position: relative;
-      right: 8px;
-      font-size: 45px;
+      right: 0px;
+      font-size: $bot-font-size-45;
       color: $bot-theme-body;
       background-color: $bot-theme-slider-icon;
       &:hover{

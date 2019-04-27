@@ -81,52 +81,56 @@
                     self.getLocationFromGoogle()
                 }
 
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(geoSuccess)
-                }
-            },
-            changeMarker(map) {
-                let self = this
-                this.center = {
-                    lat: map.latLng.lat(this.$refs.map),
-                    lng: map.latLng.lng(this.$refs.map),
-                }
-                this.markers = [{position: this.center}]
-                this.getLocationFromGoogle()
-            },
-            getMarkerPosition(map) {
-                let latLong = {
-                    lat: map.latLng.lat(this.$refs.marker),
-                    lng: map.latLng.lng(this.$refs.marker),
-                }
-                this.center = latLong
-                this.locationObj.lat = latLong.lat
-                this.locationObj.lng = latLong.lng
-                this.getLocationFromGoogle()
-            },
-            getLocationFromGoogle() {
-                let self = this
-                NetworkCommunicator(`GET`,
-                    `https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.center.lat},${this.center.lng}&key=AIzaSyCgG2RHYJmuCsaY0di7Jz3lEIEbsVhhWfY`).then(response => {
-                    if (response.results.length) {
-                        self.locationObj.address = response.results[0].formatted_address
-                    }
-                })
-            },
-            setMapValue() {
-                let self = this
-                if (this.locationObj.address && !this.clicked) {
-                    this.clicked = true
-                    $(this.$el).addClass('animated bounceOutDown')
-                    setTimeout(function () {
-                        self.$parent.sendMessage(self.locationObj)
-                        self.$destroy()
-                        self.$el.parentNode.removeChild(self.$el)
-                    }, 500)
-                }
-            },
-        },
-    }
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(geoSuccess)
+        }
+      },
+      changeMarker (map) {
+        let self = this
+        this.center = {
+          lat: map.latLng.lat(this.$refs.map),
+          lng: map.latLng.lng(this.$refs.map),
+        }
+        this.markers = [{ position: this.center }]
+        this.getLocationFromGoogle()
+      },
+      getMarkerPosition (map) {
+        let latLong = {
+          lat: map.latLng.lat(this.$refs.marker),
+          lng: map.latLng.lng(this.$refs.marker),
+        }
+        this.center = latLong
+        this.locationObj.lat = latLong.lat
+        this.locationObj.lng = latLong.lng
+        this.getLocationFromGoogle()
+      },
+      getLocationFromGoogle () {
+        let self = this
+        NetworkCommunicator(`GET`,
+          `https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.center.lat},${this.center.lng}&key=AIzaSyCgG2RHYJmuCsaY0di7Jz3lEIEbsVhhWfY`).
+          then(response => {
+            if (response.results.length) {
+              self.locationObj.address = response.results[0].formatted_address
+            }
+          })
+      },
+      setMapValue () {
+        let self = this
+        if (this.locationObj.address && !this.clicked) {
+          this.clicked = true
+          animateSendButton()
+          setTimeout(function () {
+            $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
+          },200)
+          setTimeout(function () {
+            self.$parent.sendMessage(self.locationObj)
+            self.$destroy()
+            self.$el.parentNode.removeChild(self.$el)
+          }, 1000)
+        }
+      },
+    },
+  }
 </script>
 
 <style scoped>

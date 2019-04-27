@@ -2,42 +2,47 @@
   .v-picker__title {
     @extend %bot-theme-date-picker;
     color: $white !important;
-    .v-time-picker-title{
-      .v-time-picker-title__time{
+    .v-time-picker-title {
+      .v-time-picker-title__time {
         color: $white !important;
       }
-      .v-time-picker-title__ampm{
+      .v-time-picker-title__ampm {
         color: $white !important;
       }
     }
   }
 
-  .v-picker__body{
-    .v-date-picker-header{
-      button{
+  .v-picker__body {
+    .v-date-picker-header {
+      button {
         color: $bot-theme-text !important;
       }
-      .v-date-picker-header__value{
-        .accent--text{
-          button{
+      .v-date-picker-header__value {
+        .accent--text {
+          button {
             color: $bot-theme-text !important;
           }
         }
       }
     }
-    .v-date-picker-table{
-      table{
-        thead{
-          tr{
-            th{
+    .v-date-picker-years{
+      li{
+        color: $bot-theme-text;
+      }
+    }
+    .v-date-picker-table {
+      table {
+        thead {
+          tr {
+            th {
               color: $bot-theme-text;
             }
           }
         }
-        tbody{
-          tr{
-            td{
-              button{
+        tbody {
+          tr {
+            td {
+              button {
                 color: $bot-theme-text;
               }
             }
@@ -52,22 +57,27 @@
   .v-picker__title {
     @extend %bot-theme-date-picker;
     color: $white !important;
-    .v-time-picker-title{
-      .v-time-picker-title__time{
+    .v-time-picker-title {
+      .v-time-picker-title__time {
         color: $white !important;
       }
-      .v-time-picker-title__ampm{
+      .v-time-picker-title__ampm {
         color: $white !important;
       }
     }
   }
 
-  .v-picker__body{
-    .v-time-picker-clock__container{
-      .v-time-picker-clock{
-        .v-time-picker-clock__inner{
-          .v-time-picker-clock__hand{
+  .v-picker__body {
+    .v-time-picker-clock__container {
+      .v-time-picker-clock {
+        .v-time-picker-clock__inner {
+          .v-time-picker-clock__hand {
             height: calc(50% - 17px) !important;
+          }
+          .v-time-picker-clock__item {
+            span {
+              color: $bot-theme-text;
+            }
           }
         }
       }

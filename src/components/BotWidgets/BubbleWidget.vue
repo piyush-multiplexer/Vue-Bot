@@ -9,7 +9,7 @@
         </div>
       </div>
       <div class="bubble-card" v-if="bubble.img_url">
-        <div><img :src="thombarUrl+bubble.img_url"/></div>
+        <img :src="thombarUrl+bubble.img_url"/>
       </div>
     </div>
     <div class="bot-starttyping" v-if="startTyping">
