@@ -39,12 +39,15 @@
         let self = this
         if (this.phone && this.phone.length === 10 && !this.clicked) {
           this.clicked = true
-          $(this.$el).addClass('animated bounceOutDown')
+          $('.bot-button-round').addClass('animated rollOut')
+          setTimeout(function () {
+            $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
+          },200)
           setTimeout(function () {
             self.$parent.sendMessage(self.phone)
             self.$destroy()
             self.$el.parentNode.removeChild(self.$el)
-          }, 500)
+          }, 1000)
         }
       },
     },
