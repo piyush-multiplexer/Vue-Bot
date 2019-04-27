@@ -3,6 +3,7 @@
     <div v-if="showWidget" class="animated slideInUp bot-animated-card"
          @keyup.enter.once="uploadFile">
       <div class="widget-question">Upload File/Image</div>
+      <div class="bot-text-filed-buttton-broder">
       <v-layout row wrap>
         <v-flex xs10 md10>
           <v-text-field ref="uploadFile" class="bot-text-field-email" @click.native='pickFile' v-model='imageName'
@@ -15,6 +16,7 @@
           </v-btn>
         </v-flex>
       </v-layout>
+      </div>
     </div>
   </div>
 </template>

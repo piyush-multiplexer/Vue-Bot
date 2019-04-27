@@ -2,6 +2,7 @@
   <div class="UserNameWidget">
     <div v-show="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setUserValue">
       <div class="widget-question">Enter Name</div>
+      <div class="bot-text-filed-buttton-broder">
       <v-layout row wrap>
         <v-flex xs9 md10>
           <v-text-field required ref="username" class="bot-text-field" v-model="userName"></v-text-field>
@@ -12,6 +13,7 @@
           </v-btn>
         </v-flex>
       </v-layout>
+      </div>
     </div>
   </div>
 </template>

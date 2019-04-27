@@ -466,6 +466,9 @@ body {
   border-radius: 50px;
 }
 
+.bot-text-field {
+  margin-top: 0;
+}
 .bot-text-field .v-input__control .v-input__slot {
   border-radius: 10px;
   margin-bottom: 0;
@@ -486,13 +489,16 @@ body {
   display: none;
 }
 .bot-text-field .v-input__control > .v-input__slot:before {
-  border-color: #efefef !important;
+  border-color: transparent !important;
 }
 .bot-text-field .v-input__control > .v-input__slot:after {
   border-width: thin 0 0 0 !important;
-  border-color: #bfe5f1 !important;
+  border-color: transparent !important;
 }
 
+.bot-text-field-password {
+  margin-top: 0;
+}
 .bot-text-field-password .v-input__control .v-input__slot {
   border-radius: 10px;
   margin-bottom: 0;
@@ -514,13 +520,16 @@ body {
   display: none;
 }
 .bot-text-field-password .v-input__control > .v-input__slot:before {
-  border-color: #efefef !important;
+  border-color: transparent !important;
 }
 .bot-text-field-password .v-input__control > .v-input__slot:after {
   border-width: thin 0 0 0 !important;
-  border-color: #bfe5f1 !important;
+  border-color: transparent !important;
 }
 
+.bot-text-field-autocomplete {
+  margin-top: 0;
+}
 .bot-text-field-autocomplete .v-input__control .v-input__slot {
   border-radius: 10px;
   margin-bottom: 0;
@@ -546,13 +555,16 @@ body {
   display: none;
 }
 .bot-text-field-autocomplete .v-input__control > .v-input__slot:before {
-  border-color: #efefef !important;
+  border-color: transparent !important;
 }
 .bot-text-field-autocomplete .v-input__control > .v-input__slot:after {
   border-width: thin 0 0 0 !important;
-  border-color: #bfe5f1 !important;
+  border-color: transparent !important;
 }
 
+.bot-text-field-email {
+  margin-top: 0;
+}
 .bot-text-field-email .v-input__control .v-input__slot {
   border-radius: 10px;
   margin-bottom: 0;
@@ -574,11 +586,16 @@ body {
   display: none;
 }
 .bot-text-field-email .v-input__control > .v-input__slot:before {
-  border-color: #efefef !important;
+  border-color: transparent !important;
 }
 .bot-text-field-email .v-input__control > .v-input__slot:after {
   border-width: thin 0 0 0 !important;
-  border-color: #bfe5f1 !important;
+  border-color: transparent !important;
+}
+
+.bot-text-filed-buttton-broder {
+  border: 1px solid #efefef;
+  padding: 0 10px;
 }
 
 .bot-animated-card {

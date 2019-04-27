@@ -2,6 +2,7 @@
   <div class="PasswordWidget">
     <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setPasswordValue">
       <div class="widget-question">Enter Password</div>
+      <div class="bot-text-filed-buttton-broder">
       <v-layout row wrap>
         <v-flex xs9 md10>
           <v-text-field required ref="password" prepend-inner-icon="vpn_key" class="bot-text-field-password"
@@ -14,6 +15,7 @@
           </v-btn>
         </v-flex>
       </v-layout>
+      </div>
     </div>
   </div>
 </template>

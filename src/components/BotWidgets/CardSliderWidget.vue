@@ -2,7 +2,7 @@
   <div>
     <!--<div class="card-group" v-if="showWidget">-->
 
-    <div class="bot-animated-card animated slideInUp" v-if="showWidget">
+    <div class="bot-animated-card animated slideInUp p-l-0 p-r-0" v-if="showWidget">
       <!--      <div class="CardSliderWidget">-->
       <swiper :options="swiperOption" class="p-r-24 bot-carousel">
         <swiper-slide v-for="(card) in widgetData.input.args.options" :key="index" class="p-t-10 p-b-10">

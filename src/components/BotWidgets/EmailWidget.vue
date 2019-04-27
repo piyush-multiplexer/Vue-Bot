@@ -2,6 +2,7 @@
   <div class="EmailWidget">
     <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setEmailValue">
       <div class="widget-question">Enter Email</div>
+      <div class="bot-text-filed-buttton-broder">
       <v-layout row wrap>
         <v-flex xs9 md10>
           <v-text-field ref="email" class="bot-text-field-email" prepend-inner-icon="email"
@@ -14,6 +15,7 @@
           </v-btn>
         </v-flex>
       </v-layout>
+      </div>
     </div>
   </div>
 </template>
