@@ -30,8 +30,17 @@
               </div>
             </div>
           </div>
+          <div id="powered-by" class="p-t-5 p-b-5">
+            <v-layout  class="text-center">
+              <v-flex xs12>
+                Powered By Avinashi Pvt. Ltd.
+              </v-flex>
+            </v-layout>
+          </div>
         </div>
+
       </div>
+
       </div>
     </div>
 

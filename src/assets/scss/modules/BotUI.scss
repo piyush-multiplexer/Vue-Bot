@@ -17,8 +17,8 @@
 #bot-container {
   transform: rotate(180deg);
   direction: rtl;
-  top: calc(50vh - 48vh);
-  height: calc(100vh - 10vh);
+  top: calc(50vh - 49vh);
+  height: calc(100vh - 2vh);
   background-color: $bot-theme-subbody;
   border-radius: 10px;
   padding: 0 0 0 0;
@@ -70,7 +70,7 @@
 }
 
 .bot-map-address {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 300;
   color: $bot-theme-text;
   display: table-cell;
@@ -95,13 +95,9 @@
   color: $bot-theme-text;
   border-radius: 22px;
   margin-bottom: 10px;
-  font-size: 22px;
+  font-size: $bot-font-size-22;
 }
 
-#powered-by {
-  bottom: -20px;
-  position: relative;
-}
 
 .DatePickerWidget {
 
@@ -133,7 +129,7 @@
   #bot-container {
     transform: rotate(180deg);
     direction: rtl;
-    height: calc(100vh - 5vh);
+    height: calc(100vh - 0vh);
     background-color: $bot-theme-subbody;
     border-radius: 0px;
     padding: 0 0 0 0;
@@ -155,9 +151,6 @@
     padding-bottom: 30px;
   }
 
-  #powered-by {
-    bottom: -5px;
-    position: relative;
-  }
+
 
 }
