@@ -664,10 +664,29 @@ body {
   margin: 0 auto;
 }
 
+.bot-location-center {
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
 .bot-map-address {
   font-size: 16px;
   font-weight: 300;
   color: #616c6f;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.bot-location-button-center {
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
+.bot-location-subbutton-center {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .widget-question {
@@ -930,10 +949,29 @@ $bot-theme-text-filed:#f3f3f3;
   margin: 0 auto;
 }
 
+.bot-location-center {
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
 .bot-map-address {
   font-size: 16px;
   font-weight: 300;
   color: #616c6f;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.bot-location-button-center {
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
+.bot-location-subbutton-center {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .widget-question {

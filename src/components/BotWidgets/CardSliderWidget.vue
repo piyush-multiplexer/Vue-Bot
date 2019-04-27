@@ -72,7 +72,7 @@
                     slidesPerView: 3,
                     spaceBetween: 30,
                     width: 500,
-                    loop: false,
+                    loop: true,
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev',
