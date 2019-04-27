@@ -227,6 +227,14 @@ body {
   padding-top: 10px !important;
 }
 
+.p-t-5 {
+  padding-top: 5px;
+}
+
+.p-b-5 {
+  padding-bottom: 5px;
+}
+
 .p-t-6 {
   padding-top: 6px;
 }
@@ -447,7 +455,7 @@ body {
   background-color: #b3c9da !important;
   height: 48px;
   padding: 0 34px;
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: #ffffff !important;
   margin: 0px 0;
   border-radius: 50px;
@@ -477,7 +485,7 @@ body {
   color: #616c6f;
   margin-top: 0px;
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 .bot-text-field .v-input__control .v-input__slot .v-input__prepend-inner .v-input__icon i {
   color: #616c6f;
@@ -508,7 +516,7 @@ body {
   margin-top: 0px;
   margin-bottom: 7px;
   margin-left: 10px;
-  font-size: 32px;
+  font-size: 2rem;
 }
 .bot-text-field-password .v-input__control .v-input__slot .v-input__prepend-inner .v-input__icon i {
   color: #616c6f;
@@ -539,7 +547,7 @@ body {
   margin-top: 0px;
   margin-bottom: 7px;
   margin-left: 10px;
-  font-size: 32px;
+  font-size: 2rem;
 }
 .bot-text-field-autocomplete .v-input__control .v-input__slot .v-select__slot {
   margin-bottom: 7px;
@@ -574,7 +582,7 @@ body {
   margin-top: 0px;
   margin-bottom: 7px;
   margin-left: 10px;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 .bot-text-field-email .v-input__control .v-input__slot .v-input__prepend-inner .v-input__icon i {
   color: #616c6f;
@@ -627,8 +635,8 @@ body {
 #bot-container {
   transform: rotate(180deg);
   direction: rtl;
-  top: calc(50vh - 48vh);
-  height: calc(100vh - 10vh);
+  top: calc(50vh - 49vh);
+  height: calc(100vh - 2vh);
   background-color: #e4f1fb;
   border-radius: 10px;
   padding: 0 0 0 0;
@@ -664,10 +672,29 @@ body {
   margin: 0 auto;
 }
 
+.bot-location-center {
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
 .bot-map-address {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 300;
   color: #616c6f;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.bot-location-button-center {
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
+.bot-location-subbutton-center {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .widget-question {
@@ -677,12 +704,7 @@ body {
   color: #616c6f;
   border-radius: 22px;
   margin-bottom: 10px;
-  font-size: 22px;
-}
-
-#powered-by {
-  bottom: -20px;
-  position: relative;
+  font-size: 1.375rem;
 }
 
 @media only screen and (max-width: 767px) {
@@ -693,7 +715,7 @@ body {
   #bot-container {
     transform: rotate(180deg);
     direction: rtl;
-    height: calc(100vh - 5vh);
+    height: calc(100vh - 0vh);
     background-color: #e4f1fb;
     border-radius: 0px;
     padding: 0 0 0 0;
@@ -714,14 +736,9 @@ body {
   .SearchSuggestion {
     padding-bottom: 30px;
   }
-
-  #powered-by {
-    bottom: -5px;
-    position: relative;
-  }
 }
 .bot-list .v-list__tile .v-list__tile__content .v-list__tile__title {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 /*$white:#ffffff;
@@ -830,9 +847,9 @@ $bot-theme-text-filed:#f3f3f3;
 
 .typing-loader {
   margin: 0px auto 0px 0px;
-  width: 6px;
-  height: 6px;
-  margin-left: 10px;
+  width: 10px;
+  height: 10px;
+  margin-left: 7px;
   border-radius: 50px;
   -webkit-animation: line 1s linear infinite alternate;
   -moz-animation: line 1s linear infinite alternate;
@@ -893,8 +910,8 @@ $bot-theme-text-filed:#f3f3f3;
 #bot-container {
   transform: rotate(180deg);
   direction: rtl;
-  top: calc(50vh - 48vh);
-  height: calc(100vh - 10vh);
+  top: calc(50vh - 49vh);
+  height: calc(100vh - 2vh);
   background-color: #e4f1fb;
   border-radius: 10px;
   padding: 0 0 0 0;
@@ -930,10 +947,29 @@ $bot-theme-text-filed:#f3f3f3;
   margin: 0 auto;
 }
 
+.bot-location-center {
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
 .bot-map-address {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 300;
   color: #616c6f;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.bot-location-button-center {
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
+.bot-location-subbutton-center {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .widget-question {
@@ -943,12 +979,7 @@ $bot-theme-text-filed:#f3f3f3;
   color: #616c6f;
   border-radius: 22px;
   margin-bottom: 10px;
-  font-size: 22px;
-}
-
-#powered-by {
-  bottom: -20px;
-  position: relative;
+  font-size: 1.375rem;
 }
 
 @media only screen and (max-width: 767px) {
@@ -959,7 +990,7 @@ $bot-theme-text-filed:#f3f3f3;
   #bot-container {
     transform: rotate(180deg);
     direction: rtl;
-    height: calc(100vh - 5vh);
+    height: calc(100vh - 0vh);
     background-color: #e4f1fb;
     border-radius: 0px;
     padding: 0 0 0 0;
@@ -979,11 +1010,6 @@ $bot-theme-text-filed:#f3f3f3;
 
   .SearchSuggestion {
     padding-bottom: 30px;
-  }
-
-  #powered-by {
-    bottom: -5px;
-    position: relative;
   }
 }
 /*$white:#ffffff;
@@ -1108,7 +1134,7 @@ $bot-theme-text-filed:#f3f3f3;
   padding: 17px;
   margin: 15px 0;
   border-radius: 15px;
-  font-size: 18px;
+  font-size: 1.125rem;
   border-top-left-radius: 0;
   background-color: #ffffff;
   box-shadow: 0 0 12px 0 #cbdeec;
@@ -1121,7 +1147,7 @@ $bot-theme-text-filed:#f3f3f3;
   padding: 17px;
   margin: 15px 0;
   border-radius: 15px;
-  font-size: 18px;
+  font-size: 1.125rem;
   border-top-right-radius: 0;
   background-color: #b3c9da;
   box-shadow: 0 0 12px 0 #cbdeec;
@@ -1343,7 +1369,7 @@ $bot-theme-text-filed:#f3f3f3;
 .bot-silder-icon .swiper-button-prev i {
   position: relative;
   left: -10px;
-  font-size: 45px;
+  font-size: 2.8125rem;
   color: #9aa3ab;
   background-color: rgba(179, 201, 218, 0.4);
 }
@@ -1356,8 +1382,8 @@ $bot-theme-text-filed:#f3f3f3;
 }
 .bot-silder-icon .swiper-button-next i {
   position: relative;
-  right: 8px;
-  font-size: 45px;
+  right: 0px;
+  font-size: 2.8125rem;
   color: #9aa3ab;
   background-color: rgba(179, 201, 218, 0.4);
 }
@@ -1438,6 +1464,9 @@ $bot-theme-text-filed:#f3f3f3;
 .bot-date-picker .v-picker__body .v-date-picker-header .v-date-picker-header__value .accent--text button {
   color: #616c6f !important;
 }
+.bot-date-picker .v-picker__body .v-date-picker-years li {
+  color: #616c6f;
+}
 .bot-date-picker .v-picker__body .v-date-picker-table table thead tr th {
   color: #616c6f;
 }
@@ -1457,6 +1486,9 @@ $bot-theme-text-filed:#f3f3f3;
 .bot-time-picker .v-picker__body .v-time-picker-clock__container .v-time-picker-clock .v-time-picker-clock__inner .v-time-picker-clock__hand {
   height: calc(50% - 17px) !important;
 }
+.bot-time-picker .v-picker__body .v-time-picker-clock__container .v-time-picker-clock .v-time-picker-clock__inner .v-time-picker-clock__item span {
+  color: #616c6f;
+}
 
 .bot-starttyping {
   width: 70px;
@@ -1469,9 +1501,9 @@ $bot-theme-text-filed:#f3f3f3;
 
 .typing-loader {
   margin: 0px auto 0px 0px;
-  width: 6px;
-  height: 6px;
-  margin-left: 10px;
+  width: 10px;
+  height: 10px;
+  margin-left: 7px;
   border-radius: 50px;
   -webkit-animation: line 1s linear infinite alternate;
   -moz-animation: line 1s linear infinite alternate;
@@ -1642,7 +1674,7 @@ $bot-theme-text-filed:#f3f3f3;
   padding: 17px;
   margin: 15px 0;
   border-radius: 15px;
-  font-size: 18px;
+  font-size: 1.125rem;
   border-top-left-radius: 0;
   background-color: #ffffff;
   box-shadow: 0 0 12px 0 #cbdeec;
@@ -1655,7 +1687,7 @@ $bot-theme-text-filed:#f3f3f3;
   padding: 17px;
   margin: 15px 0;
   border-radius: 15px;
-  font-size: 18px;
+  font-size: 1.125rem;
   border-top-right-radius: 0;
   background-color: #b3c9da;
   box-shadow: 0 0 12px 0 #cbdeec;
@@ -1877,7 +1909,7 @@ $bot-theme-text-filed:#f3f3f3;
 .bot-silder-icon .swiper-button-prev i {
   position: relative;
   left: -10px;
-  font-size: 45px;
+  font-size: 2.8125rem;
   color: #9aa3ab;
   background-color: rgba(179, 201, 218, 0.4);
 }
@@ -1890,8 +1922,8 @@ $bot-theme-text-filed:#f3f3f3;
 }
 .bot-silder-icon .swiper-button-next i {
   position: relative;
-  right: 8px;
-  font-size: 45px;
+  right: 0px;
+  font-size: 2.8125rem;
   color: #9aa3ab;
   background-color: rgba(179, 201, 218, 0.4);
 }

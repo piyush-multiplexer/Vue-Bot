@@ -4,7 +4,8 @@
       <div class="widget-question">Drag & Drop Pin to Select Location</div>
       <v-layout row wrap>
         <v-flex xs12>
-          <google-map ref="map" :center="center" :zoom="10" style="width: 100%; height: 300px; margin-bottom: 10px" @click="changeMarker">
+          <google-map ref="map" :center="center" :zoom="10" style="width: 100%; height: 300px; margin-bottom: 10px"
+                      @click="changeMarker">
             <google-marker ref="marker" v-for="(marker,index) in markers" :key="index" :position="marker.position"
                            :clickable="true"
                            :draggable="true" @click="center=marker.position"
@@ -12,16 +13,22 @@
           </google-map>
         </v-flex>
         <v-flex xs10 md10 class="text-left">
-          <div class="bot-map-address">
-            {{locationObj.address}}
+          <div class="bot-location-center">
+            <div class="bot-map-address">
+              {{locationObj.address}}
+            </div>
           </div>
         </v-flex>
         <v-flex xs2 md2 class="text-center">
-          <v-btn class="bot-button-round" :disabled="!locationObj.address.length"
-                 @click.once="setMapValue" fab flat
-                 icon>
-            <v-icon>send</v-icon>
-          </v-btn>
+          <div class="bot-location-button-center">
+            <div class="bot-location-subbutton-center">
+              <v-btn class="bot-button-round" :disabled="!locationObj.address.length"
+                     @click.once="setMapValue" fab flat
+                     icon>
+                <v-icon>send</v-icon>
+              </v-btn>
+            </div>
+          </div>
         </v-flex>
       </v-layout>
     </div>
@@ -30,49 +37,49 @@
 
 <script>
 
-  import EventBus from '../../plugins/eventBus'
-  import NetworkCommunicator from '../../plugins/NetworkResourceHandler'
+    import EventBus from '../../plugins/eventBus'
+    import NetworkCommunicator from '../../plugins/NetworkResourceHandler'
 
-  export default {
-    name: 'GEOLocationWidget',
-    props: ['widgetData'],
-    data () {
-      return {
-        // center: {},
-        center: { lat: 21.17, lng: 72.83 },
-        // markers: [{ position: { lat: 21.20, lng: 72.84 } }],
-        markers: [],
-        locationObj: {
-          'lat': '',
-          'lng': '',
-          'address': '',
-          'type': 'geoloc',
-        }, showWidget: false,
-        clicked: false,
-      }
-    },
-    mounted () {
-      let self = this
-      EventBus.$on('AFTER_BUBBLE', function () {
-        self.showWidget = true
-        self.detectLocation()
-      })
-    },
-    methods: {
-      detectLocation () {
-        let self = this
+    export default {
+        name: 'GEOLocationWidget',
+        props: ['widgetData'],
+        data() {
+            return {
+                // center: {},
+                center: {lat: 21.17, lng: 72.83},
+                // markers: [{ position: { lat: 21.20, lng: 72.84 } }],
+                markers: [],
+                locationObj: {
+                    'lat': '',
+                    'lng': '',
+                    'address': '',
+                    'type': 'geoloc',
+                }, showWidget: false,
+                clicked: false,
+            }
+        },
+        mounted() {
+            let self = this
+            EventBus.$on('AFTER_BUBBLE', function () {
+                self.showWidget = true
+                self.detectLocation()
+            })
+        },
+        methods: {
+            detectLocation() {
+                let self = this
 
-        function geoSuccess (position) {
-          self.center = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          }
-          self.locationObj.lat = position.coords.latitude
-          self.locationObj.lng = position.coords.longitude
-          self.markers = [{ position: self.center }]
-          self.$forceUpdate()
-          self.getLocationFromGoogle()
-        }
+                function geoSuccess(position) {
+                    self.center = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude,
+                    }
+                    self.locationObj.lat = position.coords.latitude
+                    self.locationObj.lng = position.coords.longitude
+                    self.markers = [{position: self.center}]
+                    self.$forceUpdate()
+                    self.getLocationFromGoogle()
+                }
 
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(geoSuccess)
