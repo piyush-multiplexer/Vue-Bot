@@ -5,7 +5,7 @@
       <div class="bot-text-filed-buttton-broder">
         <v-layout row wrap>
           <v-flex md10 xs9>
-            <v-text-field class="bot-text-field-password" prepend-inner-icon="vpn_key" ref="password" required
+            <v-text-field class="bot-text-field-password" prepend-icon="vpn_key" ref="password" required
                           type="password"
                           v-model="password"></v-text-field>
           </v-flex>

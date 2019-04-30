@@ -6,7 +6,7 @@
       <div class="bot-text-filed-buttton-broder">
         <v-layout row wrap>
           <v-flex md10 xs10>
-            <v-text-field @click.native='pickFile' class="bot-text-field-email" prepend-inner-icon='attach_file' ref="uploadFile"
+            <v-text-field @click.native='pickFile' class="bot-text-field-email" prepend-icon='attach_file' ref="uploadFile"
                           v-model='imageName'></v-text-field>
             <input @change="localUpload" id="file" name="file" ref="file" style="display: none" type="file">
           </v-flex>

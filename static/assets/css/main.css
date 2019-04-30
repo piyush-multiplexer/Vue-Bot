@@ -500,11 +500,11 @@ body {
   display: none;
 }
 .bot-text-field .v-input__control > .v-input__slot:before {
-  border-color: transparent !important;
+  border-color: #efefef !important;
 }
 .bot-text-field .v-input__control > .v-input__slot:after {
   border-width: thin 0 0 0 !important;
-  border-color: transparent !important;
+  border-color: #bfe5f1 !important;
 }
 
 .bot-text-field-password {
@@ -531,11 +531,11 @@ body {
   display: none;
 }
 .bot-text-field-password .v-input__control > .v-input__slot:before {
-  border-color: transparent !important;
+  border-color: #efefef !important;
 }
 .bot-text-field-password .v-input__control > .v-input__slot:after {
   border-width: thin 0 0 0 !important;
-  border-color: transparent !important;
+  border-color: #bfe5f1 !important;
 }
 
 .bot-text-field-autocomplete {
@@ -566,11 +566,11 @@ body {
   display: none;
 }
 .bot-text-field-autocomplete .v-input__control > .v-input__slot:before {
-  border-color: transparent !important;
+  border-color: #efefef !important;
 }
 .bot-text-field-autocomplete .v-input__control > .v-input__slot:after {
   border-width: thin 0 0 0 !important;
-  border-color: transparent !important;
+  border-color: #bfe5f1 !important;
 }
 
 .bot-text-field-email {
@@ -597,16 +597,15 @@ body {
   display: none;
 }
 .bot-text-field-email .v-input__control > .v-input__slot:before {
-  border-color: transparent !important;
+  border-color: #efefef !important;
 }
 .bot-text-field-email .v-input__control > .v-input__slot:after {
   border-width: thin 0 0 0 !important;
-  border-color: transparent !important;
+  border-color: #bfe5f1 !important;
 }
 
 .bot-text-filed-buttton-broder {
-  border: 1px solid #efefef;
-  padding: 0 10px;
+  padding: 0 0 0 10px;
 }
 
 .bot-animated-card {
@@ -656,7 +655,7 @@ body {
 /*height: 80vh;*/
 .message-content-bot {
   word-break: break-word;
-  padding: 5px 10px;
+  padding: 0px 10px;
   border-radius: 30%;
   display: inline-block;
   text-align: left;
@@ -931,7 +930,7 @@ $bot-theme-text-filed:#f3f3f3;
 /*height: 80vh;*/
 .message-content-bot {
   word-break: break-word;
-  padding: 5px 10px;
+  padding: 0px 10px;
   border-radius: 30%;
   display: inline-block;
   text-align: left;
