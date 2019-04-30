@@ -2,44 +2,44 @@
   <div id="BotUI">
     <div id="bot-container">
       <div class="bot-background">
-      <div id="bot-content" v-if="messages.length">
-        <div style="transform: rotate(180deg);direction: ltr;">
-          <div v-for="(message,messageIndex) in messages" :key="messageIndex" class="animated bounceInUp">
-            <div v-if="message.type==='user'" class="text-right">
-              <div class="message-content-user">
-                <bubble :bubbles="message.text"></bubble>
-              </div>
-            </div>
-
-            <div v-else-if="message.input.name==='text'"
-                 :style="botConfig.isHuman?'text-align: left':'text-align: center'">
-              <div class="message-content-bot">
-                <bubble :bubbles="message.text"></bubble>
-              </div>
-              <component :is="message.input.args.input_type" :widgetData="message"></component>
-            </div>
-
-            <div v-else>
-              <div :style="botConfig.isHuman?'text-align: left':'text-align: center'">
-                <div class="message-content-bot">
+        <div id="bot-content" v-if="messages.length">
+          <div style="transform: rotate(180deg);direction: ltr;">
+            <div :key="messageIndex" class="animated bounceInUp" v-for="(message,messageIndex) in messages">
+              <div class="text-right" v-if="message.type==='user'">
+                <div class="message-content-user">
                   <bubble :bubbles="message.text"></bubble>
                 </div>
               </div>
-              <div class="widget-content">
-                <component :is="message.input.name" :widgetData="message"></component>
+
+              <div :style="botConfig.isHuman?'text-align: left':'text-align: center'"
+                   v-else-if="message.input.name==='text'">
+                <div class="message-content-bot">
+                  <bubble :bubbles="message.text"></bubble>
+                </div>
+                <component :is="message.input.args.input_type" :widgetData="message"></component>
+              </div>
+
+              <div v-else>
+                <div :style="botConfig.isHuman?'text-align: left':'text-align: center'">
+                  <div class="message-content-bot">
+                    <bubble :bubbles="message.text"></bubble>
+                  </div>
+                </div>
+                <div class="widget-content">
+                  <component :is="message.input.name" :widgetData="message"></component>
+                </div>
               </div>
             </div>
+            <div class="p-t-5 p-b-5" id="powered-by">
+              <v-layout class="text-center">
+                <v-flex xs12>
+                  Powered By Avinashi Pvt. Ltd.
+                </v-flex>
+              </v-layout>
+            </div>
           </div>
-          <div id="powered-by" class="p-t-5 p-b-5">
-            <v-layout  class="text-center">
-              <v-flex xs12>
-                Powered By Avinashi Pvt. Ltd.
-              </v-flex>
-            </v-layout>
-          </div>
-        </div>
 
-      </div>
+        </div>
 
       </div>
     </div>
@@ -123,11 +123,11 @@
       async sendMessage (userValue) {
         this.messages.push({
           type: 'user',
-          input: { name: 'user' },
+          input: { name: userValue.type },
           class: '',
-          text: [{ string: this.userValue ? this.userValue : userValue }],
+          text: [{ string: this.userValue ? this.userValue : userValue.value }],
         })
-        this.messages.push(await Bot.getNextMessage(this.userValue ? this.userValue : userValue))
+        this.messages.push(await Bot.getNextMessage(this.userValue ? this.userValue : userValue.value))
         this.userValue = ''
         this.$forceUpdate()
       },

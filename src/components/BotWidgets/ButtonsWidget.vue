@@ -3,7 +3,7 @@
     <div class="btn-group animated slideInUp bot-animated-card" v-if="showWidget">
       <div class="widget-question">Select an Option</div>
       <template v-for="btn in widgetData.input.args.options">
-        <v-btn round class="bot-button-round-text m-b-10" @click.once="setButtonValue(btn)">{{btn.val}}<span
+        <v-btn @click.once="setButtonValue(btn)" class="bot-button-round-text m-b-10" round>{{btn.val}}<span
           v-html="btn.href"></span>
         </v-btn>
       </template>
@@ -33,7 +33,7 @@
         $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
           Bot.rsp_gid = btn.rsp_gid
-          self.$parent.sendMessage(btn.val)
+          self.$parent.sendMessage({ value: btn.val, type: 'user_buttons' })
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)

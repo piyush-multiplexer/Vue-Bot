@@ -1,5 +1,5 @@
 <template>
-  <div class="BubbleWidget"  @keyup.esc="imageIndex=null">
+  <div class="BubbleWidget" >
     <div :key="index" v-for="(bubble,index) in localBubbles">
       <div class="bubble-card">
         <div v-html="bubble.string"

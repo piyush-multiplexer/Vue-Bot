@@ -1,11 +1,11 @@
 <template>
   <div class="RatingWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card">
+    <div class="animated slideInUp bot-animated-card" v-if="showWidget">
       <div class="widget-question">Rate It</div>
-      <v-rating class="bot-rating m-b-20" v-model="rating" color="yellow darken-3" background-color="grey darken-1"
-                empty-icon="$vuetify.icons.ratingFull" :half-increments="widgetData.input.args.step!=1?true:false"
-                hover x-large></v-rating>
-      <v-btn class="bot-button-round-text" @click.once="setDateTimeValue">Submit {{rating}} Rating</v-btn>
+      <v-rating :half-increments="widgetData.input.args.step!=1?true:false" background-color="grey darken-1" class="bot-rating m-b-20" color="yellow darken-3"
+                empty-icon="$vuetify.icons.ratingFull" hover
+                v-model="rating" x-large></v-rating>
+      <v-btn @click.once="setDateTimeValue" class="bot-button-round-text">Submit {{rating}} Rating</v-btn>
     </div>
   </div>
 </template>
@@ -33,7 +33,7 @@
         let self = this
         $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
-          self.$parent.sendMessage(self.rating.toString())
+          self.$parent.sendMessage({ type: 'user_rating', value: self.rating.toString() })
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)

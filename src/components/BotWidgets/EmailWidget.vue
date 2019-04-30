@@ -1,20 +1,20 @@
 <template>
   <div class="EmailWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setEmailValue">
+    <div @keyup.enter="setEmailValue" class="animated slideInUp bot-animated-card" v-if="showWidget">
       <div class="widget-question">Enter Email</div>
       <div class="bot-text-filed-buttton-broder">
-      <v-layout row wrap>
-        <v-flex xs9 md10>
-          <v-text-field ref="email" class="bot-text-field-email" prepend-icon="email"
-                        v-model="email"></v-text-field>
-        </v-flex>
-        <v-flex xs3 md2 class="text-right">
-          <v-btn class="bot-button-round" @click.once="setEmailValue" fab flat icon
-                 :disabled="!emailPattern.test(email)">
-            <v-icon>send</v-icon>
-          </v-btn>
-        </v-flex>
-      </v-layout>
+        <v-layout row wrap>
+          <v-flex md10 xs9>
+            <v-text-field class="bot-text-field-email" prepend-icon="email" ref="email"
+                          v-model="email"></v-text-field>
+          </v-flex>
+          <v-flex class="text-right" md2 xs3>
+            <v-btn :disabled="!emailPattern.test(email)" @click.once="setEmailValue" class="bot-button-round" fab flat
+                   icon>
+              <v-icon>send</v-icon>
+            </v-btn>
+          </v-flex>
+        </v-layout>
       </div>
     </div>
   </div>
@@ -49,9 +49,9 @@
           animateSendButton()
           setTimeout(function () {
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
-          },200)
+          }, 200)
           setTimeout(function () {
-            self.$parent.sendMessage(self.email)
+            self.$parent.sendMessage({ value: self.email, type: 'user_email' })
             self.$destroy()
             self.$el.parentNode.removeChild(self.$el)
           }, 1000)

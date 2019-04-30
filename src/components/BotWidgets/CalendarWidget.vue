@@ -1,15 +1,15 @@
 <template>
   <div class="CalendarWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setDateTimeValue">
+    <div @keyup.enter="setDateTimeValue" class="animated slideInUp bot-animated-card" v-if="showWidget">
       <div class="widget-question"> Select Date & Time</div>
       <v-layout row wrap>
-        <v-flex xs10 md10>
-          <v-datetime-picker label="Select Datetime" timePickerFormat="ampm" v-model="datetime"
-                             format="DD/MM/YYYY hh:mm:ss A">
+        <v-flex md10 xs10>
+          <v-datetime-picker format="DD/MM/YYYY hh:mm:ss A" label="Select Datetime" timePickerFormat="ampm"
+                             v-model="datetime">
           </v-datetime-picker>
         </v-flex>
-        <v-flex xs2 md2 class="text-center">
-          <v-btn class="bot-button-round" :disabled="!datetime" @click.once="setDateTimeValue" fab flat icon>
+        <v-flex class="text-center" md2 xs2>
+          <v-btn :disabled="!datetime" @click.once="setDateTimeValue" class="bot-button-round" fab flat icon>
             <v-icon style="transform:rotate(-45deg) ">send</v-icon>
           </v-btn>
         </v-flex>
@@ -36,7 +36,7 @@
       setDateTimeValue () {
         if (!this.clicked) {
           this.clicked = true
-          this.$parent.sendMessage(moment(this.datetime).format('LLLL'))
+          this.$parent.sendMessage({ value: moment(this.datetime).format('LLLL'), type: 'calendar_picker' })
           this.$destroy()
           this.$el.parentNode.removeChild(this.$el)
         }

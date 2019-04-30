@@ -41,9 +41,9 @@
           animateSendButton()
           setTimeout(function () {
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
-          },200)
+          }, 200)
           setTimeout(function () {
-            self.$parent.sendMessage(self.userName)
+            self.$parent.sendMessage({ type: 'user_name', value: self.userName })
             self.$destroy()
             self.$el.parentNode.removeChild(self.$el)
           }, 1000)
