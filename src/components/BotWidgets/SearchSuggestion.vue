@@ -5,7 +5,7 @@
       <div class="bot-text-filed-buttton-broder">
       <v-layout row wrap>
         <v-flex xs9 md10>
-          <v-autocomplete prepend-inner-icon="search" class="bot-text-field-autocomplete" lable="name" ref="state" item-text="name"
+          <v-autocomplete prepend-icon="search" class="bot-text-field-autocomplete" lable="name" ref="state" item-text="name"
                           v-model="state" :items="widgetData.input.args.options"></v-autocomplete>
         </v-flex>
         <v-flex xs3 md2 class="text-right">
