@@ -764,10 +764,6 @@ body {
   }
 
   #powered-by {
-    transform: rotate(180deg);
-    direction: initial;
-    position: fixed;
-    width: 100%;
     top: 10px;
   }
 
@@ -1057,10 +1053,6 @@ $bot-theme-text-filed:#f3f3f3;
   }
 
   #powered-by {
-    transform: rotate(180deg);
-    direction: initial;
-    position: fixed;
-    width: 100%;
     top: 10px;
   }
 
