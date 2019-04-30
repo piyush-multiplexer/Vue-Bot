@@ -4,10 +4,10 @@
       <div class="widget-question">Enter Name</div>
       <div class="bot-text-filed-buttton-broder">
         <v-layout row wrap>
-          <v-flex md10 xs9>
+          <v-flex md10 xs10>
             <v-text-field class="bot-text-field" ref="username" required v-model="userName"></v-text-field>
           </v-flex>
-          <v-flex class="text-right" md2 xs3>
+          <v-flex class="text-right" md2 xs2>
             <v-btn :disabled="!userName.length" @click.once="setUserValue" class="bot-button-round" fab flat icon>
               <v-icon>send</v-icon>
             </v-btn>
@@ -41,9 +41,9 @@
           animateSendButton()
           setTimeout(function () {
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
-          },200)
+          }, 200)
           setTimeout(function () {
-            self.$parent.sendMessage(self.userName)
+            self.$parent.sendMessage({ type: 'user_name', value: self.userName })
             self.$destroy()
             self.$el.parentNode.removeChild(self.$el)
           }, 1000)

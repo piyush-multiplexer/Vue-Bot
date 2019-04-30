@@ -1,15 +1,16 @@
 <template>
-  <div class="BubbleWidget">
-    <div v-for="(bubble,index) in localBubbles" :key="index">
+  <div class="BubbleWidget" >
+    <div :key="index" v-for="(bubble,index) in localBubbles">
       <div class="bubble-card">
-        <div v-if="typeof bubble.string === 'string' || typeof bubble.string === 'number' "
-             v-html="bubble.string"></div>
+        <div v-html="bubble.string"
+             v-if="typeof bubble.string === 'string' || typeof bubble.string === 'number' "></div>
         <div v-else>
           {{bubble.string.address}}
         </div>
       </div>
-      <div class="bubble-card" v-if="bubble.img_url">
-        <img :src="thombarUrl+bubble.img_url"/>
+      <div class="" v-if="bubble.img_url" @keyup.esc="imageIndex=null">
+        <LightGallery width="10" :images="[bubble.img_url]" :index="imageIndex" @close="imageIndex=null"></LightGallery>
+        <img class="bubble-card" style="cursor: pointer" :src="thombarUrl+bubble.img_url" @click="imageIndex=0"/>
       </div>
     </div>
     <div class="bot-starttyping" v-if="startTyping">
@@ -26,6 +27,7 @@
     props: ['bubbles'],
     data () {
       return {
+        imageIndex: null,
         localBubbles: [],
         startTyping: true,
         thombarUrl: 'http://thumbor.avinashi.com/unsafe/250x300/smart/',
@@ -61,3 +63,18 @@
     },
   }
 </script>
+<style>
+  .light-gallery__modal{
+    height: 100vh !important;
+    z-index: 9999;
+  }
+  .loaded{
+    width: 50% !important;
+  }
+
+  .light-gallery__container{
+    transform: translate(-50%, 0%);
+    top: calc(50vh - 25%);
+
+  }
+</style>

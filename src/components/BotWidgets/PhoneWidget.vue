@@ -1,19 +1,19 @@
 <template>
   <div class="PhoneWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setPhoneValue">
+    <div @keyup.enter="setPhoneValue" class="animated slideInUp bot-animated-card" v-if="showWidget">
       <div class="widget-question">Enter Phone Number</div>
       <div class="bot-text-filed-buttton-broder">
-      <v-layout row wrap>
-        <v-flex xs9 md10>
-          <v-text-field required ref="phone" class="bot-text-field-email" v-model="phone" prepend-inner-icon="phone"
-                        mask="##### #####"></v-text-field>
-        </v-flex>
-        <v-flex xs3 md2 class="text-right">
-          <v-btn class="bot-button-round" :disabled="!(phone.length===10)" @click.once="setPhoneValue" fab flat icon>
-            <v-icon>send</v-icon>
-          </v-btn>
-        </v-flex>
-      </v-layout>
+        <v-layout row wrap>
+          <v-flex md10 xs9>
+            <v-text-field class="bot-text-field-email" mask="##### #####" prepend-icon="phone" ref="phone" required
+                          v-model="phone"></v-text-field>
+          </v-flex>
+          <v-flex class="text-right" md2 xs3>
+            <v-btn :disabled="!(phone.length===10)" @click.once="setPhoneValue" class="bot-button-round" fab flat icon>
+              <v-icon>send</v-icon>
+            </v-btn>
+          </v-flex>
+        </v-layout>
       </div>
     </div>
   </div>
@@ -42,9 +42,9 @@
           animateSendButton()
           setTimeout(function () {
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
-          },200)
+          }, 200)
           setTimeout(function () {
-            self.$parent.sendMessage(self.phone)
+            self.$parent.sendMessage({ value: self.phone, type: 'user_phone' })
             self.$destroy()
             self.$el.parentNode.removeChild(self.$el)
           }, 1000)

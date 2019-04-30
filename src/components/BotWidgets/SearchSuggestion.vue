@@ -1,19 +1,20 @@
 <template>
   <div class="SearchSuggestion">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter="setSearchValue">
+    <div @keyup.enter="setSearchValue" class="animated slideInUp bot-animated-card" v-if="showWidget">
       <div class="widget-question">Search & Select</div>
       <div class="bot-text-filed-buttton-broder">
-      <v-layout row wrap>
-        <v-flex xs9 md10>
-          <v-autocomplete prepend-inner-icon="search" class="bot-text-field-autocomplete" lable="name" ref="state" item-text="name"
-                          v-model="state" :items="widgetData.input.args.options"></v-autocomplete>
-        </v-flex>
-        <v-flex xs3 md2 class="text-right">
-          <v-btn class="bot-button-round" @click.once="setSearchValue" fab flat icon>
-            <v-icon>send</v-icon>
-          </v-btn>
-        </v-flex>
-      </v-layout>
+        <v-layout row wrap>
+          <v-flex md10 xs9>
+            <v-autocomplete :items="widgetData.input.args.options" class="bot-text-field-autocomplete" item-text="name" lable="name"
+                            prepend-icon="search"
+                            ref="state" v-model="state"></v-autocomplete>
+          </v-flex>
+          <v-flex class="text-right" md2 xs3>
+            <v-btn @click.once="setSearchValue" class="bot-button-round" fab flat icon>
+              <v-icon>send</v-icon>
+            </v-btn>
+          </v-flex>
+        </v-layout>
       </div>
     </div>
   </div>
@@ -47,7 +48,7 @@
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
           }, 200)
           setTimeout(function () {
-            self.$parent.sendMessage(self.state)
+            self.$parent.sendMessage({ value: self.state, type: 'user_search_suggestion' })
             self.$destroy()
             self.$el.parentNode.removeChild(self.$el)
           }, 500)

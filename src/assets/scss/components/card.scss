@@ -6,3 +6,25 @@
   padding: 10px;
   box-shadow: 0 -2px 10px 0 $bot-theme-bot-shadow;
 }
+
+
+.bot-animated-card-slider{
+  width: 100%;
+  bottom: 0;
+  background-color: $white;
+  padding: 10px;
+  box-shadow: 0 -2px 10px 0 $bot-theme-bot-shadow;
+}
+
+
+@media only screen and (max-width: 767px) {
+
+  .bot-animated-card-slider{
+    width: 100vw;
+    bottom: 0;
+    background-color: $white;
+    padding: 10px;
+    box-shadow: 0 -2px 10px 0 $bot-theme-bot-shadow;
+  }
+
+}

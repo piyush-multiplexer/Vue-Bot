@@ -33,6 +33,9 @@ import 'animate.css/animate.min.css'
 import VueAnime from 'vue-animejs'
 
 Vue.use(VueAnime)
+import LightGallery from 'vue-light-gallery';
+Vue.use(LightGallery);
+
 import VueTypedJs from 'vue-typed-js'
 
 Vue.use(VueTypedJs)
