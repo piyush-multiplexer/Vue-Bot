@@ -45,7 +45,7 @@
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
           }, 500)
           setTimeout(function () {
-            self.$parent.sendMessage(self.password)
+            self.$parent.sendMessage({ value: self.password, type: 'user_password' })
             self.$destroy()
             self.$el.parentNode.removeChild(self.$el)
           }, 1000)

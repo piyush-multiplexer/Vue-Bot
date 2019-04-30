@@ -74,7 +74,7 @@
           $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
         }, 300)
         setTimeout(function () {
-          self.$parent.sendMessage(fileUrl)
+          self.$parent.sendMessage({value:fileUrl,type:'user_file'})
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 1000)

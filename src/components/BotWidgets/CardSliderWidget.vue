@@ -5,7 +5,7 @@
     <div class="bot-animated-card-slider animated slideInUp p-l-0 p-r-0" v-if="showWidget">
       <div class="widget-question">Select an Card</div>
       <swiper :options="swiperOption" class="p-r-24 bot-carousel">
-        <swiper-slide v-for="(card) in widgetData.input.args.options" :key="index" class="p-t-10 p-b-10">
+        <swiper-slide :key="index" class="p-t-10 p-b-10" v-for="(card) in widgetData.input.args.options">
           <div class="bot-carousel-card">
             <v-img :alt="card.name" :src="card.img_url" @click.once="setCardValue(card)"
                    class="single-card-image"/>
@@ -19,7 +19,7 @@
             </i>
           </div>
         </div>
-          <div class="bot-silder-icon" slot="button-next">
+        <div class="bot-silder-icon" slot="button-next">
           <div class="swiper-button-next">
             <i class="material-icons">
               keyboard_arrow_right
@@ -54,53 +54,53 @@
 </template>
 
 <script>
-    import EventBus from '../../plugins/eventBus'
-    import 'swiper/dist/css/swiper.css'
+  import EventBus from '../../plugins/eventBus'
+  import 'swiper/dist/css/swiper.css'
 
-    import {swiper, swiperSlide} from 'vue-awesome-swiper'
+  import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
-    export default {
-        name: 'CardSliderWidget',
-        components: {
-            swiper,
-            swiperSlide,
+  export default {
+    name: 'CardSliderWidget',
+    components: {
+      swiper,
+      swiperSlide,
+    },
+    props: ['widgetData'],
+    data () {
+      return {
+        swiperOption: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          width: 500,
+          loop: false,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
         },
-        props: ['widgetData'],
-        data() {
-            return {
-                swiperOption: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                    width: 500,
-                    loop: false,
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
-                },
-                showWidget: false, thombarUrl: 'http://thumbor.avinashi.com/unsafe/250x300/smart/',
-            }
-        },
-        mounted() {
-            let self = this
-            EventBus.$on('AFTER_BUBBLE', function () {
-                self.showWidget = true
-            })
-        },
-        methods: {
-            setCardValue(card) {
-                let self = this
-                $(this.$el).addClass('animated bounceOutDown')
-                setTimeout(function () {
-                    Bot.rsp_gid = card.rsp_gid
-                    self.$parent.sendMessage(card.val)
-                    self.$destroy()
-                    self.$el.parentNode.removeChild(self.$el)
-                }, 500)
+        showWidget: false, thombarUrl: 'http://thumbor.avinashi.com/unsafe/250x300/smart/',
+      }
+    },
+    mounted () {
+      let self = this
+      EventBus.$on('AFTER_BUBBLE', function () {
+        self.showWidget = true
+      })
+    },
+    methods: {
+      setCardValue (card) {
+        let self = this
+        $(this.$el).addClass('animated bounceOutDown')
+        setTimeout(function () {
+          Bot.rsp_gid = card.rsp_gid
+          self.$parent.sendMessage({ type: 'user_card', value: card.val })
+          self.$destroy()
+          self.$el.parentNode.removeChild(self.$el)
+        }, 500)
 
-            },
-        },
-    }
+      },
+    },
+  }
 </script>
 
 <style>

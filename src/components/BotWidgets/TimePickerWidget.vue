@@ -35,7 +35,7 @@
         let self = this
         $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
-          self.$parent.sendMessage(moment(self.time, 'HH:mm').format('hh:mm A'))
+          self.$parent.sendMessage({value:moment(self.time, 'HH:mm').format('hh:mm A'),type:'user_time_picker'})
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)
