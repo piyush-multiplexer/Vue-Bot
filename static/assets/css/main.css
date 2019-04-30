@@ -61,6 +61,7 @@ $bot-theme-text-filed:#f3f3f3;
   background: linear-gradient(135deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f86f7', endColorstr='#5aa5fa', GradientType=1 );
 }*/
+@import url(//db.onlinewebfonts.com/c/176b61e4e4c448d232fdbf51d2953d3f?family=AzoSansW01-Regular);
 .bot-time-picker .v-picker__title, .bot-date-picker .v-picker__title {
   background: #86939e;
   background: -moz-linear-gradient(left, #86939e 0%, #b4d6f0 100%);
@@ -97,8 +98,8 @@ $bot-theme-text-filed:#f3f3f3;
 /* Base scss imported */
 @font-face {
   font-family: "AzoSansW01-Regular";
-  src: url("//db.onlinewebfonts.com/t/176b61e4e4c448d232fdbf51d2953d3f.eot");
-  src: url("//db.onlinewebfonts.com/t/176b61e4e4c448d232fdbf51d2953d3f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/176b61e4e4c448d232fdbf51d2953d3f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/176b61e4e4c448d232fdbf51d2953d3f.woff") format("woff"), url("//db.onlinewebfonts.com/t/176b61e4e4c448d232fdbf51d2953d3f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/176b61e4e4c448d232fdbf51d2953d3f.svg#AzoSansW01-Regular") format("svg");
+  src: url("././../../../../static/assets/fonts/Azosans/176b61e4e4c448d232fdbf51d2953d3f.eot");
+  src: url("././../../../../static/assets/fonts/Azosans/176b61e4e4c448d232fdbf51d2953d3f.eot?#iefix") format("embedded-opentype"), url("././../../../../static/assets/fonts/Azosans/176b61e4e4c448d232fdbf51d2953d3f.woff2") format("woff2"), url("././../../../../static/assets/fonts/Azosans/176b61e4e4c448d232fdbf51d2953d3f.woff") format("woff"), url("././../../../../static/assets/fonts/Azosans/176b61e4e4c448d232fdbf51d2953d3f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/176b61e4e4c448d232fdbf51d2953d3f.svg#AzoSansW01-Regular") format("svg");
 }
 html {
   box-sizing: border-box;
