@@ -95,6 +95,11 @@ $bot-theme-text-filed:#f3f3f3;
 }
 
 /* Base scss imported */
+@font-face {
+  font-family: "AzoSansW01-Regular";
+  src: url("//db.onlinewebfonts.com/t/176b61e4e4c448d232fdbf51d2953d3f.eot");
+  src: url("//db.onlinewebfonts.com/t/176b61e4e4c448d232fdbf51d2953d3f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/176b61e4e4c448d232fdbf51d2953d3f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/176b61e4e4c448d232fdbf51d2953d3f.woff") format("woff"), url("//db.onlinewebfonts.com/t/176b61e4e4c448d232fdbf51d2953d3f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/176b61e4e4c448d232fdbf51d2953d3f.svg#AzoSansW01-Regular") format("svg");
+}
 html {
   box-sizing: border-box;
   overflow-y: hidden;
@@ -770,7 +775,7 @@ body {
     overflow-x: hidden;
     height: 100%;
     background-image: url("../../../../static/assets/image/bot-background.png");
-    background-size: 35%;
+    background-size: 50%;
     background-position: bottom;
     background-repeat: repeat;
   }
@@ -1063,7 +1068,7 @@ $bot-theme-text-filed:#f3f3f3;
     overflow-x: hidden;
     height: 100%;
     background-image: url("../../../../static/assets/image/bot-background.png");
-    background-size: 35%;
+    background-size: 50%;
     background-position: bottom;
     background-repeat: repeat;
   }
