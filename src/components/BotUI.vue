@@ -3,7 +3,7 @@
     <div id="bot-container">
       <div class="bot-background">
       <div id="bot-content" v-if="messages.length">
-        <div style="transform: rotate(180deg);direction: ltr;">
+        <div style="transform: rotate(180deg);direction: ltr;top: 45px;position: relative;width: 100%;">
           <div v-for="(message,messageIndex) in messages" :key="messageIndex" class="animated bounceInUp">
             <div v-if="message.type==='user'" class="text-right">
               <div class="message-content-user">
@@ -30,16 +30,15 @@
               </div>
             </div>
           </div>
-          <div id="powered-by" class="p-t-5 p-b-5">
-            <v-layout  class="text-center">
-              <v-flex xs12>
-                Powered By Avinashi Pvt. Ltd.
-              </v-flex>
-            </v-layout>
-          </div>
         </div>
-
       </div>
+        <div id="powered-by" class="p-t-5 p-b-5">
+          <v-layout row wrap class="text-center">
+            <v-flex xs12>
+              Powered By Avinashi Pvt. Ltd.
+            </v-flex>
+          </v-layout>
+        </div>
 
       </div>
     </div>

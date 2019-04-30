@@ -68,3 +68,12 @@
     box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px rgba(0, 0, 0, 2);
   }
 }
+
+
+@media only screen and (max-width: 767px) {
+
+  .bot-starttyping {
+    padding: 18px 10px;
+  }
+
+}

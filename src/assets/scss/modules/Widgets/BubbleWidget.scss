@@ -46,7 +46,7 @@
       width: fit-content;
       max-width: 100%;
       padding: 17px;
-      margin: 15px 0;
+      margin: -5px 0;
       border-radius: 15px;
       font-size: $bot-font-size-18;
       border-top-right-radius: 0;
@@ -55,4 +55,33 @@
       color: $white;
     }
   }
+}
+
+@media only screen and (max-width: 767px) {
+
+
+  .message-content-bot{
+    .BubbleWidget{
+      .bubble-card {
+        padding: 13px;
+        margin: 10px 0;
+        font-size: $bot-font-size-16;
+      }
+    }
+  }
+
+  .message-content-user{
+    .BubbleWidget{
+      .bubble-card {
+        padding: 13px;
+        margin: -5px 0;
+        border-radius: 15px;
+        font-size: $bot-font-size-16;
+
+      }
+    }
+  }
+
+
+
 }

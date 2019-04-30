@@ -477,6 +477,12 @@ body {
   border-radius: 50px;
 }
 
+@media only screen and (max-width: 767px) {
+  .bot-button-round-text {
+    height: 40px;
+    padding: 0 30px;
+  }
+}
 .bot-text-field {
   margin-top: 0;
 }
@@ -608,6 +614,19 @@ body {
   padding: 0 0 0 10px;
 }
 
+@media only screen and (max-width: 767px) {
+  .bot-text-field .v-input__control .v-input__slot .v-text-field__slot input {
+    font-size: 1rem;
+  }
+
+  .bot-text-field-email .v-input__control .v-input__slot .v-text-field__slot input {
+    color: #616c6f;
+    margin-top: 0px;
+    margin-bottom: 7px;
+    margin-left: 10px;
+    font-size: 1rem;
+  }
+}
 .bot-animated-card {
   width: 100%;
   bottom: 0;
@@ -616,6 +635,23 @@ body {
   box-shadow: 0 -2px 10px 0 #cbdeec;
 }
 
+.bot-animated-card-slider {
+  width: 100%;
+  bottom: 0;
+  background-color: #ffffff;
+  padding: 10px;
+  box-shadow: 0 -2px 10px 0 #cbdeec;
+}
+
+@media only screen and (max-width: 767px) {
+  .bot-animated-card-slider {
+    width: 100vw;
+    bottom: 0;
+    background-color: #ffffff;
+    padding: 10px;
+    box-shadow: 0 -2px 10px 0 #cbdeec;
+  }
+}
 .bot-carousel .swiper-wrapper {
   z-index: -1;
 }
@@ -650,6 +686,14 @@ body {
 #bot-content {
   bottom: 10px;
   width: 100%;
+}
+
+#powered-by {
+  transform: rotate(180deg);
+  direction: initial;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 /*height: 80vh;*/
@@ -714,6 +758,23 @@ body {
     padding-bottom: 30px;
   }
 
+  #powered-by {
+    transform: rotate(180deg);
+    direction: initial;
+    position: fixed;
+    width: 100%;
+    top: 10px;
+  }
+
+  .bot-background {
+    overflow-x: hidden;
+    height: 100%;
+    background-image: url("../../../../static/assets/image/bot-background.png");
+    background-size: 35%;
+    background-position: bottom;
+    background-repeat: repeat;
+  }
+
   #bot-container {
     transform: rotate(180deg);
     direction: rtl;
@@ -725,18 +786,6 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
     top: 0;
-  }
-
-  .DatePickerWidget {
-    padding-bottom: 50px;
-  }
-
-  .RatingWidget {
-    padding-bottom: 20px;
-  }
-
-  .SearchSuggestion {
-    padding-bottom: 30px;
   }
 }
 .bot-list .v-list__tile .v-list__tile__content .v-list__tile__title {
@@ -900,6 +949,11 @@ $bot-theme-text-filed:#f3f3f3;
     box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px black;
   }
 }
+@media only screen and (max-width: 767px) {
+  .bot-starttyping {
+    padding: 18px 10px;
+  }
+}
 .bot-background {
   overflow-x: hidden;
   height: 100%;
@@ -925,6 +979,14 @@ $bot-theme-text-filed:#f3f3f3;
 #bot-content {
   bottom: 10px;
   width: 100%;
+}
+
+#powered-by {
+  transform: rotate(180deg);
+  direction: initial;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 /*height: 80vh;*/
@@ -989,6 +1051,23 @@ $bot-theme-text-filed:#f3f3f3;
     padding-bottom: 30px;
   }
 
+  #powered-by {
+    transform: rotate(180deg);
+    direction: initial;
+    position: fixed;
+    width: 100%;
+    top: 10px;
+  }
+
+  .bot-background {
+    overflow-x: hidden;
+    height: 100%;
+    background-image: url("../../../../static/assets/image/bot-background.png");
+    background-size: 35%;
+    background-position: bottom;
+    background-repeat: repeat;
+  }
+
   #bot-container {
     transform: rotate(180deg);
     direction: rtl;
@@ -1000,18 +1079,6 @@ $bot-theme-text-filed:#f3f3f3;
     overflow-y: auto;
     overflow-x: hidden;
     top: 0;
-  }
-
-  .DatePickerWidget {
-    padding-bottom: 50px;
-  }
-
-  .RatingWidget {
-    padding-bottom: 20px;
-  }
-
-  .SearchSuggestion {
-    padding-bottom: 30px;
   }
 }
 /*$white:#ffffff;
@@ -1147,7 +1214,7 @@ $bot-theme-text-filed:#f3f3f3;
   width: fit-content;
   max-width: 100%;
   padding: 17px;
-  margin: 15px 0;
+  margin: -5px 0;
   border-radius: 15px;
   font-size: 1.125rem;
   border-top-right-radius: 0;
@@ -1156,6 +1223,20 @@ $bot-theme-text-filed:#f3f3f3;
   color: #ffffff;
 }
 
+@media only screen and (max-width: 767px) {
+  .message-content-bot .BubbleWidget .bubble-card {
+    padding: 13px;
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+
+  .message-content-user .BubbleWidget .bubble-card {
+    padding: 13px;
+    margin: -5px 0;
+    border-radius: 15px;
+    font-size: 1rem;
+  }
+}
 /*$white:#ffffff;
 $black:#000000;
 $bot-theme-body:#E0E1EA;
@@ -1257,7 +1338,7 @@ $bot-theme-text-filed:#f3f3f3;
 
 @media only screen and (max-width: 767px) {
   .btn-group {
-    padding-bottom: 40px;
+    padding-bottom: 10px;
   }
 }
 /*$white:#ffffff;
@@ -1440,6 +1521,16 @@ $bot-theme-text-filed:#f3f3f3;
   .CardSliderWidget {
     overflow-x: auto;
     width: 95vw;
+  }
+
+  .single-card-image {
+    height: 120px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .bot-silder-icon {
+    display: none;
   }
 }
 .bot-rating .yellow--text.text--darken-3 {
@@ -1554,6 +1645,11 @@ $bot-theme-text-filed:#f3f3f3;
     box-shadow: 12px 0px 0px 0px rgba(0, 0, 0, 0.2), 24px 0px 0px 0px black;
   }
 }
+@media only screen and (max-width: 767px) {
+  .bot-starttyping {
+    padding: 18px 10px;
+  }
+}
 /*$white:#ffffff;
 $black:#000000;
 $bot-theme-body:#E0E1EA;
@@ -1687,7 +1783,7 @@ $bot-theme-text-filed:#f3f3f3;
   width: fit-content;
   max-width: 100%;
   padding: 17px;
-  margin: 15px 0;
+  margin: -5px 0;
   border-radius: 15px;
   font-size: 1.125rem;
   border-top-right-radius: 0;
@@ -1696,6 +1792,20 @@ $bot-theme-text-filed:#f3f3f3;
   color: #ffffff;
 }
 
+@media only screen and (max-width: 767px) {
+  .message-content-bot .BubbleWidget .bubble-card {
+    padding: 13px;
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+
+  .message-content-user .BubbleWidget .bubble-card {
+    padding: 13px;
+    margin: -5px 0;
+    border-radius: 15px;
+    font-size: 1rem;
+  }
+}
 /*$white:#ffffff;
 $black:#000000;
 $bot-theme-body:#E0E1EA;
@@ -1797,7 +1907,7 @@ $bot-theme-text-filed:#f3f3f3;
 
 @media only screen and (max-width: 767px) {
   .btn-group {
-    padding-bottom: 40px;
+    padding-bottom: 10px;
   }
 }
 /*$white:#ffffff;
@@ -1980,6 +2090,16 @@ $bot-theme-text-filed:#f3f3f3;
   .CardSliderWidget {
     overflow-x: auto;
     width: 95vw;
+  }
+
+  .single-card-image {
+    height: 120px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .bot-silder-icon {
+    display: none;
   }
 }
 

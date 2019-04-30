@@ -32,3 +32,13 @@
   padding: 0 20px;
   border-radius: 50px;
 }
+
+
+@media only screen and (max-width: 767px) {
+
+  .bot-button-round-text {
+    height: 40px;
+    padding: 0 30px;
+  }
+
+}

@@ -33,6 +33,14 @@
   //padding: 10px 0;
 }
 
+#powered-by{
+  transform: rotate(180deg);
+  direction: initial;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
 /*height: 80vh;*/
 
 #user-input-container {
@@ -126,6 +134,24 @@
     padding-bottom: 30px;
   }
 
+  #powered-by{
+    transform: rotate(180deg);
+    direction: initial;
+    position: fixed;
+    width: 100%;
+    top: 10px;
+  }
+
+  .bot-background {
+    overflow-x: hidden;
+    height: 100%;
+    background-image: url("../../../../static/assets/image/bot-background.png");
+    background-size: 35%;
+    background-position: bottom;
+    background-repeat: repeat;
+  }
+
+
   #bot-container {
     transform: rotate(180deg);
     direction: rtl;
@@ -139,18 +165,18 @@
     top: 0;
   }
 
-  .DatePickerWidget {
-    padding-bottom: 50px;
-  }
-
-  .RatingWidget {
-    padding-bottom: 20px;
-  }
-
-  .SearchSuggestion {
-    padding-bottom: 30px;
-  }
-
-
+  //.DatePickerWidget {
+  //  padding-bottom: 50px;
+  //}
+  //
+  //.RatingWidget {
+  //  padding-bottom: 20px;
+  //}
+  //
+  //.SearchSuggestion {
+  //  padding-bottom: 30px;
+  //}
+  //
+  //
 
 }

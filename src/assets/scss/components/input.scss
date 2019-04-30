@@ -190,3 +190,40 @@
   //border: 1px solid $bot-theme-text-filed-border;
   padding: 0 0 0 10px;
 }
+
+
+
+@media only screen and (max-width: 767px) {
+
+  .bot-text-field {
+
+    .v-input__control {
+      .v-input__slot {
+
+        .v-text-field__slot {
+          input {
+            font-size: $bot-font-size-16;
+          }
+        }
+      }
+    }
+  }
+
+
+  .bot-text-field-email {
+    .v-input__control {
+      .v-input__slot {
+        .v-text-field__slot {
+          input {
+            color: $bot-theme-text;
+            margin-top: 0px;
+            margin-bottom: 7px;
+            margin-left: 10px;
+            font-size: $bot-font-size-16;
+          }
+        }
+      }
+    }
+  }
+
+}
