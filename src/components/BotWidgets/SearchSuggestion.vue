@@ -4,12 +4,12 @@
       <div class="widget-question">Search & Select</div>
       <div class="bot-text-filed-buttton-broder">
         <v-layout row wrap>
-          <v-flex md10 xs9>
+          <v-flex md10 xs10>
             <v-autocomplete :items="widgetData.input.args.options" class="bot-text-field-autocomplete" item-text="name" lable="name"
                             prepend-icon="search"
                             ref="state" v-model="state"></v-autocomplete>
           </v-flex>
-          <v-flex class="text-right" md2 xs3>
+          <v-flex class="text-right" md2 xs2>
             <v-btn @click.once="setSearchValue" class="bot-button-round" fab flat icon>
               <v-icon>send</v-icon>
             </v-btn>
