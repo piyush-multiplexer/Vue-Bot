@@ -699,7 +699,7 @@ body {
   direction: initial;
   position: fixed;
   width: 100%;
-  top: 0;
+  top: 5px;
 }
 
 /*height: 80vh;*/
@@ -762,10 +762,6 @@ body {
 @media only screen and (max-width: 767px) {
   .bot-search-filed {
     padding-bottom: 30px;
-  }
-
-  #powered-by {
-    top: 10px;
   }
 
   .bot-background {
@@ -988,7 +984,7 @@ $bot-theme-text-filed:#f3f3f3;
   direction: initial;
   position: fixed;
   width: 100%;
-  top: 0;
+  top: 5px;
 }
 
 /*height: 80vh;*/
@@ -1051,10 +1047,6 @@ $bot-theme-text-filed:#f3f3f3;
 @media only screen and (max-width: 767px) {
   .bot-search-filed {
     padding-bottom: 30px;
-  }
-
-  #powered-by {
-    top: 10px;
   }
 
   .bot-background {
