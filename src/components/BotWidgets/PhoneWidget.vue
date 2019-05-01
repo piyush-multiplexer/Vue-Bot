@@ -4,11 +4,11 @@
       <div class="widget-question">Enter Phone Number</div>
       <div class="bot-text-filed-buttton-broder">
         <v-layout row wrap>
-          <v-flex md10 xs9>
-            <v-text-field class="bot-text-field-email" mask="##### #####" prepend-icon="phone" ref="phone" required
+          <v-flex md10 xs10>
+            <v-text-field class="bot-text-field-email" type="tel" mask="##### #####" prepend-icon="phone" ref="phone" required
                           v-model="phone"></v-text-field>
           </v-flex>
-          <v-flex class="text-right" md2 xs3>
+          <v-flex class="text-right" md2 xs2>
             <v-btn :disabled="!(phone.length===10)" @click.once="setPhoneValue" class="bot-button-round" fab flat icon>
               <v-icon>send</v-icon>
             </v-btn>

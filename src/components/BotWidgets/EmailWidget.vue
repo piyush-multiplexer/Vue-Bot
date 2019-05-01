@@ -4,11 +4,11 @@
       <div class="widget-question">Enter Email</div>
       <div class="bot-text-filed-buttton-broder">
         <v-layout row wrap>
-          <v-flex md10 xs9>
+          <v-flex md10 xs10>
             <v-text-field class="bot-text-field-email" prepend-icon="email" ref="email"
                           v-model="email"></v-text-field>
           </v-flex>
-          <v-flex class="text-right" md2 xs3>
+          <v-flex class="text-right" md2 xs2>
             <v-btn :disabled="!emailPattern.test(email)" @click.once="setEmailValue" class="bot-button-round" fab flat
                    icon>
               <v-icon>send</v-icon>

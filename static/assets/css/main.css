@@ -668,7 +668,10 @@ body {
 /* modules scss imported */
 .bot-background {
   overflow-x: hidden;
-  height: 100%;
+  width: 100%;
+  height: 96%;
+  position: absolute;
+  bottom: 0;
   background-image: url("../../../../static/assets/image/bot-background.png");
   background-size: 100%;
   background-position: bottom;
@@ -688,6 +691,14 @@ body {
   overflow-x: hidden;
 }
 
+#bot-sub-content {
+  transform: rotate(180deg);
+  direction: ltr;
+  top: 10px;
+  position: relative;
+  width: 100%;
+}
+
 #bot-content {
   bottom: 10px;
   width: 100%;
@@ -697,6 +708,11 @@ body {
   transform: rotate(180deg);
   direction: initial;
   color: #616c6f;
+  background-color: #e4f1fb;
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 50%;
+  background-image: url("../../../../static/assets/image/bot-background.png");
   position: fixed;
   width: 100%;
   top: 5px;
@@ -760,17 +776,28 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
+  #bot-sub-content {
+    transform: rotate(180deg);
+    direction: ltr;
+    top: 15px;
+    position: relative;
+    width: 100%;
+  }
+
+  #powered-by {
+    top: 0;
+  }
+
   .bot-search-filed {
     padding-bottom: 30px;
   }
 
   .bot-background {
-    overflow-x: hidden;
-    height: 100%;
-    background-image: url("../../../../static/assets/image/bot-background.png");
+    width: 100%;
+    height: 96%;
+    position: absolute;
+    bottom: 0;
     background-size: 50%;
-    background-position: bottom;
-    background-repeat: repeat;
   }
 
   #bot-container {
@@ -954,7 +981,10 @@ $bot-theme-text-filed:#f3f3f3;
 }
 .bot-background {
   overflow-x: hidden;
-  height: 100%;
+  width: 100%;
+  height: 96%;
+  position: absolute;
+  bottom: 0;
   background-image: url("../../../../static/assets/image/bot-background.png");
   background-size: 100%;
   background-position: bottom;
@@ -974,6 +1004,14 @@ $bot-theme-text-filed:#f3f3f3;
   overflow-x: hidden;
 }
 
+#bot-sub-content {
+  transform: rotate(180deg);
+  direction: ltr;
+  top: 10px;
+  position: relative;
+  width: 100%;
+}
+
 #bot-content {
   bottom: 10px;
   width: 100%;
@@ -983,6 +1021,11 @@ $bot-theme-text-filed:#f3f3f3;
   transform: rotate(180deg);
   direction: initial;
   color: #616c6f;
+  background-color: #e4f1fb;
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 50%;
+  background-image: url("../../../../static/assets/image/bot-background.png");
   position: fixed;
   width: 100%;
   top: 5px;
@@ -1046,17 +1089,28 @@ $bot-theme-text-filed:#f3f3f3;
 }
 
 @media only screen and (max-width: 767px) {
+  #bot-sub-content {
+    transform: rotate(180deg);
+    direction: ltr;
+    top: 15px;
+    position: relative;
+    width: 100%;
+  }
+
+  #powered-by {
+    top: 0;
+  }
+
   .bot-search-filed {
     padding-bottom: 30px;
   }
 
   .bot-background {
-    overflow-x: hidden;
-    height: 100%;
-    background-image: url("../../../../static/assets/image/bot-background.png");
+    width: 100%;
+    height: 96%;
+    position: absolute;
+    bottom: 0;
     background-size: 50%;
-    background-position: bottom;
-    background-repeat: repeat;
   }
 
   #bot-container {

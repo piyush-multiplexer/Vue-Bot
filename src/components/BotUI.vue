@@ -3,11 +3,12 @@
     <div id="bot-container">
       <div class="bot-background">
         <div id="bot-content" v-if="messages.length">
-          <div style="transform: rotate(180deg);direction: ltr;top: 40px;position: relative;width: 100%;">
+          <div id="bot-sub-content">
             <div :key="messageIndex" class="animated bounceInUp" v-for="(message,messageIndex) in messages">
               <div class="text-right" v-if="message.type==='user'">
                 <div class="message-content-user">
-                  <bubble :bubbles="message.text"></bubble>
+                  <user-bubble-widget :widgetData="message"></user-bubble-widget>
+                  <!--                  <bubble :bubbles="message.text"></bubble>-->
                 </div>
               </div>
 
@@ -19,22 +20,22 @@
                 <component :is="message.input.args.input_type" :widgetData="message"></component>
               </div>
 
-            <div v-else>
-              <div :style="botConfig.isHuman?'text-align: left':'text-align: center'">
-                <div class="message-content-bot">
-                  <bubble :bubbles="message.text"></bubble>
+              <div v-else>
+                <div :style="botConfig.isHuman?'text-align: left':'text-align: center'">
+                  <div class="message-content-bot">
+                    <bubble :bubbles="message.text"></bubble>
+                  </div>
                 </div>
-              </div>
-              <div class="widget-content">
-                <component :is="message.input.name" :widgetData="message"></component>
+                <div class="widget-content">
+                  <component :is="message.input.name" :widgetData="message"></component>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      </div>
-      <div id="powered-by" class="p-t-5 p-b-5">
-        <v-layout row wrap class="text-center">
+      <div class="p-t-5 p-b-5" id="powered-by">
+        <v-layout class="text-center" row wrap>
           <v-flex xs12>
             Powered By Avinashi Pvt. Ltd.
           </v-flex>
@@ -62,10 +63,12 @@
   import EmailWidget from './BotWidgets/EmailWidget'
   import UserNameWidget from './BotWidgets/UserNameWidget'
   import NoInputWidget from './BotWidgets/NoInputWidget'
+  import UserBubbleWidget from './BotWidgets/UserBubbleWidget'
 
   export default {
     name: 'BotUI',
     components: {
+      UserBubbleWidget,
       'text_widget': TextWidget,
       'buttons_vertical': ButtonsWidget,
       'calendar_time': CalendarWidget,
@@ -124,6 +127,7 @@
           input: { name: userValue.type },
           class: '',
           text: [{ string: this.userValue ? this.userValue : userValue.value }],
+          meta: userValue.meta,
         })
         this.messages.push(await Bot.getNextMessage(this.userValue ? this.userValue : userValue.value))
         this.userValue = ''
