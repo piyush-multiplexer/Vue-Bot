@@ -11,8 +11,8 @@
       </div>
       <div v-else-if="widgetData.input.name==='user_file'">
         <template v-if="fileExtensionValidater(widgetData.meta.type)">
-          <img :src="widgetData.meta">
-          <span>{{widgetData.meta.name}} | {{widgetData.meta.size|fileSizeFilter }} KB</span>
+          <img :src="widgetData.text[0].string">
+          <div>{{widgetData.meta.name}} | {{widgetData.meta.size|fileSizeFilter }} KB</div>
         </template>
         <template v-else>
           <v-icon dark>attachment</v-icon>
@@ -93,11 +93,15 @@
       //   offset += bubble.delay
       // })
     },
+    computed: {},
     methods: {
       fileExtensionValidater (fileExtension) {
-        ['jpeg', 'jpg', 'png', 'gif', 'bmp'].forEach(extension => {
-          return fileExtension.toString().includes(extension)
+        let flag = false;
+        ['jpeg', 'jpg', 'png', 'gif', 'bmp'].every(extension => {
+          if (fileExtension.toString().includes(extension))
+            flag = true
         })
+        return flag
       },
       checkBubble () {
         if (this.bubbles.length === this.localBubbles.length) {

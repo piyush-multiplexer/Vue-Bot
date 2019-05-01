@@ -76,7 +76,7 @@
         }, 300)
         setTimeout(function () {
           self.$parent.sendMessage(
-            { value: self.$refs.file.files[0].name, meta: self.$refs.file.files[0], type: 'user_file' })
+            { value: fileUrl, meta: self.$refs.file.files[0], type: 'user_file' })
           // self.$parent.sendMessage({value:fileUrl,type:'user_file'})
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
