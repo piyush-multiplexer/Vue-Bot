@@ -15,23 +15,23 @@
               </div>
 
               <div :style="botConfig.isHuman?'text-align: left':'text-align: center'"
-                   v-else-if="message.input.name==='text'" class="animated bounceInUp">
+                   class="animated bounceInUp" v-else-if="message.input.name==='text'">
                 <div class="message-content-bot">
                   <bubble :bubbles="message.text"></bubble>
                 </div>
                 <component :is="message.input.args.input_type" :widgetData="message"></component>
-<!--                <v-layout row wrap>-->
-<!--                  <v-flex md10 xs10></v-flex>-->
-<!--                  <v-flex class="text-right" md2 xs2>-->
-<!--                    <v-btn class="bot-button-round-animate" fab flat icon-->
-<!--                           style="visibility: hidden;    position: fixed;    right: 0;    bottom: 0;">-->
-<!--                      <v-icon>send</v-icon>-->
-<!--                    </v-btn>-->
-<!--                  </v-flex>-->
-<!--                </v-layout>-->
+                <!--                <v-layout row wrap>-->
+                <!--                  <v-flex md10 xs10></v-flex>-->
+                <!--                  <v-flex class="text-right" md2 xs2>-->
+                <!--                    <v-btn class="bot-button-round-animate" fab flat icon-->
+                <!--                           style="visibility: hidden;    position: fixed;    right: 0;    bottom: 0;">-->
+                <!--                      <v-icon>send</v-icon>-->
+                <!--                    </v-btn>-->
+                <!--                  </v-flex>-->
+                <!--                </v-layout>-->
               </div>
 
-              <div v-else class="animated bounceInUp">
+              <div class="animated bounceInUp" v-else>
                 <div :style="botConfig.isHuman?'text-align: left':'text-align: center'">
                   <div class="message-content-bot">
                     <bubble :bubbles="message.text"></bubble>
@@ -75,6 +75,7 @@
   import UserNameWidget from './BotWidgets/UserNameWidget'
   import NoInputWidget from './BotWidgets/NoInputWidget'
   import UserBubbleWidget from './BotWidgets/UserBubbleWidget'
+  import CustomTextWidget from './BotWidgets/CustomTextWidget'
 
   export default {
     name: 'BotUI',
@@ -98,6 +99,7 @@
       'user_name': UserNameWidget,
       'user_fullname': UserNameWidget,
       'no_input': NoInputWidget,
+      'custom_text': CustomTextWidget,
     },
     data () {
       return {
