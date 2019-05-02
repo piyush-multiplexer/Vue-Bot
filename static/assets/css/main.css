@@ -638,6 +638,7 @@ body {
   background-color: #ffffff;
   padding: 10px;
   box-shadow: 0 -2px 10px 0 #cbdeec;
+  text-align: -moz-center;
 }
 
 .bot-animated-card-slider {
