@@ -1,6 +1,6 @@
 <template>
   <div class="CustomTextWidget">
-    <div @keyup.enter="setUserValue" class="animated slideInUp bot-animated-card" v-show="showWidget">
+    <div @keyup.enter="setTextValue" class="animated slideInUp bot-animated-card" v-show="showWidget">
       <div class="widget-question">Enter Value</div>
       <div class="bot-text-filed-buttton-broder">
         <v-layout row wrap>
