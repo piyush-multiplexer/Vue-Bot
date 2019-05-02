@@ -1644,6 +1644,9 @@ $bot-theme-text-filed:#f3f3f3;
 .bot-date-picker .v-picker__body .v-date-picker-table table tbody tr td button {
   color: #616c6f;
 }
+.bot-date-picker .v-picker__body .v-date-picker-table .v-btn.v-btn--active {
+  background-color: #9aa3ab !important;
+}
 
 .bot-time-picker .v-picker__title {
   color: #ffffff !important;
@@ -1656,6 +1659,10 @@ $bot-theme-text-filed:#f3f3f3;
 }
 .bot-time-picker .v-picker__body .v-time-picker-clock__container .v-time-picker-clock .v-time-picker-clock__inner .v-time-picker-clock__hand {
   height: calc(50% - 17px) !important;
+  background-color: #9aa3ab !important;
+}
+.bot-time-picker .v-picker__body .v-time-picker-clock__container .v-time-picker-clock .v-time-picker-clock__inner .v-time-picker-clock__hand:after {
+  border-color: #9aa3ab !important;
 }
 .bot-time-picker .v-picker__body .v-time-picker-clock__container .v-time-picker-clock .v-time-picker-clock__inner .v-time-picker-clock__item span {
   color: #616c6f;

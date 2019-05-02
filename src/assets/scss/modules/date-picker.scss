@@ -50,6 +50,9 @@
         }
       }
     }
+    .v-date-picker-table .v-btn.v-btn--active{
+      background-color: $bot-theme-body !important;
+    }
   }
 }
 
@@ -73,6 +76,10 @@
         .v-time-picker-clock__inner {
           .v-time-picker-clock__hand {
             height: calc(50% - 17px) !important;
+            background-color: $bot-theme-body !important;
+          }
+          .v-time-picker-clock__hand:after{
+            border-color: $bot-theme-body !important;
           }
           .v-time-picker-clock__item {
             span {
