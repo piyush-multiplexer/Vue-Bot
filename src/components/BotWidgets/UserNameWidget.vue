@@ -26,6 +26,10 @@
     name: 'UserNameWidget',
     props: ['widgetData'],
     data () {return { userName: '', showWidget: false, clicked: false }},
+    created () {
+      if (window.BotMetaData.hasOwnProperty(this.widgetData.varid))
+        this.userName = window.BotMetaData[this.widgetData.varid]
+    },
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
@@ -41,7 +45,7 @@
           animateSendButton()
           setTimeout(function () {
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
-          }, 200)
+          }, 1000)
           setTimeout(function () {
             self.$parent.sendMessage({ type: 'user_name', value: self.userName })
             self.$destroy()

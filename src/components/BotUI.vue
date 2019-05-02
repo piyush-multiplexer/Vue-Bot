@@ -4,8 +4,10 @@
       <div class="bot-background">
         <div id="bot-content" v-if="messages.length">
           <div id="bot-sub-content">
-            <div :key="messageIndex" class="animated bounceInUp" v-for="(message,messageIndex) in messages">
-              <div class="text-right" v-if="message.type==='user'">
+            <!--            <div :key="messageIndex" class="animated bounceInUp" v-for="(message,messageIndex) in messages">-->
+            <div :key="messageIndex" v-for="(message,messageIndex) in messages">
+              <div class="text-right animated fadeInRight" v-if="message.type==='user'">
+                <!--              <div class="text-right animated bounceInRight" v-if="message.type==='user'">-->
                 <div class="message-content-user">
                   <user-bubble-widget :widgetData="message"></user-bubble-widget>
                   <!--                  <bubble :bubbles="message.text"></bubble>-->
@@ -13,14 +15,23 @@
               </div>
 
               <div :style="botConfig.isHuman?'text-align: left':'text-align: center'"
-                   v-else-if="message.input.name==='text'">
+                   v-else-if="message.input.name==='text'" class="animated bounceInUp">
                 <div class="message-content-bot">
                   <bubble :bubbles="message.text"></bubble>
                 </div>
                 <component :is="message.input.args.input_type" :widgetData="message"></component>
+<!--                <v-layout row wrap>-->
+<!--                  <v-flex md10 xs10></v-flex>-->
+<!--                  <v-flex class="text-right" md2 xs2>-->
+<!--                    <v-btn class="bot-button-round-animate" fab flat icon-->
+<!--                           style="visibility: hidden;    position: fixed;    right: 0;    bottom: 0;">-->
+<!--                      <v-icon>send</v-icon>-->
+<!--                    </v-btn>-->
+<!--                  </v-flex>-->
+<!--                </v-layout>-->
               </div>
 
-              <div v-else>
+              <div v-else class="animated bounceInUp">
                 <div :style="botConfig.isHuman?'text-align: left':'text-align: center'">
                   <div class="message-content-bot">
                     <bubble :bubbles="message.text"></bubble>
@@ -101,6 +112,8 @@
       let self = this
       this.messages = []
       this.messages[0] = await Bot.getConfig()
+      window.BotMetaData = await Bot.getBotHashData()
+      console.log(BotMetaData)
       this.$forceUpdate()
     },
     computed: {

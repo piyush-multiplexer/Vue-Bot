@@ -20,7 +20,7 @@ const router = new Router({
         return import('../components/BotList.vue')
       },
     }, {
-      path: '/:botId',
+      path: '/:botId/:hashId?',
       name: 'BotHome',
       component: function () {
         return import('../components/BotHome.vue')

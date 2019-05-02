@@ -73,7 +73,7 @@
         }, 100)
         setTimeout(function () {
           $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
-        }, 300)
+        }, 1000)
         setTimeout(function () {
           self.$parent.sendMessage(
             { value: fileUrl, meta: self.$refs.file.files[0], type: 'user_file' })

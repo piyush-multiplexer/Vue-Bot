@@ -34,6 +34,10 @@
         emailPattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       }
     },
+    created () {
+      if (window.BotMetaData.hasOwnProperty(this.widgetData.varid))
+        this.email = window.BotMetaData[this.widgetData.varid]
+    },
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
@@ -49,7 +53,7 @@
           animateSendButton()
           setTimeout(function () {
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
-          }, 200)
+          }, 1000)
           setTimeout(function () {
             self.$parent.sendMessage({ value: self.email, type: 'user_email' })
             self.$destroy()

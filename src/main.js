@@ -17,7 +17,7 @@ import move from 'move-js'
 window.move = move
 Vue.use(Loader)
 import * as VueGoogleMaps from 'vue2-google-maps'
-
+import '../static/assets/css/main.css'
 Vue.use(VueGoogleMaps, {
   load: {
     region: 'IN',

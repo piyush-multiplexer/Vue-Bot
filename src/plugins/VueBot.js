@@ -5,12 +5,13 @@ import Constants from '../Constant'
 let nextUrl = 'https://manage.bots.bizbrain.in/api/getJsonById/'
 // method, url, loading, postData, headers
 export default class VueBot {
-  constructor (botID) {
+  constructor (botID, hashId) {
     this.messages = BotData
     this.historyId = ''
     this.currentId = ''
     // this.convid = '087f5c' // //HyT2ac //Syrk3f //HkJrB4 //087f5c //40cb22
     this.convid = botID // //HyT2ac //Syrk3f //HkJrB4 //087f5c //40cb22
+    this.botHashId = hashId
     this.rsp_gid = ''
     this.originalGambit = []
   }
@@ -26,6 +27,20 @@ export default class VueBot {
       originalGambit: response.originalGambit,
     })
     return response.json
+  }
+
+  async getBotHashData () {
+    if (this.botHashId) {
+      let response = await NetworkCommunicator('POST',
+        `${Constants.base_url}getMetaData`, false,
+        { botId: this.convid, hashId: this.botHashId })
+      if (response.flag)
+        return response.data.data
+      else
+        return {}
+    } else {
+      return {}
+    }
   }
 
   setConfig (config) {
