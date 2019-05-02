@@ -103,6 +103,7 @@ $bot-theme-text-filed:#f3f3f3;
 html {
   box-sizing: border-box;
   overflow-y: hidden;
+  background-color: #9aa3ab;
   -webkit-text-size-adjust: 100%;
   font-family: "AzoSansW01-Regular";
 }
