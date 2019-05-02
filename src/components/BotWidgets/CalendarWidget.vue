@@ -36,7 +36,7 @@
       setDateTimeValue () {
         if (!this.clicked) {
           this.clicked = true
-          this.$parent.sendMessage({ value: moment(this.datetime).format('LLLL'), type: 'calendar_picker' })
+          this.$parent.sendMessage({ value: moment(this.datetime).format('LLLL'), type: 'user_calendar_picker' })
           this.$destroy()
           this.$el.parentNode.removeChild(this.$el)
         }

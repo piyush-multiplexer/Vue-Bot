@@ -5,7 +5,7 @@
       <div class="bot-text-filed-buttton-broder">
         <v-layout row wrap>
           <v-flex md10 xs10>
-            <v-text-field class="bot-text-field-email" mask="##### #####" prepend-icon="phone" ref="phone" required
+            <v-text-field class="bot-text-field-email" type="tel" mask="##### #####" prepend-icon="phone" ref="phone" required
                           v-model="phone"></v-text-field>
           </v-flex>
           <v-flex class="text-right" md2 xs2>

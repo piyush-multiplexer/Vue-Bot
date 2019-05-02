@@ -5,7 +5,7 @@
     <div class="bot-animated-card-slider animated slideInUp p-l-0 p-r-0" v-if="showWidget">
       <div class="widget-question">Select an Card</div>
       <swiper :options="swiperOption" class="p-r-24 bot-carousel">
-        <swiper-slide :key="index" class="p-t-10 p-b-10" v-for="(card) in widgetData.input.args.options">
+        <swiper-slide :key="index" class="p-t-10 p-b-10" v-for="(card,index) in widgetData.input.args.options">
           <div class="bot-carousel-card">
             <v-img :alt="card.name" :src="card.img_url" @click.once="setCardValue(card)"
                    class="single-card-image"/>
@@ -93,7 +93,7 @@
         $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
           Bot.rsp_gid = card.rsp_gid
-          self.$parent.sendMessage({ type: 'user_card', value: card.val })
+          self.$parent.sendMessage({ type: 'user_card', value: card })
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)
