@@ -4,8 +4,8 @@
       <div class="widget-question">Select an Option</div>
       <template v-for="btn in widgetData.input.args.options">
         <v-btn :class="selectedButton===btn.val?'bot-button':''" @click.once="setButtonValue(btn)"
-               class="bot-button-round-text m-b-10" round>{{btn.val}}<span
-          v-html="btn.href"></span>
+               class="bot-button-round-text m-b-10" round>
+          {{btn.val}}<span v-html="btn.href"></span>
         </v-btn>
       </template>
     </div>

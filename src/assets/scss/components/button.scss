@@ -17,6 +17,8 @@
   color: $white !important;
   margin: 0px 0;
   border-radius: 50px;
+  min-width: 60%;
+  max-width: 100%;
   &:hover {
     background-color: $bot-theme-button-hover !important;
     color: $white !important;
