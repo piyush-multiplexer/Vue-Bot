@@ -7,7 +7,7 @@
       </div>
       <div v-else-if="widgetData.input.name==='user_buttons'">
         <v-icon dark class="float-left m-r-5">view_list</v-icon>
-        <span>You Selected {{widgetData.text[0].string.name}}</span>
+        <span>You Selected {{widgetData.text[0].string}}</span>
       </div>
       <div v-else-if="widgetData.input.name==='user_file'">
         <template v-if="fileExtensionValidater(widgetData.meta.type)">
