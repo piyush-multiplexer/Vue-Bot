@@ -64,7 +64,9 @@
         <v-icon dark class="float-left m-r-5">search</v-icon>
         <span v-text="widgetData.text[0].string"></span>
       </div>
-
+      <div v-else-if="widgetData.input.name==='user_custom_text'">
+        <span>{{widgetData.text[0].string}}</span>
+      </div>
       <div v-else>
         <span>{{widgetData.text[0].string}}</span>
       </div>
