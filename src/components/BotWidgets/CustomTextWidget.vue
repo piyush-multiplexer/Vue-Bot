@@ -1,16 +1,14 @@
 <template>
-  <div class="PhoneWidget">
-    <div @keyup.enter="setPhoneValue" class="animated slideInUp bot-animated-card" v-if="showWidget">
-      <div class="widget-question">Enter Phone Number</div>
+  <div class="CustomTextWidget">
+    <div @keyup.enter="setUserValue" class="animated slideInUp bot-animated-card" v-show="showWidget">
+      <div class="widget-question">Enter Value</div>
       <div class="bot-text-filed-buttton-broder">
         <v-layout row wrap>
           <v-flex md10 xs10>
-            <v-text-field class="bot-text-field-email" mask="##### #####" prepend-icon="phone" ref="phone" required
-                          type="tel"
-                          v-model="phone"></v-text-field>
+            <v-text-field class="bot-text-field" ref="text" required v-model="text"></v-text-field>
           </v-flex>
           <v-flex class="text-right" md2 xs2>
-            <v-btn :disabled="!(phone.length===10)" @click.once="setPhoneValue" class="bot-button-round" fab flat icon>
+            <v-btn :disabled="!text.length" @click.once="setTextValue" class="bot-button-round" fab flat icon>
               <v-icon>send</v-icon>
             </v-btn>
           </v-flex>
@@ -25,31 +23,31 @@
   import EventBus from '../../plugins/eventBus'
 
   export default {
-    name: 'PhoneWidget',
+    name: 'CustomTextWidget',
     props: ['widgetData'],
-    data () {return { phone: '', showWidget: false, clicked: false }},
+    data () {return { text: '', showWidget: false, clicked: false }},
     created () {
       if (window.BotMetaData.hasOwnProperty(this.widgetData.varid))
-        this.phone = window.BotMetaData[this.widgetData.varid]
+        this.text = window.BotMetaData[this.widgetData.varid]
     },
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
         self.showWidget = true
-        setTimeout(function () { self.$refs.phone.focus() }, 200)
+        setTimeout(function () { self.$refs.text.focus() }, 200)
       })
     },
     methods: {
-      setPhoneValue () {
+      setTextValue () {
         let self = this
-        if (this.phone && this.phone.length === 10 && !this.clicked) {
+        if (this.text.length && !this.clicked) {
           this.clicked = true
           animateSendButton()
           setTimeout(function () {
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
           }, 1000)
           setTimeout(function () {
-            self.$parent.sendMessage({ value: self.phone, type: 'user_phone' })
+            self.$parent.sendMessage({ type: 'user_custom_text', value: self.text })
             self.$destroy()
             self.$el.parentNode.removeChild(self.$el)
           }, 1000)

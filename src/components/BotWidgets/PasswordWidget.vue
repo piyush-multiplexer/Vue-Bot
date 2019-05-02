@@ -28,6 +28,10 @@
     name: 'PasswordWidget',
     props: ['widgetData'],
     data () {return { password: '', passwordOriginal: '', showWidget: false, clicked: false }},
+    created () {
+      if (window.BotMetaData.hasOwnProperty(this.widgetData.varid))
+        this.password = window.BotMetaData[this.widgetData.varid]
+    },
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
@@ -43,12 +47,21 @@
           animateSendButton()
           setTimeout(function () {
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
-          }, 500)
+          }, 1000)
           setTimeout(function () {
             self.$parent.sendMessage({ value: self.password, type: 'user_password' })
             self.$destroy()
             self.$el.parentNode.removeChild(self.$el)
           }, 1000)
+          // animateSendButton()
+          // setTimeout(function () {
+          //   $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
+          // }, 500)
+          // setTimeout(function () {
+          //   self.$parent.sendMessage({ value: self.password, type: 'user_password' })
+          //   self.$destroy()
+          //   self.$el.parentNode.removeChild(self.$el)
+          // }, 1000)
         }
       },
     },

@@ -81,6 +81,10 @@
         showWidget: false, thombarUrl: 'http://thumbor.avinashi.com/unsafe/250x300/smart/',
       }
     },
+    created () {
+      // if (window.BotMetaData.hasOwnProperty(this.widgetData.varid))
+      //   this.locationObj = JSON.parse(window.BotMetaData[this.widgetData.varid])
+    },
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {

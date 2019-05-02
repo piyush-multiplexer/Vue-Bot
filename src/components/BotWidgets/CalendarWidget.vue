@@ -26,6 +26,10 @@
     name: 'CalendarWidget',
     props: ['widgetData'],
     data () {return { datetime: new Date(), showWidget: false, clicked: false }},
+    created () {
+      if (window.BotMetaData.hasOwnProperty(this.widgetData.varid))
+        this.datetime = window.BotMetaData[this.widgetData.varid]
+    },
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {

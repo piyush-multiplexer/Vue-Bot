@@ -38,6 +38,10 @@
     data () {
       return { showWidget: false, state: '', clicked: false }
     },
+    created () {
+      if (window.BotMetaData.hasOwnProperty(this.widgetData.varid))
+        this.state = window.BotMetaData[this.widgetData.varid]
+    },
     methods: {
       setSearchValue () {
         let self = this
@@ -46,12 +50,12 @@
           animateSendButton()
           setTimeout(function () {
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
-          }, 200)
+          }, 1000)
           setTimeout(function () {
             self.$parent.sendMessage({ value: self.state, type: 'user_search_suggestion' })
             self.$destroy()
             self.$el.parentNode.removeChild(self.$el)
-          }, 500)
+          }, 1000)
         }
       },
     },

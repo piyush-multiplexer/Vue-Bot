@@ -24,6 +24,10 @@
     name: 'TimePickerWidget',
     props: ['widgetData'],
     data () {return { time: new Date(), showWidget: false }},
+    created () {
+      if (window.BotMetaData.hasOwnProperty(this.widgetData.varid))
+        this.time = window.BotMetaData[this.widgetData.varid]
+    },
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
@@ -43,7 +47,3 @@
     },
   }
 </script>
-
-<style scoped>
-
-</style>

@@ -13,10 +13,13 @@
     components: {
       'BotUI': BotUI,
     },
-    data(){return{isBot:null}},
+    data () {return { isBot: null }},
     mounted () {
-      window.Bot = new VueBot(this.$route.params.botId)
-      this.isBot  = true
-    }
+      if (this.$route.params.hashId)
+        window.Bot = new VueBot(this.$route.params.botId, this.$route.params.hashId)
+      else
+        window.Bot = new VueBot(this.$route.params.botId)
+      this.isBot = true
+    },
   }
 </script>
