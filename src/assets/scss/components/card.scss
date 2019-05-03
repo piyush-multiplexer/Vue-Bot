@@ -18,6 +18,10 @@
 }
 
 
+.bot-hover{
+  background-color: $bot-theme-button-hover !important;
+}
+
 @media only screen and (max-width: 767px) {
 
   .bot-animated-card-slider{

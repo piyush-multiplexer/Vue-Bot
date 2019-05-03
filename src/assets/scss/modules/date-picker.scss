@@ -81,10 +81,16 @@
           .v-time-picker-clock__hand:after{
             border-color: $bot-theme-body !important;
           }
+          .v-time-picker-clock__hand:before{
+            border-color: $bot-theme-body !important;
+          }
           .v-time-picker-clock__item {
             span {
               color: $bot-theme-text;
             }
+          }
+          .v-time-picker-clock__item--active{
+            background-color: $bot-theme-body !important;
           }
         }
       }

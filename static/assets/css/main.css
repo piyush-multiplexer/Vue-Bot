@@ -103,6 +103,7 @@ $bot-theme-text-filed:#f3f3f3;
 html {
   box-sizing: border-box;
   overflow-y: hidden;
+  background-color: #9aa3ab;
   -webkit-text-size-adjust: 100%;
   font-family: "AzoSansW01-Regular";
 }
@@ -499,6 +500,8 @@ body {
   color: #ffffff !important;
   margin: 0px 0;
   border-radius: 50px;
+  min-width: 60%;
+  max-width: 100%;
 }
 .bot-button-round-text:hover {
   background-color: #2f72a7 !important;
@@ -681,6 +684,10 @@ body {
   box-shadow: 0 -2px 10px 0 #cbdeec;
 }
 
+.bot-hover {
+  background-color: #2f72a7 !important;
+}
+
 @media only screen and (max-width: 767px) {
   .bot-animated-card-slider {
     width: 100vw;
@@ -748,7 +755,7 @@ body {
   background-image: url("../image/bot-background.png");
   position: fixed;
   width: 100%;
-  top: 5px;
+  top: 0px;
 }
 
 /*height: 80vh;*/
@@ -1061,7 +1068,7 @@ $bot-theme-text-filed:#f3f3f3;
   background-image: url("../image/bot-background.png");
   position: fixed;
   width: 100%;
-  top: 5px;
+  top: 0px;
 }
 
 /*height: 80vh;*/
@@ -1664,8 +1671,14 @@ $bot-theme-text-filed:#f3f3f3;
 .bot-time-picker .v-picker__body .v-time-picker-clock__container .v-time-picker-clock .v-time-picker-clock__inner .v-time-picker-clock__hand:after {
   border-color: #9aa3ab !important;
 }
+.bot-time-picker .v-picker__body .v-time-picker-clock__container .v-time-picker-clock .v-time-picker-clock__inner .v-time-picker-clock__hand:before {
+  border-color: #9aa3ab !important;
+}
 .bot-time-picker .v-picker__body .v-time-picker-clock__container .v-time-picker-clock .v-time-picker-clock__inner .v-time-picker-clock__item span {
   color: #616c6f;
+}
+.bot-time-picker .v-picker__body .v-time-picker-clock__container .v-time-picker-clock .v-time-picker-clock__inner .v-time-picker-clock__item--active {
+  background-color: #9aa3ab !important;
 }
 
 .bot-starttyping {
