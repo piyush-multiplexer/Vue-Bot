@@ -76,7 +76,7 @@
   import NoInputWidget from './BotWidgets/NoInputWidget'
   import UserBubbleWidget from './BotWidgets/UserBubbleWidget'
   import CustomTextWidget from './BotWidgets/CustomTextWidget'
-
+  import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
   export default {
     name: 'BotUI',
     components: {
@@ -146,6 +146,7 @@
         })
         this.messages.push(await Bot.getNextMessage(this.userValue ? this.userValue : userValue.value))
         this.userValue = ''
+        enableBodyScroll(this.$el)
         this.$forceUpdate()
       },
     },
