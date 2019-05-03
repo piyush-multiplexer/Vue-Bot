@@ -500,10 +500,24 @@ body {
   color: #ffffff !important;
   margin: 0px 0;
   border-radius: 50px;
-  min-width: 60%;
-  max-width: 100%;
 }
 .bot-button-round-text:hover {
+  background-color: #2f72a7 !important;
+  color: #ffffff !important;
+}
+
+.bot-button-round-text-width {
+  box-shadow: none !important;
+  background-color: #b3c9da !important;
+  width: 80%;
+  height: 48px;
+  padding: 0 34px;
+  font-size: 0.9375rem;
+  color: #ffffff !important;
+  margin: 0px 0;
+  border-radius: 50px;
+}
+.bot-button-round-text-width:hover {
   background-color: #2f72a7 !important;
   color: #ffffff !important;
 }
