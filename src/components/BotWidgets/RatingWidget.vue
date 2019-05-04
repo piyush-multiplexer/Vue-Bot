@@ -8,7 +8,7 @@
                 v-model="rating" x-large></v-rating>
       <v-btn @click.once="setDateTimeValue(false)" class="bot-button-round-text">Submit {{rating}} Rating</v-btn>
       <br/>
-      <span @click.once="setDateTimeValue(true)" style="cursor: pointer;text-align: right;color: #00b0ff"
+      <span @click.once="setDateTimeValue(true)" style="cursor: pointer;text-align: center;color: #00b0ff"
             v-if="widgetData.input.args.pass">skip
       </span>
     </div>

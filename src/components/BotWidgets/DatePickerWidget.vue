@@ -12,7 +12,7 @@
           <v-btn @click.once="setDateValue(false)" class="bot-button-round-text">Set Date</v-btn>
         </v-flex>
       </v-layout>
-      <span @click.once="setDateValue(true)" style="cursor: pointer;text-align: right;color: #00b0ff"
+      <span @click.once="setDateValue(true)" style="cursor: pointer;text-align: center;color: #00b0ff"
             v-if="widgetData.input.args.pass">skip
       </span>
     </div>
