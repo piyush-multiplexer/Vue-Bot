@@ -14,6 +14,95 @@
           <span>You Selected {{widgetData.text[0].string}}</span>
         </template>
       </div>
+      <div v-else-if="widgetData.input.name==='user_calendar_picker'">
+        <template v-if="widgetData.text[0].string==='skipped'">
+          <span>SKIPPED</span>
+        </template>
+        <template v-else>
+          <v-icon class="float-left m-r-5" dark>calendar_today</v-icon>
+          <span v-text="widgetData.text[0].string"></span>
+        </template>
+      </div>
+      <div v-else-if="widgetData.input.name==='user_date_picker'">
+        <template v-if="widgetData.text[0].string==='skipped'">
+          <span>SKIPPED</span>
+        </template>
+        <template v-else>
+          <v-icon class="float-left m-r-5" dark>date_range</v-icon>
+          <span v-text="widgetData.text[0].string"></span>
+        </template>
+      </div>
+      <div v-else-if="widgetData.input.name==='user_time_picker'">
+        <template v-if="widgetData.text[0].string==='skipped'">
+          <span>SKIPPED</span>
+        </template>
+        <template v-else>
+          <v-icon class="float-left m-r-5" dark>access_time</v-icon>
+          <span v-text="widgetData.text[0].string"></span>
+        </template>
+      </div>
+      <div v-else-if="widgetData.input.name==='user_email'">
+        <template v-if="widgetData.text[0].string==='skipped'">
+          <span>SKIPPED</span>
+        </template>
+        <template v-else>
+          <v-icon class="float-left m-r-5" dark>email</v-icon>
+          <span v-text="widgetData.text[0].string"></span>
+        </template>
+      </div>
+      <div v-else-if="widgetData.input.name==='user_password'">
+        <template v-if="widgetData.text[0].string==='skipped'">
+          <span>SKIPPED</span>
+        </template>
+        <template v-else>
+          <v-icon class="float-left m-r-5" dark>lock</v-icon>
+          <span v-text="widgetData.text[0].string"></span>
+        </template>
+      </div>
+      <div v-else-if="widgetData.input.name==='user_phone'">
+        <template v-if="widgetData.text[0].string==='skipped'">
+          <span>SKIPPED</span>
+        </template>
+        <template v-else>
+          <v-icon class="float-left m-r-5" dark>phone</v-icon>
+          <span v-text="widgetData.text[0].string"></span>
+        </template>
+      </div>
+      <div v-else-if="widgetData.input.name==='user_rating'">
+        <template v-if="widgetData.text[0].string==='skipped'">
+          <span>SKIPPED</span>
+        </template>
+        <template v-else>
+          <v-icon class="float-left m-r-5" dark>star_rate</v-icon>
+          <span v-text="widgetData.text[0].string"></span>
+        </template>
+      </div>
+      <div v-else-if="widgetData.input.name==='user_name'">
+        <template v-if="widgetData.text[0].string==='skipped'">
+          <span>SKIPPED</span>
+        </template>
+        <template v-else>
+          <v-icon class="float-left m-r-5" dark>person</v-icon>
+          <span v-text="widgetData.text[0].string"></span>
+        </template>
+      </div>
+      <div v-else-if="widgetData.input.name==='user_search_suggestion'">
+        <template v-if="widgetData.text[0].string==='skipped'">
+          <span>SKIPPED</span>
+        </template>
+        <template v-else>
+          <v-icon class="float-left m-r-5" dark>search</v-icon>
+          <span v-text="widgetData.text[0].string"></span>
+        </template>
+      </div>
+      <div v-else-if="widgetData.input.name==='user_custom_text'">
+        <template v-if="widgetData.text[0].string==='skipped'">
+          <span>SKIPPED</span>
+        </template>
+        <template v-else>
+          <span v-text="widgetData.text[0].string"></span>
+        </template>
+      </div>
       <div v-else-if="widgetData.input.name==='user_file'">
         <template v-if="fileExtensionValidater(widgetData.meta.type)">
           <v-img :src="widgetData.text[0].string"
@@ -41,45 +130,6 @@
         <!--          <google-marker ref="marker"-->
         <!--            :position="{lat:widgetData.text[0].string.lat,lng:widgetData.text[0].string.lng}"></google-marker>-->
         <!--        </google-map>-->
-      </div>
-      <div v-else-if="widgetData.input.name==='user_calendar_picker'">
-        <v-icon class="float-left m-r-5" dark>calendar_today</v-icon>
-        <span v-text="widgetData.text[0].string"></span>
-      </div>
-      <div v-else-if="widgetData.input.name==='user_date_picker'">
-        <v-icon class="float-left m-r-5" dark>date_range</v-icon>
-        <span v-text="widgetData.text[0].string"></span>
-      </div>
-      <div v-else-if="widgetData.input.name==='user_time_picker'">
-        <v-icon class="float-left m-r-5" dark>access_time</v-icon>
-        <span v-text="widgetData.text[0].string"></span>
-      </div>
-      <div v-else-if="widgetData.input.name==='user_email'">
-        <v-icon class="float-left m-r-5" dark>email</v-icon>
-        <span v-text="widgetData.text[0].string"></span>
-      </div>
-      <div v-else-if="widgetData.input.name==='user_password'">
-        <v-icon class="float-left m-r-5" dark>lock</v-icon>
-        <span v-text="widgetData.text[0].string"></span>
-      </div>
-      <div v-else-if="widgetData.input.name==='user_phone'">
-        <v-icon class="float-left m-r-5" dark>phone</v-icon>
-        <span v-text="widgetData.text[0].string"></span>
-      </div>
-      <div v-else-if="widgetData.input.name==='user_rating'">
-        <v-icon class="float-left m-r-5" dark>star_rate</v-icon>
-        <span v-text="widgetData.text[0].string"></span>
-      </div>
-      <div v-else-if="widgetData.input.name==='user_name'">
-        <v-icon class="float-left m-r-5" dark>person</v-icon>
-        <span v-text="widgetData.text[0].string"></span>
-      </div>
-      <div v-else-if="widgetData.input.name==='user_search_suggestion'">
-        <v-icon class="float-left m-r-5" dark>search</v-icon>
-        <span v-text="widgetData.text[0].string"></span>
-      </div>
-      <div v-else-if="widgetData.input.name==='user_custom_text'">
-        <span>{{widgetData.text[0].string}}</span>
       </div>
       <div v-else>
         <span>{{widgetData.text[0].string}}</span>
