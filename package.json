@@ -12,7 +12,6 @@
   "dependencies": {
     "animate.css": "^3.7.0",
     "axios": "^0.18.0",
-    "body-scroll-lock": "^2.6.1",
     "jquery": "^3.4.0",
     "moment": "latest",
     "move-js": "^0.5.0",
