@@ -5,7 +5,8 @@
       <div class="bot-text-filed-buttton-broder">
         <v-layout row wrap>
           <v-flex md10 xs10>
-            <v-autocomplete :items="widgetData.input.args.options" class="bot-text-field-autocomplete" item-text="name" lable="name"
+            <v-autocomplete :items="widgetData.input.args.options" class="bot-text-field-autocomplete" item-text="name"
+                            lable="name"
                             prepend-icon="search"
                             ref="state" v-model="state"></v-autocomplete>
           </v-flex>
@@ -15,6 +16,9 @@
             </v-btn>
           </v-flex>
         </v-layout>
+        <div @click.once="skipSearchValue" style="cursor: pointer;text-align: center;color: #00b0ff"
+              v-if="widgetData.input.args.pass">skip
+      </div>
       </div>
     </div>
   </div>
@@ -57,6 +61,18 @@
             self.$el.parentNode.removeChild(self.$el)
           }, 1000)
         }
+      },
+      skipSearchValue () {
+        let self = this
+        animateSendButton()
+        setTimeout(function () {
+          $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
+        }, 1000)
+        setTimeout(function () {
+          self.$parent.sendMessage({ value: 'skipped', type: 'user_search_suggestion' })
+          self.$destroy()
+          self.$el.parentNode.removeChild(self.$el)
+        }, 1000)
       },
     },
   }

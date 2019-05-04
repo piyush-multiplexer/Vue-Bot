@@ -1,10 +1,10 @@
 <template>
   <div class="BubbleWidget" >
     <div :key="index" v-for="(bubble,index) in localBubbles">
-      <div class="bubble-card">
+      <div class="bubble-card" v-if="bubble.string">
         <div v-html="bubble.string"
              v-if="typeof bubble.string === 'string' || typeof bubble.string === 'number' "></div>
-        <div v-else>
+        <div v-else-if="!bubble.img_url">
           {{bubble.string.address}}
         </div>
       </div>

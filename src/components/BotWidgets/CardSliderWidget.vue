@@ -7,7 +7,7 @@
       <swiper :options="swiperOption" class="p-r-24 bot-carousel">
         <swiper-slide :key="index" class="p-t-10 p-b-10" v-for="(card,index) in widgetData.input.args.options">
           <div class="bot-carousel-card">
-            <v-img :alt="card.name" :src="card.img_url" @click.once="setCardValue(card)"
+            <v-img :alt="card.name" :src="card.img_url" @click.once="setCardValue(card,false)"
                    class="single-card-image"/>
             <p class="m-t-5 m-b-0">{{card.footer_text}}</p>
           </div>
@@ -27,29 +27,11 @@
           </div>
         </div>
       </swiper>
-      <!--      <carousel :dots="false" :nav="false" class="bot-carousel">-->
-
-      <!--            <div class="single-card" v-for="(card,index) in widgetData.input.args.options" :key="index">-->
-      <!--              <v-img class="single-card-image" @click.once="setCardValue(card)" :src="thombarUrl+card.img_url"-->
-      <!--                     :alt="card.name"/>-->
-      <!--              <v-card-text class="single-card-content" v-html="card.footer_text"></v-card-text>-->
-      <!--            </div>-->
-
-      <!--      </carousel>-->
-      <!--      <div>-->
-      <!--    </div>-->
-      <!--        <div class="CardSliderWidget">-->
-      <!--          <v-layout>-->
-      <!--            <v-flex class="single-card" v-for="(card,index) in widgetData.input.args.options" :key="index">-->
-      <!--              <div>-->
-      <!--                <v-img class="single-card-image" @click.once="setCardValue(card)" :src="card.img_url" :alt="card.name"/>-->
-      <!--                <v-card-text class="single-card-content" v-html="card.footer_text"></v-card-text>-->
-      <!--              </div>-->
-      <!--            </v-flex>-->
-      <!--          </v-layout>-->
-      <!--        </div>-->
+      <div @click.once="setCardValue({rsp_gid:widgetData.input.args.rsp_gid,val:'skipped',name:'skipped'},true)"
+            style="cursor: pointer;text-align: center;color: #00b0ff"
+            v-if="widgetData.input.args.pass">skip
+      </div>
     </div>
-    <!--  </div>-->
   </div>
 </template>
 
@@ -81,10 +63,6 @@
         showWidget: false, thombarUrl: 'http://thumbor.avinashi.com/unsafe/250x300/smart/',
       }
     },
-    created () {
-      // if (window.BotMetaData.hasOwnProperty(this.widgetData.varid))
-      //   this.locationObj = JSON.parse(window.BotMetaData[this.widgetData.varid])
-    },
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
@@ -92,12 +70,12 @@
       })
     },
     methods: {
-      setCardValue (card) {
+      setCardValue (card, skip) {
         let self = this
         $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
           Bot.rsp_gid = card.rsp_gid
-          self.$parent.sendMessage({ type: 'user_card', value: card })
+          self.$parent.sendMessage({ type: 'user_card', value: skip ? 'skipped' : card })
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)

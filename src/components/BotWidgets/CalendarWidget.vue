@@ -9,11 +9,14 @@
           </v-datetime-picker>
         </v-flex>
         <v-flex class="text-center" md2 xs2>
-          <v-btn :disabled="!datetime" @click.once="setDateTimeValue" class="bot-button-round" fab flat icon>
+          <v-btn :disabled="!datetime" @click.once="setDateTimeValue(false)" class="bot-button-round" fab flat icon>
             <v-icon style="transform:rotate(-45deg) ">send</v-icon>
           </v-btn>
         </v-flex>
       </v-layout>
+      <div @click.once="setDateTimeValue(true)" style="cursor: pointer;text-align: center;color: #00b0ff"
+            v-if="widgetData.input.args.pass">skip
+      </div>
     </div>
   </div>
 </template>
@@ -37,10 +40,11 @@
       })
     },
     methods: {
-      setDateTimeValue () {
+      setDateTimeValue (skip) {
         if (!this.clicked) {
           this.clicked = true
-          this.$parent.sendMessage({ value: moment(this.datetime).format('LLLL'), type: 'user_calendar_picker' })
+          this.$parent.sendMessage(
+            { value: skip ? 'skipped' : moment(this.datetime).format('LLLL'), type: 'user_calendar_picker' })
           this.$destroy()
           this.$el.parentNode.removeChild(this.$el)
         }

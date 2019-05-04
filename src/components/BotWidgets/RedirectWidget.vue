@@ -11,7 +11,9 @@
     mounted () {
       let self = this
       setTimeout(function () {
-        window.location.href = self.widgetData.input.args.redirect_url
+        if (self.widgetData.input.args.redirect_url !== null){
+          window.location.href = self.widgetData.input.args.redirect_url
+        }
       }, self.widgetData.input.args.redirect_delay)
     },
   }

@@ -144,7 +144,10 @@
           text: [{ string: this.userValue ? this.userValue : userValue.value }],
           meta: userValue.meta,
         })
-        this.messages.push(await Bot.getNextMessage(this.userValue ? this.userValue : userValue.value))
+        if (userValue === 'skipped')
+          this.messages.push(await Bot.getNextMessage(''))
+        else
+          this.messages.push(await Bot.getNextMessage(this.userValue ? this.userValue : userValue.value))
         this.userValue = ''
         this.$forceUpdate()
       },

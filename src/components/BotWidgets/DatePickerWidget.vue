@@ -9,9 +9,12 @@
         </v-flex>
         <v-flex class="m-t-20 m-b-10" xs12>
           <v-spacer></v-spacer>
-          <v-btn @click.once="setDateValue" class="bot-button-round-text">Set Date</v-btn>
+          <v-btn @click.once="setDateValue(false)" class="bot-button-round-text">Set Date</v-btn>
         </v-flex>
       </v-layout>
+      <div @click.once="setDateValue(true)" style="cursor: pointer;text-align: center;color: #00b0ff"
+            v-if="widgetData.input.args.pass">skip
+      </div>
     </div>
   </div>
 </template>
@@ -35,11 +38,12 @@
       })
     },
     methods: {
-      setDateValue () {
+      setDateValue (skip) {
         let self = this
         $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
-          self.$parent.sendMessage({ value: moment(self.date).format('DD/MM/YYYY'), type: 'user_date_picker' })
+          self.$parent.sendMessage(
+            { value: skip ? 'skipped' : moment(self.date).format('DD/MM/YYYY'), type: 'user_date_picker' })
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)

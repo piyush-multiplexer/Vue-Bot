@@ -15,6 +15,9 @@
             </v-btn>
           </v-flex>
         </v-layout>
+        <div @click.once="skipPasswordValue" style="cursor: pointer;text-align: center;color: #00b0ff"
+             v-if="widgetData.input.args.pass">skip
+        </div>
       </div>
     </div>
   </div>
@@ -53,16 +56,18 @@
             self.$destroy()
             self.$el.parentNode.removeChild(self.$el)
           }, 1000)
-          // animateSendButton()
-          // setTimeout(function () {
-          //   $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
-          // }, 500)
-          // setTimeout(function () {
-          //   self.$parent.sendMessage({ value: self.password, type: 'user_password' })
-          //   self.$destroy()
-          //   self.$el.parentNode.removeChild(self.$el)
-          // }, 1000)
         }
+      }, skipPasswordValue () {
+        let self = this
+        animateSendButton()
+        setTimeout(function () {
+          $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
+        }, 1000)
+        setTimeout(function () {
+          self.$parent.sendMessage({ value: 'skipped', type: 'user_password' })
+          self.$destroy()
+          self.$el.parentNode.removeChild(self.$el)
+        }, 1000)
       },
     },
   }

@@ -24,18 +24,18 @@ sass --watch src/assets/scss/main.scss:static/assets/css/main.css
 Supported Inputs
 -----------------------
 * Text 
-  - Custom Text
-  - Mobile
-  - Password
-  - Name
-  - Email
-* Auto Search Suggestion
-* Button Group[single]
-* Card Group[single]
-* Start Rating
-* Date Picker
-* Time Picker
-* DateTime Picker
+  - Custom Text[skip]
+  - Mobile[skip]
+  - Password[skip]
+  - Name[skip]
+  - Email[skip]
+* Auto Search Suggestion[skip]
+* Button Group[skip]
+* Card Group[skip]
+* Start Rating[skip]
+* Date Picker[skip]
+* Time Picker[skip]
+* DateTime Picker[skip]
 * Image/file Upload
 * Current Location/Custom Location Selection[Map]
 * Auto Page Redirection
@@ -43,11 +43,11 @@ Supported Inputs
 
 Upcoming Supported Features
 ---------------------------
-* Geo Location
-* Calendar Date/Time
+*disable scroll in open widget
 
 
 Support Output
 ----------------
 * Text
 * Raw HTML
+* Widget Respective
