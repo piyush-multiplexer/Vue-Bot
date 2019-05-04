@@ -6,7 +6,11 @@
                 class="bot-rating m-b-20" color="yellow darken-3"
                 empty-icon="$vuetify.icons.ratingFull" hover
                 v-model="rating" x-large></v-rating>
-      <v-btn @click.once="setDateTimeValue" class="bot-button-round-text">Submit {{rating}} Rating</v-btn>
+      <v-btn @click.once="setDateTimeValue(false)" class="bot-button-round-text">Submit {{rating}} Rating</v-btn>
+      <br/>
+      <span @click.once="setDateTimeValue(true)" style="cursor: pointer;text-align: right;color: #00b0ff"
+            v-if="widgetData.input.args.pass">skip
+      </span>
     </div>
   </div>
 </template>
@@ -34,11 +38,11 @@
       })
     },
     methods: {
-      setDateTimeValue () {
+      setDateTimeValue (skip) {
         let self = this
         $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
-          self.$parent.sendMessage({ type: 'user_rating', value: self.rating.toString() })
+          self.$parent.sendMessage({ type: 'user_rating', value: skip ? 'skipped' : self.rating.toString() })
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)

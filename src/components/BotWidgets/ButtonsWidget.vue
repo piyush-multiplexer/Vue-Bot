@@ -8,8 +8,9 @@
           {{btn.val}}<span v-html="btn.href"></span>
         </v-btn>
       </template>
-      <span style="cursor: pointer;text-align: right;color: #00b0ff" @click.once="setButtonValue({rsp_gid:widgetData.input.args.rsp_gid,val:'skipped',name:'skipped'},true)"
-           v-if="widgetData.input.args.pass">skip
+      <span @click.once="setButtonValue({rsp_gid:widgetData.input.args.rsp_gid,val:'skipped',name:'skipped'},true)"
+            style="cursor: pointer;text-align: right;color: #00b0ff"
+            v-if="widgetData.input.args.pass">skip
       </span>
     </div>
   </div>
@@ -35,7 +36,7 @@
         this.selectedButton = window.BotMetaData[this.widgetData.varid]
     },
     methods: {
-      setButtonValue (btn,skip) {
+      setButtonValue (btn, skip) {
         let self = this
         $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
