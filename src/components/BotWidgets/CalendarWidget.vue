@@ -14,9 +14,9 @@
           </v-btn>
         </v-flex>
       </v-layout>
-      <span @click.once="setDateTimeValue(true)" style="cursor: pointer;text-align: center;color: #00b0ff"
+      <div @click.once="setDateTimeValue(true)" style="cursor: pointer;text-align: center;color: #00b0ff"
             v-if="widgetData.input.args.pass">skip
-      </span>
+      </div>
     </div>
   </div>
 </template>

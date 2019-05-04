@@ -25,10 +25,10 @@ Supported Inputs
 -----------------------
 * Text 
   - Custom Text[skip]
-  - Mobile
+  - Mobile[skip]
   - Password
   - Name
-  - Email
+  - Email[skip]
 * Auto Search Suggestion[skip]
 * Button Group[skip]
 * Card Group[skip]

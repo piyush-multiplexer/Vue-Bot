@@ -8,10 +8,10 @@
           {{btn.val}}<span v-html="btn.href"></span>
         </v-btn>
       </template>
-      <span @click.once="setButtonValue({rsp_gid:widgetData.input.args.rsp_gid,val:'skipped',name:'skipped'},true)"
+      <div @click.once="setButtonValue({rsp_gid:widgetData.input.args.rsp_gid,val:'skipped',name:'skipped'},true)"
             style="cursor: pointer;text-align: center;color: #00b0ff"
             v-if="widgetData.input.args.pass">skip
-      </span>
+      </div>
     </div>
   </div>
 </template>
