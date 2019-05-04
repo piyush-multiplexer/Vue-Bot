@@ -26,8 +26,8 @@ Supported Inputs
 * Text 
   - Custom Text[skip]
   - Mobile[skip]
-  - Password
-  - Name
+  - Password[skip]
+  - Name[skip]
   - Email[skip]
 * Auto Search Suggestion[skip]
 * Button Group[skip]
