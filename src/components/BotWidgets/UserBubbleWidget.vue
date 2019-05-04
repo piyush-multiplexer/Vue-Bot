@@ -6,8 +6,13 @@
         <div v-html="widgetData.text[0].string.val"></div>
       </div>
       <div v-else-if="widgetData.input.name==='user_buttons'">
-        <v-icon class="float-left m-r-5" dark>view_list</v-icon>
-        <span>You Selected {{widgetData.text[0].string}}</span>
+        <template v-if="widgetData.text[0].string==='skipped'">
+          <span>SKIPPED</span>
+        </template>
+        <template v-else>
+          <v-icon class="float-left m-r-5" dark>view_list</v-icon>
+          <span>You Selected {{widgetData.text[0].string}}</span>
+        </template>
       </div>
       <div v-else-if="widgetData.input.name==='user_file'">
         <template v-if="fileExtensionValidater(widgetData.meta.type)">
