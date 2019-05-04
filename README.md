@@ -30,8 +30,8 @@ Supported Inputs
   - Name
   - Email
 * Auto Search Suggestion
-* Button Group[single][skip]
-* Card Group[single]
+* Button Group[skip]
+* Card Group
 * Start Rating
 * Date Picker[skip]
 * Time Picker[skip]

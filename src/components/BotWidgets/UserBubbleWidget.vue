@@ -2,8 +2,13 @@
   <div class="UserBubbleWidget BubbleWidget">
     <div class="bubble-card">
       <div v-if="widgetData.input.name==='user_card'">
-        <img :src="thombarUrl+widgetData.text[0].string.img_url" style="cursor: pointer"/>
-        <div v-html="widgetData.text[0].string.val"></div>
+        <template v-if="widgetData.text[0].string==='skipped'">
+          <span>SKIPPED</span>
+        </template>
+        <template v-else>
+          <img :src="thombarUrl+widgetData.text[0].string.img_url" style="cursor: pointer"/>
+          <div v-html="widgetData.text[0].string.val"></div>
+        </template>
       </div>
       <div v-else-if="widgetData.input.name==='user_buttons'">
         <template v-if="widgetData.text[0].string==='skipped'">

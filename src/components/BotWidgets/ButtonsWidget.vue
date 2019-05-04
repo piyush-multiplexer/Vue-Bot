@@ -3,12 +3,12 @@
     <div class="btn-group animated slideInUp bot-animated-card" v-if="showWidget">
       <div class="widget-question">Select an Option</div>
       <template v-for="btn in widgetData.input.args.options">
-        <v-btn :class="selectedButton===btn.val?'bot-button':''" @click.once="setButtonValue(btn)"
+        <v-btn :class="selectedButton===btn.val?'bot-button':''" @click.once="setButtonValue(btn,false)"
                class="bot-button-round-text m-b-10" round>
           {{btn.val}}<span v-html="btn.href"></span>
         </v-btn>
       </template>
-      <span style="cursor: pointer;text-align: right;color: #00b0ff" @click.once="setButtonValue({rsp_gid:widgetData.input.args.rsp_gid,val:'skipped',name:'skipped'})"
+      <span style="cursor: pointer;text-align: right;color: #00b0ff" @click.once="setButtonValue({rsp_gid:widgetData.input.args.rsp_gid,val:'skipped',name:'skipped'},true)"
            v-if="widgetData.input.args.pass">skip
       </span>
     </div>
@@ -35,12 +35,12 @@
         this.selectedButton = window.BotMetaData[this.widgetData.varid]
     },
     methods: {
-      setButtonValue (btn) {
+      setButtonValue (btn,skip) {
         let self = this
         $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
           Bot.rsp_gid = btn.rsp_gid
-          self.$parent.sendMessage({ value: btn.name, type: 'user_buttons' })
+          self.$parent.sendMessage({ value: skip ? 'skipped' : btn.name, type: 'user_buttons' })
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)
