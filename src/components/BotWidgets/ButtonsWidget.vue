@@ -37,7 +37,6 @@
     methods: {
       setButtonValue (btn) {
         let self = this
-        // $(this.$el).addClass('animated bounceOutDown')
         $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
           Bot.rsp_gid = btn.rsp_gid

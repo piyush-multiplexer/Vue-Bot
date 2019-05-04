@@ -30,12 +30,12 @@ Supported Inputs
   - Name
   - Email
 * Auto Search Suggestion
-* Button Group[single]
+* Button Group[single][skip]
 * Card Group[single]
 * Start Rating
-* Date Picker
-* Time Picker
-* DateTime Picker
+* Date Picker[skip]
+* Time Picker[skip]
+* DateTime Picker[skip]
 * Image/file Upload
 * Current Location/Custom Location Selection[Map]
 * Auto Page Redirection
