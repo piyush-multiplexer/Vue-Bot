@@ -19,13 +19,21 @@ const router = new Router({
       component: function () {
         return import('../components/BotList.vue')
       },
-    }, {
+    },
+    {
       path: '/:botId/:hashId?',
       name: 'BotHome',
       component: function () {
         return import('../components/BotHome.vue')
       },
     },
+    // {
+    //   path: '/test',
+    //   name: 'test',
+    //   component: function () {
+    //     return import('../components/test.vue')
+    //   },
+    // },
   ],
 })
 export default router

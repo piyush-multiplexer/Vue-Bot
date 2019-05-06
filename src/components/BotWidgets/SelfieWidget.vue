@@ -1,15 +1,16 @@
 <template>
-  <div class="FileUploadWidget">
+  <div class="SelfieWidget">
     <div @keyup.enter.once="uploadFile" class="animated slideInUp bot-animated-card"
          v-if="showWidget">
-      <div class="widget-question">Upload File/Image</div>
+      <div class="widget-question">Take Selfie</div>
       <div class="bot-text-filed-buttton-broder">
         <v-layout row wrap>
           <v-flex md10 xs10>
             <v-text-field @click.native='pickFile' class="bot-text-field-email" prepend-icon='attach_file'
                           ref="uploadFile"
                           v-model='imageName'></v-text-field>
-            <input @change="localUpload" id="file" name="file" ref="file" style="display: none" type="file">
+            <input @change="localUpload" accept="image/*" capture="user" id="file" name="file" ref="file" style="display: none"
+                   type="file">
           </v-flex>
           <v-flex class="text-right" md2 xs2>
             <v-btn :disabled="!uploadFileData.length" @click.once="uploadFile" class="bot-button-round" fab flat icon>
@@ -32,7 +33,7 @@
   import Constants from '../../Constant'
 
   export default {
-    name: 'FileUploadWidget',
+    name: 'SelfieWidget',
     props: ['widgetData'],
     data () {return { showWidget: false, imageName: '', uploadFileData: '' }},
     mounted () {
@@ -79,7 +80,7 @@
         }, 1000)
         setTimeout(function () {
           self.$parent.sendMessage(
-            { value: fileUrl, meta: self.$refs.file.files[0], type: 'user_file' })
+            { value: fileUrl, meta: self.$refs.file.files[0], type: 'user_take_photo' })
           // self.$parent.sendMessage({value:fileUrl,type:'user_file'})
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
@@ -92,7 +93,7 @@
           $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
         }, 1000)
         setTimeout(function () {
-          self.$parent.sendMessage({ type: 'user_file', value: 'skipped' })
+          self.$parent.sendMessage({ type: 'user_take_photo', meta: self.$refs.file.files[0], value: 'skipped' })
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 1000)

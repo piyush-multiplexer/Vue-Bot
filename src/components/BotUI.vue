@@ -76,6 +76,7 @@
   import NoInputWidget from './BotWidgets/NoInputWidget'
   import UserBubbleWidget from './BotWidgets/UserBubbleWidget'
   import CustomTextWidget from './BotWidgets/CustomTextWidget'
+  import SelfieWidget from './BotWidgets/SelfieWidget'
 
   export default {
     name: 'BotUI',
@@ -100,6 +101,7 @@
       'user_fullname': UserNameWidget,
       'no_input': NoInputWidget,
       'custom_text': CustomTextWidget,
+      'take_photo': SelfieWidget,
     },
     data () {
       return {

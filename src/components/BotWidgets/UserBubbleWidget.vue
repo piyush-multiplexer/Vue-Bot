@@ -109,7 +109,32 @@
         </template>
       </div>
       <div v-else-if="widgetData.input.name==='user_file'">
-        <template v-if="fileExtensionValidater(widgetData.meta.type)">
+        <template v-if="widgetData.text[0].string==='skipped'">
+          <span>SKIPPED</span>
+        </template>
+        <template v-else>
+          <template v-if="fileExtensionValidater(widgetData.meta.type)">
+            <v-img :src="widgetData.text[0].string"
+                   max-height="200">
+              <template v-slot:placeholder>
+                <v-layout align-center fill-height justify-center ma-0>
+                  <v-progress-circular color="grey lighten-5" indeterminate></v-progress-circular>
+                </v-layout>
+              </template>
+            </v-img>
+            <div>{{widgetData.meta.name}} | {{widgetData.meta.size|fileSizeFilter }} KB</div>
+          </template>
+          <template v-else>
+            <v-icon class="float-left m-r-5" dark>attachment</v-icon>
+            <span>{{widgetData.meta.name}} | {{widgetData.meta.size|fileSizeFilter }} KB</span>
+          </template>
+        </template>
+      </div>
+      <div v-else-if="widgetData.input.name==='user_take_photo'">
+        <template v-if="widgetData.text[0].string==='skipped'">
+          <span>SKIPPED</span>
+        </template>
+        <template v-else>
           <v-img :src="widgetData.text[0].string"
                  max-height="200">
             <template v-slot:placeholder>
@@ -118,13 +143,7 @@
               </v-layout>
             </template>
           </v-img>
-
-          <!--          <img :src="widgetData.text[0].string" style="cursor: pointer" width="100%">-->
           <div>{{widgetData.meta.name}} | {{widgetData.meta.size|fileSizeFilter }} KB</div>
-        </template>
-        <template v-else>
-          <v-icon class="float-left m-r-5" dark>attachment</v-icon>
-          <span>{{widgetData.meta.name}} | {{widgetData.meta.size|fileSizeFilter }} KB</span>
         </template>
       </div>
       <div v-else-if="widgetData.input.name==='user_location'">

@@ -30,7 +30,7 @@
         imageIndex: null,
         localBubbles: [],
         startTyping: true,
-        thombarUrl: 'http://thumbor.avinashi.com/unsafe/250x300/smart/',
+        thombarUrl: 'http://thumbor.avinashi.com/unsafe/smart/',
       }
     },
     mounted () {
