@@ -1,4 +1,4 @@
-import BotData from '../data/BotDataTwo'
+import BotData from '../data/BotMetaData'
 import NetworkCommunicator from './NetworkResourceHandler'
 import Constants from '../Constant'
 
