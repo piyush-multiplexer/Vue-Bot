@@ -6,7 +6,8 @@
           <span>SKIPPED</span>
         </template>
         <template v-else>
-          <img :src="thombarUrl+widgetData.text[0].string.img_url" style="cursor: pointer"/>
+          <img :src="thombarUrl+widgetData.text[0].string.img_url"
+               style="cursor: pointer;border: 3px solid white;border-radius: 15px;border-top-right-radius:0;"/>
           <div v-html="widgetData.text[0].string.val"></div>
         </template>
       </div>
