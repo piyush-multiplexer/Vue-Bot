@@ -144,7 +144,7 @@
               </v-layout>
             </template>
           </v-img>
-          <div>{{widgetData.meta.name}} | {{widgetData.meta.size|fileSizeFilter }} KB</div>
+<!--          <div>{{widgetData.meta.name}} | {{widgetData.meta.size|fileSizeFilter }} KB</div>-->
         </template>
       </div>
       <div v-else-if="widgetData.input.name==='user_location'">
