@@ -136,16 +136,16 @@
           <span>SKIPPED</span>
         </template>
         <template v-else>
-          <v-img :src="widgetData.text[0].string"
-                 max-height="200">
-            <template v-slot:placeholder>
-              <v-layout align-center fill-height justify-center ma-0>
-                <v-progress-circular color="grey lighten-5" indeterminate></v-progress-circular>
-              </v-layout>
-            </template>
-          </v-img>
-<!--          <div>{{widgetData.meta.name}} | {{widgetData.meta.size|fileSizeFilter }} KB</div>-->
+          <img :src="thombarUrl+widgetData.text[0].string" style="cursor: pointer"/>
+          <!--          <v-img :src="thombarUrl+widgetData.text[0].string"  style="width: 30%" width="100">-->
+          <!--            <template v-slot:placeholder>-->
+          <!--              <v-layout align-center fill-height justify-center ma-0>-->
+          <!--                <v-progress-circular color="grey lighten-5" indeterminate></v-progress-circular>-->
+          <!--              </v-layout>-->
+          <!--            </template>-->
+          <!--          </v-img>-->
         </template>
+        <!--        <div style="">{{widgetData.meta.name}} | {{widgetData.meta.size|fileSizeFilter }} KB</div>-->
       </div>
       <div v-else-if="widgetData.input.name==='user_location'">
         <v-icon class="float-left m-r-5" dark>location_city</v-icon>
