@@ -80,7 +80,7 @@
         }, 1000)
         setTimeout(function () {
           self.$parent.sendMessage(
-            { value: fileUrl, meta: self.$refs.file.files[0], type: 'user_take_photo' })
+            { value: fileUrl,metaValue: fileUrl, meta: self.$refs.file.files[0], type: 'user_take_photo' })
           // self.$parent.sendMessage({value:fileUrl,type:'user_file'})
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
@@ -93,7 +93,7 @@
           $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
         }, 1000)
         setTimeout(function () {
-          self.$parent.sendMessage({ type: 'user_take_photo', meta: self.$refs.file.files[0], value: 'skipped' })
+          self.$parent.sendMessage({ type: 'user_take_photo', meta: self.$refs.file.files[0], value: 'skipped' , metaValue: 'skipped' })
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 1000)

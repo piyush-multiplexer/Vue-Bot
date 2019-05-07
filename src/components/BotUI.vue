@@ -147,9 +147,9 @@
           meta: userValue.meta,
         })
         if (userValue === 'skipped')
-          this.messages.push(await Bot.getNextMessage(''))
+          this.messages.push(await Bot.getNextMessage('', ''))
         else
-          this.messages.push(await Bot.getNextMessage(this.userValue ? this.userValue : userValue.value))
+          this.messages.push(await Bot.getNextMessage(this.userValue ? this.userValue : userValue.value,userValue.metaValue))
         this.userValue = ''
         this.$forceUpdate()
       },

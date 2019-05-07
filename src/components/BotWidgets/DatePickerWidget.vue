@@ -43,7 +43,7 @@
         $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
           self.$parent.sendMessage(
-            { value: skip ? 'skipped' : moment(self.date).format('DD/MM/YYYY'), type: 'user_date_picker' })
+            { value: skip ? 'skipped' : moment(self.date).format('DD/MM/YYYY'), metaValue: skip ? 'skipped' : moment(self.date).format('DD/MM/YYYY'), type: 'user_date_picker' })
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)

@@ -10,7 +10,7 @@
                           v-model="password"></v-text-field>
           </v-flex>
           <v-flex class="text-right" md2 xs2>
-            <v-btn :disabled="!password.length" @click.once="setPasswordValue" class="bot-button-round" fab flat icon>
+            <v-btn :disabled="password.length < 6" @click.once="setPasswordValue" class="bot-button-round" fab flat icon>
               <v-icon>send</v-icon>
             </v-btn>
           </v-flex>
@@ -52,7 +52,7 @@
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
           }, 1000)
           setTimeout(function () {
-            self.$parent.sendMessage({ value: self.password, type: 'user_password' })
+            self.$parent.sendMessage({ value: self.password,metaValue: self.password, type: 'user_password' })
             self.$destroy()
             self.$el.parentNode.removeChild(self.$el)
           }, 1000)
@@ -64,7 +64,7 @@
           $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
         }, 1000)
         setTimeout(function () {
-          self.$parent.sendMessage({ value: 'skipped', type: 'user_password' })
+          self.$parent.sendMessage({ value: 'skipped', metaValue: 'skipped', type: 'user_password' })
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 1000)

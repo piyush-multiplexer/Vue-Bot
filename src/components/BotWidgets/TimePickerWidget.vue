@@ -8,7 +8,7 @@
         </v-flex>
         <v-flex class="m-t-20 m-b-10" xs12>
           <v-spacer></v-spacer>
-          <v-btn @click.once="setTimeValue(false)" class="bot-button-round-text">Set Date</v-btn>
+          <v-btn @click.once="setTimeValue(false)" class="bot-button-round-text">Set Time</v-btn>
         </v-flex>
       </v-layout>
       <div @click.once="setTimeValue(true)" style="cursor: pointer;text-align: center;color: #00b0ff"
@@ -43,7 +43,7 @@
         $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
           self.$parent.sendMessage(
-            { value: skip ? 'skipped' : moment(self.time, 'HH:mm').format('hh:mm A'), type: 'user_time_picker' })
+            { value: skip ? 'skipped' : moment(self.time, 'HH:mm').format('hh:mm A'), metaValue: skip ? 'skipped' : moment(self.time, 'HH:mm').format('hh:mm A'), type: 'user_time_picker' })
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)

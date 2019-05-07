@@ -41,7 +41,7 @@
         $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
           Bot.rsp_gid = btn.rsp_gid
-          self.$parent.sendMessage({ value: skip ? 'skipped' : btn.name, type: 'user_buttons' })
+          self.$parent.sendMessage({ value: skip ? 'skipped' : btn.name,metaValue: skip ? 'skipped' : btn.name, type: 'user_buttons' })
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)

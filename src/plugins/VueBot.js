@@ -51,10 +51,11 @@ export default class VueBot {
     this.originalGambit = config.originalGambit
   }
 
-  async getNextMessage (userInput) {
+  async getNextMessage (metaInput, userInput) {
     let postData = {
       gambits: this.originalGambit,
       userInput: userInput,
+      metaInput: metaInput,
       currentId: this.currentId,
       convid: this.convid,
       historyId: this.historyId,

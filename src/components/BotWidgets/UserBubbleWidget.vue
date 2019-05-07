@@ -78,7 +78,7 @@
           <span>SKIPPED</span>
         </template>
         <template v-else>
-          <v-icon class="float-left m-r-5" dark>star_rate</v-icon>
+          <v-icon class="float-left m-r-5" dark>star</v-icon>
           <span v-text="widgetData.text[0].string"></span>
         </template>
       </div>

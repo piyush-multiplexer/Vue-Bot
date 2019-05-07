@@ -50,7 +50,7 @@
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
           }, 1000)
           setTimeout(function () {
-            self.$parent.sendMessage({ type: 'user_name', value: self.userName })
+            self.$parent.sendMessage({ type: 'user_name', value: self.userName, metaValue: self.userName })
             self.$destroy()
             self.$el.parentNode.removeChild(self.$el)
           }, 1000)
@@ -62,7 +62,7 @@
           $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
         }, 1000)
         setTimeout(function () {
-          self.$parent.sendMessage({ type: 'user_name', value: 'skipped' })
+          self.$parent.sendMessage({ type: 'user_name', value: 'skipped', metaValue: 'skipped' })
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 1000)
