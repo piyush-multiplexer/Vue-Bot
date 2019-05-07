@@ -42,7 +42,7 @@
         let self = this
         $(this.$el).addClass('animated bounceOutDown')
         setTimeout(function () {
-          self.$parent.sendMessage({ type: 'user_rating', value: skip ? 'skipped' : self.rating.toString() })
+          self.$parent.sendMessage({ type: 'user_rating', value: skip ? 'skipped' : self.rating.toString() , metaValue: skip ? 'skipped' : self.rating.toString() })
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 500)

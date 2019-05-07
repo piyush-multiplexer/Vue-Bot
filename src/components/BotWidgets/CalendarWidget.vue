@@ -44,7 +44,7 @@
         if (!this.clicked) {
           this.clicked = true
           this.$parent.sendMessage(
-            { value: skip ? 'skipped' : moment(this.datetime).format('LLLL'), type: 'user_calendar_picker' })
+            { value: skip ? 'skipped' : moment(this.datetime).format('LLLL'),metaValue: skip ? 'skipped' : moment(this.datetime).format('LLLL'), type: 'user_calendar_picker' })
           this.$destroy()
           this.$el.parentNode.removeChild(this.$el)
         }

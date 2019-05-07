@@ -127,7 +127,7 @@
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
           }, 1000)
           setTimeout(function () {
-            self.$parent.sendMessage({ value: self.locationObj, type: 'user_location' })
+            self.$parent.sendMessage({ value: self.locationObj, metaValue: self.locationObj.address, type: 'user_location' })
             self.$destroy()
             self.$el.parentNode.removeChild(self.$el)
           }, 1000)

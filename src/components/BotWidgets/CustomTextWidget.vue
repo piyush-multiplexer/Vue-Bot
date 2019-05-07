@@ -52,7 +52,7 @@
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
           }, 1000)
           setTimeout(function () {
-            self.$parent.sendMessage({ type: 'user_custom_text', value: self.text })
+            self.$parent.sendMessage({ type: 'user_custom_text', value: self.text , metaValue: self.text })
             self.$destroy()
             self.$el.parentNode.removeChild(self.$el)
           }, 1000)
@@ -64,7 +64,7 @@
           $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
         }, 1000)
         setTimeout(function () {
-          self.$parent.sendMessage({ type: 'user_custom_text', value: 'skipped' })
+          self.$parent.sendMessage({ type: 'user_custom_text', value: 'skipped', metaValue: 'skipped' })
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 1000)

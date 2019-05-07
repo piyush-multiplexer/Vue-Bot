@@ -21,6 +21,12 @@ const router = new Router({
       },
     },
     {
+      path: '/:botId/manage',
+      name: 'ManageBot',
+      component: function () {
+        return import('../components/ManageBot.vue')
+      },
+    },{
       path: '/:botId/:hashId?',
       name: 'BotHome',
       component: function () {

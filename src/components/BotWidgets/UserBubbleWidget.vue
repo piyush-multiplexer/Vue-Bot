@@ -6,7 +6,8 @@
           <span>SKIPPED</span>
         </template>
         <template v-else>
-          <img :src="thombarUrl+widgetData.text[0].string.img_url" style="cursor: pointer"/>
+          <img :src="thombarUrl+widgetData.text[0].string.img_url"
+               style="cursor: pointer;border: 3px solid white;border-radius: 15px;border-top-right-radius:0;"/>
           <div v-html="widgetData.text[0].string.val"></div>
         </template>
       </div>
@@ -78,7 +79,7 @@
           <span>SKIPPED</span>
         </template>
         <template v-else>
-          <v-icon class="float-left m-r-5" dark>star_rate</v-icon>
+          <v-icon class="float-left m-r-5" dark>star</v-icon>
           <span v-text="widgetData.text[0].string"></span>
         </template>
       </div>
@@ -143,7 +144,7 @@
               </v-layout>
             </template>
           </v-img>
-          <div>{{widgetData.meta.name}} | {{widgetData.meta.size|fileSizeFilter }} KB</div>
+<!--          <div>{{widgetData.meta.name}} | {{widgetData.meta.size|fileSizeFilter }} KB</div>-->
         </template>
       </div>
       <div v-else-if="widgetData.input.name==='user_location'">

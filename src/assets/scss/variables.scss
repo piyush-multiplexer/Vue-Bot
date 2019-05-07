@@ -1,72 +1,8 @@
 
-/*$white:#ffffff;
-$black:#000000;
-$bot-theme-body:#E0E1EA;
-$bot-theme-shadow:#EAEAEA;
-$bot-theme-text:#9F9F9F;
-$bot-theme-text-filed:#f3f3f3;
-
-%bot-theme-dropdown {
-  background: rgba(111,134,247,1);
-  background: -moz-linear-gradient(-45deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(111,134,247,1)), color-stop(100%, rgba(90,165,250,1)));
-  background: -webkit-linear-gradient(-45deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  background: -o-linear-gradient(-45deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  background: -ms-linear-gradient(-45deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  background: linear-gradient(135deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f86f7', endColorstr='#5aa5fa', GradientType=1 );
-}
-
-%bot-theme-date-picker {
-  background: rgba(111,134,247,1);
-  background: -moz-linear-gradient(-45deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(111,134,247,1)), color-stop(100%, rgba(90,165,250,1)));
-  background: -webkit-linear-gradient(-45deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  background: -o-linear-gradient(-45deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  background: -ms-linear-gradient(-45deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  background: linear-gradient(135deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f86f7', endColorstr='#5aa5fa', GradientType=1 );
-}
-
-%bot-theme-button {
-  background: rgba(111,134,247,1);
-  background: -moz-linear-gradient(-45deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(111,134,247,1)), color-stop(100%, rgba(90,165,250,1)));
-  background: -webkit-linear-gradient(-45deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  background: -o-linear-gradient(-45deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  background: -ms-linear-gradient(-45deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  background: linear-gradient(135deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f86f7', endColorstr='#5aa5fa', GradientType=1 );
-}
-
-%bot-theme-hover-button {
-  background: rgba(80,102,199,1);
-  background: -moz-linear-gradient(-45deg, rgba(80,102,199,1) 0%, rgba(38,88,141,1) 100%);
-  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(80,102,199,1)), color-stop(100%, rgba(38,88,141,1)));
-  background: -webkit-linear-gradient(-45deg, rgba(80,102,199,1) 0%, rgba(38,88,141,1) 100%);
-  background: -o-linear-gradient(-45deg, rgba(80,102,199,1) 0%, rgba(38,88,141,1) 100%);
-  background: -ms-linear-gradient(-45deg, rgba(80,102,199,1) 0%, rgba(38,88,141,1) 100%);
-  background: linear-gradient(135deg, rgba(80,102,199,1) 0%, rgba(38,88,141,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5066c7', endColorstr='#26588d', GradientType=1 );
-}
-
-
-%bot-theme-user-bg {
-  background: rgba(111,134,247,1);
-  background: -moz-linear-gradient(-45deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(111,134,247,1)), color-stop(100%, rgba(90,165,250,1)));
-  background: -webkit-linear-gradient(-45deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  background: -o-linear-gradient(-45deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  background: -ms-linear-gradient(-45deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  background: linear-gradient(135deg, rgba(111,134,247,1) 0%, rgba(90,165,250,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f86f7', endColorstr='#5aa5fa', GradientType=1 );
-}*/
-
-
-
 $bot-font-size-15: 0.9375rem;
 $bot-font-size-16: 1rem;
 $bot-font-size-18: 1.125rem;
+$bot-font-size-19: 1.1875rem;
 $bot-font-size-22: 1.375rem;
 $bot-font-size-32: 2rem;
 $bot-font-size-45: 2.8125rem;
