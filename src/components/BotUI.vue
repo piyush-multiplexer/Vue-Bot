@@ -106,6 +106,7 @@
     data () {
       return {
         messages: [],
+        historyId: '',
         userValue: '',
         isBotLoading: false,
         conversationEnd: false,
@@ -116,8 +117,8 @@
       let self = this
       this.messages = []
       this.messages[0] = await Bot.getConfig()
+      this.historyId = await Bot.getHistoryId()
       window.BotMetaData = await Bot.getBotHashData()
-      console.log(BotMetaData)
       this.$forceUpdate()
     },
     computed: {
@@ -149,7 +150,8 @@
         if (userValue === 'skipped')
           this.messages.push(await Bot.getNextMessage('', ''))
         else
-          this.messages.push(await Bot.getNextMessage(this.userValue ? this.userValue : userValue.value,userValue.metaValue))
+          this.messages.push(
+            await Bot.getNextMessage(this.userValue ? this.userValue : userValue.value, userValue.metaValue))
         this.userValue = ''
         this.$forceUpdate()
       },

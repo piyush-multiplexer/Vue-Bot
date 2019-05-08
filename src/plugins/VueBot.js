@@ -72,4 +72,8 @@ export default class VueBot {
     })
     return response
   }
+
+  async getHistoryId () {
+    return this.historyId
+  }
 }
