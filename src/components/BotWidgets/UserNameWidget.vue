@@ -8,7 +8,7 @@
             <v-text-field class="bot-text-field" ref="username" required v-model="userName"></v-text-field>
           </v-flex>
           <v-flex class="text-right" md2 xs2>
-            <v-btn :disabled="!userName.length" @click.once="setUserValue" class="bot-button-round" fab flat icon>
+            <v-btn :disabled="!userName.trim().length" @click.once="setUserValue" class="bot-button-round" fab flat icon>
               <v-icon>send</v-icon>
             </v-btn>
           </v-flex>

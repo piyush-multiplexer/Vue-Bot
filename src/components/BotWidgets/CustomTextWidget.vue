@@ -10,7 +10,7 @@
             <v-text-field class="bot-text-field" ref="text" required v-model="text"></v-text-field>
           </v-flex>
           <v-flex class="text-right" md2 xs2>
-            <v-btn :disabled="!text.length" @click.once="setTextValue" class="bot-button-round" fab flat icon>
+            <v-btn :disabled="!text.trim().length" @click.once="setTextValue" class="bot-button-round" fab flat icon>
               <v-icon>send</v-icon>
             </v-btn>
           </v-flex>
