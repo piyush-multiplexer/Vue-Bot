@@ -485,6 +485,7 @@ body {
 .bot-text-field .v-input__control .v-input__slot .v-text-field__slot input {
   color: #616c6f;
   margin-top: 5px;
+  padding-left: 10px;
   margin-bottom: 5px;
   font-size: 1.1875rem;
 }

@@ -10,7 +10,7 @@
       </div>
       <div class="" v-if="bubble.img_url" @keyup.esc="imageIndex=null">
         <LightGallery width="10" :images="[bubble.img_url]" :index="imageIndex" @close="imageIndex=null"></LightGallery>
-        <img class="bubble-card" style="cursor: pointer;margin: 0" :src="thombarUrl+bubble.img_url" @click="imageIndex=0"/>
+        <img class="bubble-card" style="cursor: pointer;margin: 0; margin-bottom: -5px" :src="thombarUrl+bubble.img_url" @click="imageIndex=0"/>
       </div>
     </div>
     <div class="bot-starttyping" v-if="startTyping">
