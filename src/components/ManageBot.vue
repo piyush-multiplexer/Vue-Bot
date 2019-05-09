@@ -80,7 +80,6 @@
 </script>
 
 <style>
-  .v-content__wrap{
-    background-color: white;
-  }
+
+
 </style>
