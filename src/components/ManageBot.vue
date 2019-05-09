@@ -79,7 +79,7 @@
     }
 </script>
 
-<style>
+<style scoped>
   .v-content__wrap{
     background-color: white;
   }
