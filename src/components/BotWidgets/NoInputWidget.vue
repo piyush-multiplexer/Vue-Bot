@@ -2,7 +2,7 @@
   <div class="UserNameWidget">
     <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="restartBot">
       <div class="widget-question">
-        Finished
+        Thank You
       </div>
       <v-layout row wrap>
         <v-flex xs12>
