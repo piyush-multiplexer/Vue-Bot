@@ -1,5 +1,5 @@
 <template>
-  <div class="ButtonsWidget" style="text-align: -webkit-center;">
+  <div class="ButtonsWidget" style="max-height: 86vh;overflow-y: scroll;text-align: -webkit-center;">
     <div class="btn-group animated slideInUp bot-animated-card" v-if="showWidget">
       <div class="widget-question">Select an Option</div>
       <template v-if="widgetData.input.args.multiple">
@@ -9,7 +9,10 @@
             {{btn.val}}<span v-html="btn.href"></span>
           </v-btn>
         </template>
-        <v-btn @click.once="setButtonValueMultiple(false)" class="bot-button-round-text m-b-10" round>SUBMIT</v-btn>
+        <v-btn @click.once="setButtonValueMultiple(false)"
+               class="bot-button-round-text m-b-10"
+               round style="background-color: #2f72a7 !important;  color: #ffffff !important;">SUBMIT
+        </v-btn>
       </template>
       <template v-else>
         <template v-for="(btn,index) in widgetData.input.args.options">
@@ -52,7 +55,10 @@
     },
     methods: {
       appendButtonValue (btn, index) {
-        this.selectedButton[index] = btn.val
+        if (this.selectedButton[index])
+          this.selectedButton[index] = ''
+        else
+          this.selectedButton[index] = btn.val
         this.$forceUpdate()
       },
       setButtonValueMultiple (skip) {

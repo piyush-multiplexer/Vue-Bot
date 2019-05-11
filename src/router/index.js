@@ -26,8 +26,21 @@ const router = new Router({
       component: function () {
         return import('../components/ManageBot.vue')
       },
-    },{
-      path: '/:botId/:hashId?',
+    },
+    {
+      path: '/:botId',
+      name: 'BotHome',
+      component: function () {
+        return import('../components/BotHome.vue')
+      },
+    }, {
+      path: '/:botId/d/:hashId?',
+      name: 'BotHome',
+      component: function () {
+        return import('../components/BotHome.vue')
+      },
+    }, {
+      path: '/:botId/s/:sessionId?',
       name: 'BotHome',
       component: function () {
         return import('../components/BotHome.vue')

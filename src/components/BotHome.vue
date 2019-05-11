@@ -17,6 +17,8 @@
     mounted () {
       if (this.$route.params.hashId)
         window.Bot = new VueBot(this.$route.params.botId, this.$route.params.hashId)
+      else if (this.$route.params.sessionId)
+        window.Bot = new VueBot(this.$route.params.botId, this.$route.params.sessionId)
       else
         window.Bot = new VueBot(this.$route.params.botId)
       this.isBot = true
