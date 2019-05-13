@@ -60,6 +60,7 @@
         }
       }
       .v-input__prepend-inner{
+        margin-top: 10px;
         .v-input__icon{
           i{
             color: $bot-theme-text;
@@ -73,6 +74,12 @@
     .v-text-field__details {
       display: none;
     }
+
+
+  }
+
+  .v-input__prepend-outer{
+    margin-top: 10px;
   }
 
   .v-input__control > .v-input__slot:before{
@@ -170,6 +177,10 @@
     .v-text-field__details {
       display: none;
     }
+  }
+
+  .v-input__prepend-outer{
+    margin-top: 10px;
   }
 
   .v-input__control > .v-input__slot:before{
