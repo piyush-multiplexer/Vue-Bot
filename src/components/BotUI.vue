@@ -49,8 +49,9 @@
       <div class="p-t-5 p-b-5" id="powered-by">
         <v-layout class="text-center" row wrap>
           <v-flex xs12>
-            Powered By <a href="https://www.meracrm.com"><img src="../../static/assets/image/MeraCRMlogo.png"
-                                                              width="60px"></a>
+            Powered By <a href="https://www.meracrm.com" target="_blank"><img
+            src="../../static/assets/image/MeraCRMlogo.png"
+            width="60px"></a>
             <!--Powered By Avinashi Pvt. Ltd.-->
           </v-flex>
         </v-layout>
