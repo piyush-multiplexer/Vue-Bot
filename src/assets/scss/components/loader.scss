@@ -1,0 +1,60 @@
+@keyframes bouncing-loader {
+  to {
+    opacity: 0.1;
+    transform: translate3d(0, -1rem, 0);
+  }
+}
+
+.bot-loader {
+  background-color: rgba(0,0,0,0.2);
+  position: absolute;
+  top: calc(50vh - 49vh);
+  height: calc(100vh - 2vh);
+  border-radius: 10px;
+  width: 450px;
+  .bouncing-loader {
+    display: flex;
+    justify-content: center;
+    top: calc(50% - 49px);
+    position: relative;
+    width: 100%;
+    div {
+      width: 1rem;
+      height: 1rem;
+      margin: 3rem 0.2rem;
+      background: $bot-theme-button-hover;
+      border-radius: 50%;
+      animation: bouncing-loader 0.6s infinite alternate;
+      &:last-child(2) {
+        animation-delay: 0.2s;
+      }
+      &:last-child(3) {
+        animation-delay: 0.4s;
+      }
+    }
+  }
+}
+
+.bot-loader, .bouncing-loader > div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.bot-loader, .bouncing-loader > div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+
+
+  .bot-loader {
+    top: 0;
+    height: calc(100vh - 0vh);
+    border-radius: 0px;
+    width: 100%;
+    .bouncing-loader {
+      width: 100%;
+    }
+  }
+
+}

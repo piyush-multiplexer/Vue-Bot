@@ -6,7 +6,8 @@
           <div id="bot-sub-content">
             <!--            <div :key="messageIndex" class="animated bounceInUp" v-for="(message,messageIndex) in messages">-->
             <div :key="messageIndex" v-for="(message,messageIndex) in messages">
-              <div class="text-right animated fadeInRight" v-if="message.type==='user'">
+              <div class="text-right animated fadeInRight" style="width: 80%; margin: 0 0 0 auto"
+                   v-if="message.type==='user'">
                 <!--              <div class="text-right animated bounceInRight" v-if="message.type==='user'">-->
                 <div class="message-content-user">
                   <user-bubble-widget :widgetData="message"></user-bubble-widget>
@@ -32,7 +33,7 @@
               </div>
 
               <div class="animated bounceInUp" v-else>
-                <div :style="botConfig.isHuman?'text-align: left':'text-align: center'">
+                <div :style="botConfig.isHuman?'text-align: left':'text-align: center'" style="width: 80%">
                   <div class="message-content-bot">
                     <bubble :bubbles="message.text"></bubble>
                   </div>
@@ -48,9 +49,18 @@
       <div class="p-t-5 p-b-5" id="powered-by">
         <v-layout class="text-center" row wrap>
           <v-flex xs12>
-            Powered By Avinashi Pvt. Ltd.
+            Powered By <a href="https://www.meracrm.com"><img src="../../static/assets/image/MeraCRMlogo.png"
+                                                              width="60px"></a>
+            <!--Powered By Avinashi Pvt. Ltd.-->
           </v-flex>
         </v-layout>
+      </div>
+    </div>
+    <div class="bot-loader" v-if="screenLoader">
+      <div class="bouncing-loader">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
 
@@ -111,6 +121,7 @@
         isBotLoading: false,
         conversationEnd: false,
         botConfig: { isHuman: true },
+        screenLoader: true,
       }
     },
     async mounted () {
@@ -119,6 +130,7 @@
       this.messages[0] = await Bot.getConfig()
       this.historyId = await Bot.getHistoryId()
       window.BotMetaData = await Bot.getBotHashData()
+      this.screenLoader = false
       this.$forceUpdate()
     },
     computed: {

@@ -61,6 +61,7 @@ body {
 
 .primary--text {
   color: #b3c9da !important;
+  caret-color: #b3c9da !important;
 }
 
 .accent {
@@ -520,6 +521,9 @@ body {
   margin-left: 10px;
   font-size: 2rem;
 }
+.bot-text-field-password .v-input__control .v-input__slot .v-input__prepend-inner {
+  margin-top: 10px;
+}
 .bot-text-field-password .v-input__control .v-input__slot .v-input__prepend-inner .v-input__icon i {
   color: #616c6f;
 }
@@ -528,6 +532,9 @@ body {
 }
 .bot-text-field-password .v-input__control .v-text-field__details {
   display: none;
+}
+.bot-text-field-password .v-input__prepend-outer {
+  margin-top: 10px;
 }
 .bot-text-field-password .v-input__control > .v-input__slot:before {
   border-color: #efefef !important;
@@ -595,6 +602,9 @@ body {
 .bot-text-field-email .v-input__control .v-text-field__details {
   display: none;
 }
+.bot-text-field-email .v-input__prepend-outer {
+  margin-top: 10px;
+}
 .bot-text-field-email .v-input__control > .v-input__slot:before {
   border-color: #efefef !important;
 }
@@ -658,6 +668,61 @@ body {
   color: #ffffff;
 }
 
+@keyframes bouncing-loader {
+  to {
+    opacity: 0.1;
+    transform: translate3d(0, -1rem, 0);
+  }
+}
+.bot-loader {
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: calc(50vh - 49vh);
+  height: calc(100vh - 2vh);
+  border-radius: 10px;
+  width: 450px;
+}
+.bot-loader .bouncing-loader {
+  display: flex;
+  justify-content: center;
+  top: calc(50% - 49px);
+  position: relative;
+  width: 100%;
+}
+.bot-loader .bouncing-loader div {
+  width: 1rem;
+  height: 1rem;
+  margin: 3rem 0.2rem;
+  background: #2f72a7;
+  border-radius: 50%;
+  animation: bouncing-loader 0.6s infinite alternate;
+}
+.bot-loader .bouncing-loader div:last-child(2) {
+  animation-delay: 0.2s;
+}
+.bot-loader .bouncing-loader div:last-child(3) {
+  animation-delay: 0.4s;
+}
+
+.bot-loader, .bouncing-loader > div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.bot-loader, .bouncing-loader > div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@media only screen and (max-width: 767px) {
+  .bot-loader {
+    top: 0;
+    height: calc(100vh - 0vh);
+    border-radius: 0px;
+    width: 100%;
+  }
+  .bot-loader .bouncing-loader {
+    width: 100%;
+  }
+}
 /* modules scss imported */
 .bot-background {
   overflow-x: hidden;
@@ -1128,7 +1193,7 @@ body {
   width: fit-content;
   max-width: 100%;
   padding: 17px;
-  margin: -5px 0;
+  margin: 0 0 0 auto;
   border-radius: 15px;
   font-size: 1.125rem;
   border-top-right-radius: 0;
@@ -1524,7 +1589,7 @@ body {
   width: fit-content;
   max-width: 100%;
   padding: 17px;
-  margin: -5px 0;
+  margin: 0 0 0 auto;
   border-radius: 15px;
   font-size: 1.125rem;
   border-top-right-radius: 0;
