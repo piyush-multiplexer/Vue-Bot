@@ -8,7 +8,7 @@
             <v-text-field class="bot-text-field" ref="username" required v-model="userName"></v-text-field>
           </v-flex>
           <v-flex class="text-right" md2 xs2>
-            <v-btn :disabled="!userName.trim().length" @click.once="setUserValue" class="bot-button-round" fab flat icon>
+            <v-btn :disabled="!validateName" @click.once="setUserValue" class="bot-button-round" fab flat icon>
               <v-icon>send</v-icon>
             </v-btn>
           </v-flex>
@@ -33,6 +33,17 @@
       if (window.BotMetaData.hasOwnProperty(this.widgetData.varid))
         this.userName = window.BotMetaData[this.widgetData.varid]
     },
+    computed: {
+      validateName () {
+        let flag = false
+        if (this.widgetData.input.args.input_type === 'user_fullname') {
+          flag = this.userName.toString().split(' ').length > 1
+        } else if (this.widgetData.input.args.input_type === 'user_name') {
+          flag = this.userName.toString().trim().length
+        }
+        return flag
+      },
+    },
     mounted () {
       let self = this
       EventBus.$on('AFTER_BUBBLE', function () {
@@ -41,6 +52,10 @@
       })
     },
     methods: {
+      // validateName () {
+      //   // console.log(this.userName.toString().split(' '))
+      //   return this.widgetData.input.args.input_type === 'user_fullname';
+      // },
       setUserValue () {
         let self = this
         if (this.userName.length && !this.clicked) {
