@@ -65,7 +65,7 @@
     },
     mounted () {
       let self = this
-      EventBus.$on('AFTER_BUBBLE', function () {
+      EventBus.$once('AFTER_BUBBLE', function () {
         self.showWidget = true
       })
     },

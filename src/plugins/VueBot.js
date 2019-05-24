@@ -2,6 +2,10 @@ import BotData from '../data/BotMetaData'
 import NetworkCommunicator from './NetworkResourceHandler'
 import Constants from '../Constant'
 
+let logs = []
+window.onerror = function (a, b, c) {
+  logs.push({ errorMessage: a, errorPath: b, errorLine: c })
+}
 let nextUrl = 'https://manage.bots.bizbrain.in/api/getJsonById/'
 // method, url, loading, postData, headers
 export default class VueBot {
@@ -27,6 +31,12 @@ export default class VueBot {
       originalGambit: response.originalGambit,
     })
     return response.json
+  }
+
+  setLogs () {
+    let self = this
+    NetworkCommunicator('POST', `${Constants.base_url}log/${this.historyId}`,
+      false, { log: logs })
   }
 
   async getBotHashData () {
@@ -60,6 +70,7 @@ export default class VueBot {
       convid: this.convid,
       historyId: this.historyId,
     }
+    this.setLogs()
     let response = await NetworkCommunicator('POST',
       `${Constants.base_url}getJsonById/${this.rsp_gid}`,
       '', postData)

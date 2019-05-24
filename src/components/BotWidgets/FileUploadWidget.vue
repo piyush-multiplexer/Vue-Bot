@@ -37,7 +37,7 @@
     data () {return { showWidget: false, imageName: '', uploadFileData: '' }},
     mounted () {
       let self = this
-      EventBus.$on('AFTER_BUBBLE', function () {
+      EventBus.$once('AFTER_BUBBLE', function () {
         self.showWidget = true
         setTimeout(function () { self.$refs.uploadFile.focus() }, 200)
       })
