@@ -2,7 +2,18 @@
   <div class="SelfieWidget">
     <div @keyup.enter.once="uploadFile" class="animated slideInUp bot-animated-card"
          v-if="showWidget">
-      <div class="widget-question">Take Selfie</div>
+
+      <v-layout row wrap>
+        <v-flex xs6 sm6>
+          <div class="widget-question">Take Selfie</div>
+        </v-flex>
+        <v-flex xs6 sm6>
+          <div @click.once="skipFileValue" class="widget-skip"
+               v-if="widgetData.input.args.pass">skip
+          </div>
+        </v-flex>
+      </v-layout>
+
       <div class="bot-text-filed-buttton-broder">
         <v-layout row wrap>
           <v-flex md10 xs10>
@@ -18,9 +29,7 @@
             </v-btn>
           </v-flex>
         </v-layout>
-        <div @click.once="skipFileValue" style="cursor: pointer;text-align: center;color: #00b0ff"
-             v-if="widgetData.input.args.pass">skip
-        </div>
+
       </div>
     </div>
   </div>

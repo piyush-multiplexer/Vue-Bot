@@ -1,7 +1,14 @@
 <template>
   <div class="GEOLocationWidget">
     <div @keyup.enter="setMapValue" class="animated slideInUp bot-animated-card" v-if="showWidget">
-      <div class="widget-question">Drag & Drop Pin to Select Location</div>
+
+      <v-layout row wrap>
+        <v-flex xs12 sm12>
+          <div class="widget-question" style="padding-left: 4% !important;">Drag & Drop Pin to Select Location</div>
+        </v-flex>
+      </v-layout>
+
+
       <v-layout row wrap>
         <v-flex xs12>
           <google-map :center="center" :zoom="10" @click="changeMarker" ref="map"

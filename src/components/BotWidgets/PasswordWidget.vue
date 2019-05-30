@@ -1,7 +1,18 @@
 <template>
   <div class="PasswordWidget">
     <div @keyup.enter="setPasswordValue" class="animated slideInUp bot-animated-card" v-if="showWidget">
-      <div class="widget-question">Enter Password</div>
+
+      <v-layout row wrap>
+        <v-flex xs6 sm6>
+          <div class="widget-question">Enter Password</div>
+        </v-flex>
+        <v-flex xs6 sm6>
+          <div @click.once="skipPasswordValue" class="widget-skip"
+               v-if="widgetData.input.args.pass">skip
+          </div>
+        </v-flex>
+      </v-layout>
+
       <div class="bot-text-filed-buttton-broder">
         <v-layout row wrap>
           <v-flex md10 xs10>
@@ -15,9 +26,7 @@
             </v-btn>
           </v-flex>
         </v-layout>
-        <div @click.once="skipPasswordValue" style="cursor: pointer;text-align: center;color: #00b0ff"
-             v-if="widgetData.input.args.pass">skip
-        </div>
+
       </div>
     </div>
   </div>

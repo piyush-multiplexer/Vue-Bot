@@ -1,9 +1,21 @@
 <template>
   <div class="CustomTextWidget">
     <div @keyup.enter="setTextValue" class="animated slideInUp bot-animated-card" v-show="showWidget">
-      <div class="widget-question">
-        {{widgetData.text.length?widgetData.text[widgetData.text.length-1].string:'Enter Value'}}
-      </div>
+
+      <v-layout row wrap>
+        <v-flex xs6 sm6>
+          <div class="widget-question">
+            {{widgetData.text.length?widgetData.text[widgetData.text.length-1].string:'Enter Value'}}
+          </div>
+        </v-flex>
+        <v-flex xs6 sm6>
+          <div @click.once="skipTextValue" class="widget-skip"
+               v-if="widgetData.input.args.pass">skip
+          </div>
+        </v-flex>
+      </v-layout>
+
+
       <div class="bot-text-filed-buttton-broder">
         <v-layout row wrap>
           <v-flex md10 xs10>
@@ -15,9 +27,7 @@
             </v-btn>
           </v-flex>
         </v-layout>
-        <div @click.once="skipTextValue" style="cursor: pointer;text-align: center;color: #00b0ff"
-             v-if="widgetData.input.args.pass">skip
-        </div>
+
       </div>
     </div>
   </div>

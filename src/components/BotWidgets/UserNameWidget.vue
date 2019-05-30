@@ -1,7 +1,18 @@
 <template>
   <div class="UserNameWidget">
     <div @keyup.enter="setUserValue" class="animated slideInUp bot-animated-card" v-show="showWidget">
-      <div class="widget-question">Enter Name</div>
+      <v-layout row wrap>
+        <v-flex xs6 sm6>
+          <div class="widget-question">Enter Name</div>
+        </v-flex>
+        <v-flex xs6 sm6>
+          <div class="widget-skip" @click.once="skipUserValue"
+               v-if="widgetData.input.args.pass">skip
+          </div>
+        </v-flex>
+      </v-layout>
+
+
       <div class="bot-text-filed-buttton-broder">
         <v-layout row wrap>
           <v-flex md10 xs10>
@@ -13,9 +24,7 @@
             </v-btn>
           </v-flex>
         </v-layout>
-        <div @click.once="skipUserValue" style="cursor: pointer;text-align: center;color: #00b0ff"
-             v-if="widgetData.input.args.pass">skip
-        </div>
+
       </div>
     </div>
   </div>
@@ -28,13 +37,15 @@
   export default {
     name: 'UserNameWidget',
     props: ['widgetData'],
-    data () {return { userName: '', showWidget: false, clicked: false }},
-    created () {
+    data() {
+      return {userName: '', showWidget: false, clicked: false}
+    },
+    created() {
       if (window.BotMetaData.hasOwnProperty(this.widgetData.varid))
         this.userName = window.BotMetaData[this.widgetData.varid]
     },
     computed: {
-      validateName () {
+      validateName() {
         let flag = false
         if (this.widgetData.input.args.input_type === 'user_fullname') {
           flag = this.userName.toString().split(' ').length > 1
@@ -44,11 +55,13 @@
         return flag
       },
     },
-    mounted () {
+    mounted() {
       let self = this
       EventBus.$once('AFTER_BUBBLE', function () {
         self.showWidget = true
-        setTimeout(function () { self.$refs.username.focus() }, 200)
+        setTimeout(function () {
+          self.$refs.username.focus()
+        }, 200)
       })
     },
     methods: {
@@ -56,7 +69,7 @@
       //   // console.log(this.userName.toString().split(' '))
       //   return this.widgetData.input.args.input_type === 'user_fullname';
       // },
-      setUserValue () {
+      setUserValue() {
         let self = this
         if (this.userName.length && !this.clicked) {
           this.clicked = true
@@ -65,19 +78,19 @@
             $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
           }, 1000)
           setTimeout(function () {
-            self.$parent.sendMessage({ type: 'user_name', value: self.userName, metaValue: self.userName })
+            self.$parent.sendMessage({type: 'user_name', value: self.userName, metaValue: self.userName})
             self.$destroy()
             self.$el.parentNode.removeChild(self.$el)
           }, 1000)
         }
-      }, skipUserValue () {
+      }, skipUserValue() {
         let self = this
         animateSendButton()
         setTimeout(function () {
           $(self.$el).addClass('animated bounceOutDown') // //fadeOutDownBig
         }, 1000)
         setTimeout(function () {
-          self.$parent.sendMessage({ type: 'user_name', value: 'skipped', metaValue: 'skipped' })
+          self.$parent.sendMessage({type: 'user_name', value: 'skipped', metaValue: 'skipped'})
           self.$destroy()
           self.$el.parentNode.removeChild(self.$el)
         }, 1000)

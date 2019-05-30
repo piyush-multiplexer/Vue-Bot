@@ -1,7 +1,18 @@
 <template>
   <div class="DatePickerWidget">
     <div class="animated slideInUp bot-animated-card" v-if="showWidget">
-      <div class="widget-question"> Select Date</div>
+
+      <v-layout row wrap>
+        <v-flex xs6 sm6>
+          <div class="widget-question"> Select Date</div>
+        </v-flex>
+        <v-flex xs6 sm6>
+          <div @click.once="setDateValue(true)" class="widget-skip"
+               v-if="widgetData.input.args.pass">skip
+          </div>
+        </v-flex>
+      </v-layout>
+
       <v-layout row wrap>
         <v-flex xs12>
           <v-date-picker class="bot-date-picker"
@@ -12,9 +23,7 @@
           <v-btn @click.once="setDateValue(false)" class="bot-button-round-text">Set Date</v-btn>
         </v-flex>
       </v-layout>
-      <div @click.once="setDateValue(true)" style="cursor: pointer;text-align: center;color: #00b0ff"
-            v-if="widgetData.input.args.pass">skip
-      </div>
+
     </div>
   </div>
 </template>

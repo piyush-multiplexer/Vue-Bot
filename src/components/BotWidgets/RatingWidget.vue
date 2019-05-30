@@ -1,16 +1,25 @@
 <template>
   <div class="RatingWidget">
     <div class="animated slideInUp bot-animated-card" v-if="showWidget">
-      <div class="widget-question">Rate It</div>
+
+      <v-layout row wrap>
+        <v-flex xs6 sm6>
+          <div class="widget-question">Rate It</div>
+        </v-flex>
+        <v-flex xs6 sm6>
+          <div @click.once="setDateTimeValue(true)" class="widget-skip"
+               v-if="widgetData.input.args.pass">skip
+          </div>
+        </v-flex>
+      </v-layout>
+
       <v-rating :half-increments="widgetData.input.args.step!=1?true:false" background-color="grey darken-1"
                 class="bot-rating m-b-20" color="yellow darken-3"
                 empty-icon="$vuetify.icons.ratingFull" hover
                 v-model="rating" x-large></v-rating>
       <v-btn @click.once="setDateTimeValue(false)" class="bot-button-round-text">Submit {{rating}} Rating</v-btn>
       <br/>
-      <div @click.once="setDateTimeValue(true)" style="cursor: pointer;text-align: center;color: #00b0ff"
-            v-if="widgetData.input.args.pass">skip
-      </div>
+
     </div>
   </div>
 </template>

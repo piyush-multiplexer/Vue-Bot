@@ -1,7 +1,18 @@
 <template>
   <div class="TimePickerWidget">
     <div class="animated slideInUp bot-animated-card" v-if="showWidget">
-      <div class="widget-question">Pick a Time</div>
+      <v-layout row wrap>
+        <v-flex xs6 sm6>
+          <div class="widget-question">Pick a Time</div>
+        </v-flex>
+        <v-flex xs6 sm6>
+          <div @click.once="setTimeValue(true)" class="widget-skip"
+               v-if="widgetData.input.args.pass">skip
+          </div>
+        </v-flex>
+      </v-layout>
+
+
       <v-layout row wrap>
         <v-flex xs12>
           <v-time-picker class="bot-time-picker" v-model="time"></v-time-picker>
@@ -11,9 +22,7 @@
           <v-btn @click.once="setTimeValue(false)" class="bot-button-round-text">Set Time</v-btn>
         </v-flex>
       </v-layout>
-      <div @click.once="setTimeValue(true)" style="cursor: pointer;text-align: center;color: #00b0ff"
-            v-if="widgetData.input.args.pass">skip
-      </div>
+
     </div>
   </div>
 </template>
