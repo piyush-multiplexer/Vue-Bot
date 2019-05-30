@@ -3,7 +3,19 @@
     <!--<div class="card-group" v-if="showWidget">-->
 
     <div class="bot-animated-card-slider animated slideInUp p-l-0 p-r-0" v-if="showWidget">
-      <div class="widget-question">Select an Card</div>
+
+      <v-layout row wrap>
+        <v-flex xs6 sm6>
+          <div class="widget-question">Select an Card</div>
+        </v-flex>
+        <v-flex xs6 sm6>
+          <div @click.once="setCardValue({rsp_gid:widgetData.input.args.rsp_gid,val:'skipped',name:'skipped'},true)"
+               class="widget-skip"
+               v-if="widgetData.input.args.pass">skip
+          </div>
+        </v-flex>
+      </v-layout>
+
       <swiper :options="swiperOption" class="p-r-24 bot-carousel">
         <swiper-slide :key="index" class="p-t-10 p-b-10" v-for="(card,index) in widgetData.input.args.options">
           <div class="bot-carousel-card">
@@ -27,10 +39,7 @@
           </div>
         </div>
       </swiper>
-      <div @click.once="setCardValue({rsp_gid:widgetData.input.args.rsp_gid,val:'skipped',name:'skipped'},true)"
-            style="cursor: pointer;text-align: center;color: #00b0ff"
-            v-if="widgetData.input.args.pass">skip
-      </div>
+
     </div>
   </div>
 </template>

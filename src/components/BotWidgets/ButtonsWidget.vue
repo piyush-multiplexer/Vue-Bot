@@ -1,7 +1,23 @@
 <template>
   <div class="ButtonsWidget" style="max-height: 86vh;overflow-y: scroll;text-align: -webkit-center;">
     <div class="btn-group animated slideInUp bot-animated-card" v-if="showWidget">
-      <div class="widget-question">Select an Option</div>
+
+      <v-layout row wrap>
+        <v-flex xs6 sm6>
+          <div class="widget-question">Select an Option</div>
+        </v-flex>
+        <v-flex xs6 sm6>
+          <div @click.once="setButtonValueMultiple(true)" class="widget-skip"
+               v-if="widgetData.input.args.pass && widgetData.input.args.multiple">skip
+          </div>
+          <div @click.once="setButtonValue({rsp_gid:widgetData.input.args.rsp_gid,val:'skipped',name:'skipped'},true)"
+               class="widget-skip"
+               v-else-if="widgetData.input.args.pass">skip
+          </div>
+        </v-flex>
+      </v-layout>
+
+
       <template v-if="widgetData.input.args.multiple">
         <template v-for="(btn,index) in widgetData.input.args.options">
           <v-btn :class="selectedButton[index]===btn.val?'bot-button':''" @click="appendButtonValue(btn,index)"
@@ -22,14 +38,7 @@
           </v-btn>
         </template>
       </template>
-      <div @click.once="setButtonValueMultiple(true)"
-           style="cursor: pointer;text-align: center;color: #00b0ff"
-           v-if="widgetData.input.args.pass && widgetData.input.args.multiple">skip
-      </div>
-      <div @click.once="setButtonValue({rsp_gid:widgetData.input.args.rsp_gid,val:'skipped',name:'skipped'},true)"
-           style="cursor: pointer;text-align: center;color: #00b0ff"
-           v-else-if="widgetData.input.args.pass">skip
-      </div>
+
     </div>
   </div>
 </template>
