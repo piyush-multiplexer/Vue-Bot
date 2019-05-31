@@ -2,10 +2,10 @@
   <div class="TimePickerWidget">
     <div class="animated slideInUp bot-animated-card" v-if="showWidget">
       <v-layout row wrap>
-        <v-flex xs6 sm6>
+        <v-flex xs10 sm10>
           <div class="widget-question">Pick a Time</div>
         </v-flex>
-        <v-flex xs6 sm6>
+        <v-flex xs2 sm2>
           <div @click.once="setTimeValue(true)" class="widget-skip"
                v-if="widgetData.input.args.pass">skip
           </div>

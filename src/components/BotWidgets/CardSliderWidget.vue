@@ -5,10 +5,10 @@
     <div class="bot-animated-card-slider animated slideInUp p-l-0 p-r-0" v-if="showWidget">
 
       <v-layout row wrap>
-        <v-flex xs6 sm6>
+        <v-flex xs10 sm10>
           <div class="widget-question">Select an Card</div>
         </v-flex>
-        <v-flex xs6 sm6>
+        <v-flex xs2 sm2>
           <div @click.once="setCardValue({rsp_gid:widgetData.input.args.rsp_gid,val:'skipped',name:'skipped'},true)"
                class="widget-skip"
                v-if="widgetData.input.args.pass">skip
