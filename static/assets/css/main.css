@@ -656,10 +656,9 @@ body {
   border-radius: 22px;
   margin-bottom: 10px;
   font-size: 1.375rem;
-  padding-left: 8%; }
+  padding-left: 4%; }
 
-.widget-skip
-{
+.widget-skip {
   cursor: pointer;
   text-align: right;
   color: #00b0ff;
@@ -667,8 +666,8 @@ body {
   padding-top: 13px;
   border-radius: 22px;
   margin-bottom: 10px;
-  padding-right: 8%;
-}
+  padding-right: 8%; }
+
 @media only screen and (max-width: 767px) {
   #bot-sub-content {
     transform: rotate(180deg);
@@ -880,7 +879,17 @@ body {
   border-radius: 22px;
   margin-bottom: 10px;
   font-size: 1.375rem;
-  padding-left: 8%; }
+  padding-left: 4%; }
+
+.widget-skip {
+  cursor: pointer;
+  text-align: right;
+  color: #00b0ff;
+  padding-bottom: 10px;
+  padding-top: 13px;
+  border-radius: 22px;
+  margin-bottom: 10px;
+  padding-right: 8%; }
 
 @media only screen and (max-width: 767px) {
   #bot-sub-content {
