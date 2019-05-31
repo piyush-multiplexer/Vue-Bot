@@ -121,9 +121,20 @@
   border-radius: 22px;
   margin-bottom: 10px;
   font-size: $bot-font-size-22;
-  padding-left: 8%;
+  padding-left: 4%;
 }
 
+.widget-skip
+{
+  cursor: pointer;
+  text-align: right;
+  color: #00b0ff;
+  padding-bottom: 10px;
+  padding-top: 13px;
+  border-radius: 22px;
+  margin-bottom: 10px;
+  padding-right: 8%;
+}
 
 .DatePickerWidget {
 
