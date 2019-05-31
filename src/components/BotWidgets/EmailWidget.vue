@@ -3,10 +3,10 @@
     <div @keyup.enter="setEmailValue" class="animated slideInUp bot-animated-card" v-if="showWidget">
 
       <v-layout row wrap>
-        <v-flex xs6 sm6>
+        <v-flex xs10 sm10>
           <div class="widget-question">Enter Email</div>
         </v-flex>
-        <v-flex xs6 sm6>
+        <v-flex xs2 sm2>
           <div @click.once="skipEmailValue" class="widget-skip"
                v-if="widgetData.input.args.pass">skip
           </div>

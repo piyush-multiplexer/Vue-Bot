@@ -2,10 +2,10 @@
   <div class="UserNameWidget">
     <div @keyup.enter="setUserValue" class="animated slideInUp bot-animated-card" v-show="showWidget">
       <v-layout row wrap>
-        <v-flex xs6 sm6>
+        <v-flex xs10 sm10>
           <div class="widget-question">Enter Name</div>
         </v-flex>
-        <v-flex xs6 sm6>
+        <v-flex xs2 sm2>
           <div class="widget-skip" @click.once="skipUserValue"
                v-if="widgetData.input.args.pass">skip
           </div>

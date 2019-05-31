@@ -1,12 +1,12 @@
 <template>
   <div class="UserNameWidget">
-    <div v-if="showWidget" class="animated slideInUp bot-animated-card" @keyup.enter.once="restartBot">
-      <div class="widget-question">
+    <div @keyup.enter.once="restartBot" class="animated slideInUp bot-animated-card" v-if="showWidget">
+      <div class="widget-question" style="text-align: center !important;    padding-right: 6% !important;">
         Thank You
       </div>
       <v-layout row wrap>
         <v-flex xs12>
-          <v-btn class="bot-button-round-text" @click.once="restartBot">
+          <v-btn @click.once="restartBot" class="bot-button-round-text">
             Restart
           </v-btn>
         </v-flex>
