@@ -15,6 +15,8 @@
     },
     data () {return { isBot: null }},
     mounted () {
+      if(this.$route.params.botId)
+        document.title = this.$route.params.botId
       if (this.$route.params.hashId)
         window.Bot = new VueBot(this.$route.params.botId, this.$route.params.hashId)
       else if (this.$route.params.sessionId)
