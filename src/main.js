@@ -28,7 +28,7 @@ Vue.use(VueGoogleMaps, {
     region: 'IN',
     language: 'en',
     libraries: 'places',
-    key: 'AIzaSyCgG2RHYJmuCsaY0di7Jz3lEIEbsVhhWfY',
+    key: '',
   },
   installComponents: false,
 })
